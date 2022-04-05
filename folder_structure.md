@@ -1,4 +1,4 @@
-# CellPainting Gallery folder structure
+# Cell Painting Gallery folder structure
 
 Let's use Broad's data as an example to understand the folder structure.
 
