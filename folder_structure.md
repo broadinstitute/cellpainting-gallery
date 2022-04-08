@@ -1,6 +1,18 @@
 # Cell Painting Gallery folder structure
 
-Let's use Broad's data as an example to understand the folder structure.
+Here are the top-two levels of the structure
+
+```
+cellpainting-gallery/
+└── <project-group>
+    └── <project-specific-nesting>
+```
+
+- `<project-group>` groups together sets of related projects
+- `<project-specific-nesting>` additional nesting level like what we have for s3://cellpainting-gallery/jump (one folder per partner e.g. s3://cellpainting-gallery/jump/source_4). 
+
+
+Let's use Broad's data as an example to understand the full folder structure.
 
 These are the first four levels under the bucket:
 
