@@ -4,11 +4,11 @@ Here are the top-two levels of the structure
 
 ```
 cellpainting-gallery/
-└── <project-group>
+└── <project>
     └── <project-specific-nesting>
 ```
 
-- `<project-group>` groups together sets of related projects
+- `<project>` top level folder for the project. Keep the name short an simple with `[a-z0-9_]` only  
 - `<project-specific-nesting>` additional nesting level like what we have for s3://cellpainting-gallery/jump (one folder per partner e.g. s3://cellpainting-gallery/jump/source_4). 
 
 
