@@ -9,7 +9,7 @@ cellpainting-gallery/
 ```
 
 - `<project>` top level folder for the project. Keep the name short and simple with `[a-z0-9_]` only  
-- `<project-specific-nesting>` additional nesting level like what we have for s3://cellpainting-gallery/jump (one folder per partner e.g. s3://cellpainting-gallery/jump/source_4). 
+- `<project-specific-nesting>` additional nesting level like what we have for `s3://cellpainting-gallery/jump` (one folder per partner e.g. `s3://cellpainting-gallery/jump/source_4`) or for `s3://cellpainting-gallery/cpg0003-rosetta` (single source i.e. `s3://cellpainting-gallery/cpg0003-rosetta/broad/`) 
 
 
 Let's use Broad's data as an example to understand the full folder structure.
