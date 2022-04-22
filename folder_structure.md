@@ -12,7 +12,7 @@ cellpainting-gallery/
 - `<project-specific-nesting>` additional nesting level like what we have for `s3://cellpainting-gallery/jump` (one folder per partner e.g. `s3://cellpainting-gallery/jump/source_4`) or for `s3://cellpainting-gallery/cpg0003-rosetta` (single source i.e. `s3://cellpainting-gallery/cpg0003-rosetta/broad/`) 
 
 
-Let's use Broad's data as an example to understand the full folder structure.
+Let's use Broad's data in `s3://cellpainting-gallery/jump` as an example to understand the full folder structure. Broad's data is stored under `source_4`.
 
 These are the first four levels under the bucket:
 
