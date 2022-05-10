@@ -1,14 +1,18 @@
 # Uploading your data
 
-You need to do 4 things
+You need to do 5 things:
 
-0. Set up AWS credentials
+0. Set up AWS
 1. Follow naming conventions
 2. Upload your images
 3. Upload the outputs of CellProfiler
 4. Upload the outputs of the profiling recipe
 
-## 0. Set up AWS credentials
+## 0. Set up AWS
+
+### Install AWS CLI
+
+### Set up AWS credentials
 
 [FIXME] If the images live on S3, first please ensure that you have indeed configured your AWS IAM role [here](https://github.com/jump-cellpainting/aws#steps-for-creating-a-aws-iam-role) using the configuration specified under "If your own data is stored on AWS".
 
@@ -74,26 +78,25 @@ e.g. here, we should expected something like this, one per file
 ### Upload images
 
 Once you've inspected it, do the actual run (i.e. not a dry run) by running the command above but without the `--dryrun` flag.
-If you have multiple plates you will need to repeat the command for each plate or see [Uploading multiple plates at one go](#uploading-multiple-plates-at-one-go) for information on batch uploading.
+If you have multiple plates you will need to repeat the command for each plate or see [Uploading multiple plates at one go](upload.md#2-uploading-your-images) for information on batch uploading.
 
 ## 3. Upload the outputs of CellProfiler
 
-This section is nearly identical to [Uploading your images](#uploading-your-images).
+This section is nearly identical to [Uploading your images](upload.md#uploading-your-images).
 As you did in the previous section:
 - Start a dryrun
 - Check the dryrun output
 - Do the actual run
-
-As before, we want to upload files for a single plate of data.
-For our sample plate:
-- The files live in the folder `BR00117035`
-- The plate was acquired in the batch `2021_04_26_Batch1`
 
 ### Upload analysis files
 
 These are the files output by the analysis pipeline.
 If the images live on your local disk, your TOP_LEVEL_FOLDER will be a relative or absolute path on your file system.
 If the images are already in your own bucket in S3, your TOP_LEVEL_FOLDER will instead be an S3 URI such as s3://your-bucket/projects/2021_04_26_Production/workspace/analysis/2021_04_26_Batch1
+
+As before, we want to upload files for a single plate of data.
+For our example plate most variables are the same with the change that
+- The files live in the plate folder `BR00117035`
 
 ```sh
 # TOP_LEVEL_FOLDER is the folder containing BR00117035 measurement outputs
@@ -132,20 +135,15 @@ aws s3 sync \
 
 ## 4. Upload the outputs of the profiling recipe
 
-This section is nearly identical to [Uploading your images](#uploading-your-images).
+This section is nearly identical to [Uploading your images](upload.md#uploading-your-images).
 As you did in the previous section:
 - Start a dryrun
 - Check the dryrun output
 - Do the actual run
 
-As before, we want to upload files for a single plate of data.
-For our sample plate:
-- The files live in the folder `BR00117035`
-- The plate was acquired in the batch `2021_04_26_Batch1`
-
 ### Upload profiles, backend, and load_data_csv folders
 
-The commands for uploading the `profiles`, `backend`, and `load_data_csv` folders are the same as the command for uploading the `analysis` folder, as desribed in the [previous section](#upload-analysis-files), with the following replacements:
+The commands for uploading the `profiles`, `backend`, and `load_data_csv` folders are the same as the command for uploading the `analysis` folder, as described in the [previous section](upload.md#upload-analysis-files), with the following replacements:
 
 The destination S3 path `s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/workspace/analysis/${BATCH}/${PLATE}` becomes
 
@@ -157,7 +155,7 @@ Make sure that you also change your source path for each command.
 
 ### Upload metadata folder
 
-The `metadata` folder has a different nesting structure (there is no plate-level structure)
+The `metadata` folder has a different nesting structure (there is no plate-level structure).
 
 ```sh
 # TOP_LEVEL_FOLDER is the folder containing metadata
