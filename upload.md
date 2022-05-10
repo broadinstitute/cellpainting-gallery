@@ -78,11 +78,11 @@ e.g. here, we should expected something like this, one per file
 ### Upload images
 
 Once you've inspected it, do the actual run (i.e. not a dry run) by running the command above but without the `--dryrun` flag.
-If you have multiple plates you will need to repeat the command for each plate or see [Uploading multiple plates at one go](upload.md#2-uploading-your-images) for information on batch uploading.
+If you have multiple plates you will need to repeat the command for each plate or see [Uploading multiple plates at one go](upload.md#uploading-multiple-plates-at-once) for information on batch uploading.
 
 ## 3. Upload the outputs of CellProfiler
 
-This section is nearly identical to [Uploading your images](upload.md#uploading-your-images).
+This section is nearly identical to [Uploading your images](upload.md#2-uploading-your-images).
 As you did in the previous section:
 - Start a dryrun
 - Check the dryrun output
@@ -135,7 +135,7 @@ aws s3 sync \
 
 ## 4. Upload the outputs of the profiling recipe
 
-This section is nearly identical to [Uploading your images](upload.md#uploading-your-images).
+This section is nearly identical to [Uploading your images](upload.md#2-uploading-your-images).
 As you did in the previous section:
 - Start a dryrun
 - Check the dryrun output
