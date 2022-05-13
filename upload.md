@@ -1,5 +1,7 @@
 # Uploading your data
 
+Note: At present, only a few individuals – those with access to instructions [here](https://github.com/jump-cellpainting/aws#creating-an-aws-role-to-access-s3-buckets) – have the ability to upload data to `s3://cellpainting-gallery`.
+
 You need to do 5 things:
 
 0. Set up AWS
@@ -12,10 +14,11 @@ You need to do 5 things:
 
 ### Install AWS CLI
 
+[FIXME] Write this up
+
 ### Set up AWS credentials
 
-[FIXME] If the images live on S3, first please ensure that you have indeed configured your AWS IAM role [here](https://github.com/jump-cellpainting/aws#steps-for-creating-a-aws-iam-role) using the configuration specified under "If your own data is stored on AWS".
-
+Follow the instructions [here](https://github.com/jump-cellpainting/aws#creating-an-aws-role-to-access-s3-buckets).
 
 ## 1. Follow naming conventions
 
@@ -63,6 +66,7 @@ aws s3 sync \
   --dryrun \
   --profile jump-cp-role \
   --acl bucket-owner-full-control \
+  --metadata-directive REPLACE \
   "${TOP_LEVEL_FOLDER}"/${PLATE} \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/images/${BATCH}/images/${PLATE}
 ```
@@ -75,6 +79,7 @@ e.g. here, we should expected something like this, one per file
 ```
 (dryrun) upload: BR00117035__2021-05-02T16_02_51-Measurement1/Images/r01c01f01p01-ch1sk1fk1fl1.tiff to s3://cellpainting-gallery/jump/source_4/images/2021_04_26_Batch1/images/Images/r01c01f01p01-ch1sk1fk1fl1.tiff
 ```
+
 ### Upload images
 
 Once you've inspected it, do the actual run (i.e. not a dry run) by running the command above but without the `--dryrun` flag.
@@ -109,9 +114,11 @@ aws s3 sync \
   --dryrun \
   --profile jump-cp-role \
   --acl bucket-owner-full-control \
+  --metadata-directive REPLACE \
   "${TOP_LEVEL_FOLDER}"/${PLATE} \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/workspace/analysis/${BATCH}/${PLATE}
 ```
+
 ### Upload illumination functions
 
 These are the files output by the illumination correction pipeline.
@@ -129,6 +136,7 @@ aws s3 sync \
   --dryrun \
   --profile jump-cp-role \
   --acl bucket-owner-full-control \
+  --metadata-directive REPLACE \
   "${TOP_LEVEL_FOLDER}"/${PLATE} \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/images/${BATCH}/illum/${PLATE}
 ```
@@ -166,6 +174,7 @@ aws s3 sync \
   --dryrun \
   --profile jump-cp-role \
   --acl bucket-owner-full-control \
+  --metadata-directive REPLACE \
   "${TOP_LEVEL_FOLDER}"/metadata \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/workspace/metadata
 ```
@@ -183,6 +192,7 @@ aws s3 sync \
   --dryrun \
   --profile jump-cp-role \
   --acl bucket-owner-full-control \
+  --metadata-directive REPLACE \
   "${TOP_LEVEL_FOLDER}"/quality_control \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/workspace/quality_control
 ```
@@ -194,6 +204,7 @@ If you have other folders that need to be uploaded (e.g. `assay_dev`, `pipelines
 # Checking your upload
 
 ## Check upload paths
+
 To check that your images were uploaded to the correct paths, output the file list in the cellpainting-gallery bucket.
 
 ```sh
@@ -254,6 +265,7 @@ aws s3 ls \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/workspace/quality_control/
 
 ```
+
 ## Check upload completion
 
 If your paths look correct but you have any reason to suspect that your uploads are incomplete, you can confirm complete upload in multiple ways.
@@ -288,6 +300,7 @@ parallel \
   aws s3 sync \
   --profile jump-cp-role \
   --acl bucket-owner-full-control \
+  --metadata-directive REPLACE \
   "${TOP_LEVEL_FOLDER}"/{1} \
   s3://cellpainting-gallery/${PROJECT_DIRECTORY}/${PROJECT_NESTING}/images/${BATCH}/images/{1}
 ```
