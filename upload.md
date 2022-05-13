@@ -273,9 +273,14 @@ aws s3 ls \
 If your paths look correct but you have any reason to suspect that your uploads are incomplete, you can confirm complete upload in multiple ways.
 
 The simplest way to confirm complete transfer is to run the `aws s3 sync` command again.
+
 Your terminal will pause while it checks that each file has transferred and then will either initiate transfer of any missing files or return nothing if the transfer was indeed complete.
 
-# Uploading multiple plates at once.
+## Validate completeness
+
+Once everything has been uploaded, run this [script](https://github.com/jump-cellpainting/data-validation) to validate that all expected files are available.
+
+# Uploading multiple plates at once
 
 There are many ways of doing this.
 
