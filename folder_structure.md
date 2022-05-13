@@ -4,20 +4,21 @@ All projects in the Cell Painting Gallery form a stereotyped structure.
 The parent structure is as follows.
 
 ```
-cellpainting-gallery/
+cellpainting-gallery
 └── <project>
     └── <project-specific-nesting>
         ├── images
         └── workspace
 ```
 
-- `<project>`: top level folder for the project. Keep the name short and simple with `[a-z0-9_]` only  
+- `<project>`: top level folder for the project. Keep the name short and simple with `[a-z0-9_]` only
 - `<project-specific-nesting>`: additional nesting level that is typically an institution identifier.
 It can be anonymized (e.g. `s3://cellpainting-gallery/jump/` contains `source_1/`, `source_2/`, etc.).
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 - `images`: all images and illumination correction functions
 - `workspace`: everything else goes here
 
+The "completeness" of a project can be checked using this [data validation script](https://github.com/jump-cellpainting/data-validation#readme).
 
 ## `images` folder structure
 
@@ -100,7 +101,8 @@ cellpainting-gallery
 ## `workspace` folder structure
 
 Let's look under the `workspace` folder.
-Everything but images live here.
+Everything but images lives here.
+These folders are produced when following the data processing steps in the [Image-based Profiling Handbook](https://cytomining.github.io/profiling-handbook/).
 Below are the minimally required top-level folders under `workspace`.
 Note that some experiments may generate additional categories of data/metadata and these should be uploaded to the `workspace` folder in their own folder/s.
 
@@ -232,7 +234,6 @@ For a full description of the files, see [profiling-recipe files generated](http
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - The .csv files undergo gzip compression to be .csv.gz files
-
 
 ### `quality_control` folder structure:
 
