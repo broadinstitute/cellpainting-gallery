@@ -1,6 +1,6 @@
 # Uploading your data
 
-Note: At present, only a few individuals – those with access to instructions [here](https://github.com/jump-cellpainting/aws#creating-an-aws-role-to-access-s3-buckets) – have the ability to upload data to `s3://cellpainting-gallery`.
+**Note: At present, only a few individuals – those with access to instructions [here](https://github.com/jump-cellpainting/aws#creating-an-aws-role-to-access-s3-buckets) – have the ability to upload data to `s3://cellpainting-gallery`.**
 
 You need to do 5 things:
 
@@ -14,11 +14,13 @@ You need to do 5 things:
 
 ### Install AWS CLI
 
-[FIXME] Write this up
+You will need AWS CLI installed. Follow [Amazon's installation instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 ### Set up AWS credentials
 
-Follow the instructions [here](https://github.com/jump-cellpainting/aws#creating-an-aws-role-to-access-s3-buckets).
+At present, only a few individuals have the correct access credentials to upload data to `s3://cellpainting-gallery`.
+If you can access [these instructions](https://github.com/jump-cellpainting/aws#creating-an-aws-role-to-access-s3-buckets), follow them.
+Further information broadening access will be provided here in the future.
 
 ## 1. Follow naming conventions
 
