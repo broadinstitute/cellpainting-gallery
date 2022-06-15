@@ -10,7 +10,7 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 ## Available datasets
 
 | Name in Gallery | Description | Publication to cite | IDR identifier |
-|---|---|---|
+|---|---|---|---|
 | cpg0003-rosetta | | | |
 | cpg0004-lincs | | | |
 | cpg0005-gerry-bioactivity | | | |
