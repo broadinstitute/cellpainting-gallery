@@ -9,18 +9,18 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 
 ## Available datasets
 
-| Name in Gallery | Description | Publication to cite |
+| Name in Gallery | Description | Publication to cite | IDR identifier |
 |---|---|---|
-| cpg0003-rosetta | | |
-| cpg0004-lincs | | |
-| cpg0005-gerry-bioactivity | | |
-| cpg0006-miami | | |
-| cpg0007-prism | | |
-| cpg0009-molglue | | |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset | |
-| cpg0014-jump-adipocyte | | |
-| jump-pilot | | |
-| jump | CRISPR knockdown, ORF overexpression, and 120,000 compounds in U2OS cells | |
+| cpg0003-rosetta | | | |
+| cpg0004-lincs | | | |
+| cpg0005-gerry-bioactivity | | | |
+| cpg0006-miami | | | |
+| cpg0007-prism | | | |
+| cpg0009-molglue | | | |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells | 2 | idr0016, idr0036 |
+| cpg0014-jump-adipocyte | | | |
+| jump-pilot | | | |
+| jump | CRISPR knockdown, ORF overexpression, and 120,000 compounds in U2OS cells | | |
 
 ## Downloading from CellPainting Gallery
 
