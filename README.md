@@ -9,12 +9,12 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 
 ## Available datasets
 
-| Name in Gallery                          | Description                            | Publication to cite | IDR identifier |
-| ---------------------------------------- | -------------------------------------- | ------------------- | -------------- |
-| jump-pilot/source_4                      |                                        |                     |                |
-| cpg0003-rosetta                          |                                        | 10                  |                |
-| cpg0004-lincs                            |                                        | 9                   | idr0125        |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2-OS cells | 2,4                 | idr0016        |
+| Name in Gallery                          | Description                                  | Publication to cite | IDR identifier |
+| ---------------------------------------- | -------------------------------------------- | ------------------- | -------------- |
+| jump-pilot/source_4                      |                                              |                     |                |
+| cpg0003-rosetta                          |                                              | 10                  |                |
+| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells | 9                   | idr0125        |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2-OS cells       | 2,4                 | idr0016        |
 
 ## Downloading from Cell Painting Gallery
 
