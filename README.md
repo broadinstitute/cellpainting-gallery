@@ -23,6 +23,7 @@ Note that for each dataset you can download just images, just extracted features
 Note also that many datasets contain separate batches and you may want a subset of available batches.
 
 ## Publications using datasets in Cell Painting Gallery
+
 |     | First Author   | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div> | Dataset Name in Gallery                  |
 | --- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---- | ---------------------------------------------- | ---------------------------------------- |
 | 1   | Gustafsdottir  | Multiplex Cytological Profiling Assay to Measure Diverse Cellular States                                                             | 2013 | https://doi.org/10.1371/journal.pone.0080999   |                                          |
