@@ -1,4 +1,4 @@
-# CellPainting Gallery
+# Cell Painting Gallery
 
 Documentation for https://registry.opendata.aws/cellpainting-gallery
 
@@ -22,13 +22,13 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 | jump-pilot                               |                                                                           |                     |                  |
 | jump                                     | CRISPR knockdown, ORF overexpression, and 120,000 compounds in U2OS cells |                     |                  |
 
-## Downloading from CellPainting Gallery
+## Downloading from Cell Painting Gallery
 
-See [Folder Structure](folder_structure.md) for a complete description of data organization in CellPainting gallery.
+See [Folder Structure](folder_structure.md) for a complete description of data organization in Cell Painting gallery.
 Note that for each dataset you can download just images, just extracted features and metadata, or both.
 Note also that many datasets contain separate batches and you may want a subset of available batches.
 
-## Publications using datasets in CellPainting Gallery
+## Publications using datasets in Cell Painting Gallery
 |     | First Author  | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div>                           | Dataset Name in Gallery                  |
 | --- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---- | ------------------------------------------------------------------------ | ---------------------------------------- |
 | 1   | Gustafsdottir | Multiplex Cytological Profiling Assay to Measure Diverse Cellular States                                                             | 2013 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0080999 | cpg0012-wawer-bioactivecompoundprofiling |
@@ -39,15 +39,15 @@ Note also that many datasets contain separate batches and you may want a subset 
 | 6   | Rohban        | Systematic morphological profiling of human gene and allele function via Cell Painting                                               | 2017 | https://elifesciences.org/content/6/e24060                               |                                          |
 | 7   | Caicedo       | Cell Painting predicts impact of lung cancer variants                                                                                | 2022 | https://www.molbiolcell.org/doi/10.1091/mbc.E21-11-0538                  |                                          |
 
-## Contributing to CellPainting Gallery
+## Contributing to Cell Painting Gallery
 
-See [Folder Structure](folder_structure.md) for the required folder structure of your data. See [Upload](upload.md) for a complete description of how to upload to the CellPainting gallery bucket.
+See [Folder Structure](folder_structure.md) for the required folder structure of your data. See [Upload](upload.md) for a complete description of how to upload to the Cell Painting gallery bucket.
 
-Any data contributions to CellPainting Gallery must be accompanied by a pull request to this repository with updates to this README to add your dataset to [Available datasets](#available-datasets) and [Publications](#publications-using-datasets-in-cellpainting-gallery).
+Any data contributions to Cell Painting Gallery must be accompanied by a pull request to this repository with updates to this README to add your dataset to [Available datasets](#available-datasets) and [Publications](#publications-using-datasets-in-cellpainting-gallery).
 
 ## Complementary Datasets
 
-For other sources of publicly available CellPainting datasets we encourage you to explore:
+For other sources of publicly available Cell Painting datasets we encourage you to explore:
 - [Recursion](https://www.rxrx.ai)
 - [Broad Bioimage Benchmark Collection (BBBC)](https://bbbc.broadinstitute.org)
 - [Image Data Resource](https://idr.openmicroscopy.org)
