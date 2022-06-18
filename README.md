@@ -9,18 +9,12 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 
 ## Available datasets
 
-| Name in Gallery                          | Description                                                               | Publication to cite | IDR identifier   |
-| ---------------------------------------- | ------------------------------------------------------------------------- | ------------------- | ---------------- |
-| cpg0003-rosetta                          |                                                                           |                     |                  |
-| cpg0004-lincs                            |                                                                           |                     |                  |
-| cpg0005-gerry-bioactivity                |                                                                           |                     |                  |
-| cpg0006-miami                            |                                                                           |                     |                  |
-| cpg0007-prism                            |                                                                           |                     |                  |
-| cpg0009-molglue                          |                                                                           |                     |                  |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                     | 2                   | idr0016, idr0036 |
-| cpg0014-jump-adipocyte                   |                                                                           |                     |                  |
-| jump-pilot                               |                                                                           |                     |                  |
-| jump                                     | CRISPR knockdown, ORF overexpression, and 120,000 compounds in U2OS cells |                     |                  |
+| Name in Gallery                          | Description                           | Publication to cite | IDR identifier   |
+| ---------------------------------------- | ------------------------------------- | ------------------- | ---------------- |
+| jump-pilot                               |                                       |                     |                  |
+| cpg0003-rosetta                          |                                       |                     |                  |
+| cpg0004-lincs                            |                                       |                     | idr0125          |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells | 2                   | idr0016, idr0036 |
 
 ## Downloading from Cell Painting Gallery
 
@@ -29,19 +23,20 @@ Note that for each dataset you can download just images, just extracted features
 Note also that many datasets contain separate batches and you may want a subset of available batches.
 
 ## Publications using datasets in Cell Painting Gallery
-|     | First Author  | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div>                           | Dataset Name in Gallery                  |
-| --- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---- | ------------------------------------------------------------------------ | ---------------------------------------- |
-| 1   | Gustafsdottir | Multiplex Cytological Profiling Assay to Measure Diverse Cellular States                                                             | 2013 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0080999 | cpg0012-wawer-bioactivecompoundprofiling |
-| 2   | Wawer         | Toward performance-diverse small-molecule libraries for cell-based phenotypic screening using multiplexed high-dimensional profiling | 2014 | http://www.pnas.org/content/111/30/10911                                 | cpg0012-wawer-bioactivecompoundprofiling |
-| 3   | Singh         | Morphological Profiles of RNAi-Induced Gene Knockdown Are Highly Reproducible but Dominated by Seed Effects                          | 2015 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0131370 |                                          |
-| 4   | Bray          | A dataset of images and morphological profiles of 30 000 small-molecule treatments using the Cell Painting assay                     | 2017 | https://academic.oup.com/gigascience/article/6/12/1/2865213              | cpg0012-wawer-bioactivecompoundprofiling |
-| 5   | Bray          | Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes                       | 2016 | https://pubmed.ncbi.nlm.nih.gov/27560178/                                |                                          |
-| 6   | Rohban        | Systematic morphological profiling of human gene and allele function via Cell Painting                                               | 2017 | https://elifesciences.org/content/6/e24060                               |                                          |
-| 7   | Caicedo       | Cell Painting predicts impact of lung cancer variants                                                                                | 2022 | https://www.molbiolcell.org/doi/10.1091/mbc.E21-11-0538                  |                                          |
+|     | First Author  | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div> | Dataset Name in Gallery                  |
+| --- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---- | ---------------------------------------------- | ---------------------------------------- |
+| 1   | Gustafsdottir | Multiplex Cytological Profiling Assay to Measure Diverse Cellular States                                                             | 2013 | https://doi.org/10.1371/journal.pone.0080999   | cpg0012-wawer-bioactivecompoundprofiling |
+| 2   | Wawer         | Toward performance-diverse small-molecule libraries for cell-based phenotypic screening using multiplexed high-dimensional profiling | 2014 | https://doi.org/10.1073/pnas.1410933111        | cpg0012-wawer-bioactivecompoundprofiling |
+| 3   | Singh         | Morphological Profiles of RNAi-Induced Gene Knockdown Are Highly Reproducible but Dominated by Seed Effects                          | 2015 | https://doi.org/10.1371/journal.pone.0131370   |                                          |
+| 4   | Bray          | A dataset of images and morphological profiles of 30 000 small-molecule treatments using the Cell Painting assay                     | 2017 | https://doi.org/10.1093/gigascience/giw014     | cpg0012-wawer-bioactivecompoundprofiling |
+| 5   | Bray          | Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes                       | 2016 | https://doi.org/10.1038/nprot.2016.105         |                                          |
+| 6   | Rohban        | Systematic morphological profiling of human gene and allele function via Cell Painting                                               | 2017 | https://doi.org/10.7554/eLife.24060            |                                          |
+| 7   | Caicedo       | Cell Painting predicts impact of lung cancer variants                                                                                | 2022 | https://doi.org/10.1091/mbc.E21-11-0538        |                                          |
 
 ## Contributing to Cell Painting Gallery
 
-See [Folder Structure](folder_structure.md) for the required folder structure of your data. See [Upload](upload.md) for a complete description of how to upload to the Cell Painting gallery bucket.
+See [Folder Structure](folder_structure.md) for the required folder structure of your data.
+See [Upload](upload.md) for a complete description of how to upload to the Cell Painting gallery bucket.
 
 Any data contributions to Cell Painting Gallery must be accompanied by a pull request to this repository with updates to this README to add your dataset to [Available datasets](#available-datasets) and [Publications](#publications-using-datasets-in-cellpainting-gallery).
 
