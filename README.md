@@ -9,14 +9,16 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 
 ## Available datasets
 
-| Name in Gallery                          | Description                                  | Publication to cite | IDR identifier |
-| ---------------------------------------- | -------------------------------------------- | ------------------- | -------------- |
-| cpg0000-jump-pilot                       |                                              | 8                   |                |
-| cpg0001-cellpainting-protocol            |                                              | 11                  |                |
-| cpg0002-jump-scope                       |                                              | 12                  |                |
-| cpg0003-rosetta                          |                                              | 10                  |                |
-| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells | 9                   | idr0125        |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2-OS cells       | 2,4                 | idr0016        |
+All datasets are generated using Cell Painting unless indicated otherwise
+
+| Name in Gallery                          | Description                                                                                                           | Publication to cite | IDR identifier |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- |
+| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2-OS cell, at two timepoints | 3                   |                |
+| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2-OS using several different modifications of the Cell Painting protocol                  | 6                   |                |
+| cpg0002-jump-scope                       | 300+ compounds profiled in U2-OS using different microscopes and settings                                             | 7                   |                |
+| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049)       | 5                   |                |
+| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                          | 4                   | idr0125        |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2-OS cells                                                                                | 1,2                 | idr0016        |
 
 ## Downloading from Cell Painting Gallery
 
@@ -28,18 +30,13 @@ Note also that many datasets contain separate batches and you may want a subset 
 
 |     | First Author   | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div> | Dataset Name in Gallery                  |
 | --- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---- | ---------------------------------------------- | ---------------------------------------- |
-| 1   | Gustafsdottir  | Multiplex Cytological Profiling Assay to Measure Diverse Cellular States                                                             | 2013 | https://doi.org/10.1371/journal.pone.0080999   |                                          |
-| 2   | Wawer          | Toward performance-diverse small-molecule libraries for cell-based phenotypic screening using multiplexed high-dimensional profiling | 2014 | https://doi.org/10.1073/pnas.1410933111        | cpg0012-wawer-bioactivecompoundprofiling |
-| 3   | Singh          | Morphological Profiles of RNAi-Induced Gene Knockdown Are Highly Reproducible but Dominated by Seed Effects                          | 2015 | https://doi.org/10.1371/journal.pone.0131370   |                                          |
-| 4   | Bray           | A dataset of images and morphological profiles of 30 000 small-molecule treatments using the Cell Painting assay                     | 2017 | https://doi.org/10.1093/gigascience/giw014     | cpg0012-wawer-bioactivecompoundprofiling |
-| 5   | Bray           | Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes                       | 2016 | https://doi.org/10.1038/nprot.2016.105         |                                          |
-| 6   | Rohban         | Systematic morphological profiling of human gene and allele function via Cell Painting                                               | 2017 | https://doi.org/10.7554/eLife.24060            |                                          |
-| 7   | Caicedo        | Cell Painting predicts impact of lung cancer variants                                                                                | 2022 | https://doi.org/10.1091/mbc.E21-11-0538        |                                          |
-| 8   | Chandrasekaran | Three million images and morphological profiles of cells treated with matched chemical and genetic perturbations                     | 2022 | https://doi.org/10.1101/2022.01.05.475090      | cpg0000-jump-pilot                       |
-| 9   | Way            | Morphology and gene expression profiling provide complementary information for mapping cell state                                    | 2022 | https://doi.org/10.1101/2021.10.21.465335      | cpg0004-lincs                            |
-| 10  | Haghighi       | High-Dimensional Gene Expression and Morphology Profiles of Cells across 28,000 Genetic and Chemical Perturbations                   | 2022 | https://doi.org/10.1101/2021.09.08.459417      | cpg0003-rosetta                          |
-| 11  | Cimini         | Optimizing the Cell Painting assay for image-based profiling                                                                         | 2022 | In Preparation                                 | cpg0001-cellpainting-protocol            |
-| 12  | Jamali         |                                                                                                                                      | 2022 | In Preparation                                 | cpg0002-jump-scope                       |
+| 1   | Wawer          | Toward performance-diverse small-molecule libraries for cell-based phenotypic screening using multiplexed high-dimensional profiling | 2014 | https://doi.org/10.1073/pnas.1410933111        | cpg0012-wawer-bioactivecompoundprofiling |
+| 2   | Bray           | A dataset of images and morphological profiles of 30 000 small-molecule treatments using the Cell Painting assay                     | 2017 | https://doi.org/10.1093/gigascience/giw014     | cpg0012-wawer-bioactivecompoundprofiling |
+| 3   | Chandrasekaran | Three million images and morphological profiles of cells treated with matched chemical and genetic perturbations                     | 2022 | https://doi.org/10.1101/2022.01.05.475090      | cpg0000-jump-pilot                       |
+| 4   | Way            | Morphology and gene expression profiling provide complementary information for mapping cell state                                    | 2022 | https://doi.org/10.1101/2021.10.21.465335      | cpg0004-lincs                            |
+| 5   | Haghighi       | High-Dimensional Gene Expression and Morphology Profiles of Cells across 28,000 Genetic and Chemical Perturbations                   | 2022 | https://doi.org/10.1101/2021.09.08.459417      | cpg0003-rosetta                          |
+| 6   | Cimini         | Optimizing the Cell Painting assay for image-based profiling                                                                         | 2022 | In Preparation                                 | cpg0001-cellpainting-protocol            |
+| 7   | Jamali         |                                                                                                                                      | 2022 | In Preparation                                 | cpg0002-jump-scope                       |
 
 ## Contributing to Cell Painting Gallery
 
