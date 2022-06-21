@@ -9,7 +9,9 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 
 ## Available datasets
 
-All datasets are generated using Cell Painting unless indicated otherwise
+All datasets are generated using Cell Painting unless indicated otherwise.
+
+The first column indicates the prefix of the dataset in the gallery. E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot`.
 
 | Name in Gallery                          | Description                                                                                                           | Publication to cite | IDR identifier |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- |
