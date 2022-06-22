@@ -49,7 +49,7 @@ Note also that many datasets contain separate batches and you may want a subset 
 See [Folder Structure](folder_structure.md) for the required folder structure of your data.
 See [Upload](upload.md) for a complete description of how to upload to the Cell Painting gallery bucket.
 
-Any data contributions to Cell Painting Gallery must be accompanied by a pull request to this repository with updates to this README to add your dataset to [Available datasets](#available-datasets) and [Publications](#publications-using-datasets-in-cellpainting-gallery).
+Any data contributions to Cell Painting Gallery must be accompanied by a pull request to this repository with updates to this README to add your dataset to [Available datasets](#available-datasets) and [Publications](#publications-using-datasets-in-cell-painting-gallery).
 
 ## Complementary Datasets
 
