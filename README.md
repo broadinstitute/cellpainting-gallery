@@ -11,9 +11,13 @@ However, please cite the appropriate resources/publications, [listed below](#ava
 
 All datasets are generated using Cell Painting unless indicated otherwise.
 
-The first column indicates the prefix of the dataset in the gallery. E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot`.
+The datasets are stored with the prefix indicated by the dataset name.
+E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot`.
 
-| Name in Gallery                          | Description                                                                                                           | Publication to cite | IDR identifier |
+The datasets' accession numbers are the first seven characters of the dataset name.
+E.g. the accession number of the first dataset is `cpg0000`.
+
+| Dataset name                             | Description                                                                                                           | Publication to cite | IDR identifier |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- |
 | cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2-OS cell, at two timepoints | 3                   |                |
 | cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2-OS using several different modifications of the Cell Painting protocol                  | 6                   |                |
