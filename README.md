@@ -15,7 +15,7 @@ For example,
 All datasets are generated using Cell Painting unless indicated otherwise.
 
 The datasets are stored with the prefix indicated by the dataset name.
-E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot`.
+E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot` and can be listed using `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg0000-jump-pilot`.
 
 The datasets' accession numbers are the first seven characters of the dataset name.
 E.g. the accession number of the first dataset is `cpg0000`.
