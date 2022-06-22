@@ -17,14 +17,14 @@ E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pil
 The datasets' accession numbers are the first seven characters of the dataset name.
 E.g. the accession number of the first dataset is `cpg0000`.
 
-| Dataset name                             | Description                                                                                                           | Publication to cite | IDR identifier |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- |
-| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2-OS cell, at two timepoints | 3                   |                |
-| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2-OS using several different modifications of the Cell Painting protocol                  | 6                   |                |
-| cpg0002-jump-scope                       | 300+ compounds profiled in U2-OS using different microscopes and settings                                             | 7                   |                |
-| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049)       | 5                   |                |
-| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                          | 4                   | idr0125        |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2-OS cells                                                                                | 1,2                 | idr0016        |
+| Dataset name                             | Description                                                                                                           | Publication to cite | IDR accession number |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------- |
+| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2-OS cell, at two timepoints | 3                   |                      |
+| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2-OS using several different modifications of the Cell Painting protocol                  | 6                   |                      |
+| cpg0002-jump-scope                       | 300+ compounds profiled in U2-OS using different microscopes and settings                                             | 7                   |                      |
+| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049)       | 5                   |                      |
+| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                          | 4                   | idr0125              |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2-OS cells                                                                                | 1,2                 | idr0016              |
 
 ## Downloading from Cell Painting Gallery
 
