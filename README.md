@@ -6,6 +6,9 @@ Documentation for https://registry.opendata.aws/cellpainting-gallery
 
 All the data will be released with CC0 1.0 Universal (CC0 1.0).
 However, please cite the appropriate resources/publications, [listed below](#available-datasets), when citing individual datasets.
+For example,
+
+> We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/).
 
 ## Available datasets
 
@@ -17,14 +20,14 @@ E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pil
 The datasets' accession numbers are the first seven characters of the dataset name.
 E.g. the accession number of the first dataset is `cpg0000`.
 
-| Dataset name                             | Description                                                                                                           | Publication to cite | IDR accession number |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------- |
-| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints | 3                   |                      |
-| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol                  | 6                   |                      |
-| cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                             | 7                   |                      |
-| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression| 5                   |                      |
-| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                          | 4                   | idr0125              |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                | 1,2                 | idr0016              |
+| Dataset name                             | Description                                                                                                                     | Publication to cite | IDR accession number |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------- |
+| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints           | 3                   |                      |
+| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol                       | 6                   |                      |
+| cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                                        | 7                   |                      |
+| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5                   |                      |
+| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125              |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016              |
 
 ## Downloading from Cell Painting Gallery
 
