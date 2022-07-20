@@ -44,6 +44,8 @@ See [Folder Structure](folder_structure.md) for a complete description of data o
 Note that for each dataset you can download just images, just extracted features and metadata, or both.
 Note also that many datasets contain separate batches and you may want a subset of available batches.
 
+If you'd like to just browse the data, it's a lot easier [to do so using a storage browser](https://stackoverflow.com/a/72143198/1094109). 
+
 ## Publications using datasets in Cell Painting Gallery
 
 |     | First Author   | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div> | Dataset Name in Gallery                  |
