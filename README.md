@@ -2,6 +2,14 @@
 
 Documentation for https://registry.opendata.aws/cellpainting-gallery
 
+Note: As of July 2022, there is a typo on the landing page above (a fix is in progress)
+
+The URL below should be `s3://cellpainting-gallery/cpg` (no `/` at the end).
+
+> AWS CLI Access (No AWS account required)
+>
+> `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg/`
+
 ## Citation
 
 All the data will be released with CC0 1.0 Universal (CC0 1.0).
