@@ -130,6 +130,7 @@ Examples of additional folders you may upload to `workspace` include:
 - `pipelines`: the CellProfiler .cppipe or .cpproj files used
 - `software`: scripts used while handling the batch
 - `qc`: quality control data
+- `embeddings`: embeddings generated from deep learning models
 
 ### `analysis` folder structure:
 
@@ -254,6 +255,28 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 
+### `embeddings` folder structure:
+
+The structure here is very similar to `analysis`
+
+```
+└── embeddings
+    ├── 2021_04_26_Batch1
+    │   ├── BR00117035
+    │   │   └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+    │   │       ├── BR00117035-A01-1
+    │   │       │   └── embedding.parquet
+    │   │       └── BR00117035-A01-2
+    │   └── BR00117036
+    └── 2021_05_31_Batch2
+```
+
+In this example batch:
+- `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
+- `efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff` is an identifier for the deep learning network, prefixed with some hash for the model
+- `BR00117035-A01-1` is a folder containing the embedding file for site `1` in well `A01` in plate `BR00117035`
+- `embedding.parquet` is the single-cell Parquet file containing the embeddings
+
 ## Complete folder structure
 
 Here's the complete folder structure for a sample project.
@@ -327,6 +350,15 @@ Here's the complete folder structure for a sample project.
                 │           │   ├── BR00117035_position_effect.png
                 │           │   └── and possibly others
                 │           └── BR00117036
+                ├── embeddings
+                │   ├── 2021_04_26_Batch1
+                │   │   ├── BR00117035
+                │   │   │   └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+                │   │   │       ├── BR00117035-A01-1
+                │   │   │       │   └── embedding.parquet
+                │   │   │       └── BR00117035-A01-2
+                │   │   └── BR00117036
+                │   └── 2021_05_31_Batch2                
                 └── profiles
                     └── 2021_04_26_Batch1
                         ├── BR00117035
