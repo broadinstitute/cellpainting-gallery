@@ -33,8 +33,11 @@ E.g. the accession number of the first dataset is `cpg0000`.
 ## Downloading from Cell Painting Gallery
 
 See [Folder Structure](folder_structure.md) for a complete description of data organization in Cell Painting gallery.
-Note that for each dataset you can download just images, just extracted features and metadata, or both.
-Note also that many datasets contain separate batches and you may want a subset of available batches.
+Note 
+
+- for each dataset you can download just images, just extracted features and metadata, or both.
+- many datasets contain separate batches and you may want a subset of available batches.
+- some datasets do not follow the folder structure 
 
 If you'd like to just browse the data, it's a lot easier [to do so using a storage browser](https://stackoverflow.com/a/72143198/1094109). 
 
