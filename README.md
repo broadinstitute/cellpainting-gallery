@@ -37,7 +37,7 @@ Note
 
 - for each dataset you can download just images, just extracted features and metadata, or both.
 - many datasets contain separate batches and you may want a subset of available batches.
-- some datasets do not follow the folder structure 
+- some datasets do not follow the folder structure. _TODO: update the table above to indicate which datasets don't_
 
 If you'd like to just browse the data, it's a lot easier [to do so using a storage browser](https://stackoverflow.com/a/72143198/1094109). 
 
