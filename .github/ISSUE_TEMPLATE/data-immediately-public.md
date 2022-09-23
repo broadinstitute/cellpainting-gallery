@@ -16,6 +16,7 @@ Update as generated:
 [Link to publication repo]  
 [cellpainting-gallery identifier]  
 
+- [ ] Metadata collection form filled out by collaborator or Imaging Platform member (https://airtable.com/shrVxz9DcoMlDoCBI)
 - [ ] Metadata completely filled out in Project Profiler Database (Imaging Platform internal use only)
 - [ ] Segmentation/Feature extraction complete
 - [ ] Profiling complete
