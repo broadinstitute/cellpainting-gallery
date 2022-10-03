@@ -264,9 +264,9 @@ The structure here is very similar to `analysis`
     ├── 2021_04_26_Batch1
     │   ├── BR00117035
     │   │   └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
-    │   │       ├── BR00117035-A01-1
+    │   │       ├── A01-1
     │   │       │   └── embedding.parquet
-    │   │       └── BR00117035-A01-2
+    │   │       └── A01-2
     │   └── BR00117036
     └── 2021_05_31_Batch2
 ```
@@ -274,7 +274,7 @@ The structure here is very similar to `analysis`
 In this example batch:
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - `efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff` is an identifier for the deep learning network, prefixed with some hash for the model
-- `BR00117035-A01-1` is a folder containing the embedding file for site `1` in well `A01` in plate `BR00117035`
+- `A01-1` is a folder containing the embedding file for site `1` in well `A01` in plate `BR00117035`
 - `embedding.parquet` is the single-cell Parquet file containing the embeddings
 
 ## Complete folder structure
