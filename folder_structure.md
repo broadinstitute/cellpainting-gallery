@@ -257,7 +257,7 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 ### `embeddings` folder structure:
 
-The structure here is very similar to `analysis`
+The structure here is somehwat similar to `analysis`
 
 ```
 └── embeddings
@@ -276,6 +276,22 @@ In this example batch:
 - `efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff` is an identifier for the deep learning network, prefixed with some hash for the model
 - `A01-1` is a folder containing the embedding file for site `1` in well `A01` in plate `BR00117035`
 - `embedding.parquet` is the single-cell Parquet file containing the embeddings
+
+The folder structure is a little different for DeepProfiler-generated output
+
+```
+└── embeddings
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            ├── 2021_04_26_Batch1
+            │   ├── BR00117035
+            │   │       ├── A01
+            │   │       │   └── 1
+            │   │       │       └── embedding.npz
+            │   │       └── A01-2
+            │   └── BR00117036
+            └── 2021_05_31_Batch2
+    
+```
 
 ## Complete folder structure
 
