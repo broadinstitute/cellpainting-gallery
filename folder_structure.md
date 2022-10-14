@@ -261,14 +261,14 @@ The structure here is very similar to `analysis`
 
 ```
 └── embeddings
-    ├── 2021_04_26_Batch1
-    │   ├── BR00117035
-    │   │   └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
-    │   │       ├── A01-1
-    │   │       │   └── embedding.parquet
-    │   │       └── A01-2
-    │   └── BR00117036
-    └── 2021_05_31_Batch2
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            ├── 2021_04_26_Batch1
+            │   ├── BR00117035
+            │   │       ├── A01-1
+            │   │       │   └── embedding.parquet
+            │   │       └── A01-2
+            │   └── BR00117036
+            └── 2021_05_31_Batch2
 ```
 
 In this example batch:
