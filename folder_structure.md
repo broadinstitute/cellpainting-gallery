@@ -164,7 +164,7 @@ Often there is an additional folder such as `outlines` that contains object outl
 
 In this example batch:
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
-- `BR00117035-A01-1` is a folder containing CSV files and outline files for site `1` in well `A01` in plate `BR00117035`
+- `BR00117035-A01-1` is a folder containing CSV files and outline files for site `1` in well `A01` in plate `BR00117035`. Less-granular folders are acceptable as well. E.g., `BR00117035-A01` containing CSV files for the whole well and outline files for each site in the well. 
 
 ### `backend` folder structure:
 
