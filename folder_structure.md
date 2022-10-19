@@ -8,7 +8,8 @@ cellpainting-gallery
 └── <project>
     └── <project-specific-nesting>
         ├── images
-        └── workspace
+        ├── workspace
+        └── workspace_dl
 ```
 
 - `<project>`: top level folder for the project. Keep the name short and simple with `[a-z0-9_]` only
@@ -16,7 +17,8 @@ cellpainting-gallery
 It can be anonymized (e.g. `s3://cellpainting-gallery/jump/` contains `source_1/`, `source_2/`, etc.).
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 - `images`: all images and illumination correction functions
-- `workspace`: everything else goes here
+- `workspace`: everything else that results from CellProfiler-based features goes here
+- `workspace_dl`: everything else that results from deep learning-based features goes here. The folder structure for this parent folder is still in flux, so the documentation below may not be complete w.r.t. this folder.
 
 The "completeness" of a project can be checked using this [data validation script](https://github.com/jump-cellpainting/data-validation#readme).
 
@@ -255,12 +257,23 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 
-### `embeddings` folder structure:
-
-The structure here is somehwat similar to `analysis`
+## `workspace_dl` folder structure
 
 ```
-└── embeddings
+cellpainting-gallery/
+└── jump
+    └── source_4
+        └── workspace_dl
+            ├── collated
+            ├── consensus
+            ├── single_cell
+            └── profiles
+```
+
+### `single_cell` folder structure:
+
+```
+└── single_cell
         └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
             ├── 2021_04_26_Batch1
             │   ├── BR00117035
@@ -280,7 +293,7 @@ In this example batch:
 The folder structure is a little different for DeepProfiler-generated output
 
 ```
-└── embeddings
+└── single_cell
         └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
             ├── 2021_04_26_Batch1
             │   ├── BR00117035
@@ -290,8 +303,36 @@ The folder structure is a little different for DeepProfiler-generated output
             │   │       └── A01-2
             │   └── BR00117036
             └── 2021_05_31_Batch2
-    
 ```
+
+### `profiles` folder structure:
+
+```
+└── profiles
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            ├── 2021_04_26_Batch1
+            │   ├── BR00117035
+            │   │       └── BR00117035.parquet
+            │   └── BR00117036
+            └── 2021_05_31_Batch2
+```
+
+### `collated` folder structure:
+
+```
+└── collated
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            └── collated.parquet
+```
+
+### `consensus` folder structure:
+
+```
+└── consensus
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            └── consensus.parquet
+```
+
 
 ## Complete folder structure
 
