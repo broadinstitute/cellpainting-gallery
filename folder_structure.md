@@ -259,7 +259,7 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 ## `workspace_dl` folder structure
 
-**NOTE: This section is work in progress
+**NOTE: This section is work in progress**
 
 ```
 cellpainting-gallery/
