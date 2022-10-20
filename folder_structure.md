@@ -18,7 +18,7 @@ It can be anonymized (e.g. `s3://cellpainting-gallery/jump/` contains `source_1/
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 - `images`: all images and illumination correction functions
 - `workspace`: everything else that results from CellProfiler-based features goes here
-- `workspace_dl`: everything else that results from deep learning-based features goes here. The folder structure for this parent folder is still in flux, so the documentation below may not be complete w.r.t. this folder.
+- `workspace_dl`: everything else that results from deep learning-based features goes here. The folder structure for this parent folder is still in flux, so the documentation for this is work in progress.
 
 The "completeness" of a project can be checked using this [data validation script](https://github.com/jump-cellpainting/data-validation#readme).
 
@@ -259,6 +259,8 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 ## `workspace_dl` folder structure
 
+**NOTE: This section is work in progress
+
 ```
 cellpainting-gallery/
 └── jump
@@ -266,14 +268,14 @@ cellpainting-gallery/
         └── workspace_dl
             ├── collated
             ├── consensus
-            ├── single_cell
+            ├── embeddings
             └── profiles
 ```
 
-### `single_cell` folder structure:
+### `embeddings` folder structure:
 
 ```
-└── single_cell
+└── embeddings
         └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
             ├── 2021_04_26_Batch1
             │   ├── BR00117035
@@ -293,7 +295,7 @@ In this example batch:
 The folder structure is a little different for DeepProfiler-generated output
 
 ```
-└── single_cell
+└── embeddings
         └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
             ├── 2021_04_26_Batch1
             │   ├── BR00117035
@@ -407,15 +409,6 @@ Here's the complete folder structure for a sample project.
                 │           │   ├── BR00117035_position_effect.png
                 │           │   └── and possibly others
                 │           └── BR00117036
-                ├── embeddings
-                │   ├── 2021_04_26_Batch1
-                │   │   ├── BR00117035
-                │   │   │   └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
-                │   │   │       ├── BR00117035-A01-1
-                │   │   │       │   └── embedding.parquet
-                │   │   │       └── BR00117035-A01-2
-                │   │   └── BR00117036
-                │   └── 2021_05_31_Batch2                
                 └── profiles
                     └── 2021_04_26_Batch1
                         ├── BR00117035
