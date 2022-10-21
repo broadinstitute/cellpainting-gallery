@@ -1,18 +1,18 @@
 # Cell Painting Gallery
 
-Documentation for https://registry.opendata.aws/cellpainting-gallery
+This page provides a guide to the datasets that are available in the Cell Painting Gallery, hosted by the AWS Registry of Open Data (RODA): https://registry.opendata.aws/cellpainting-gallery
 
-## Citation
+## Citation/license
 
-All the data will be released with CC0 1.0 Universal (CC0 1.0).
-However, please cite the appropriate resources/publications, [listed below](#available-datasets), when citing individual datasets.
+All the data is released with CC0 1.0 Universal (CC0 1.0).
+Still, professional ethics require that you cite the appropriate resources/publications, [listed below](#available-datasets), when using individual datasets.
 For example,
 
 > We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/).
 
 ## Available datasets
 
-All datasets are generated using Cell Painting unless indicated otherwise.
+All datasets are generated using the Cell Painting assay unless indicated otherwise. Several updates to that protocol exist ([Cell Painting wiki](https://github.com/carpenterlab/2022_Cimini_NatureProtocols/wiki)).
 
 The datasets are stored with the prefix indicated by the dataset name.
 E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot` and can be listed using `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg0000-jump-pilot/` (note the `/` at the end).
