@@ -29,6 +29,7 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  |
 | cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  |
 | cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 |
+| cpg0016-jump                    | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells                                                                          | 9                   |  |
 
 ## Downloading from Cell Painting Gallery
 
@@ -50,6 +51,8 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 6   | Cimini         | Optimizing the Cell Painting assay for image-based profiling                                                                         | 2022 | https://doi.org/10.1101/2022.07.13.499171      | cpg0001-cellpainting-protocol            |
 | 7   | Jamali         |                                                                                                                                      | 2022 | In Preparation                                 | cpg0002-jump-scope                       |
 | 8   | Rohban         | Capturing single-cell heterogeneity via data fusion improves image-based profiling                                                   | 2019 | https://doi.org/10.1038/s41467-019-10154-8     | cpg0015-heterogeneity                    |
+| 9   | Chandrasekaran         |                                                                                                                                      | 2022 | In Preparation                                 | cpg0016-jump                       |
+
 
 ## Contributing to Cell Painting Gallery
 
