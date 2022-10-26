@@ -8,15 +8,20 @@ cellpainting-gallery
 └── <project>
     └── <project-specific-nesting>
         ├── images
-        └── workspace
+        ├── workspace
+        └── workspace_dl
 ```
 
-- `<project>`: top level folder for the project. Keep the name short and simple with `[a-z0-9_]` only
+- `<project>`: top level folder for the project.
+Keep the name short and simple with `[a-z0-9_]` only.
 - `<project-specific-nesting>`: additional nesting level that is typically an institution identifier.
 It can be anonymized (e.g. `s3://cellpainting-gallery/jump/` contains `source_1/`, `source_2/`, etc.).
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
-- `images`: all images and illumination correction functions
-- `workspace`: everything else goes here
+- `images`: all images and illumination correction functions.
+- `workspace`: everything else that results from CellProfiler-based features goes here.
+- `workspace_dl`: everything else that results from deep learning-based features goes here.
+
+Not all projects will have all parent structures.
 
 The "completeness" of a project can be checked using this [data validation script](https://github.com/jump-cellpainting/data-validation#readme).
 
@@ -130,6 +135,7 @@ Examples of additional folders you may upload to `workspace` include:
 - `pipelines`: the CellProfiler .cppipe or .cpproj files used
 - `software`: scripts used while handling the batch
 - `qc`: quality control data
+- `embeddings`: embeddings generated from deep learning models
 
 ### `analysis` folder structure:
 
@@ -163,11 +169,12 @@ Often there is an additional folder such as `outlines` that contains object outl
 
 In this example batch:
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
-- `BR00117035-A01-1` is a folder containing CSV files and outline files for site `1` in well `A01` in plate `BR00117035`
+- `BR00117035-A01-1` is a folder containing CSV files and outline files for site `1` in well `A01` in plate `BR00117035`.
+Less-granular folders are acceptable as well. e.g., `BR00117035-A01` containing CSV files for the whole well and outline files for each site in the well.
 
 ### `backend` folder structure:
 
-Within the `analysis` folder, is a folder for each batch and within each batch folder is a folder for each plate.
+Within the `backend` folder, is a folder for each batch and within each batch folder is a folder for each plate.
 Within each plate folder is a single-cell SQLite file, comprising all measurements from all cells in the plate, and a CSV that aggregates the single-cell data into a per-well measurement.
 
 ```
@@ -254,9 +261,104 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 
+## `workspace_dl` folder structure
+
+**NOTE: This section is work in progress.
+More documentation will be added.
+The structure may change.**
+
+Within the `workspace_dl` folder are several subfolders for different classes of data.
+
+Within the subfolders are folders for the
+In this example we have used `efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff` where `efficientnet` is the name of the network, `imagenet1k` is the dataset that was used for training, and `ec756ff` is a hash for the model.
+Note that it is possible to use other identifiers for the model such as a Zenodo DOI.
+
+```
+cellpainting-gallery/
+└── jump
+    └── source_4
+        └── workspace_dl
+            ├── collated
+            ├── consensus
+            ├── embeddings
+            └── profiles
+```
+### `collated` folder structure:
+
+The `collated` contains .csv or .parquet files with well-level profiles for all plates in a folder for each network/model.
+
+```
+└── collated
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            └── collated.parquet
+```
+
+### `consensus` folder structure:
+
+The `consensus` folder contains .csv or .parquet files with treatment-level profiles for all plates in a folder for each network/model.
+
+```
+└── consensus
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            └── consensus.parquet
+```
+
+### `embeddings` folder structure:
+
+The `embeddings` folder contains a subfolder for each network/model, with subfolders for each batch. Within each batch folder is a subfolder for each plate. Within each plate subfolder is a subfolder for well-site. In the well-site subfolder is a .npz or .parquet file with single-cell features extracted from the single image.
+
+```
+└── embeddings
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            ├── 2021_04_26_Batch1
+            │   ├── BR00117035
+            │   │       ├── A01-1
+            │   │       │   └── embedding.parquet
+            │   │       └── A01-2
+            │   └── BR00117036
+            └── 2021_05_31_Batch2
+```
+
+In this example batch:
+- `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
+- `efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff` is an identifier for the deep learning network, suffixed with some hash for the model
+- `A01-1` is a folder containing the embedding file for site `1` in well `A01` in plate `BR00117035`
+- `embedding.parquet` is the single-cell Parquet file containing the embeddings
+
+The folder structure is a little different for DeepProfiler-generated output in that the well-site subfolder is replaced by a well subfolders with subfolders per site.
+
+```
+└── embeddings
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            ├── 2021_04_26_Batch1
+            │   ├── BR00117035
+            │   │       ├── A01
+            │   │       │   └── 1
+            │   │       │   │   └── embedding.npz
+            │   │       │   └── 2
+            │   └── BR00117036
+            └── 2021_05_31_Batch2
+```
+
+### `profiles` folder structure:
+Within the `profiles` folder is a folder for the deep learning network with its hash.
+Within the network folder is a folder for each batch and within each batch folder is a file for each plate.
+
+```
+└── profiles
+        └── efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff
+            ├── 2021_04_26_Batch1
+            │   ├── BR00117035
+            │   │       └── BR00117035.parquet
+            │   └── BR00117036
+            └── 2021_05_31_Batch2
+```
+
+
+
 ## Complete folder structure
 
-Here's the complete folder structure for a sample project.
+Here's the complete folder structure for a sample project with CellProfiler-based features.
 
 <details>
  <summary>Click here</summary>
