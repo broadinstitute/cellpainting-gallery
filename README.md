@@ -8,7 +8,7 @@ All the data is released with CC0 1.0 Universal (CC0 1.0).
 Still, professional ethics require that you cite the appropriate resources/publications, [listed below](#available-datasets), when using individual datasets.
 For example,
 
-> We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/).
+> We used the dataset `cpg0000` ([Chandrasekaran et al., 2022a](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/).
 
 ## Available datasets
 
