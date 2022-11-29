@@ -23,7 +23,7 @@ Update as generated:
 
 Transfer to CellPainting Gallery:
 - [ ] Upload data to RODA (is private by default)
-- [ ] Run validation script to ensure completion
+- [ ] Run validation script to ensure completion (https://github.com/jump-cellpainting/data-validation)
 - [ ] Update cellpainting-gallery/README.md
 - [ ] Make RODA entry public
 
