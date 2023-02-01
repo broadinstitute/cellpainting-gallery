@@ -15,7 +15,7 @@ cellpainting-gallery
 - `<project>`: top level folder for the project.
 Keep the name short and simple with `[a-z0-9_]` only.
 - `<project-specific-nesting>`: additional nesting level that is typically an institution identifier.
-It can be anonymized (e.g. `s3://cellpainting-gallery/jump/` contains `source_1/`, `source_2/`, etc.).
+It can be anonymized (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `source_1/`, `source_2/`, etc.).
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 - `images`: all images and illumination correction functions.
 - `workspace`: everything else that results from CellProfiler-based features goes here.
@@ -72,7 +72,7 @@ Those folders will follow the format `images_<manipulation-description>` (e.g. `
 An example of what this looks like in practice is below.
 ```
 cellpainting-gallery
-└── jump
+└── cpg0016-jump
     └── source_1
     └── source_2
     └── source_3
@@ -96,7 +96,7 @@ cellpainting-gallery
         │   └── 2021_05_31_Batch2
         └── workspace
 ```
-- `jump` is the project folder. Note that it differs from most project names in that it doesn't start with `cpg`.
+- `cpg0016-jump` is the project folder.
 - `source_4` is the anonymized nesting folder, representing Broad's data. Note that there are multiple sources in this project, though a nesting folder is still required even if your project doesn't have multiple sources.
 - `2021_04_26_Batch1` is the batch folder. Note that there are multiple batches of data acquired on different days in this project.
 - There are two plates in this example. `BR00117035__2021-05-02T16_02_51-Measurement1` is the plate name as it comes off the microscope. This naming may differ with different microscopes and different acquisition configurations.
@@ -113,7 +113,7 @@ Note that some experiments may generate additional categories of data/metadata a
 
 ```
 cellpainting-gallery/
-└── jump
+└── cpg0016-jump
     └── source_4
         ├── images
         └── workspace
@@ -275,7 +275,7 @@ Note that it is possible to use other identifiers for the model such as a Zenodo
 
 ```
 cellpainting-gallery/
-└── jump
+└── cpg0016-jump
     └── source_4
         └── workspace_dl
             ├── collated
@@ -365,7 +365,7 @@ Here's the complete folder structure for a sample project with CellProfiler-base
 
 ```
  └── cellpainting-gallery
-    └── jump
+    └── cpg0016-jump
         └── source_4
             ├── images
             │   ├── 2021_04_26_Batch1
