@@ -292,7 +292,9 @@ Within the plate folder there are typically two files - a `load_data.csv` for pi
 
 ### `metadata` folder structure:
 
-The `metadata` folder has the slightly different structure, as explained in the [profiling recipe](https://github.com/cytomining/profiling-recipe#metadata-platemap-and-barcode_platemap-files)
+#### arrayed metadata
+
+The `metadata` folder has a slightly different structure from other `workspace` folders, as explained in the [profiling recipe](https://github.com/cytomining/profiling-recipe#metadata-platemap-and-barcode_platemap-files)
 
 ```
 └── metadata
@@ -303,6 +305,17 @@ The `metadata` folder has the slightly different structure, as explained in the 
              ├── platemap
              │   └── OAA01.02.03.04.A.txt
              └── barcode_platemap.csv
+```
+
+#### pooled metadata
+
+For pooled experiments, the primary source of disambiguation of cellular pertubations is through barcode assignment to individual cells and not through a platemap, so the folder structure is different than for arrayed `metadata`. The `Barcodes.csv` used for assignment is required and is assumed to be the same for each batch, though other sources of metadata may be included, particulalry if there are additional per-well or per-plate differences. Additionally, we suggest the inclusion of the metadata.json dictionary used for image processing with the [pooled cell painting image processing repository](https://github.com/broadinstitute/pooled-cell-painting-image-processing).
+
+```
+└── metadata
+   └── 2021_04_26_Batch1
+        ├── Barcodes.csv
+        └── metadata.json
 ```
 
 ### `profiles` folder structure:
