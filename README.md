@@ -20,17 +20,17 @@ E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pil
 The datasets' accession numbers are the first seven characters of the dataset name.
 E.g. the accession number of the first dataset is `cpg0000`.
 
-| Dataset name                             | Description                                                                                                                     | Publication to cite | IDR accession number     |
-|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------------|
-| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints           | 3                   |                          |
-| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol                       | 6                   |                          |
-| cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                                        | 7                   |                          |
-| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5                   |                          |
-| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  |
-| cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 |
-| cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells                                    | 9                   |                          |
-| cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          |
+| Dataset name                             | Description                                                                                                                     | Publication to cite | IDR accession number     | Associated Repositories |
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------------|-------------------------|
+| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints           | 3                   |                          | [data]()                |
+| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol                       | 6                   |                          | [data]()                |
+| cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                                        | 7                   |                          | [data]()                |
+| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5                   |                          | [data]()                |
+| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  | [data]()                |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  | [data]()                |
+| cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 | [data]()                |
+| cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells                                    | 9                   |                          | [data]()                |
+| cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          | [data]()                |
 
 ## Downloading from Cell Painting Gallery
 
