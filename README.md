@@ -30,6 +30,7 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  |
 | cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 |
 | cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells                                    | 9                   |                          |
+| cpg0017-rohban-pathways                | 323 genes overexpressed in U2OS cells. Original images re-profiled in 2023  | 11                  |                          |
 | cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          |
 
 ## Downloading from Cell Painting Gallery
@@ -54,6 +55,7 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 8  | Rohban         | Capturing single-cell heterogeneity via data fusion improves image-based profiling                                                   | 2019  | <https://doi.org/10.1038/s41467-019-10154-8>   | cpg0015-heterogeneity                    |
 | 9  | Chandrasekaran |                                                                                                                                      | 2022b | In Preparation                                 | cpg0016-jump                             |
 | 10 | Moshkov        | Learning representations for image-based profiling of perturbations                                                                  | 2022  | <https://doi.org/10.1101/2022.08.12.503783>    | cpg0019-moshkov-deepprofiler             |
+| 11 | Rohban        | Systematic morphological profiling of human gene and allele function via Cell Painting | 2017  | <https://doi.org/10.7554/eLife.24060>  | cpg0017-rohban-pathways |
 
 ## Contributing to Cell Painting Gallery
 
