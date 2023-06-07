@@ -29,7 +29,8 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  |
 | cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  |
 | cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 |
-| cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells                                    | 9                   |                          |
+| cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.
+                                    | 9                   |                          |
 | cpg0017-rohban-pathways                  | 323 genes overexpressed in U2OS cells. Original images re-profiled in 2023                                                      | 11                  |                          |
 | cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          |
 
