@@ -27,6 +27,7 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                                        | 7                   |                          |
 | cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5                   |                          |
 | cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  |
+| cpg0011-lipocyteprofiler | Variety of lipocytes in different metabolic states and with genetic and drug perturbations | 14                 | |
 | cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  |
 | cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 |
 | cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.  | 9                   |                          |
@@ -60,6 +61,7 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 11 | Rohban         | Systematic morphological profiling of human gene and allele function via Cell Painting                                               | 2017 | [link](https://doi.org/10.7554/eLife.24060)          | cpg0017-rohban-pathways                  |
 | 12 | Ramezani, Bauman, Singh, and Weisbart | A genome-wide atlas of human cell morphology | 2023 | [link](https://doi.org/10.1101/2023.08.06.552164)          | cpg0021-periscope                  |
 | 13 | Tegtmeyer | High-dimensional pheotyping to define the genetic basis of cellular morphology | 2023 | [link](https://doi.org/10.1101/2023.01.09.522731)          | cpg0022-cmqtl                 |
+| 14 | Laber and Strobel | Discovering cellular programs of intrinsic and extrinsic drivers of metabolic traits using LipocyteProfiler | 2023 | [link](https://doi.org/10.1016/j.xgen.2023.100346)          | cpg0011-lipocyteprofiler                |
 
 ## Contributing to Cell Painting Gallery
 
