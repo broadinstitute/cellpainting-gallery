@@ -35,6 +35,7 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          |
 | cpg0021-periscope                        | 30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media     | 12,15               |                          |
 | cpg0022-cmqtl                            | 297 iPSC lines     | 13                  |                          |
+| cpg0028-kelley-resistance                | Bortezomib resistant HCT116 clones     | 16                  |                          |
 
 ## Downloading from Cell Painting Gallery
 
@@ -63,6 +64,7 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 13 | Tegtmeyer | High-dimensional pheotyping to define the genetic basis of cellular morphology | 2023 | [link](https://doi.org/10.1101/2023.01.09.522731)          | cpg0022-cmqtl                 |
 | 14 | Laber and Strobel | Discovering cellular programs of intrinsic and extrinsic drivers of metabolic traits using LipocyteProfiler | 2023 | [link](https://doi.org/10.1016/j.xgen.2023.100346)          | cpg0011-lipocyteprofiler                |
 | 15 | Haghighi | Pseudo-labeling enhanced by privileged information and its application to in situ sequencing images | 2023 | [link](https://www.ijcai.org/proceedings/2023/0531.pdf)          | cpg0021-periscope  |
+| 16 | Kelley | High-content microscopy reveals a morphological signature of bortezomib resistance | 2023 | [link](https://doi.org/10.1101/2023.05.02.539137)          | cpg0028-kelley-resistance  |
 
 ## Contributing to Cell Painting Gallery
 
