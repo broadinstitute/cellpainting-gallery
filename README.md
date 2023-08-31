@@ -33,7 +33,7 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.  | 9                   |                          |
 | cpg0017-rohban-pathways                  | 323 genes overexpressed in U2OS cells. Original images re-profiled in 2023                                                      | 11                  |                          |
 | cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          |
-| cpg0021-periscope                        | 30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media     | 12                  |                          |
+| cpg0021-periscope                        | 30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media     | 12,15               |                          |
 | cpg0022-cmqtl                            | 297 iPSC lines     | 13                  |                          |
 
 ## Downloading from Cell Painting Gallery
@@ -62,6 +62,7 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 12 | Ramezani, Bauman, Singh, and Weisbart | A genome-wide atlas of human cell morphology | 2023 | [link](https://doi.org/10.1101/2023.08.06.552164)          | cpg0021-periscope                  |
 | 13 | Tegtmeyer | High-dimensional pheotyping to define the genetic basis of cellular morphology | 2023 | [link](https://doi.org/10.1101/2023.01.09.522731)          | cpg0022-cmqtl                 |
 | 14 | Laber and Strobel | Discovering cellular programs of intrinsic and extrinsic drivers of metabolic traits using LipocyteProfiler | 2023 | [link](https://doi.org/10.1016/j.xgen.2023.100346)          | cpg0011-lipocyteprofiler                |
+| 15 | Haghighi | Pseudo-labeling enhanced by privileged information and its application to in situ sequencing images | 2023 | [link](https://www.ijcai.org/proceedings/2023/0531.pdf)          | cpg0021-periscope  |
 
 ## Contributing to Cell Painting Gallery
 
