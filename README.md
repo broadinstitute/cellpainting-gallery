@@ -20,22 +20,22 @@ E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pil
 The datasets' accession numbers are the first seven characters of the dataset name.
 E.g. the accession number of the first dataset is `cpg0000`.
 
-| Dataset name                             | Description                                                                                                                     | Publication to cite | IDR accession number     | Associated repositories | Size (TB) |
-|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------------|----------|----------|
-| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints           | 3                   |                          | [data](https://github.com/jump-cellpainting/2023_Chandrasekaran_submitted) | 12.3 |
-| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol                       | 6                   |                          | [data](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols) | 40.3 |
-| cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                                        | 7                   |                          | [data](https://github.com/jump-cellpainting/jump-scope), [analysis](https://github.com/jump-cellpainting/jump-scope-analysis) | 16.7 |
-| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5                   |                          | [data](https://github.com/carpenter-singh-lab/2022_Haghighi_NatureMethods) | |
-| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  | [data](https://github.com/broadinstitute/lincs-cell-painting) | 65.7 |
-| cpg0011-lipocyteprofiler | Variety of lipocytes in different metabolic states and with genetic and drug perturbations | 14                 | | [analysis](https://github.com/ClaussnitzerLab/Lipocyte-Profiler) | |
-| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  | | 10.7 |
-| cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 | [data](https://github.com/carpenterlab/2018_Rohban_NatComm) | |
-| cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.  | 9                   |                          | [resource](https://github.com/jump-cellpainting/datasets) | 358.4 |
-| cpg0017-rohban-pathways                  | 323 genes overexpressed in U2OS cells. Original images re-profiled in 2023                                                      | 11                  |                          | [re-profiled data](https://github.com/broadinstitute/cpg0017-rohban-pathways), [original data](https://github.com/carpenterlab/2017_Rohban_eLife) | |
-| cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          | [data](https://github.com/broadinstitute/DeepProfilerExperiments), [software](https://github.com/cytomining/DeepProfiler) | |
-| cpg0021-periscope                        | 30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media     | 12,15               |                          | [analysis](https://github.com/broadinstitute/2022_PERISCOPE), [data](https://github.com/broadinstitute/CP186-A549-WG), [data](https://github.com/broadinstitute/CP257-HeLa-WG) | 56.0 |
-| cpg0022-cmqtl                            | 297 iPSC lines     | 13                  |                          | [data](https://github.com/broadinstitute/cmQTL) | 10.6 |
-| cpg0028-kelley-resistance                | Bortezomib resistant HCT116 clones | 16                  |                          | [data](https://github.com/broadinstitute/profiling-resistance-mechanisms) | |
+| Dataset name                             | Description                                                                                                                     | Publication to cite | IDR accession number     | Associated repositories | Size (TB) | Cell Painting protocol |
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------------|----------|----------|----------|
+| cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints           | 3                   |                          | [data](https://github.com/jump-cellpainting/2023_Chandrasekaran_submitted) | 12.3 | v2.5 |
+| cpg0001-cellpainting-protocol            | 300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol                       | 6                   |                          | [data](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols) | 40.3 | v3 and experiments|
+| cpg0002-jump-scope                       | 300+ compounds profiled in U2OS using different microscopes and settings                                                        | 7                   |                          | [data](https://github.com/jump-cellpainting/jump-scope), [analysis](https://github.com/jump-cellpainting/jump-scope-analysis) | 16.7 | v2.5 |
+| cpg0003-rosetta                          | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5                   |                          | [data](https://github.com/carpenter-singh-lab/2022_Haghighi_NatureMethods) | | |
+| cpg0004-lincs                            | 1,571 compounds across 6 doses in A549 cells                                                                                    | 4                   | idr0125                  | [data](https://github.com/broadinstitute/lincs-cell-painting) | 65.7 | v2 |
+| cpg0011-lipocyteprofiler | Variety of lipocytes in different metabolic states and with genetic and drug perturbations | 14                 | | [analysis](https://github.com/ClaussnitzerLab/Lipocyte-Profiler) | | lipocyte |
+| cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells                                                                                           | 1,2                 | idr0016                  | | 10.7 | v1 |
+| cpg0015-heterogeneity                    | 2,200+ compounds and 200+ genes profiles in U2OS cells                                                                          | 8                   | idr0016,idr0036, idr0033 | [data](https://github.com/carpenterlab/2018_Rohban_NatComm) | | |
+| cpg0016-jump                             | 116,000+ compounds and 16+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.  | 9                   |                          | [resource](https://github.com/jump-cellpainting/datasets) | 358.4 | v3 |
+| cpg0017-rohban-pathways                  | 323 genes overexpressed in U2OS cells. Original images re-profiled in 2023                                                      | 11                  |                          | [re-profiled data](https://github.com/broadinstitute/cpg0017-rohban-pathways), [original data](https://github.com/carpenterlab/2017_Rohban_eLife) | | v1 |
+| cpg0019-moshkov-deepprofiler             | 8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations       | 10                  |                          | [data](https://github.com/broadinstitute/DeepProfilerExperiments), [software](https://github.com/cytomining/DeepProfiler) | | dataset dependent |
+| cpg0021-periscope                        | 30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media     | 12,15               |                          | [analysis](https://github.com/broadinstitute/2022_PERISCOPE), [data](https://github.com/broadinstitute/CP186-A549-WG), [data](https://github.com/broadinstitute/CP257-HeLa-WG) | 56.0 | pooled |
+| cpg0022-cmqtl                            | 297 iPSC lines     | 13                  |                          | [data](https://github.com/broadinstitute/cmQTL) | 10.6 | v2.5 |
+| cpg0028-kelley-resistance                | Bortezomib resistant HCT116 clones | 16                  |                          | [data](https://github.com/broadinstitute/profiling-resistance-mechanisms) | | |
 
 ## Downloading from Cell Painting Gallery
 
@@ -65,6 +65,18 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 14 | Laber and Strobel | Discovering cellular programs of intrinsic and extrinsic drivers of metabolic traits using LipocyteProfiler | 2023 | [Publication](https://doi.org/10.1016/j.xgen.2023.100346), [Preprint](https://www.biorxiv.org/content/10.1101/2021.07.17.452050v1) | cpg0011-lipocyteprofiler                |
 | 15 | Haghighi | Pseudo-labeling enhanced by privileged information and its application to in situ sequencing images | 2023 | [Publication](https://www.ijcai.org/proceedings/2023/0531.pdf), [Preprint](https://arxiv.org/abs/2306.15898)| cpg0021-periscope  |
 | 16 | Kelley | High-content microscopy reveals a morphological signature of bortezomib resistance | 2023 | [Preprint](https://doi.org/10.1101/2023.05.02.539137) | cpg0028-kelley-resistance  |
+
+## Cell Painting protocol versions
+More information about protocol changes and development is available [here](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki#updates-to-the-cell-painting-protocol).
+
+| Protocol | Year | Publication |
+| -------- | ---- | ----------- |
+| v1 | 2013 | Gustafsdottir, SM., et al. [Multiplex cytological profiling assay to measure diverse cellular states](https://doi.org/10.1371/journal.pone.0080999). PLoS ONE 8(12): e80999. |
+| v2 | 2016 | Bray, MA., et al. [Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes](https://doi.org/10.1038/nprot.2016.105). Nat Protoc 11, 1757–1774 |
+| v2.5 | 2021 | 3 |
+| v3 | 2023 | 6 |
+| pooled | 2023 | 12 |
+| lipocyte | 2023 | 14 |
 
 ## Contributing to Cell Painting Gallery
 
