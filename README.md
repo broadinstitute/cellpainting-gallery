@@ -27,6 +27,7 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0002-jump-scope | 300+ compounds profiled in U2OS using different microscopes and settings | 7 | [data](https://github.com/jump-cellpainting/jump-scope), [analysis](https://github.com/jump-cellpainting/jump-scope-analysis) | 16.7 TB | 12.5 TB | 4.2 TB | v2.5 |  |
 | cpg0003-rosetta | 28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression | 5 | [data](https://github.com/carpenter-singh-lab/2022_Haghighi_NatureMethods) | 8.5 GB |  |  |  |  |
 | cpg0004-lincs | 1,571 compounds across 6 doses in A549 cells | 4 | [data](https://github.com/broadinstitute/lincs-cell-painting) | 65.7 TB | 61.9 TB | 3.8 TB | v2 | idr0125 |
+| cpg0010-caie-drugresponse | MCF-7 breast cancer cells treated  with 113 small molecules at eight concentrations. | 17 |  | 239.2 GB | 98.4 GB | 140.8 GB | other variation | BBBC021 |
 | cpg0011-lipocyteprofiler | Variety of lipocytes in different metabolic states and with genetic and drug perturbations | 14 | [analysis](https://github.com/ClaussnitzerLab/Lipocyte-Profiler) | 1.2 TB |  |  | lipocyte |  |
 | cpg0012-wawer-bioactivecompoundprofiling | 30,000 compound dataset in U2OS cells | 1,2 |  | 10.7 TB | 3.1 TB | 7.6 TB | v1 | idr0016 |
 | cpg0015-heterogeneity | 2,200+ compounds and 200+ genes profiles in U2OS cells | 8 | [data](https://github.com/carpenterlab/2018_Rohban_NatComm) | 204 GB |  |  |  | idr0016, idr0036, idr0033 |
@@ -66,6 +67,11 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 14 | Laber and Strobel | Discovering cellular programs of intrinsic and extrinsic drivers of metabolic traits using LipocyteProfiler | 2023 | [Publication](https://doi.org/10.1016/j.xgen.2023.100346), [Preprint](https://www.biorxiv.org/content/10.1101/2021.07.17.452050v1) | cpg0011-lipocyteprofiler                |
 | 15 | Haghighi | Pseudo-labeling enhanced by privileged information and its application to in situ sequencing images | 2023 | [Publication](https://www.ijcai.org/proceedings/2023/0531.pdf), [Preprint](https://arxiv.org/abs/2306.15898)| cpg0021-periscope  |
 | 16 | Kelley | High-content microscopy reveals a morphological signature of bortezomib resistance | 2023 | [Preprint](https://doi.org/10.1101/2023.05.02.539137) | cpg0028-kelley-resistance  |
+| 17 | Caie | High-Content Phenotypic Profiling of Drug Response Signatures across Distinct Cancer Cells | 2010 | [Publication](https://doi.org/10.1158/1535-7163.MCT-09-1148) | cpg0010-caie-drugresponse |
+| 18 | Caicedo | Weakly Supervised Learning of Single-Cell Feature Embeddings | 2018 | [Preprint](http://dx.doi.org/10.1101/293431) | cpg0010-caie-drugresponse |
+| 19 | Goldsborough | CytoGAN: Generative Modeling of Cell Images | 2017 | [Preprint](https://www.biorxiv.org/content/10.1101/227645v1.full) | cpg0010-caie-drugresponse |
+| 20 | Pawlowski | Automating Morphological Profiling with Generic Deep Convolutional Networks | 2016 | [Preprint](http://dx.doi.org/10.1101/085118) | cpg0010-caie-drugresponse |
+
 
 ## Cell Painting protocol versions
 More information about protocol changes and development is available [here](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki#updates-to-the-cell-painting-protocol).
