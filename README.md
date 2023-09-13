@@ -38,6 +38,8 @@ E.g. the accession number of the first dataset is `cpg0000`.
 | cpg0021-periscope | 30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media | 12,15 | [analysis](https://github.com/broadinstitute/2022_PERISCOPE), [data](https://github.com/broadinstitute/CP186-A549-WG), [data](https://github.com/broadinstitute/CP257-HeLa-WG) | 56.0 TB | 45.0 TB | 11.0 TB | pooled |  |
 | cpg0022-cmqtl | 297 iPSC lines | 13 | [data](https://github.com/broadinstitute/cmQTL) | 10.6 TB |  |  | v2.5 |  |
 | cpg0028-kelley-resistance | Bortezomib resistant HCT116 clones | 16 | [data](https://github.com/broadinstitute/profiling-resistance-mechanisms) |  |  |  |  |  |
+| cpg0030-gustafsdottir-cellpainting | U2OS cells treated with each of 1600 known bioactive compounds | 21 |  |  |  |  | v1 | [BBBC022](https://bbbc.broadinstitute.org/BBBC022), [idr0036](https://idr.openmicroscopy.org/webclient/?show=screen-1952) |
+| cpg0031-caicedo-cmvip | ORF over-expression of 596 alleles of 53 genes in A549 cells | 22 | [data](https://github.com/broadinstitute/luad-cell-painting) |  |  |  | v1 | BBBC043, LUAD |
 
 ## Downloading from Cell Painting Gallery
 
@@ -71,6 +73,8 @@ If you'd like to just browse the data, it's a lot easier [to do so using a stora
 | 18 | Caicedo | Weakly Supervised Learning of Single-Cell Feature Embeddings | 2018 | [Preprint](http://dx.doi.org/10.1101/293431) | cpg0010-caie-drugresponse |
 | 19 | Goldsborough | CytoGAN: Generative Modeling of Cell Images | 2017 | [Preprint](https://www.biorxiv.org/content/10.1101/227645v1.full) | cpg0010-caie-drugresponse |
 | 20 | Pawlowski | Automating Morphological Profiling with Generic Deep Convolutional Networks | 2016 | [Preprint](http://dx.doi.org/10.1101/085118) | cpg0010-caie-drugresponse |
+| 21 | Gustafsdottir | Multiplex cytological profiling assay to measure diverse cellular states | 2013 | [Publication](https://doi.org/10.1371/journal.pone.0080999) | cpg0030-gustafsdottir-cellpainting |
+| 22 | Caicedo | Cell Painting predicts impact of lung cancer variants | 2022 | [Preprint](https://doi.org/10.1101/2021.11.18.469171) [Publication](https://www.molbiolcell.org/doi/10.1091/mbc.E21-11-0538) | cpg0031-caicedo-cmvip |
 
 
 ## Cell Painting protocol versions
@@ -78,7 +82,7 @@ More information about protocol changes and development is available [here](http
 
 | Protocol | Year | Publication |
 | -------- | ---- | ----------- |
-| v1 | 2013 | Gustafsdottir, SM., et al. [Multiplex cytological profiling assay to measure diverse cellular states](https://doi.org/10.1371/journal.pone.0080999). PLoS ONE 8(12): e80999. |
+| v1 | 2013 | 21 |
 | v2 | 2016 | Bray, MA., et al. [Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes](https://doi.org/10.1038/nprot.2016.105). Nat Protoc 11, 1757–1774 |
 | v2.5 | 2021 | 3 |
 | v3 | 2023 | 6 |
