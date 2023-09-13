@@ -34,3 +34,5 @@ Complete datasets will be fully described in the main repository [README](README
 | cpg0027-haghighi-barcodecalling          |
 | cpg0028-kelley-resistance                |
 | cpg0029-chroma-pilot                     |
+| cpg0030-gustafsdottir-cellpainting       |
+| cpg0031-caicedo-cmvip                    |
