@@ -1,9 +1,10 @@
+# Prefixes
+
 The purpose of this table is to maintain a full listing of Cell Painting Gallery identifiers for both complete and in-progress datasets.
 Complete datasets will be fully described in the main repository [README](README.md).
 
-
 | Dataset name                             |
-| ---------------------------------------- |
+|------------------------------------------|
 | cpg0000-jump-pilot                       |
 | cpg0001-cellpainting-protocol            |
 | cpg0002-jump-scope                       |
