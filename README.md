@@ -15,7 +15,8 @@ For example,
 All datasets are generated using the Cell Painting assay unless indicated otherwise. Several updates to that protocol exist ([Cell Painting wiki](https://github.com/carpenterlab/2022_Cimini_NatureProtocols/wiki)).
 
 The datasets are stored with the prefix indicated by the dataset name.
-E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot` and can be listed using `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg0000-jump-pilot/` (note the `/` at the end).
+E.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot` and can be listed using AWS CLI `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg0000-jump-pilot/` (note the `/` at the end).
+See [Download Instructions](download_instructions.md) for more information and examples of how to list files using AWS CLI or boto3.
 
 The datasets' accession numbers are the first seven characters of the dataset name.
 E.g. the accession number of the first dataset is `cpg0000`.
@@ -48,6 +49,8 @@ Note that for each dataset you can download just images, just extracted features
 Note also that many datasets contain separate batches and you may want a subset of available batches.
 
 If you'd like to just browse the data, it's a lot easier [to do so using a storage browser](https://stackoverflow.com/a/72143198/1094109).
+
+We provide more documentation and examples of listing and downloading files using AWS CLI on [Download Instructions](download_instructions.md).
 
 ## Cell Painting protocol versions
 
