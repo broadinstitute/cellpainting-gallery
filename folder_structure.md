@@ -51,7 +51,8 @@ The rest of the batch folder name can be a simple ordinal (e.g. `YYYY_MM_DD_Batc
 A single batch typically contains all of the plates that were imaged (or started acquisition) on that day.
 However, for simplifying project tracking and analysis, sometimes plates imaged on the same day are divided into multiple batches where each batch is a different experimental condition (e.g. `2020_01_02_LowPhalloidin` and `2020_01_02_HighPhalloidin`).
 
-### Arrayed Cell Painting experiments 
+### Arrayed Cell Painting experiments
+
 Most Cell Painting experiments are arrayed, meaning that each well contains a single perturbation and therefore every cell within that well has the same perturbation.
 For arrayed experiments, within each `YYYY_MM_DD_<batch-name>` batch subfolder there is typically an `illum` and an `images` folder.
 
@@ -73,6 +74,7 @@ Those folders will follow the format `images_<manipulation-description>`.
 The most common example of atypical image manipulation in an arrayed experiment is when images are acquired in z-stacks and then max-projected and saved as `images_projected` before undergoing analysis.
 
 An example of what this looks like in practice for a typical arrayed Cell Painting experiment is below.
+
 ```
 cellpainting-gallery
 └── cpg0016-jump
@@ -99,6 +101,7 @@ cellpainting-gallery
         │   └── 2021_05_31_Batch2
         └── workspace
 ```
+
 - `cpg0016-jump` is the project folder.
 - `source_4` is the anonymized nesting folder, representing Broad's data. Note that there are multiple sources in this project, though a nesting folder is still required even if your project doesn't have multiple sources.
 - `2021_04_26_Batch1` is the batch folder. Note that there are multiple batches of data acquired on different days in this project.
@@ -106,7 +109,8 @@ cellpainting-gallery
 - `BR00117035` is the truncated plate name that we have given to `BR00117035__2021-05-02T16_02_51-Measurement1` that is used for naming the plate in the `illum` folder (and the `workspace` folder, discussed below).
 - In the `illum` folder, within the `BR00117035` plate folder, there are 8 separate illumination correction functions, one for each of the 8 channels imaged in that plate (e.g. `BR00117035_IllumAGP.npy` is the correction function for the AGP channel.)
 
-### Pooled Cell Painting experiments 
+### Pooled Cell Painting experiments
+
 Some Cell Painting experiments are pooled, meaning that each well contains multiple perturbations and therefore the identity of a cell's perturbation requires additional disambiguation - typically through optically reading a barcode
 For pooled experiments, within each `YYYY_MM_DD_<batch-name>` batch subfolder there are at least an `illum` and an `images` folder, though likely more given that the complexity of handling pooled experiments often requires generating intermediate images.
 
@@ -133,6 +137,7 @@ The substructure of non-standard folders may vary greatly based on the specific 
 Some examples are shown below.
 
 An example of what this looks like in practice for an example pooled Cell Painting experiment is below.
+
 ```
 cellpainting-gallery
 └── cpg0021-periscope
@@ -178,6 +183,7 @@ cellpainting-gallery
         │          └── CP257B
         └── workspace
 ```
+
 - `cpg0021-periscope` is the project folder.
 - `broad` is source of the data.
 - `20210422_6W_CP257` is the batch folder. Note that there are multiple batches of data acquired on different days in this project.
@@ -216,6 +222,7 @@ cellpainting-gallery/
 - `profiles`: contains a set of well-level profiles files (one set per plate). The set comprises different stages of the CSV files produced when running the profiling recipe, as well as other output.
 
 Examples of additional optional folders you may upload to `workspace` include:
+
 - `assaydev`: work use to test/optimize segmentation parameters
 - `embeddings`: embeddings generated from deep learning models
 - `pipelines`: the CellProfiler .cppipe or .cpproj files used
@@ -223,7 +230,7 @@ Examples of additional optional folders you may upload to `workspace` include:
 - `segmentation`: optimized segmentations generated independently of the `analysis` pipeline
 - `software`: scripts used while handling the batch
 
-### `analysis` folder structure:
+### `analysis` folder structure
 
 Within the `analysis` folder, is a folder for each batch and within each batch folder is a folder for each plate.
 Within the plate folder is an additional `analysis` folder.
@@ -255,11 +262,12 @@ These are the actual masks/outlines that were generated during the CellProfiler 
 ```
 
 In this example batch:
+
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - `BR00117035-A01-1` is a folder containing CSV files and outline files for site `1` in well `A01` in plate `BR00117035`.
 Less-granular folders are acceptable as well. e.g., `BR00117035-A01` containing CSV files for the whole well and outline files for each site in the well.
 
-### `backend` folder structure:
+### `backend` folder structure
 
 Within the `backend` folder, is a folder for each batch and within each batch folder is a folder for each plate.
 Within each plate folder is a single-cell SQLite file, comprising all measurements from all cells in the plate, and a CSV that aggregates the single-cell data into a per-well measurement.
@@ -274,11 +282,12 @@ Within each plate folder is a single-cell SQLite file, comprising all measuremen
 ```
 
 In this example batch:
+
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - `BR00117035.sqlite` is the single-cell SQLite file
 - `BR00117035.csv` is the aggregated CSV file
 
-### `load_data_csv` folder structure:
+### `load_data_csv` folder structure
 
 Within the `load_data_csv` folder is a folder for each batch and within each batch folder is a folder for each plate.
 Within the plate folder there are typically two files - a `load_data.csv` for pipelines that do not use an illumination correction function and a `load_data_with_illum.csv` for pipelines that do use an illumination correction function, however atypical workflows can have other arrangements such as a separate CSV for each pipeline in the workflow.
@@ -292,7 +301,7 @@ Within the plate folder there are typically two files - a `load_data.csv` for pi
          └── BR00117036
 ```
 
-### `metadata` folder structure:
+### `metadata` folder structure
 
 #### arrayed metadata
 
@@ -311,8 +320,8 @@ The `metadata` folder has a slightly different structure from other `workspace` 
 
 #### pooled metadata
 
-For pooled experiments, the primary source of disambiguation of cellular perturbations is through barcode assignment to individual cells and not through a platemap, so the folder structure is different than for arrayed `metadata`. 
-The `Barcodes.csv` used for assignment is required and is assumed to be the same for each batch, though other sources of metadata may be included, particularly if there are additional per-well or per-plate differences. 
+For pooled experiments, the primary source of disambiguation of cellular perturbations is through barcode assignment to individual cells and not through a platemap, so the folder structure is different than for arrayed `metadata`.
+The `Barcodes.csv` used for assignment is required and is assumed to be the same for each batch, though other sources of metadata may be included, particularly if there are additional per-well or per-plate differences.
 Additionally, we suggest the inclusion of the metadata.json dictionary used for image processing with the [pooled cell painting image processing repository](https://github.com/broadinstitute/pooled-cell-painting-image-processing).
 
 ```
@@ -322,7 +331,7 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
         └── metadata.json
 ```
 
-### `profiles` folder structure:
+### `profiles` folder structure
 
 Within the `profiles` folder is a folder for each batch and within each batch folder is a folder for each plate.
 Within each plate folder are many files produced by the [profiling-recipe](https://github.com/cytomining/profiling-recipe) that describe single-cell morphological profiles.
@@ -344,7 +353,7 @@ For a full description of the files, see [profiling-recipe files generated](http
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - The .csv files undergo gzip compression to be .csv.gz files
 
-### `quality_control` folder structure:
+### `quality_control` folder structure
 
 The `quality_control` folder has the slightly different structure.
 The files are all produced by the [profiling-recipe](https://github.com/jump-cellpainting/profiling-recipe#files-generated).
@@ -363,7 +372,7 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 
-### `segmentation` folder structure:
+### `segmentation` folder structure
 
 Files within `segmentation` are object segmentations (masks and/or outlines) generated outside of the final (CellProfiler) `analysis` pipeline and therefore likely differ from the segmentations used to make the dataset's profiles.
 They are considered "state-of-the-field" or better in quality.
@@ -407,7 +416,8 @@ cellpainting-gallery/
             ├── embeddings
             └── profiles
 ```
-### `collated` folder structure:
+
+### `collated` folder structure
 
 The `collated` contains .csv or .parquet files with well-level profiles for all plates in a folder for each network/model.
 
@@ -417,7 +427,7 @@ The `collated` contains .csv or .parquet files with well-level profiles for all 
             └── collated.parquet
 ```
 
-### `consensus` folder structure:
+### `consensus` folder structure
 
 The `consensus` folder contains .csv or .parquet files with treatment-level profiles for all plates in a folder for each network/model.
 
@@ -427,7 +437,7 @@ The `consensus` folder contains .csv or .parquet files with treatment-level prof
             └── consensus.parquet
 ```
 
-### `embeddings` folder structure:
+### `embeddings` folder structure
 
 The `embeddings` folder contains a subfolder for each network/model, with subfolders for each batch. Within each batch folder is a subfolder for each plate. Within each plate subfolder is a subfolder for well-site. In the well-site subfolder is a .npz or .parquet file with single-cell features extracted from the single image.
 
@@ -444,6 +454,7 @@ The `embeddings` folder contains a subfolder for each network/model, with subfol
 ```
 
 In this example batch:
+
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - `efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff` is an identifier for the deep learning network, suffixed with some hash for the model
 - `A01-1` is a folder containing the embedding file for site `1` in well `A01` in plate `BR00117035`
@@ -464,7 +475,8 @@ The folder structure is a little different for DeepProfiler-generated output in 
             └── 2021_05_31_Batch2
 ```
 
-### `profiles` folder structure:
+### `profiles` folder structure
+
 Within the `profiles` folder is a folder for the deep learning network with its hash.
 Within the network folder is a folder for each batch and within each batch folder is a file for each plate.
 
@@ -477,8 +489,6 @@ Within the network folder is a folder for each batch and within each batch folde
             │   └── BR00117036
             └── 2021_05_31_Batch2
 ```
-
-
 
 ## Complete folder structure
 
@@ -565,4 +575,5 @@ Here's the complete folder structure for a sample project with CellProfiler-base
                         │   └── and others https://github.com/cytomining/profiling-recipe#files-generated
                         └── BR00117036
  ```
+
  </details>
