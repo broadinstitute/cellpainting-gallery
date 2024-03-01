@@ -37,3 +37,4 @@ Complete datasets will be fully described in the main repository [README](README
 | cpg0029-chroma-pilot                     |
 | cpg0030-gustafsdottir-cellpainting       |
 | cpg0031-caicedo-cmvip                    |
+| cpg0032-pooled-rare                      |
