@@ -37,6 +37,10 @@ The structure of the download command is `aws s3 cp --recursive "CPG_LOCATION" "
 
 Before using the AWS CLI command, you will need to install AWS CLI following [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
+You do NOT need an AWS account to download files from the Cell Painting Gallery.
+If you do not have an AWS account and get an error with the AWS CLI command provided, add `--no-sign-request` to the end of the command.
+e.g. `aws s3 cp --recursive "CPG_LOCATION" "LOCAL_DESTINATION" --no-sign-request`
+
 ## Generating your own AWS CLI download commands
 
 Before using AWS CLI, you will need to install AWS CLI following [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
