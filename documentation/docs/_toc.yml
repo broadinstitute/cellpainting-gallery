@@ -3,12 +3,9 @@
 format: jb-book
 root: overview
 parts:
-- caption: About
+- caption: Data
   chapters:
-  - file: overview
   - file: data_structure
-- caption: Accessing Data
-  chapters:
   - file: browsing_data
   - file: downloading_instructions
 - caption: Technical Guides
