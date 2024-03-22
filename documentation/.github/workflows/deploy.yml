@@ -4,7 +4,7 @@ name: deploy-documentation
 on:
   push:
     branches:
-    - master
+    - main
     # Only run if edits in documentation
     paths:
     - documentation/docs/**
