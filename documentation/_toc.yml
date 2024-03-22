@@ -7,7 +7,7 @@ parts:
   chapters:
   - file: data_structure
   - file: browsing_data
-  - file: downloading_instructions
+  - file: download_instructions
 - caption: Technical Guides
   chapters:
   - file: contributing_to_cpg
