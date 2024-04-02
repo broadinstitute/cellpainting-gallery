@@ -16,11 +16,11 @@ Contributions can be in the form of complete datasets or additions to extant dat
 Please contact @erinweisbart or @shntnu to initiate discussion of a data contribution.
 After receiving approval, you will receive a detailed contribution workflow customized for your data contribution.
 
-To be approved, your dataset must required to meet the following requirements:
+To be approved, your dataset must meet the following requirements:
 
 ### Assay structure
 
-All datasets in the Cell Painting Gallery are from a published Cell Painting Assay version or a close derivative.
+All datasets in the Cell Painting Gallery must be from a published Cell Painting Assay version or a close derivative.
 If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.
 
 ### Accompanying information

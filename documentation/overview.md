@@ -1,16 +1,16 @@
 # Cell Painting Gallery Overview
 
 The Cell Painting Gallery is a publicly available collection of Cell Painting datasets, curated by the Imaging Platform at the Broad Institute of MIT and Harvard and hosted by Amazon Web Services (AWS) on the Registry of Open Data (RODA).
-Access does not require an AWS account.
+**Access does not require an AWS account**.
 
 ## Available datasets
 
-Complete datasets with descriptpive overview are listed [here](https://github.com/broadinstitute/cellpainting-gallery/README.md).
+Complete datasets with descriptive overview are listed [here](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md).
 Prefixes for datasets-in-progress can be accessed [here](prefixes.md).
 
 ## Downloading from Cell Painting Gallery
 
-See [Data Structure](data_structure.md) for a complete description of data organization in Cell Painting gallery.
+See [Data Structure](data_structure.md) for a complete description of data organization in the Cell Painting Gallery.
 Note that for each dataset you can download just images, just extracted features and metadata, or both.
 Note also that many datasets contain multiple batches and you may want a subset of available batches.
 
