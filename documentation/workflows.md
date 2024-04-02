@@ -1,6 +1,6 @@
 # Workflows using the Cell Painting Gallery
 
-Data in the cell painting gallery can be used for many different purposes in many different ways.
+Data in the Cell Painting Gallery can be used for many different purposes in many different ways.
 We provide here links to external workflows that access Cell Painting Gallery data to serve as inspiration for others in making their own workflows.
 
 ## CellPose
