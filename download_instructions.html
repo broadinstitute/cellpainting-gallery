@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Contributing &#8212; Cell Painting Gallery Documentation</title>
+    <title>Downloading from Cell Painting Gallery &#8212; Cell Painting Gallery Documentation</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing_to_cpg';</script>
-    <link rel="canonical" href="broadinstitute.github.io/contributing_to_cpg.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'download_instructions';</script>
+    <link rel="canonical" href="broadinstitute.github.io/download_instructions.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Prefixes" href="prefixes.html" />
-    <link rel="prev" title="Downloading from Cell Painting Gallery" href="download_instructions.html" />
+    <link rel="next" title="Contributing" href="contributing_to_cpg.html" />
+    <link rel="prev" title="Browsing Data on the Cell Painting Gallery" href="browsing_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,14 +165,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="data_structure.html">Cell Painting Gallery folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Downloading from Cell Painting Gallery</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Guides</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="contributing_to_cpg.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prefixes.html">Prefixes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using datasets in Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows using the Cell Painting Gallery</a></li>
@@ -247,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/contributing_to_cpg.md" target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/download_instructions.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fcontributing_to_cpg.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fdownload_instructions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/contributing_to_cpg.md" target="_blank"
+      <li><a href="_sources/download_instructions.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Contributing</h1>
+    <h1>Downloading from Cell Painting Gallery</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,16 +388,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-documentation">Contributing to Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assay-structure">Assay structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accompanying-information">Accompanying information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-quilt-to-generate-download-commands">Using Quilt to generate download commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-with-quilt-python-command">Downloading with Quilt Python command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-with-quilt-aws-cli-command">Downloading with Quilt AWS CLI command</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-your-own-aws-cli-download-commands">Generating your own AWS CLI download commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-whole-dataset">Downloading a whole dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-data-subsets">Downloading data subsets</a></li>
 </ul>
 </li>
 </ul>
@@ -411,55 +410,80 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="contributing">
-<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h1>
-<p>We welcome contributions to the Cell Painting Gallery.</p>
-<section id="contributing-to-documentation">
-<h2>Contributing to Documentation<a class="headerlink" href="#contributing-to-documentation" title="Permalink to this heading">#</a></h2>
-<p>If you would like to contribute to our documentation, please make a <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/pulls">Pull Request</a>.
-We particularly welcome contributions to our list of <a class="reference internal" href="publications.html"><span class="doc std std-doc">publications using data from the Cell Painting Gallery</span></a> and to <a class="reference internal" href="workflows.html"><span class="doc std std-doc">workflows accessing the Cell Painting Gallery</span></a>.</p>
-<p>To ask a question that is not covered by our documentation, you are also welcome to create an <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/issues">Issue</a> in the Cell Painting Gallery repository.
-Please note that dataset-specific questions should be directed to the respective dataset repository linked in the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">README</a>.</p>
+  <section id="downloading-from-cell-painting-gallery">
+<h1>Downloading from Cell Painting Gallery<a class="headerlink" href="#downloading-from-cell-painting-gallery" title="Permalink to this heading">#</a></h1>
+<p>Before downloading from the Cell Painting Gallery, please read our comprehensive description of <span class="xref myst">folder structure</span> so that you understand the structure of the data you will be downloading.</p>
+<p>We provide below instructions for downloading data using Quilt or AWS CLI.</p>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">#</a></h2>
+<p>Before initiating a download, consider what kind and how much data you need.
+Most datasets have both images and profiles.
+Most datasets have multiple batches.
+Not all datasets and not all batches have been described in a publication.
+Browse the data to determine the batch/plate/file names that you would like to download.</p>
+<p>We recommend <a class="reference internal" href="browsing_data.html"><span class="doc std std-doc">browsing the data</span></a> before initiating download.</p>
 </section>
-<section id="contributing-data-to-the-gallery">
-<h2>Contributing Data to the Gallery<a class="headerlink" href="#contributing-data-to-the-gallery" title="Permalink to this heading">#</a></h2>
-<p>Contributions can be in the form of complete datasets or additions to extant datasets (such as segmentations or deep-learning generated profiles).
-Please contact &#64;erinweisbart or &#64;shntnu to initiate discussion of a data contribution.
-After receiving approval, you will receive a detailed contribution workflow customized for your data contribution.</p>
-<p>To be approved, your dataset must meet the following requirements:</p>
-<section id="assay-structure">
-<h3>Assay structure<a class="headerlink" href="#assay-structure" title="Permalink to this heading">#</a></h3>
-<p>All datasets in the Cell Painting Gallery must be from a published Cell Painting Assay version or a close derivative.
-If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.</p>
+<section id="using-quilt-to-generate-download-commands">
+<h2>Using Quilt to generate download commands<a class="headerlink" href="#using-quilt-to-generate-download-commands" title="Permalink to this heading">#</a></h2>
+<p>Once you have browsed to the location of your desired files in <a class="reference external" href="https://open.quiltdata.com/b/cellpainting-gallery/tree/">the Cell Painting Gallery indexed on Quilt</a>, select the <code class="docutils literal notranslate"><span class="pre">CODE</span></code> bar to expand that section.
+It will reveal two tabs: <code class="docutils literal notranslate"><span class="pre">PYTHON</span></code> and <code class="docutils literal notranslate"><span class="pre">CLI</span></code>.</p>
+<section id="downloading-with-quilt-python-command">
+<h3>Downloading with Quilt Python command<a class="headerlink" href="#downloading-with-quilt-python-command" title="Permalink to this heading">#</a></h3>
+<p><img alt="Downloading CPG with Quilt Python command" src="_images/Quilt_CPG_Python_download.png" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PYTHON</span></code> tab returns a download command that will download files using Quilt’s Python client.
+The structure of the download command is <code class="docutils literal notranslate"><span class="pre">b.fetch(&quot;CPG_LOCATION&quot;,</span> <span class="pre">&quot;LOCAL_DESTINATION&quot;)</span></code> so if you would like to control where the files are downloaded to, simply edit the local destination path.</p>
+<p>Before using the Python download command, you will ned to install the Quilt Python client with the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">quilt3</span></code>. (See <a class="reference external" href="https://docs.quiltdata.com/installation">Quilt’s installation documentation</a> for more information.)</p>
 </section>
-<section id="accompanying-information">
-<h3>Accompanying information<a class="headerlink" href="#accompanying-information" title="Permalink to this heading">#</a></h3>
-<p>Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/">Cell Painting Gallery repository</a> with updates to the README to add your dataset to <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">Available datasets</a>.
-If your dataset is associated with a publication, please also edit <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/docs/publications.md">Publications</a>.</p>
+<section id="downloading-with-quilt-aws-cli-command">
+<h3>Downloading with Quilt AWS CLI command<a class="headerlink" href="#downloading-with-quilt-aws-cli-command" title="Permalink to this heading">#</a></h3>
+<p><img alt="Downloading CPG with Quilt AWS CLI command" src="_images/Quilt_CPG_AWS_CLI_download.png" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CLI</span></code> tab returns a download command that will download files using <a class="reference external" href="https://aws.amazon.com/cli/">AWS CLI</a>.
+The structure of the download command is <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span> <span class="pre">--recursive</span> <span class="pre">&quot;CPG_LOCATION&quot;</span> <span class="pre">&quot;LOCAL_DESTINATION&quot;</span></code> so if you would like to control where the files are downloaded to, simply edit the local destination path.</p>
+<p>Before using the AWS CLI command, you will need to install AWS CLI following <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS documentation</a>.</p>
+<p>You do NOT need an AWS account to download files from the Cell Painting Gallery.
+If you do not have an AWS account and get an error with the AWS CLI command provided, add <code class="docutils literal notranslate"><span class="pre">--no-sign-request</span></code> to the end of the command.
+e.g. <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span> <span class="pre">--recursive</span> <span class="pre">&quot;CPG_LOCATION&quot;</span> <span class="pre">&quot;LOCAL_DESTINATION&quot;</span> <span class="pre">--no-sign-request</span></code></p>
 </section>
-<section id="data-structure">
-<h3>Data structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h3>
-<section id="remove-special-characters-in-folder-names">
-<h4>Remove special characters in folder names<a class="headerlink" href="#remove-special-characters-in-folder-names" title="Permalink to this heading">#</a></h4>
-<p>To the maximum extent possible, please avoid the following in your folder names</p>
-<ul class="simple">
-<li><p>Whitespaces</p></li>
-<li><p>Special characters other than <code class="docutils literal notranslate"><span class="pre">_</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
-</ul>
-<p>Please delete these characters if they are present in your folder names.</p>
 </section>
-<section id="prepare-project-specific-naming">
-<h4>Prepare project-specific naming<a class="headerlink" href="#prepare-project-specific-naming" title="Permalink to this heading">#</a></h4>
-<p>Reference <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a> for comprehensive information on folder structure and naming.
-Your data must strictly comply with the data structure we have laid out.
-Additionally it must include all, unblinded metadata.</p>
-<p>If your new dataset is approved for inclusion, we will assign you a project identifier.
-Your source name can be your institution or it can be anonymized.</p>
+<section id="generating-your-own-aws-cli-download-commands">
+<h2>Generating your own AWS CLI download commands<a class="headerlink" href="#generating-your-own-aws-cli-download-commands" title="Permalink to this heading">#</a></h2>
+<p>Before using AWS CLI, you will need to install AWS CLI following <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS documentation</a>.</p>
+<section id="downloading-a-whole-dataset">
+<h3>Downloading a whole dataset<a class="headerlink" href="#downloading-a-whole-dataset" title="Permalink to this heading">#</a></h3>
+<p>Perhaps the simplest download command is to download a whole dataset.
+However, before doing so, we encourage you to look carefully at the <span class="xref myst">README</span> so that you are aware of the size of the dataset that you are downloading.</p>
+<p>In your terminal, navigate into the folder that you would like to download into.
+Run the following command to see a listing of all files that would be downloaded with your command.
+If your source and destination paths are as expected, remove <code class="docutils literal notranslate"><span class="pre">--dryrun</span></code> from the command and run it again.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DATASET</span><span class="o">=</span>cpg0000-jump-pilot
+aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>--recursive<span class="w"> </span>s3://cellpainting-gallery/<span class="si">${</span><span class="nv">DATASET</span><span class="si">}</span>/<span class="w"> </span>.<span class="w"> </span>--no-sign-request<span class="w"> </span>--dryrun
+</pre></div>
+</div>
 </section>
-<section id="validate-your-data">
-<h4>Validate your data<a class="headerlink" href="#validate-your-data" title="Permalink to this heading">#</a></h4>
-<p>Use our <a class="reference external" href="http://github.com/broadinstitute.org/cpg">data validator</a> to validate that your data complies with our required structure.</p>
-</section>
+<section id="downloading-data-subsets">
+<h3>Downloading data subsets<a class="headerlink" href="#downloading-data-subsets" title="Permalink to this heading">#</a></h3>
+<p>In your terminal, navigate into the folder that you would like to download into.
+Use the the provided <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">folder structure</span></a> documentation and browse the data with a storage browser or <a class="reference internal" href="browsing_data.html"><span class="doc std std-doc">by listing</span></a> to determine the path (i.e. prefix) you would like to download.</p>
+<p>Below we provide several examples of download commands.</p>
+<p>We suggest you always first run download commands with the <code class="docutils literal notranslate"><span class="pre">--dryrun</span></code> command to see a listing of all files that would be downloaded with your command.
+If your source and destination paths are as expected, remove <code class="docutils literal notranslate"><span class="pre">--dryrun</span></code> from the command and run it again.</p>
+<p>If you would like to download a subset of data with a common prefix (i.e. folder nesting) then use the <code class="docutils literal notranslate"><span class="pre">--include</span></code> and <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> flags in your command.
+We suggest the format of <code class="docutils literal notranslate"><span class="pre">--exclude</span> <span class="pre">&quot;*&quot;</span> <span class="pre">--include</span> <span class="pre">&quot;*yourfilter*&quot;</span></code> to exclude all files from the download command and then include only the files that have your specified filter.</p>
+<p>The copy command examples provided follow the format of <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span> <span class="pre">--recursive</span></code> SOURCE DESTINATION <code class="docutils literal notranslate"><span class="pre">--no-sign-request</span> <span class="pre">--dryrun</span></code>.
+When files download, they will maintain any folder structure below the prefix that you are downloading from.
+You can create/define additional folders by editing the DESTINATION.</p>
+<p>e.g. download a single plate of images</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>--recursive<span class="w"> </span>s3://cellpainting-gallery/cpg0000-jump-pilot/source_4/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/<span class="w"> </span>.<span class="w"> </span>--no-sign-request<span class="w"> </span>--dryrun
+</pre></div>
+</div>
+<p>e.g. download all platemaps to a platemap folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>--recursive<span class="w"> </span>s3://cellpainting-gallery/cpg0000-jump-pilot/source_4/workspace/metadata/platemaps/<span class="w"> </span>platemap/<span class="w"> </span>--no-sign-request<span class="w"> </span>--dryrun
+</pre></div>
+</div>
+<p>e.g. download all backends that are in .csv format to a backend folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>--recursive<span class="w"> </span>s3://cellpainting-gallery/cpg0000-jump-pilot/source_4/workspace/backend/<span class="w"> </span>backend/<span class="w"> </span>--exclude<span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.csv&quot;</span><span class="w"> </span>--no-sign-request<span class="w"> </span>--dryrun
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -495,20 +519,20 @@ Your source name can be your institution or it can be anonymized.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="download_instructions.html"
+       href="browsing_data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Downloading from Cell Painting Gallery</p>
+        <p class="prev-next-title">Browsing Data on the Cell Painting Gallery</p>
       </div>
     </a>
     <a class="right-next"
-       href="prefixes.html"
+       href="contributing_to_cpg.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Prefixes</p>
+        <p class="prev-next-title">Contributing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -527,16 +551,15 @@ Your source name can be your institution or it can be anonymized.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-documentation">Contributing to Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assay-structure">Assay structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accompanying-information">Accompanying information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-quilt-to-generate-download-commands">Using Quilt to generate download commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-with-quilt-python-command">Downloading with Quilt Python command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-with-quilt-aws-cli-command">Downloading with Quilt AWS CLI command</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-your-own-aws-cli-download-commands">Generating your own AWS CLI download commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-a-whole-dataset">Downloading a whole dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-data-subsets">Downloading data subsets</a></li>
 </ul>
 </li>
 </ul>

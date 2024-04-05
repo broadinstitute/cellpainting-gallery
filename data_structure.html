@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cell Painting Gallery folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Guides</span></p>
 <ul class="nav bd-sidenav">
@@ -441,8 +442,8 @@ The parent structure is as follows.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;project&gt;</span></code>: top level folder for the project.
 Keep the name short and simple with <code class="docutils literal notranslate"><span class="pre">[a-z0-9_]</span></code> only.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;project-specific-nesting&gt;</span></code>: additional nesting level that is typically an institution identifier.
-It can be anonymized (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">source_1/</span></code>, <code class="docutils literal notranslate"><span class="pre">source_2/</span></code>, etc.).
-It should be present even if the data is from a single source (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0003-rosetta/</span></code> only contains <code class="docutils literal notranslate"><span class="pre">broad/</span></code>).</p></li>
+It should be present even if the data is from a single source (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0003-rosetta/</span></code> only contains <code class="docutils literal notranslate"><span class="pre">broad/</span></code>).
+It can be anonymized (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">source_1/</span></code>, <code class="docutils literal notranslate"><span class="pre">source_2/</span></code>, etc.).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: all images and illumination correction functions.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">workspace</span></code>: everything else that results from CellProfiler-based features goes here.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">workspace_dl</span></code>: everything else that results from deep learning-based features goes here.</p></li>
