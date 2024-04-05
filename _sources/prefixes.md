@@ -38,3 +38,4 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0030-gustafsdottir-cellpainting       |
 | cpg0031-caicedo-cmvip                    |
 | cpg0032-pooled-rare                      |
+| cpg0033-oasis-pilot                      |
