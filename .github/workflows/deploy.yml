@@ -7,7 +7,7 @@ on:
     - main
     # Only run if edits in documentation
     paths:
-    - documentation/docs/**
+    - documentation/**
     - .github/workflows/deploy.yml
 
 # This job installs dependencies, builds the book, and pushes it to branch `gh-pages`
