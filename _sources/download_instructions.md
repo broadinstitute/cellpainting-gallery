@@ -4,6 +4,8 @@ Before downloading from the Cell Painting Gallery, please read our comprehensive
 
 We provide below instructions for downloading data using Quilt or AWS CLI.
 
+Please note that an AWS account is NOT required for downloading data.
+
 ## Preparation
 
 Before initiating a download, consider what kind and how much data you need.

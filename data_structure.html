@@ -170,12 +170,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows using the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning.html">Machine Learning (ML)/Deep Learning (DL)</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Guides</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="contributing_to_cpg.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prefixes.html">Prefixes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using datasets in Cell Painting Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows using the Cell Painting Gallery</a></li>
 </ul>
 
     </div>
@@ -716,22 +720,42 @@ Within the plate folder there are typically two files - a <code class="docutils 
 <h3><code class="docutils literal notranslate"><span class="pre">metadata</span></code> folder structure<a class="headerlink" href="#metadata-folder-structure" title="Permalink to this heading">#</a></h3>
 <section id="arrayed-metadata">
 <h4>arrayed metadata<a class="headerlink" href="#arrayed-metadata" title="Permalink to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> folder has a slightly different structure from other <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folders, as explained in the <a class="reference external" href="https://github.com/cytomining/profiling-recipe#metadata-platemap-and-barcode_platemap-files">profiling recipe</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> folder has a slightly different structure from other <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folders.
+It complies with <a class="reference external" href="https://github.com/cytomining/pycytominer">pycytominer</a> metadata requirements.</p>
+<p>Additional context and information may also be found in the <a class="reference external" href="https://github.com/cytomining/profiling-recipe#metadata-platemap-and-barcode_platemap-files">profiling recipe</a> and the <a class="reference external" href="https://cytomining.github.io/profiling-handbook/05-create-profiles.html#create-metadata-files">Image-based Profiling Handbook</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── metadata
      ├─── external_metadata
      |   └── external_metadata.tsv
      └── platemaps
          └── 2021_04_26_Batch1
-             ├── platemap
-             │   └── OAA01.02.03.04.A.txt
-             └── barcode_platemap.csv
+             ├── barcode_platemap.csv
+             └── platemap
+                 └── OAA01.02.03.04.A.txt
 </pre></div>
 </div>
+<p>All datasets have at least <code class="docutils literal notranslate"><span class="pre">barcode_platemap.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">PLATEMAP.txt</span></code> files.</p>
+<p>Within <code class="docutils literal notranslate"><span class="pre">barcode_platemap.csv</span></code>, there are two columns: <code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> and <code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> matches the plate name used for analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code> is the name of a platemap in the <code class="docutils literal notranslate"><span class="pre">platemaps/BATCH/platemap</span></code> folder.
+There may be one-to-one or many-to-one correspondence between <code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> and <code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code>.</p></li>
+</ul>
+<p>Within <code class="docutils literal notranslate"><span class="pre">PLATEMAP.txt</span></code> there at least <code class="docutils literal notranslate"><span class="pre">plate_map_name</span></code> and <code class="docutils literal notranslate"><span class="pre">well_position</span></code> columns and may be any additional number of metadata columns.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plate_map_name</span></code> matches the <code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code> in the <code class="docutils literal notranslate"><span class="pre">barcode_platemap.csv</span></code> and the <code class="docutils literal notranslate"><span class="pre">PLATEMAP</span></code> in the file name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">well_position</span></code> matches the well names in the data output by CellProfiler and are typically based on raw image file naming as so are generally formatted like <code class="docutils literal notranslate"><span class="pre">A01</span></code> but may be upper or lowercase and may or may not have zero padding (e.g. <code class="docutils literal notranslate"><span class="pre">a1</span></code>, <code class="docutils literal notranslate"><span class="pre">a01</span></code>, <code class="docutils literal notranslate"><span class="pre">A1</span></code>, <code class="docutils literal notranslate"><span class="pre">A01</span></code>).</p></li>
+</ul>
+<p>Some datasets additionally have <code class="docutils literal notranslate"><span class="pre">external_metadata.tsv</span></code>.
+These contain mapping between a perturbation identifier to other metadata using matching column names.</p>
+<p>We do not currently enforce metadata harmonization beyond what is described here.
+However, one can generally expect that metadata have been harmonized within a dataset.
+We are currently exploring further metadata harmonization requirements and will update our documentation at the point of implementation.</p>
 </section>
 <section id="pooled-metadata">
 <h4>pooled metadata<a class="headerlink" href="#pooled-metadata" title="Permalink to this heading">#</a></h4>
 <p>For pooled experiments, the primary source of disambiguation of cellular perturbations is through barcode assignment to individual cells and not through a platemap, so the folder structure is different than for arrayed <code class="docutils literal notranslate"><span class="pre">metadata</span></code>.
-The <code class="docutils literal notranslate"><span class="pre">Barcodes.csv</span></code> used for assignment is required and is assumed to be the same for each batch, though other sources of metadata may be included, particularly if there are additional per-well or per-plate differences.
+The <code class="docutils literal notranslate"><span class="pre">Barcodes.csv</span></code> used for assignment is required and is assumed to be the same for each plate within a batch.
+Other sources of metadata may be included, particularly if there are additional per-well or per-plate differences in metadata.
 Additionally, we suggest the inclusion of the metadata.json dictionary used for image processing with the <a class="reference external" href="https://github.com/broadinstitute/pooled-cell-painting-image-processing">pooled cell painting image processing repository</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── metadata
    └── 2021_04_26_Batch1
