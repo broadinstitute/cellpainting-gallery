@@ -1,5 +1,10 @@
 # Publications using datasets in Cell Painting Gallery
 
+This list is not exhuastive but instead we have emphasized publications referencing datasets in the Cell Painting Gallery that were referenced before the datasets received a `cpg identifier`.
+See below for literature searches for specific `cpg identifiers`.
+
+We welcome contributions to this list either through a pull request or by emailing the corresponding author of our [Cell Painting Gallery paper](https://doi.org/10.48550/arXiv.2402.02203).
+
 | First Author                          | <div style="width:350px">Title</div>                                                                                                 | Year | <div style="width:150px">Publication URL</div>                                                                                     | Dataset Name in Gallery                  |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
 | Bray                                  | A dataset of images and morphological profiles of 30 000 small-molecule treatments using the Cell Painting assay                     | 2017 | [Publication](https://doi.org/10.1093/gigascience/giw014)                                                                          | cpg0012-wawer-bioactivecompoundprofiling |
@@ -24,3 +29,41 @@
 | Tromans-Coia and Jamali               | Assessing the performance of the Cell Painting assay across different imaging systems                                                | 2023 | [Preprint](https://doi.org/10.1101/2023.02.15.528711)                                                                              | cpg0002-jump-scope                       |
 | Wawer                                 | Toward performance-diverse small-molecule libraries for cell-based phenotypic screening using multiplexed high-dimensional profiling | 2014 | [Publication](https://doi.org/10.1073/pnas.1410933111)                                                                             | cpg0012-wawer-bioactivecompoundprofiling |
 | Way                                   | Morphology and gene expression profiling provide complementary information for mapping cell state                                    | 2022 | [Publication](https://doi.org/10.1016/j.cels.2022.10.001), [Preprint](https://doi.org/10.1101/2021.10.21.465335)                   | cpg0004-lincs                            |
+
+Click on any of the links below for a Google Scholar search for publications referencing the given dataset.
+
+| Dataset name                             |
+|------------------------------------------|
+| [cpg0000-jump-pilot](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0000%22&hl=en&as_sdt=0,22&as_vis=1)                       |
+| [cpg0001-cellpainting-protocol](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0001%22&hl=en&as_sdt=0,22&as_vis=1)            |
+| [cpg0002-jump-scope](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0002%22&hl=en&as_sdt=0,22&as_vis=1)                       |
+| [cpg0003-rosetta](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0003%22&hl=en&as_sdt=0,22&as_vis=1)                          |
+| [cpg0004-lincs](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0004%22&hl=en&as_sdt=0,22&as_vis=1)                            |
+| [cpg0005-gerry-bioactivity](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0005%22&hl=en&as_sdt=0,22&as_vis=1)                |
+| [cpg0006-miami](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0006%22&hl=en&as_sdt=0,22&as_vis=1)                            |
+| [cpg0007-prism](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0007%22&hl=en&as_sdt=0,22&as_vis=1)                            |
+| [cpg0008-pki](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0008%22&hl=en&as_sdt=0,22&as_vis=1)                              |
+| [cpg0009-molglue](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0009%22&hl=en&as_sdt=0,22&as_vis=1)                          |
+| [cpg0010-caie-drugresponse](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0010%22&hl=en&as_sdt=0,22&as_vis=1)                |
+| [cpg0011-lipocyteprofiler](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0011%22&hl=en&as_sdt=0,22&as_vis=1)                 |
+| [cpg0012-wawer-bioactivecompoundprofiling](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0012%22&hl=en&as_sdt=0,22&as_vis=1) |
+| [cpg0013-gustafsdottir-cellpainting](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0013%22&hl=en&as_sdt=0,22&as_vis=1)       |
+| [cpg0014-jump-adipocyte](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0014%22&hl=en&as_sdt=0,22&as_vis=1)                   |
+| [cpg0015-heterogeneity](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0015%22&hl=en&as_sdt=0,22&as_vis=1)                    |
+| [cpg0016-jump](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0016%22&hl=en&as_sdt=0,22&as_vis=1)                             |
+| [cpg0017-rohban-pathways](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0017%22&hl=en&as_sdt=0,22&as_vis=1)                  |
+| [cpg0018-singh-seedseq](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0018%22&hl=en&as_sdt=0,22&as_vis=1)                    |
+| [cpg0019-moshkov-deepprofiler](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0019%22&hl=en&as_sdt=0,22&as_vis=1)             |
+| [cpg0020-varchamp](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0020%22&hl=en&as_sdt=0,22&as_vis=1)                         |
+| [cpg0021-periscope](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0021%22&hl=en&as_sdt=0,22&as_vis=1)                        |
+| [cpg0022-cmqtl](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0022%22&hl=en&as_sdt=0,22&as_vis=1)                            |
+| [cpg0023-mpi](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0023%22&hl=en&as_sdt=0,22&as_vis=1)                              |
+| [cpg0024-bortezomib](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0024%22&hl=en&as_sdt=0,22&as_vis=1)                       |
+| [cpg0025-dactyloscopy](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0025%22&hl=en&as_sdt=0,22&as_vis=1)                     |
+| [cpg0026-lacoste_haghighi-rare-diseases](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0026%22&hl=en&as_sdt=0,22&as_vis=1)   |
+| [cpg0027-haghighi-barcodecalling](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0027%22&hl=en&as_sdt=0,22&as_vis=1)          |
+| [cpg0028-kelley-resistance](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0028%22&hl=en&as_sdt=0,22&as_vis=1)                |
+| [cpg0029-chroma-pilot](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0029%22&hl=en&as_sdt=0,22&as_vis=1)                     |
+| [cpg0030-gustafsdottir-cellpainting](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0030%22&hl=en&as_sdt=0,22&as_vis=1)       |
+| [cpg0031-caicedo-cmvip](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0031%22&hl=en&as_sdt=0,22&as_vis=1)                    |
+| [cpg0032-pooled-rare](https://scholar.google.com/scholar?as_ylo=2023&q=%22cpg0032%22&hl=en&as_sdt=0,22&as_vis=1)                      |

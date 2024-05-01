@@ -307,7 +307,10 @@ Within the plate folder there are typically two files - a `load_data.csv` for pi
 
 #### arrayed metadata
 
-The `metadata` folder has a slightly different structure from other `workspace` folders, as explained in the [profiling recipe](https://github.com/cytomining/profiling-recipe#metadata-platemap-and-barcode_platemap-files)
+The `metadata` folder has a slightly different structure from other `workspace` folders.
+It complies with [pycytominer](https://github.com/cytomining/pycytominer) metadata requirements.
+
+Additional context and information may also be found in the [profiling recipe](https://github.com/cytomining/profiling-recipe#metadata-platemap-and-barcode_platemap-files) and the [Image-based Profiling Handbook](https://cytomining.github.io/profiling-handbook/05-create-profiles.html#create-metadata-files).
 
 ```
 └── metadata
@@ -315,15 +318,36 @@ The `metadata` folder has a slightly different structure from other `workspace` 
      |   └── external_metadata.tsv
      └── platemaps
          └── 2021_04_26_Batch1
-             ├── platemap
-             │   └── OAA01.02.03.04.A.txt
-             └── barcode_platemap.csv
+             ├── barcode_platemap.csv
+             └── platemap
+                 └── OAA01.02.03.04.A.txt
 ```
+
+All datasets have at least `barcode_platemap.csv` and `PLATEMAP.txt` files.
+
+Within `barcode_platemap.csv`, there are two columns: `Assay_Plate_Barcode` and `Plate_Map_Name`.  
+
+- `Assay_Plate_Barcode` matches the plate name used for analysis.
+- `Plate_Map_Name` is the name of a platemap in the `platemaps/BATCH/platemap` folder.
+There may be one-to-one or many-to-one correspondence between `Assay_Plate_Barcode` and `Plate_Map_Name`.
+
+Within `PLATEMAP.txt` there at least `plate_map_name` and `well_position` columns and may be any additional number of metadata columns.  
+
+- `plate_map_name` matches the `Plate_Map_Name` in the `barcode_platemap.csv` and the `PLATEMAP` in the file name.
+- `well_position` matches the well names in the data output by CellProfiler and are typically based on raw image file naming as so are generally formatted like `A01` but may be upper or lowercase and may or may not have zero padding (e.g. `a1`, `a01`, `A1`, `A01`).
+
+Some datasets additionally have `external_metadata.tsv`.
+These contain mapping between a perturbation identifier to other metadata using matching column names.
+
+We do not currently enforce metadata harmonization beyond what is described here.
+However, one can generally expect that metadata have been harmonized within a dataset.
+We are currently exploring further metadata harmonization requirements and will update our documentation at the point of implementation.
 
 #### pooled metadata
 
 For pooled experiments, the primary source of disambiguation of cellular perturbations is through barcode assignment to individual cells and not through a platemap, so the folder structure is different than for arrayed `metadata`.
-The `Barcodes.csv` used for assignment is required and is assumed to be the same for each batch, though other sources of metadata may be included, particularly if there are additional per-well or per-plate differences.
+The `Barcodes.csv` used for assignment is required and is assumed to be the same for each plate within a batch.
+Other sources of metadata may be included, particularly if there are additional per-well or per-plate differences in metadata.
 Additionally, we suggest the inclusion of the metadata.json dictionary used for image processing with the [pooled cell painting image processing repository](https://github.com/broadinstitute/pooled-cell-painting-image-processing).
 
 ```

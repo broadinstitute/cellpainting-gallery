@@ -5,7 +5,7 @@ We provide below instructions for browsing data using Quilt, AWS CLI, or boto3.
 
 ## Browsing the Cell Painting Gallery with Quilt
 
-![Browsing CPG with Quilt](images/Quilt_CPG_browsing.png.png)
+![Browsing CPG with Quilt](images/Quilt_CPG_browsing.png)
 
 The [Cell Painting Gallery is indexed on Quilt](https://open.quiltdata.com/b/cellpainting-gallery/tree/) which enables account-free, in-browser browsing of data.
 Within the Cell Painting Gallery bucket you can click through prefixes for a complete listing of all files with their size and last-modified date.

@@ -7,7 +7,7 @@ authors:
     country: US
 repository: https://github.com/broadinstitute/cellpainting-gallery
 title: "Cell Painting Gallery"
-doi: https://doi.org/10.48550/arXiv.2402.02203
+doi: 10.48550/arXiv.2402.02203
 date-released: 2023-01-01
 preferred-citation:
   type: article

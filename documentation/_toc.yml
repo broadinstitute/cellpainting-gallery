@@ -8,9 +8,13 @@ parts:
   - file: data_structure
   - file: browsing_data
   - file: download_instructions
+- caption: Applications
+  chapters:
+  - file: workflows
+  - file: machine_learning
 - caption: Technical Guides
   chapters:
   - file: contributing_to_cpg
   - file: prefixes
   - file: publications
-  - file: workflows
+
