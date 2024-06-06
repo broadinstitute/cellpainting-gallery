@@ -14,7 +14,7 @@ This workflow was used to create single-cell crops from the entire `cpg0016-jump
 
 ## Distributed-CellProfiler
 
-Workflow: [Load images in cpg0016-jump, make measurements, and output image crops using Distributed-CellProfiler](https://github.com/DistributedScience/Distributed-CellProfiler/tree/master/example_project_cpg).
+Workflow: [Load images in cpg0016-jump, make measurements, and output image crops using Distributed-CellProfiler](https://github.com/DistributedScience/Distributed-CellProfiler/tree/master/example_project_CPG).
 
 [Distributed-CellProfiler](https://github.com/DistributedScience/Distributed-CellProfiler) is simple, open-source Python software for running encapsulated docker containers with CellProfiler in the Amazon Web Services (AWS) infrastructure.
 [CellProfiler](https://cellprofiler.org) is an open-source image analysis software that excels in GUI or headless handling of high-content workflows.
