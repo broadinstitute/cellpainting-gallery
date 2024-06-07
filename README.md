@@ -17,8 +17,8 @@ Please see [our documentation](https://broadinstitute.github.io/cellpainting-gal
 It includes:
 
 - [how to browse gallery data](https://broadinstitute.github.io/cellpainting-gallery/browsing_data)
-- how to download gallery data (with [AWS CLI](https://broadinstitute.github.io/cellpainting-gallery/downloading_with_CLI), [Quilt](https://broadinstitute.github.io/cellpainting-gallery/downloading_with_Quilt), or [dataset-specific tools](https://broadinstitute.github.io/cellpainting-gallery/dataset_specific_access))
-- [how to contribute to the gallery](https://broadinstitute.github.io/cellpainting-gallery/contributing_data)
+- [how to download gallery data](https://broadinstitute.github.io/cellpainting-gallery/download_instructions.html) (with AWS CLI, Quilt, or dataset-specific tools)
+- [how to contribute to the gallery](https://broadinstitute.github.io/cellpainting-gallery/contributing_to_cpg)
 
 ## Available datasets
 
