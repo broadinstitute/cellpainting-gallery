@@ -1,7 +1,7 @@
 # Browsing Data on the Cell Painting Gallery
 
 Before browsing data on the Cell Painting Gallery you may find it helpful to read about our [data structure](data_structure.md).
-We provide below instructions for browsing data using Quilt, AWS CLI, or boto3.
+We provide below instructions for browsing data using Quilt, AWS CLI, boto3, or Cell Painting Gallery Tools.
 
 ## Browsing the Cell Painting Gallery with Quilt
 
@@ -107,3 +107,12 @@ print (file_list)
 
 This will list all files with a prefix no matter the subsequent "nesting".
 The `fullfile_list` returns a list of complete files (i.e. all objects) within the `prefix` you passed (e.g. `['cpg0000-jump-pilot/source_4/workspace/load_data_csv/2020_11_04_CPJUMP1/BR00116991/load_data.csv', 'cpg0000-jump-pilot/source_4/workspace/load_data_csv/2020_11_04_CPJUMP1/BR00116991/load_data_with_illum.csv']`) while the `file_list` returns just the file names in a list (e.g. `['load_data.csv', 'load_data_with_illum.csv']`).
+
+## Searching Metadata in the Cell Painting Gallery with Cell Painting Gallery Tools
+
+![Searching CPG Metadata](images/CPG_Tools_Metadata_Search.png)
+
+We currently have an alpha release of our Cell Painting Gallery Tools which enables you to search through all metadata files in the Cell Painting Gallery for a string of interest.
+Enter any string (e.g. gene names, compound names, etc.) and it will return the metadata files that contain the matching string.
+
+Please note that this is an alpha release that is under active development.

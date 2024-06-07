@@ -395,6 +395,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#browsing-the-cell-painting-gallery-with-quilt">Browsing the Cell Painting Gallery with Quilt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-the-cell-painting-gallery-with-aws-cli">Listing the Cell Painting Gallery with AWS CLI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-the-cell-painting-gallery-with-boto3">Listing the Cell Painting Gallery with boto3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-metadata-in-the-cell-painting-gallery-with-cell-painting-gallery-tools">Searching Metadata in the Cell Painting Gallery with Cell Painting Gallery Tools</a></li>
 </ul>
             </nav>
         </div>
@@ -409,7 +410,7 @@ document.write(`
   <section id="browsing-data-on-the-cell-painting-gallery">
 <h1>Browsing Data on the Cell Painting Gallery<a class="headerlink" href="#browsing-data-on-the-cell-painting-gallery" title="Permalink to this heading">#</a></h1>
 <p>Before browsing data on the Cell Painting Gallery you may find it helpful to read about our <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a>.
-We provide below instructions for browsing data using Quilt, AWS CLI, or boto3.</p>
+We provide below instructions for browsing data using Quilt, AWS CLI, boto3, or Cell Painting Gallery Tools.</p>
 <section id="browsing-the-cell-painting-gallery-with-quilt">
 <h2>Browsing the Cell Painting Gallery with Quilt<a class="headerlink" href="#browsing-the-cell-painting-gallery-with-quilt" title="Permalink to this heading">#</a></h2>
 <p><img alt="Browsing CPG with Quilt" src="_images/Quilt_CPG_browsing.png" /></p>
@@ -500,6 +501,13 @@ The <code class="docutils literal notranslate"><span class="pre">fullprefix_list
 <p>This will list all files with a prefix no matter the subsequent “nesting”.
 The <code class="docutils literal notranslate"><span class="pre">fullfile_list</span></code> returns a list of complete files (i.e. all objects) within the <code class="docutils literal notranslate"><span class="pre">prefix</span></code> you passed (e.g. <code class="docutils literal notranslate"><span class="pre">['cpg0000-jump-pilot/source_4/workspace/load_data_csv/2020_11_04_CPJUMP1/BR00116991/load_data.csv',</span> <span class="pre">'cpg0000-jump-pilot/source_4/workspace/load_data_csv/2020_11_04_CPJUMP1/BR00116991/load_data_with_illum.csv']</span></code>) while the <code class="docutils literal notranslate"><span class="pre">file_list</span></code> returns just the file names in a list (e.g. <code class="docutils literal notranslate"><span class="pre">['load_data.csv',</span> <span class="pre">'load_data_with_illum.csv']</span></code>).</p>
 </section>
+<section id="searching-metadata-in-the-cell-painting-gallery-with-cell-painting-gallery-tools">
+<h2>Searching Metadata in the Cell Painting Gallery with Cell Painting Gallery Tools<a class="headerlink" href="#searching-metadata-in-the-cell-painting-gallery-with-cell-painting-gallery-tools" title="Permalink to this heading">#</a></h2>
+<p><img alt="Searching CPG Metadata" src="_images/CPG_Tools_Metadata_Search.png" /></p>
+<p>We currently have an alpha release of our Cell Painting Gallery Tools which enables you to search through all metadata files in the Cell Painting Gallery for a string of interest.
+Enter any string (e.g. gene names, compound names, etc.) and it will return the metadata files that contain the matching string.</p>
+<p>Please note that this is an alpha release that is under active development.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -568,6 +576,7 @@ The <code class="docutils literal notranslate"><span class="pre">fullfile_list</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#browsing-the-cell-painting-gallery-with-quilt">Browsing the Cell Painting Gallery with Quilt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-the-cell-painting-gallery-with-aws-cli">Listing the Cell Painting Gallery with AWS CLI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-the-cell-painting-gallery-with-boto3">Listing the Cell Painting Gallery with boto3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-metadata-in-the-cell-painting-gallery-with-cell-painting-gallery-tools">Searching Metadata in the Cell Painting Gallery with Cell Painting Gallery Tools</a></li>
 </ul>
   </nav></div>
 
