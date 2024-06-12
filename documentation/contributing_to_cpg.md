@@ -16,7 +16,7 @@ Instead, please direct such questions to the respective dataset repository linke
 Contributions can be in the form of complete datasets or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
 Please contact @erinweisbart or @shntnu to initiate discussion of a data contribution.
 
-For new datasets, please include in your contact:
+For new datasets, please include the following details in your contact:
 
 1) assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)
 2) approximate data size
@@ -24,9 +24,9 @@ For new datasets, please include in your contact:
 4) institutional identifier to use for data (e.g. `broad`, `anonymous`)
 5) suggested top level project tag. Typically this is a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)
 
-For existing datasets, please include in your contact:
+For existing datasets, please  the following details include in your contact:
 
-1) top level project tag that your data corresponds to (e.g. cpg0016-jump)
+1) top-level project tag that your data corresponds to (e.g. `cpg0016-jump`)
 2) approximate data size
 3) components you wish to contribute
 
