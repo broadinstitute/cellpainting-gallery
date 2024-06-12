@@ -39,4 +39,6 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0031-caicedo-cmvip                    |
 | cpg0032-pooled-rare                      |
 | cpg0033-oasis-pilot                      |
-| cpg0034-compressed                       |
+| cpg0034-arevalo-su-motive                |
+| cpg0035-compressed                       |
+| cpg0036-EU-OS-bioactives                 |
