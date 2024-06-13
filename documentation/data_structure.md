@@ -24,7 +24,8 @@ It can be anonymized (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `s
 
 Not all projects will have all parent structures.
 
-The "completeness" of a project can be checked using thouris [data validator](https://github.com/broadinstitute/cpg).
+The "completeness" of a project can be checked using our [data validator](https://github.com/broadinstitute/cpg).
+Please note that it is in alpha and furhter functionality and documentation are under development.
 
 ## `images` folder structure
 
@@ -47,7 +48,7 @@ cellpainting-gallery/
 ```
 
 Within the outer `images` folder, there are `YYYY_MM_DD_<batch-name>` subfolders for each batch.
-Each batch folder should start with `YYYY_MM_DD` of the date that image acquisition started (or your best guess thereof).
+Each batch folder typically starts with `YYYY_MM_DD` of the date that image acquisition started.
 The rest of the batch folder name can be a simple ordinal (e.g. `YYYY_MM_DD_Batch1`) or more descriptive of its contents (e.g. `2020_01_02_TestPhalloidinConcentration`).
 A single batch typically contains all of the plates that were imaged (or started acquisition) on that day.
 However, for simplifying project tracking and analysis, sometimes plates imaged on the same day are divided into multiple batches where each batch is a different experimental condition (e.g. `2020_01_02_LowPhalloidin` and `2020_01_02_HighPhalloidin`).
@@ -294,6 +295,11 @@ In this example batch:
 Within the `load_data_csv` folder is a folder for each batch and within each batch folder is a folder for each plate.
 Within the plate folder there are typically two files - a `load_data.csv` for pipelines that do not use an illumination correction function and a `load_data_with_illum.csv` for pipelines that do use an illumination correction function, however atypical workflows can have other arrangements such as a separate CSV for each pipeline in the workflow.
 
+The `load_data.csv` maps the actual file names and paths and their metadata (e.g. channel number, channel name) to the naming information passed to CellProfiler for running the images in a CellProfiler pipeline.
+More information on `load_data.csv`'s and their contents is available in [CellProfiler documentation](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/fileprocessing.html#loaddata).
+
+Note that we do not currently enforce `load_data.csv` path requirements so `load_data.csv`'s may have paths that are either S3 paths (`s3://cellpainting-gallery/`) or mounted paths (`/home/ubuntu/bucket/`) and may have paths that match their current Cell Painting Gallery locations or may have paths of their original location before being transferred to the gallery.
+
 ```
 └── load_data_csv
      └── 2021_04_26_Batch1
@@ -328,8 +334,10 @@ All datasets have at least `barcode_platemap.csv` and `PLATEMAP.txt` files.
 Within `barcode_platemap.csv`, there are two columns: `Assay_Plate_Barcode` and `Plate_Map_Name`.  
 
 - `Assay_Plate_Barcode` matches the plate name used for analysis.
+This may be a full string match to the platenames as acquired off the imager and stored in the `images` folder (e.g.`BR00117035__2021-05-02T16_02_51-Measurement1`) or it may be a truncation of the full string as long as it is still a unique identifier (e.g. `BR00117035`).
 - `Plate_Map_Name` is the name of a platemap in the `platemaps/BATCH/platemap` folder.
 There may be one-to-one or many-to-one correspondence between `Assay_Plate_Barcode` and `Plate_Map_Name`.
+Platemap naming can vary greatly from dataset to dataset depending upon the source and their data tracking/naming conventions.
 
 Within `PLATEMAP.txt` there at least `plate_map_name` and `well_position` columns and may be any additional number of metadata columns.  
 
