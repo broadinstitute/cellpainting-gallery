@@ -58,8 +58,8 @@ Create `create_credentials.sh` file on your computer and [copy in the code from 
 
 ## 6. Run your transfer commands
 
-Activate your credentials with `./create_credentials.sh`.
-(Note that if you have saved your `create_credentials.sh` files into a different location than you are currently navigated into, you will need to instead run `/path/to/create_credentials.sh` with your correct file location.)
+Activate your credentials with `source ./create_credentials.sh`.
+(Note that if you have saved your `source create_credentials.sh` files into a different location than you are currently navigated into, you will need to instead run `source /path/to/create_credentials.sh` with your correct file location.)
 This activates your credentials for 12 hours (the maximum duration).
 
 Run your transfer commands to `staging-cellpainting-gallery`.
@@ -68,4 +68,4 @@ Run your transfer commands to `staging-cellpainting-gallery`.
 
 Once the transfers are complete, either you (Imaging Platform internal) or your data champion (if external) must verify the data transferred to `staging-cellpainting-gallery` is complete.
 (Currently this is done manually, though this will be programatic in the future.)
-Once verification is complete, let a Gallery maintainer (Erin, Shantanu, Ank) know that they should initiate final transfer.
+Once verification is complete, let a Gallery maintainer (Erin, Shantanu, Ank) know that they should initiate transfer from staging to Gallery.
