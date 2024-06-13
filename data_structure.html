@@ -453,7 +453,8 @@ It can be anonymized (e.g. <code class="docutils literal notranslate"><span clas
 <li><p><code class="docutils literal notranslate"><span class="pre">workspace_dl</span></code>: everything else that results from deep learning-based features goes here.</p></li>
 </ul>
 <p>Not all projects will have all parent structures.</p>
-<p>The “completeness” of a project can be checked using thouris <a class="reference external" href="https://github.com/broadinstitute/cpg">data validator</a>.</p>
+<p>The “completeness” of a project can be checked using our <a class="reference external" href="https://github.com/broadinstitute/cpg">data validator</a>.
+Please note that it is in alpha and furhter functionality and documentation are under development.</p>
 <section id="images-folder-structure">
 <h2><code class="docutils literal notranslate"><span class="pre">images</span></code> folder structure<a class="headerlink" href="#images-folder-structure" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cellpainting-gallery/
@@ -474,7 +475,7 @@ It can be anonymized (e.g. <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 <p>Within the outer <code class="docutils literal notranslate"><span class="pre">images</span></code> folder, there are <code class="docutils literal notranslate"><span class="pre">YYYY_MM_DD_&lt;batch-name&gt;</span></code> subfolders for each batch.
-Each batch folder should start with <code class="docutils literal notranslate"><span class="pre">YYYY_MM_DD</span></code> of the date that image acquisition started (or your best guess thereof).
+Each batch folder typically starts with <code class="docutils literal notranslate"><span class="pre">YYYY_MM_DD</span></code> of the date that image acquisition started.
 The rest of the batch folder name can be a simple ordinal (e.g. <code class="docutils literal notranslate"><span class="pre">YYYY_MM_DD_Batch1</span></code>) or more descriptive of its contents (e.g. <code class="docutils literal notranslate"><span class="pre">2020_01_02_TestPhalloidinConcentration</span></code>).
 A single batch typically contains all of the plates that were imaged (or started acquisition) on that day.
 However, for simplifying project tracking and analysis, sometimes plates imaged on the same day are divided into multiple batches where each batch is a different experimental condition (e.g. <code class="docutils literal notranslate"><span class="pre">2020_01_02_LowPhalloidin</span></code> and <code class="docutils literal notranslate"><span class="pre">2020_01_02_HighPhalloidin</span></code>).</p>
@@ -707,6 +708,9 @@ Within each plate folder is a single-cell SQLite file, comprising all measuremen
 <h3><code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code> folder structure<a class="headerlink" href="#load-data-csv-folder-structure" title="Permalink to this heading">#</a></h3>
 <p>Within the <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code> folder is a folder for each batch and within each batch folder is a folder for each plate.
 Within the plate folder there are typically two files - a <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> for pipelines that do not use an illumination correction function and a <code class="docutils literal notranslate"><span class="pre">load_data_with_illum.csv</span></code> for pipelines that do use an illumination correction function, however atypical workflows can have other arrangements such as a separate CSV for each pipeline in the workflow.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> maps the actual file names and paths and their metadata (e.g. channel number, channel name) to the naming information passed to CellProfiler for running the images in a CellProfiler pipeline.
+More information on <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code>’s and their contents is available in <a class="reference external" href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/fileprocessing.html#loaddata">CellProfiler documentation</a>.</p>
+<p>Note that we do not currently enforce <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> path requirements so <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code>’s may have paths that are either S3 paths (<code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/</span></code>) or mounted paths (<code class="docutils literal notranslate"><span class="pre">/home/ubuntu/bucket/</span></code>) and may have paths that match their current Cell Painting Gallery locations or may have paths of their original location before being transferred to the gallery.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── load_data_csv
      └── 2021_04_26_Batch1
          ├── BR00117035
@@ -736,9 +740,11 @@ It complies with <a class="reference external" href="https://github.com/cytomini
 <p>All datasets have at least <code class="docutils literal notranslate"><span class="pre">barcode_platemap.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">PLATEMAP.txt</span></code> files.</p>
 <p>Within <code class="docutils literal notranslate"><span class="pre">barcode_platemap.csv</span></code>, there are two columns: <code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> and <code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code>.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> matches the plate name used for analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> matches the plate name used for analysis.
+This may be a full string match to the platenames as acquired off the imager and stored in the <code class="docutils literal notranslate"><span class="pre">images</span></code> folder (e.g.<code class="docutils literal notranslate"><span class="pre">BR00117035__2021-05-02T16_02_51-Measurement1</span></code>) or it may be a truncation of the full string as long as it is still a unique identifier (e.g. <code class="docutils literal notranslate"><span class="pre">BR00117035</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code> is the name of a platemap in the <code class="docutils literal notranslate"><span class="pre">platemaps/BATCH/platemap</span></code> folder.
-There may be one-to-one or many-to-one correspondence between <code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> and <code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code>.</p></li>
+There may be one-to-one or many-to-one correspondence between <code class="docutils literal notranslate"><span class="pre">Assay_Plate_Barcode</span></code> and <code class="docutils literal notranslate"><span class="pre">Plate_Map_Name</span></code>.
+Platemap naming can vary greatly from dataset to dataset depending upon the source and their data tracking/naming conventions.</p></li>
 </ul>
 <p>Within <code class="docutils literal notranslate"><span class="pre">PLATEMAP.txt</span></code> there at least <code class="docutils literal notranslate"><span class="pre">plate_map_name</span></code> and <code class="docutils literal notranslate"><span class="pre">well_position</span></code> columns and may be any additional number of metadata columns.</p>
 <ul class="simple">

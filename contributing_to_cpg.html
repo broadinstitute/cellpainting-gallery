@@ -393,15 +393,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-documentation">Contributing to Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assay-structure">Assay structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accompanying-information">Accompanying information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-data-deposition">Preparing for data deposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-pull-request">Create a pull-request</a></li>
 </ul>
 </li>
 </ul>
@@ -423,28 +420,34 @@ document.write(`
 <p>If you would like to contribute to our documentation, please make a <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/pulls">Pull Request</a>.
 We particularly welcome contributions to our list of <a class="reference internal" href="publications.html"><span class="doc std std-doc">publications using data from the Cell Painting Gallery</span></a> and to <a class="reference internal" href="workflows.html"><span class="doc std std-doc">workflows accessing the Cell Painting Gallery</span></a>.</p>
 <p>To ask a question that is not covered by our documentation, you are also welcome to create an <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/issues">Issue</a> in the Cell Painting Gallery repository.
-Please note that dataset-specific questions should be directed to the respective dataset repository linked in the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">README</a>.</p>
+Please note that the Cell Painting Gallery is not a place to ask dataset-specific questions.
+Instead, please direct such questions to the respective dataset repository linked in the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">README</a> or if no dataset repository, to the authors of any associated publication.</p>
 </section>
 <section id="contributing-data-to-the-gallery">
 <h2>Contributing Data to the Gallery<a class="headerlink" href="#contributing-data-to-the-gallery" title="Permalink to this heading">#</a></h2>
-<p>Contributions can be in the form of complete datasets or additions to extant datasets (such as segmentations or deep-learning generated profiles).
-Please contact &#64;erinweisbart or &#64;shntnu to initiate discussion of a data contribution.
-After receiving approval, you will receive a detailed contribution workflow customized for your data contribution.</p>
-<p>To be approved, your dataset must meet the following requirements:</p>
-<section id="assay-structure">
-<h3>Assay structure<a class="headerlink" href="#assay-structure" title="Permalink to this heading">#</a></h3>
-<p>All datasets in the Cell Painting Gallery must be from a published Cell Painting Assay version or a close derivative.
-If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.</p>
+<p>Contributions can be in the form of complete datasets or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
+Please contact &#64;erinweisbart or &#64;shntnu to initiate discussion of a data contribution.</p>
+<p>For new datasets, please include the following details in your contact:</p>
+<ol class="arabic simple">
+<li><p>assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)</p></li>
+<li><p>approximate data size</p></li>
+<li><p>components you wish to contribute (all are described in <a class="reference external" href="https://broadinstitute.github.io/cellpainting-gallery/data_structure.html">data structure</a>) (major components: <code class="docutils literal notranslate"><span class="pre">images</span></code>, <code class="docutils literal notranslate"><span class="pre">analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">backend</span></code>, <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code>, <code class="docutils literal notranslate"><span class="pre">profiles</span></code>. optional components: <code class="docutils literal notranslate"><span class="pre">pipelines</span></code>, <code class="docutils literal notranslate"><span class="pre">qc</span></code>, etc.). Note that <code class="docutils literal notranslate"><span class="pre">metadata</span></code> is required.</p></li>
+<li><p>institutional identifier to use for data (e.g. <code class="docutils literal notranslate"><span class="pre">broad</span></code>, <code class="docutils literal notranslate"><span class="pre">anonymous</span></code>)</p></li>
+<li><p>suggested top level project tag. Typically this is a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)</p></li>
+</ol>
+<p>For existing datasets, please  the following details include in your contact:</p>
+<ol class="arabic simple">
+<li><p>top-level project tag that your data corresponds to (e.g. <code class="docutils literal notranslate"><span class="pre">cpg0016-jump</span></code>)</p></li>
+<li><p>approximate data size</p></li>
+<li><p>components you wish to contribute</p></li>
+</ol>
+<p>After approval, we will assign you a project identifier and create a new <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/discussions">Github Discussion</a> to provide next steps and track data deposition.</p>
 </section>
-<section id="accompanying-information">
-<h3>Accompanying information<a class="headerlink" href="#accompanying-information" title="Permalink to this heading">#</a></h3>
-<p>Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/">Cell Painting Gallery repository</a> with updates to the README to add your dataset to <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">Available datasets</a>.
-If your dataset is associated with a publication, please also edit <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/docs/publications.md">Publications</a>.</p>
-</section>
-<section id="data-structure">
-<h3>Data structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h3>
+<section id="preparing-for-data-deposition">
+<h2>Preparing for data deposition<a class="headerlink" href="#preparing-for-data-deposition" title="Permalink to this heading">#</a></h2>
+<p>In preparation for transferring data, please perform all of the following steps:</p>
 <section id="remove-special-characters-in-folder-names">
-<h4>Remove special characters in folder names<a class="headerlink" href="#remove-special-characters-in-folder-names" title="Permalink to this heading">#</a></h4>
+<h3>Remove special characters in folder names<a class="headerlink" href="#remove-special-characters-in-folder-names" title="Permalink to this heading">#</a></h3>
 <p>To the maximum extent possible, please avoid the following in your folder names</p>
 <ul class="simple">
 <li><p>Whitespaces</p></li>
@@ -453,17 +456,20 @@ If your dataset is associated with a publication, please also edit <a class="ref
 <p>Please delete these characters if they are present in your folder names.</p>
 </section>
 <section id="prepare-project-specific-naming">
-<h4>Prepare project-specific naming<a class="headerlink" href="#prepare-project-specific-naming" title="Permalink to this heading">#</a></h4>
+<h3>Prepare project-specific naming<a class="headerlink" href="#prepare-project-specific-naming" title="Permalink to this heading">#</a></h3>
 <p>Reference <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a> for comprehensive information on folder structure and naming.
 Your data must strictly comply with the data structure we have laid out.
 Additionally it must include all, unblinded metadata.</p>
-<p>If your new dataset is approved for inclusion, we will assign you a project identifier.
-Your source name can be your institution or it can be anonymized.</p>
 </section>
 <section id="validate-your-data">
-<h4>Validate your data<a class="headerlink" href="#validate-your-data" title="Permalink to this heading">#</a></h4>
-<p>Use our <a class="reference external" href="http://github.com/broadinstitute.org/cpg">data validator</a> to validate that your data complies with our required structure.</p>
+<h3>Validate your data<a class="headerlink" href="#validate-your-data" title="Permalink to this heading">#</a></h3>
+<p>We are building a <a class="reference external" href="http://github.com/broadinstitute/cpg/cpgdata">data validator</a> to check compliance with our required structure.
+It is currently in alpha and for internal use but we plan to develop it to the point that contributors can use it to validate their data before deposition in the future.</p>
 </section>
+<section id="create-a-pull-request">
+<h3>Create a pull-request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this heading">#</a></h3>
+<p>Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/">Cell Painting Gallery repository</a> with updates to the README to add your dataset to <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">Available datasets</a>.
+If your dataset is associated with a publication, please also edit <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/docs/publications.md">Publications</a>.</p>
 </section>
 </section>
 </section>
@@ -532,15 +538,12 @@ Your source name can be your institution or it can be anonymized.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-documentation">Contributing to Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assay-structure">Assay structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accompanying-information">Accompanying information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-data-deposition">Preparing for data deposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-pull-request">Create a pull-request</a></li>
 </ul>
 </li>
 </ul>
