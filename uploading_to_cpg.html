@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Contributing &#8212; Cell Painting Gallery Documentation</title>
+    <title>Tutorial: Uploading to the Cell Painting Gallery &#8212; Cell Painting Gallery Documentation</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing_to_cpg';</script>
-    <link rel="canonical" href="broadinstitute.github.io/contributing_to_cpg.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uploading_to_cpg';</script>
+    <link rel="canonical" href="broadinstitute.github.io/uploading_to_cpg.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial: Uploading to the Cell Painting Gallery" href="uploading_to_cpg.html" />
-    <link rel="prev" title="Machine Learning (ML)/Deep Learning (DL)" href="machine_learning.html" />
+    <link rel="next" title="Prefixes" href="prefixes.html" />
+    <link rel="prev" title="Contributing" href="contributing_to_cpg.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,8 +177,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Guides</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uploading_to_cpg.html">Tutorial: Uploading to the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing_to_cpg.html">Contributing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial: Uploading to the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prefixes.html">Prefixes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using datasets in Cell Painting Gallery</a></li>
 </ul>
@@ -252,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/contributing_to_cpg.md" target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/uploading_to_cpg.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fcontributing_to_cpg.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fuploading_to_cpg.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +299,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/contributing_to_cpg.md" target="_blank"
+      <li><a href="_sources/uploading_to_cpg.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Contributing</h1>
+    <h1>Tutorial: Uploading to the Cell Painting Gallery</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,15 +393,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-documentation">Contributing to Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-data-deposition">Preparing for data deposition</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-pull-request">Create a pull-request</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-upload-credentials">1. Get upload credentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-aws-cli">2. Install AWS CLI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-upload-credentials-to-your-aws-cli-config">3. Add your upload credentials to your AWS CLI config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-aws-cli-data-transfer-commands">4. Prepare your AWS CLI data transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-create-credentials-sh">5. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-transfer-commands">6. Run your transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-transfer-from-staging-to-gallery">7. Initiate transfer from staging to Gallery</a></li>
 </ul>
             </nav>
         </div>
@@ -413,65 +411,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="contributing">
-<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h1>
-<p>We welcome contributions to the Cell Painting Gallery.</p>
-<section id="contributing-to-documentation">
-<h2>Contributing to Documentation<a class="headerlink" href="#contributing-to-documentation" title="Permalink to this heading">#</a></h2>
-<p>If you would like to contribute to our documentation, please make a <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/pulls">Pull Request</a>.
-We particularly welcome contributions to our list of <a class="reference internal" href="publications.html"><span class="doc std std-doc">publications using data from the Cell Painting Gallery</span></a> and to <a class="reference internal" href="workflows.html"><span class="doc std std-doc">workflows accessing the Cell Painting Gallery</span></a>.</p>
-<p>To ask a question that is not covered by our documentation, you are also welcome to create an <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/issues">Issue</a> in the Cell Painting Gallery repository.
-Please note that the Cell Painting Gallery is not a place to ask dataset-specific questions.
-Instead, please direct such questions to the respective dataset repository linked in the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">README</a> or if no dataset repository, to the authors of any associated publication.</p>
+  <section id="tutorial-uploading-to-the-cell-painting-gallery">
+<h1>Tutorial: Uploading to the Cell Painting Gallery<a class="headerlink" href="#tutorial-uploading-to-the-cell-painting-gallery" title="Permalink to this heading">#</a></h1>
+<p>To preserve data integrity, any data going into the Cell Painting Gallery is first uploaded to a staging bucket, <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.
+A gallery maintainer can then approve the staged data and initiate transfer to <code class="docutils literal notranslate"><span class="pre">cellpainting-gallery</span></code>.</p>
+<section id="get-upload-credentials">
+<h2>1. Get upload credentials<a class="headerlink" href="#get-upload-credentials" title="Permalink to this heading">#</a></h2>
+<p>Upload credentials enable anyone with the credentials to upload to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.
+They are generated on a per-prefix basis so each credential set can only be used for upload to a single prefix.</p>
+<p><strong>Imaging Platform internal</strong>: Email Ank to ask for credentials, letting him know the prefix you want to upload to.</p>
+<p><strong>External source</strong>: Your dataset will have an Imaging Platform champion.
+That champion will contact Ank to request credentials and share them with you.</p>
 </section>
-<section id="contributing-data-to-the-gallery">
-<h2>Contributing Data to the Gallery<a class="headerlink" href="#contributing-data-to-the-gallery" title="Permalink to this heading">#</a></h2>
-<p>Contributions can be in the form of complete datasets or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
-Please contact &#64;erinweisbart or &#64;shntnu to initiate discussion of a data contribution.</p>
-<p>For new datasets, please include the following details in your contact:</p>
-<ol class="arabic simple">
-<li><p>assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)</p></li>
-<li><p>approximate data size</p></li>
-<li><p>components you wish to contribute (all are described in <a class="reference external" href="https://broadinstitute.github.io/cellpainting-gallery/data_structure.html">data structure</a>) (major components: <code class="docutils literal notranslate"><span class="pre">images</span></code>, <code class="docutils literal notranslate"><span class="pre">analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">backend</span></code>, <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code>, <code class="docutils literal notranslate"><span class="pre">profiles</span></code>. optional components: <code class="docutils literal notranslate"><span class="pre">pipelines</span></code>, <code class="docutils literal notranslate"><span class="pre">qc</span></code>, etc.). Note that <code class="docutils literal notranslate"><span class="pre">metadata</span></code> is required.</p></li>
-<li><p>institutional identifier to use for data (e.g. <code class="docutils literal notranslate"><span class="pre">broad</span></code>, <code class="docutils literal notranslate"><span class="pre">anonymous</span></code>)</p></li>
-<li><p>suggested top level project tag. Typically this is a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)</p></li>
-</ol>
-<p>For existing datasets, please  the following details include in your contact:</p>
-<ol class="arabic simple">
-<li><p>top-level project tag that your data corresponds to (e.g. <code class="docutils literal notranslate"><span class="pre">cpg0016-jump</span></code>)</p></li>
-<li><p>approximate data size</p></li>
-<li><p>components you wish to contribute</p></li>
-</ol>
-<p>After approval, we will assign you a project identifier and create a new <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/discussions">Github Discussion</a> to provide next steps and track data deposition.</p>
+<section id="install-aws-cli">
+<h2>2. Install AWS CLI<a class="headerlink" href="#install-aws-cli" title="Permalink to this heading">#</a></h2>
+<p>Follow AWS documentation to <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">install AWS CLI</a>.</p>
 </section>
-<section id="preparing-for-data-deposition">
-<h2>Preparing for data deposition<a class="headerlink" href="#preparing-for-data-deposition" title="Permalink to this heading">#</a></h2>
-<p>In preparation for transferring data, please perform all of the following steps:</p>
-<section id="remove-special-characters-in-folder-names">
-<h3>Remove special characters in folder names<a class="headerlink" href="#remove-special-characters-in-folder-names" title="Permalink to this heading">#</a></h3>
-<p>To the maximum extent possible, please avoid the following in your folder names</p>
-<ul class="simple">
-<li><p>Whitespaces</p></li>
-<li><p>Special characters other than <code class="docutils literal notranslate"><span class="pre">_</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
-</ul>
-<p>Please delete these characters if they are present in your folder names.</p>
+<section id="add-your-upload-credentials-to-your-aws-cli-config">
+<h2>3. Add your upload credentials to your AWS CLI config<a class="headerlink" href="#add-your-upload-credentials-to-your-aws-cli-config" title="Permalink to this heading">#</a></h2>
+<p>Open the AWS CLI config file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">~/.aws/config</span></code> on Mac/Linux<br />
+<code class="docutils literal notranslate"><span class="pre">notepad</span> <span class="pre">C:\Users\Administrator\.aws\config</span></code> on Windows</p>
+<p>Add the following text:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>cpg_staging<span class="o">]</span>
+<span class="nv">aws_access_key_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>ACCESS_KEY_ID<span class="o">}</span>
+<span class="nv">aws_secret_access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>SECRET_ACCESS_KEY<span class="o">}</span>
+<span class="nv">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>us-east-1
+<span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>json
+</pre></div>
+</div>
 </section>
-<section id="prepare-project-specific-naming">
-<h3>Prepare project-specific naming<a class="headerlink" href="#prepare-project-specific-naming" title="Permalink to this heading">#</a></h3>
-<p>Reference <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a> for comprehensive information on folder structure and naming.
-Your data must strictly comply with the data structure we have laid out.
-Additionally it must include all, unblinded metadata.</p>
+<section id="prepare-your-aws-cli-data-transfer-commands">
+<h2>4. Prepare your AWS CLI data transfer commands<a class="headerlink" href="#prepare-your-aws-cli-data-transfer-commands" title="Permalink to this heading">#</a></h2>
+<p>Ensure that you have read <span class="xref myst">Contributing to the Cell Painting Gallery</span> and <span class="xref myst">Data Structure</span>.</p>
+<p>Prepare your AWS CLI data transfer commands for upload to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code> exactly mimicking the structure of <code class="docutils literal notranslate"><span class="pre">cellpainting-gallery</span></code>.
+Depending upon how you have locally structured your data, you may need to generate multiple separate commands for transfer to the gallery.
+They should follow the format of <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">SOURCE</span> <span class="pre">DESTINATION</span> <span class="pre">--profile</span> <span class="pre">cpg_staging</span> <span class="pre">--acl</span> <span class="pre">bucket-owner-full-control</span></code>.
+(For single files, use <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span></code> instead of <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span></code>.)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--profile</span></code> flag tells AWS CLI to use the credentials that are specific for uploading to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.<br />
+The <code class="docutils literal notranslate"><span class="pre">--acl</span></code> flag gives the Cell Painting Gallery full ownership of the uploaded files.<br />
+<code class="docutils literal notranslate"><span class="pre">SOURCE</span></code> is where the files are on your storage and can be a local absolute or relative path or can be an S3 location of your S3 bucket.<br />
+<code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> is the S3 path within the <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code> (that should match <code class="docutils literal notranslate"><span class="pre">cellpainting-gallery</span></code>).</p>
+<p>e.g.<br />
+<code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">/Users/eweisbar/Batch8_images</span> <span class="pre">s3://cpg0123-example/broad/images/2024_04_01_Batch8/images</span> <span class="pre">--profile</span> <span class="pre">cpg_staging</span> <span class="pre">--acl</span> <span class="pre">bucket-owner-full-control</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">/Users/eweisbar/Batch8_profiles</span> <span class="pre">s3://cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/</span> <span class="pre">--profile</span> <span class="pre">cpg_staging</span> <span class="pre">--acl</span> <span class="pre">bucket-owner-full-control</span></code></p>
 </section>
-<section id="validate-your-data">
-<h3>Validate your data<a class="headerlink" href="#validate-your-data" title="Permalink to this heading">#</a></h3>
-<p>We are building a <a class="reference external" href="http://github.com/broadinstitute/cpg/cpgdata">data validator</a> to check compliance with our required structure.
-It is currently in alpha and for internal use but we plan to develop it to the point that contributors can use it to validate their data before deposition in the future.</p>
+<section id="create-create-credentials-sh">
+<h2>5. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code><a class="headerlink" href="#create-create-credentials-sh" title="Permalink to this heading">#</a></h2>
+<p>Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code> file on your computer and <a class="reference external" href="https://github.com/broadinstitute/cytoskel/blob/aws_docs/cytoskel/docs/access_cpg_staging.md#create-file-called-s3_credentialssh">copy in the code from cytoskel</a>.</p>
 </section>
-<section id="create-a-pull-request">
-<h3>Create a pull-request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this heading">#</a></h3>
-<p>Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/">Cell Painting Gallery repository</a> with updates to the README to add your dataset to <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/README.md">Available datasets</a>.
-If your dataset is associated with a publication, please also edit <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/docs/publications.md">Publications</a>.</p>
+<section id="run-your-transfer-commands">
+<h2>6. Run your transfer commands<a class="headerlink" href="#run-your-transfer-commands" title="Permalink to this heading">#</a></h2>
+<p>Activate your credentials with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">./create_credentials.sh</span></code>.
+(Note that if you have saved your <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">create_credentials.sh</span></code> files into a different location than you are currently navigated into, you will need to instead run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/path/to/create_credentials.sh</span></code> with your correct file location.)
+This activates your credentials for 12 hours (the maximum duration).</p>
+<p>Run your transfer commands to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.</p>
 </section>
+<section id="initiate-transfer-from-staging-to-gallery">
+<h2>7. Initiate transfer from staging to Gallery<a class="headerlink" href="#initiate-transfer-from-staging-to-gallery" title="Permalink to this heading">#</a></h2>
+<p>Once the transfers are complete, either you (Imaging Platform internal) or your data champion (if external) must verify the data transferred to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code> is complete.
+(Currently this is done manually, though this will be programatic in the future.)
+Once verification is complete, let a Gallery maintainer (Erin, Shantanu, Ank) know that they should initiate transfer from staging to Gallery.</p>
 </section>
 </section>
 
@@ -506,20 +506,20 @@ If your dataset is associated with a publication, please also edit <a class="ref
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="machine_learning.html"
+       href="contributing_to_cpg.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Machine Learning (ML)/Deep Learning (DL)</p>
+        <p class="prev-next-title">Contributing</p>
       </div>
     </a>
     <a class="right-next"
-       href="uploading_to_cpg.html"
+       href="prefixes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial: Uploading to the Cell Painting Gallery</p>
+        <p class="prev-next-title">Prefixes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -538,15 +538,13 @@ If your dataset is associated with a publication, please also edit <a class="ref
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-documentation">Contributing to Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-data-to-the-gallery">Contributing Data to the Gallery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-data-deposition">Preparing for data deposition</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-special-characters-in-folder-names">Remove special characters in folder names</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-project-specific-naming">Prepare project-specific naming</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-your-data">Validate your data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-pull-request">Create a pull-request</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-upload-credentials">1. Get upload credentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-aws-cli">2. Install AWS CLI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-upload-credentials-to-your-aws-cli-config">3. Add your upload credentials to your AWS CLI config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-aws-cli-data-transfer-commands">4. Prepare your AWS CLI data transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-create-credentials-sh">5. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-transfer-commands">6. Run your transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-transfer-from-staging-to-gallery">7. Initiate transfer from staging to Gallery</a></li>
 </ul>
   </nav></div>
 
