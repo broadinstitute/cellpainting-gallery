@@ -15,6 +15,7 @@ parts:
 - caption: Technical Guides
   chapters:
   - file: contributing_to_cpg
+  - file: uploading_to_cpg
   - file: prefixes
   - file: publications
 
