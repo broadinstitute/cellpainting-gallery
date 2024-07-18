@@ -6,6 +6,7 @@ parts:
 - caption: Data
   chapters:
   - file: data_structure
+  - file: feature_sets
   - file: browsing_data
   - file: download_instructions
 - caption: Applications
@@ -18,4 +19,3 @@ parts:
   - file: uploading_to_cpg
   - file: prefixes
   - file: publications
-
