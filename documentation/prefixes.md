@@ -42,3 +42,4 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0034-arevalo-su-motive                |
 | cpg0035-compressed                       |
 | cpg0036-EU-OS-bioactives                 |
+| cpg0037-oasis                            |
