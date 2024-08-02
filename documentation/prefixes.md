@@ -43,3 +43,5 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0035-compressed                       |
 | cpg0036-EU-OS-bioactives                 |
 | cpg0037-oasis                            |
+| cpg0038-tegtmeyer-neuropainting          |
+
