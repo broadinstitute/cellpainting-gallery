@@ -5,10 +5,10 @@ This page provides a guide to the datasets that are available in the Cell Painti
 ## Citation/license
 
 All the data is released with CC0 1.0 Universal (CC0 1.0).
-Still, professional ethics require that you cite the appropriate resources/publications, [listed below](#available-datasets), when using individual datasets, along with our publication announcing the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.48550/arXiv.2402.02203)).
+Still, professional ethics require that you cite the appropriate resources/publications, [listed below](#available-datasets), when using individual datasets, along with our Nature Methods publication announcing the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.1038/s41592-024-02399-z)).
 For example,
 
-> We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.48550/arXiv.2402.02203)) on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>).
+> We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.1038/s41592-024-02399-z)) on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>).
 
 ## Documentation
 
