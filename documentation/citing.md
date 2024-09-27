@@ -8,26 +8,26 @@ Though the data is in the public domain, professional ethics requires citation.
 
 ## Citing the CPG
 
-When citing data that you have accessed from the Cell Painting Gallery, please cite both our publication announcing the Cell Painting Gallery (Weisbart et al., 2024) as well as the individual publication/s describing any dataset/s that you have used.
+When citing data that you have accessed from the Cell Painting Gallery, please cite both our publication announcing the Cell Painting Gallery in Nature Methods (Weisbart et al., 2024) as well as the individual publication/s describing any dataset/s that you have used.
 Please also acknowledge the Registry of Open Data (RODA) on AWS for their support in hosting the data.
 
 ### Cell Painting Gallery publication
 
 ```text
-Weisbart, E., Kumar, A., Arevalo, J., Carpenter, A. E., Cimini, B. A., & Singh, S. (2024). Cell Painting Gallery: an open resource for image-based profiling. In arXiv [q-bio.QM]. arXiv. http://arxiv.org/abs/2402.02203
+Weisbart, E., Kumar, A., Arevalo, J., Carpenter, A. E., Cimini, B. A., & Singh, S. (2024). Cell Painting Gallery: an open resource for image-based profiling. Nature Methods. https://doi.org/10.1038/s41592-024-02399-z
 ```
 
 ```text
-@ARTICLE{Weisbart2024-cd,
-  title         = "Cell Painting Gallery: an open resource for image-based
-                   profiling",
-  author        = "Weisbart, Erin and Kumar, Ankur and Arevalo, John and
-                   Carpenter, Anne E and Cimini, Beth A and Singh, Shantanu",
-  journal       = "arXiv [q-bio.QM]",
-  month         =  feb,
-  year          =  2024,
-  archivePrefix = "arXiv",
-  primaryClass  = "q-bio.QM"
+@ARTICLE{Weisbart2024-ta,
+  title     = "Cell Painting Gallery: an open resource for image-based profiling",
+  author    = "Weisbart, Erin and Kumar, Ankur and Arevalo, John and Carpenter,
+               Anne E and Cimini, Beth A and Singh, Shantanu",
+  journal   = "Nat. Methods",
+  publisher = "Springer Science and Business Media LLC",
+  month     = September,
+  year      = 2024,
+  language  = "en",
+  doi       = "https://doi.org/10.1038/s41592-024-02399-z",
 }
 ```
 
