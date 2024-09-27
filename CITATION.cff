@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use data in this repository, please cite our preprint available on arXiv as well as any original publications describing the dataset as referenced in our README."
+message: "If you use data in this repository, please cite our Nature Methods publication describing the Gallery as well as any original publications describing the dataset as referenced in our README."
 type: dataset
 authors:
   - name: 'Imaging Platform, Broad Institute of Harvard and MIT'
@@ -7,7 +7,7 @@ authors:
     country: US
 repository: https://github.com/broadinstitute/cellpainting-gallery
 title: "Cell Painting Gallery"
-doi: 10.48550/arXiv.2402.02203
+doi: 10.1038/s41592-024-02399-z
 date-released: 2023-01-01
 preferred-citation:
   type: article
@@ -30,7 +30,7 @@ preferred-citation:
   - family-names: "Singh"
     given-names: "Shantanu"
     orcid: "https://orcid.org/0000-0003-3150-3025"
-  doi: "https://doi.org/10.48550/arXiv.2402.02203"
-  journal: arXiv
+  doi: "https://doi.org/10.1038/s41592-024-02399-z"
+  journal: Nature Methods
   title: "Cell Painting Gallery: an open resource for image-based profiling."
-  year: 2023
+  year: 2024
