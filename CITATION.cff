@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use data in this repository, please cite our Nature Methods publication describing the Gallery as well as any original publications describing the dataset as referenced in our README. Please also acknowledge AWS RODA for hosting the data. See https://broadinstitute.github.io/cellpainting-gallery/citing.html for examples and more."
+message: "If you use data in this repository, please cite our Nature Methods publication describing the Gallery as well as any original publiceations describing the dataset as referenced in our README. Please also acknowledge AWS RODA for hosting the data, e.g., "We thank the AWS Open Data Sponsorship Program for sponsoring data storage."
 type: dataset
 authors:
   - name: 'Imaging Platform, Broad Institute of Harvard and MIT'
