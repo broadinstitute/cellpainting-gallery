@@ -10,6 +10,8 @@ For example,
 
 > We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.1038/s41592-024-02399-z)) on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>).
 
+Please also acknowledge the Registry of Open Data (RODA) on AWS for their support in hosting the data, e.g., "We thank the AWS Open Data Sponsorship Program for sponsoring data storage."
+
 ## Documentation
 
 Please see [our documentation](https://broadinstitute.github.io/cellpainting-gallery/) for extensive supporting information.
