@@ -397,11 +397,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-upload-credentials">1. Get upload credentials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-aws-cli">2. Install AWS CLI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-upload-credentials-to-your-aws-cli-config">3. Add your upload credentials to your AWS CLI config</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-aws-cli-data-transfer-commands">4. Prepare your AWS CLI data transfer commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-create-credentials-sh">5. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-transfer-commands">6. Run your transfer commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-transfer-from-staging-to-gallery">7. Initiate transfer from staging to Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jq">3. Install jq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-upload-credentials-to-your-aws-cli-config">4. Add your upload credentials to your AWS CLI config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-aws-cli-data-transfer-commands">5. Prepare your AWS CLI data transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-create-credentials-sh">6. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-transfer-commands">7. Run your transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-transfer-from-staging-to-gallery">8. Initiate transfer from staging to Gallery</a></li>
 </ul>
             </nav>
         </div>
@@ -420,7 +421,8 @@ A gallery maintainer can then approve the staged data and initiate transfer to <
 <section id="get-upload-credentials">
 <h2>1. Get upload credentials<a class="headerlink" href="#get-upload-credentials" title="Permalink to this heading">#</a></h2>
 <p>Upload credentials enable anyone with the credentials to upload to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.
-They are generated on a per-prefix basis so each credential set can only be used for upload to a single prefix.</p>
+They are generated on a per-prefix basis so each credential set can only be used for upload to a single prefix.
+Upload credentials are generated through <a class="reference external" href="https://github.com/broadinstitute/cytoskel/tree/main">cytoskel</a>.</p>
 <p><strong>Imaging Platform internal</strong>: Email Ank to ask for credentials, letting him know the prefix you want to upload to.</p>
 <p><strong>External source</strong>: Your dataset will have an Imaging Platform champion.
 That champion will contact Ank to request credentials and share them with you.</p>
@@ -429,12 +431,16 @@ That champion will contact Ank to request credentials and share them with you.</
 <h2>2. Install AWS CLI<a class="headerlink" href="#install-aws-cli" title="Permalink to this heading">#</a></h2>
 <p>Follow AWS documentation to <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">install AWS CLI</a>.</p>
 </section>
+<section id="install-jq">
+<h2>3. Install jq<a class="headerlink" href="#install-jq" title="Permalink to this heading">#</a></h2>
+<p>Follow the jq documention to <a class="reference external" href="https://jqlang.github.io/jq/download/">install jq</a>.</p>
+</section>
 <section id="add-your-upload-credentials-to-your-aws-cli-config">
-<h2>3. Add your upload credentials to your AWS CLI config<a class="headerlink" href="#add-your-upload-credentials-to-your-aws-cli-config" title="Permalink to this heading">#</a></h2>
+<h2>4. Add your upload credentials to your AWS CLI config<a class="headerlink" href="#add-your-upload-credentials-to-your-aws-cli-config" title="Permalink to this heading">#</a></h2>
 <p>Open the AWS CLI config file:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">~/.aws/config</span></code> on Mac/Linux<br />
 <code class="docutils literal notranslate"><span class="pre">notepad</span> <span class="pre">C:\Users\Administrator\.aws\config</span></code> on Windows</p>
-<p>Add the following text:</p>
+<p>Add the following text at the bottom of the file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>cpg_staging<span class="o">]</span>
 <span class="nv">aws_access_key_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>ACCESS_KEY_ID<span class="o">}</span>
 <span class="nv">aws_secret_access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>SECRET_ACCESS_KEY<span class="o">}</span>
@@ -444,7 +450,7 @@ That champion will contact Ank to request credentials and share them with you.</
 </div>
 </section>
 <section id="prepare-your-aws-cli-data-transfer-commands">
-<h2>4. Prepare your AWS CLI data transfer commands<a class="headerlink" href="#prepare-your-aws-cli-data-transfer-commands" title="Permalink to this heading">#</a></h2>
+<h2>5. Prepare your AWS CLI data transfer commands<a class="headerlink" href="#prepare-your-aws-cli-data-transfer-commands" title="Permalink to this heading">#</a></h2>
 <p>Ensure that you have read <span class="xref myst">Contributing to the Cell Painting Gallery</span> and <span class="xref myst">Data Structure</span>.</p>
 <p>Prepare your AWS CLI data transfer commands for upload to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code> exactly mimicking the structure of <code class="docutils literal notranslate"><span class="pre">cellpainting-gallery</span></code>.
 Depending upon how you have locally structured your data, you may need to generate multiple separate commands for transfer to the gallery.
@@ -459,18 +465,20 @@ The <code class="docutils literal notranslate"><span class="pre">--acl</span></c
 <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">/Users/eweisbar/Batch8_profiles</span> <span class="pre">s3://cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/</span> <span class="pre">--profile</span> <span class="pre">cpg_staging</span> <span class="pre">--acl</span> <span class="pre">bucket-owner-full-control</span></code></p>
 </section>
 <section id="create-create-credentials-sh">
-<h2>5. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code><a class="headerlink" href="#create-create-credentials-sh" title="Permalink to this heading">#</a></h2>
+<h2>6. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code><a class="headerlink" href="#create-create-credentials-sh" title="Permalink to this heading">#</a></h2>
 <p>Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code> file on your computer and <a class="reference external" href="https://github.com/broadinstitute/cytoskel/blob/aws_docs/cytoskel/docs/access_cpg_staging.md#create-file-called-s3_credentialssh">copy in the code from cytoskel</a>.</p>
+<p>Edit the code copied from cytoskel so that the <code class="docutils literal notranslate"><span class="pre">*</span></code> in the <code class="docutils literal notranslate"><span class="pre">--target</span></code> line matches your prefix.
+e.g.  <code class="docutils literal notranslate"><span class="pre">--target</span> <span class="pre">&quot;s3://staging-cellpainting-gallery/*&quot;</span> <span class="pre">\</span></code> becomes <code class="docutils literal notranslate"><span class="pre">--target</span> <span class="pre">&quot;s3://staging-cellpainting-gallery/cpg0016-jump&quot;</span> <span class="pre">\</span></code> for upload to <code class="docutils literal notranslate"><span class="pre">cpg0016-jump</span></code>.</p>
 </section>
 <section id="run-your-transfer-commands">
-<h2>6. Run your transfer commands<a class="headerlink" href="#run-your-transfer-commands" title="Permalink to this heading">#</a></h2>
+<h2>7. Run your transfer commands<a class="headerlink" href="#run-your-transfer-commands" title="Permalink to this heading">#</a></h2>
 <p>Activate your credentials with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">./create_credentials.sh</span></code>.
 (Note that if you have saved your <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">create_credentials.sh</span></code> files into a different location than you are currently navigated into, you will need to instead run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/path/to/create_credentials.sh</span></code> with your correct file location.)
 This activates your credentials for 12 hours (the maximum duration).</p>
 <p>Run your transfer commands to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.</p>
 </section>
 <section id="initiate-transfer-from-staging-to-gallery">
-<h2>7. Initiate transfer from staging to Gallery<a class="headerlink" href="#initiate-transfer-from-staging-to-gallery" title="Permalink to this heading">#</a></h2>
+<h2>8. Initiate transfer from staging to Gallery<a class="headerlink" href="#initiate-transfer-from-staging-to-gallery" title="Permalink to this heading">#</a></h2>
 <p>Once the transfers are complete, either you (Imaging Platform internal) or your data champion (if external) must verify the data transferred to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code> is complete.
 (Currently this is done manually, though this will be programatic in the future.)
 Once verification is complete, let a Gallery maintainer (Erin, Shantanu, Ank) know that they should initiate transfer from staging to Gallery.</p>
@@ -542,11 +550,12 @@ Once verification is complete, let a Gallery maintainer (Erin, Shantanu, Ank) kn
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-upload-credentials">1. Get upload credentials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-aws-cli">2. Install AWS CLI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-upload-credentials-to-your-aws-cli-config">3. Add your upload credentials to your AWS CLI config</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-aws-cli-data-transfer-commands">4. Prepare your AWS CLI data transfer commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-create-credentials-sh">5. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-transfer-commands">6. Run your transfer commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-transfer-from-staging-to-gallery">7. Initiate transfer from staging to Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jq">3. Install jq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-upload-credentials-to-your-aws-cli-config">4. Add your upload credentials to your AWS CLI config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-aws-cli-data-transfer-commands">5. Prepare your AWS CLI data transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-create-credentials-sh">6. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-transfer-commands">7. Run your transfer commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-transfer-from-staging-to-gallery">8. Initiate transfer from staging to Gallery</a></li>
 </ul>
   </nav></div>
 
