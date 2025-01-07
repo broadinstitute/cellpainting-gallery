@@ -460,9 +460,11 @@ They should follow the format of <code class="docutils literal notranslate"><spa
 The <code class="docutils literal notranslate"><span class="pre">--acl</span></code> flag gives the Cell Painting Gallery full ownership of the uploaded files.<br />
 <code class="docutils literal notranslate"><span class="pre">SOURCE</span></code> is where the files are on your storage and can be a local absolute or relative path or can be an S3 location of your S3 bucket.<br />
 <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> is the S3 path within the <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code> (that should match <code class="docutils literal notranslate"><span class="pre">cellpainting-gallery</span></code>).</p>
-<p>e.g.<br />
-<code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">/Users/eweisbar/Batch8_images</span> <span class="pre">s3://cpg0123-example/broad/images/2024_04_01_Batch8/images</span> <span class="pre">--profile</span> <span class="pre">cpg_staging</span> <span class="pre">--acl</span> <span class="pre">bucket-owner-full-control</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">/Users/eweisbar/Batch8_profiles</span> <span class="pre">s3://cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/</span> <span class="pre">--profile</span> <span class="pre">cpg_staging</span> <span class="pre">--acl</span> <span class="pre">bucket-owner-full-control</span></code></p>
+<p>e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>s3<span class="w"> </span>sync<span class="w"> </span>/Users/eweisbar/Batch8_images<span class="w"> </span>s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/<span class="w"> </span>--profile<span class="w"> </span>cpg_staging<span class="w"> </span>--acl<span class="w"> </span>bucket-owner-full-control<span class="w"> </span>
+aws<span class="w"> </span>s3<span class="w"> </span>sync<span class="w"> </span>/Users/eweisbar/Batch8_profiles<span class="w"> </span>s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/<span class="w"> </span>--profile<span class="w"> </span>cpg_staging<span class="w"> </span>--acl<span class="w"> </span>bucket-owner-full-control
+</pre></div>
+</div>
 </section>
 <section id="create-create-credentials-sh">
 <h2>6. Create <code class="docutils literal notranslate"><span class="pre">create_credentials.sh</span></code><a class="headerlink" href="#create-create-credentials-sh" title="Permalink to this heading">#</a></h2>

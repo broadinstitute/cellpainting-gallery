@@ -54,8 +54,11 @@ The `--acl` flag gives the Cell Painting Gallery full ownership of the uploaded 
 `DESTINATION` is the S3 path within the `staging-cellpainting-gallery` (that should match `cellpainting-gallery`).
 
 e.g.  
-`aws s3 sync /Users/eweisbar/Batch8_images s3://cpg0123-example/broad/images/2024_04_01_Batch8/images --profile cpg_staging --acl bucket-owner-full-control`  
-`aws s3 sync /Users/eweisbar/Batch8_profiles s3://cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --profile cpg_staging --acl bucket-owner-full-control`  
+
+```bash
+aws s3 sync /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/ --profile cpg_staging --acl bucket-owner-full-control 
+aws s3 sync /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --profile cpg_staging --acl bucket-owner-full-control
+```
 
 ## 6. Create `create_credentials.sh`
 
