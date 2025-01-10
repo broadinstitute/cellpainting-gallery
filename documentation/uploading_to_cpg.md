@@ -22,6 +22,9 @@ Follow AWS documentation to [install AWS CLI](https://docs.aws.amazon.com/cli/la
 
 Follow the jq documention to [install jq](https://jqlang.github.io/jq/download/).
 
+>[!NOTE]
+>If you need to upload files to the Gallery from an institutional server and don't have permissions to install sowftware there, run this step in your local computer and check the note in **step 6 and 7**.
+
 ## 4. Add your upload credentials to your AWS CLI config
 
 Open the AWS CLI config file:
@@ -38,6 +41,9 @@ aws_secret_access_key = {SECRET_ACCESS_KEY}
 region = us-east-1
 output = json
 ```
+
+>[!NOTE]
+>If you need to upload files to the Gallery from an institutional server youe need to perform this step both on the server AND on your local computer.
 
 ## 5. Prepare your AWS CLI data transfer commands
 
@@ -60,6 +66,9 @@ aws s3 sync /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0
 aws s3 sync /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --profile cpg_staging --acl bucket-owner-full-control
 ```
 
+>[!NOTE]
+>If you are working on an institutional server and can't run `aws s3 sync`, try using `aws s3 cp --recursive` instead
+
 ## 6. Create `create_credentials.sh`
 
 Create `create_credentials.sh` file on your computer and [copy in the code from cytoskel](https://github.com/broadinstitute/cytoskel/blob/aws_docs/cytoskel/docs/access_cpg_staging.md#create-file-called-s3_credentialssh).
@@ -67,11 +76,30 @@ Create `create_credentials.sh` file on your computer and [copy in the code from 
 Edit the code copied from cytoskel so that the `*` in the `--target` line matches your prefix.
 e.g.  `--target "s3://staging-cellpainting-gallery/*" \` becomes `--target "s3://staging-cellpainting-gallery/cpg0016-jump" \` for upload to `cpg0016-jump`.
 
+>[!NOTE]
+>If you are working on an institutional server, run this step in your local computer only.
+
 ## 7. Run your transfer commands
 
 Activate your credentials with `source ./create_credentials.sh`.
 (Note that if you have saved your `source create_credentials.sh` files into a different location than you are currently navigated into, you will need to instead run `source /path/to/create_credentials.sh` with your correct file location.)
 This activates your credentials for 12 hours (the maximum duration).
+
+>[!NOTE]
+>If you need to upload files to the Gallery from an institutional server you might not be able to run `source /path/to/create_credentials.sh` in the server. 
+>
+>Instead, run the command locally in your computer (which should have both `aws cli` and `jq` installed) and copy the generated environmental variables (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`) over to your session in the server.
+>You can check the value of these variables by using `echo`:
+>- `echo $AWS_ACCESS_KEY_ID` <-- *variable_1*
+>- `echo $AWS_SECRET_ACCESS_KEY` <-- *variable_2*
+>- `echo $AWS_SESSION_TOKEN` <-- *variable_3*
+>
+>Then, in your session in the server, set those same environmental variables (replace each of the variables using the values copied from your local computer):
+>```bash
+>AWS_ACCESS_KEY_ID=variable_1
+>AWS_SECRET_ACCESS_KEY=variable_2
+>AWS_SESSION_TOKEN=variable_3
+>```
 
 Run your transfer commands to `staging-cellpainting-gallery`.
 
