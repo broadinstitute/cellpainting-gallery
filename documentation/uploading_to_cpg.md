@@ -89,10 +89,11 @@ This activates your credentials for 12 hours (the maximum duration) and writes t
 >
 >Then, in your session in the server, set those same environmental variables (replace each of the variables using the values copied from your local computer):
 >```bash
->AWS_ACCESS_KEY_ID=variable_1
->AWS_SECRET_ACCESS_KEY=variable_2
->AWS_SESSION_TOKEN=variable_3
+>export AWS_ACCESS_KEY_ID=variable_1
+>export AWS_SECRET_ACCESS_KEY=variable_2
+>export AWS_SESSION_TOKEN=variable_3
 >```
+>You can check that these values have been set up correctly win `env | grep AWS`
 
 ## 8. Initiate transfer from staging to Gallery
 
