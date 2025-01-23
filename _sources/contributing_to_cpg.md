@@ -22,7 +22,9 @@ For new datasets, please include the following details in your contact:
 2) approximate data size
 3) components you wish to contribute (all are described in [data structure](https://broadinstitute.github.io/cellpainting-gallery/data_structure.html)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` is required.
 4) institutional identifier to use for data (e.g. `broad`, `anonymous`)
-5) suggested top level project tag. Typically this is a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)
+5) suggested top level project tag.
+We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.
+The tag is typically a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)
 
 For existing datasets, please  the following details include in your contact:
 
@@ -30,7 +32,7 @@ For existing datasets, please  the following details include in your contact:
 2) approximate data size
 3) components you wish to contribute
 
-After approval, we will assign you a project identifier and create a new [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) to provide next steps and track data deposition.
+After approval, we will assign you a project identifier and create a new [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) using our [discussion template](https://github.com/broadinstitute/cellpainting-gallery/discussions/66) to provide next steps and track data deposition.
 
 ## Preparing for data deposition
 
