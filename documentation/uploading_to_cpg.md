@@ -66,7 +66,7 @@ aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-
 
 ## 6. Create `create_credentials.sh`
 
-Create `create_credentials.sh` file on your computer and [copy in the code from cytoskel](https://github.com/broadinstitute/cytoskel/blob/aws_docs/cytoskel/docs/access_cpg_staging.md#create-file-called-s3_credentialssh).
+Create `create_credentials.sh` file on your computer and [copy in the code from cytoskel](https://github.com/broadinstitute/cytoskel/blob/main/cytoskel/docs/access_cpg_staging.md#create-file-called-s3_credentialssh)).
 
 Edit the code copied from cytoskel so that the `*` in the `--target` line matches your prefix.
 e.g.  `--target "s3://staging-cellpainting-gallery/*" \` becomes `--target "s3://staging-cellpainting-gallery/cpg0016-jump" \` for upload to `cpg0016-jump`.
