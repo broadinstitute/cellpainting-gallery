@@ -298,7 +298,15 @@ Within the plate folder there are typically two files - a `load_data.csv` for pi
 The `load_data.csv` maps the actual file names and paths and their metadata (e.g. channel number, channel name) to the naming information passed to CellProfiler for running the images in a CellProfiler pipeline.
 More information on `load_data.csv`'s and their contents is available in [CellProfiler documentation](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/fileprocessing.html#loaddata).
 
-Note that we do not currently enforce `load_data.csv` path requirements so `load_data.csv`'s may have paths that are either S3 paths (`s3://cellpainting-gallery/`) or mounted paths (`/home/ubuntu/bucket/`) and may have paths that match their current Cell Painting Gallery locations or may have paths of their original location before being transferred to the gallery.
+Though CellProfiler suports multiple formats for file paths, all `load_data.csv` in the CPG use the format of column names `URL_<ChannelName>` where the URL starts `s3://cellpainting-gallery`. e.g.
+
+URL_OrigDNA | URL_OrigER | Metadata_Plate | Metadata_Well | Metadata_Site
+----------- | ---------- | -------------- | ------------- | -------------
+s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f01p01-ch5sk1fk1fl1.tiff | s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f01p01-ch4sk1fk1fl1.tiff | BR00116991 | A01 | 1
+s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f02p01-ch5sk1fk1fl1.tiff | s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f02p01-ch4sk1fk1fl1.tiff | BR00116991 | A01 | 2
+
+Note that at this time, CellProfiler from source (but not built) can directly use these `load_data.csv`'s to download and process CPG images but you must have AWS credentials as it does not support unsigned requests.
+[Distributed-CellProfiler](https://github.com/DistributedScience/Distributed-CellProfiler) will soon support this formatting for file download but not reading directly off the bucket with S3FS.
 
 ```
 └── load_data_csv
