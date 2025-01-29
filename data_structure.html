@@ -713,7 +713,33 @@ Within each plate folder is a single-cell SQLite file, comprising all measuremen
 Within the plate folder there are typically two files - a <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> for pipelines that do not use an illumination correction function and a <code class="docutils literal notranslate"><span class="pre">load_data_with_illum.csv</span></code> for pipelines that do use an illumination correction function, however atypical workflows can have other arrangements such as a separate CSV for each pipeline in the workflow.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> maps the actual file names and paths and their metadata (e.g. channel number, channel name) to the naming information passed to CellProfiler for running the images in a CellProfiler pipeline.
 More information on <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code>’s and their contents is available in <a class="reference external" href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/fileprocessing.html#loaddata">CellProfiler documentation</a>.</p>
-<p>Note that we do not currently enforce <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> path requirements so <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code>’s may have paths that are either S3 paths (<code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/</span></code>) or mounted paths (<code class="docutils literal notranslate"><span class="pre">/home/ubuntu/bucket/</span></code>) and may have paths that match their current Cell Painting Gallery locations or may have paths of their original location before being transferred to the gallery.</p>
+<p>Though CellProfiler suports multiple formats for file paths, all <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code> in the CPG use the format of column names <code class="docutils literal notranslate"><span class="pre">URL_&lt;ChannelName&gt;</span></code> where the URL starts <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery</span></code>. e.g.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>URL_OrigDNA</p></th>
+<th class="head"><p>URL_OrigER</p></th>
+<th class="head"><p>Metadata_Plate</p></th>
+<th class="head"><p>Metadata_Well</p></th>
+<th class="head"><p>Metadata_Site</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f01p01-ch5sk1fk1fl1.tiff</p></td>
+<td><p>s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f01p01-ch4sk1fk1fl1.tiff</p></td>
+<td><p>BR00116991</p></td>
+<td><p>A01</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f02p01-ch5sk1fk1fl1.tiff</p></td>
+<td><p>s3://cellpainting-gallery/cpg0000-jump-pilot/broad/images/2020_11_04_CPJUMP1/images/BR00116991__2020-11-05T19_51_35-Measurement1/Images/r01c01f02p01-ch4sk1fk1fl1.tiff</p></td>
+<td><p>BR00116991</p></td>
+<td><p>A01</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that at this time, CellProfiler from source (but not built) can directly use these <code class="docutils literal notranslate"><span class="pre">load_data.csv</span></code>’s to download and process CPG images but you must have AWS credentials as it does not support unsigned requests.
+<a class="reference external" href="https://github.com/DistributedScience/Distributed-CellProfiler">Distributed-CellProfiler</a> will soon support this formatting for file download but not reading directly off the bucket with S3FS.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── load_data_csv
      └── 2021_04_26_Batch1
          ├── BR00117035
