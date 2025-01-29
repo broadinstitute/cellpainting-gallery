@@ -18,7 +18,7 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0010-caie-drugresponse                |
 | cpg0011-lipocyteprofiler                 |
 | cpg0012-wawer-bioactivecompoundprofiling |
-| cpg0013-gustafsdottir-cellpainting       |
+| cpg0013                                  |
 | cpg0014-jump-adipocyte                   |
 | cpg0015-heterogeneity                    |
 | cpg0016-jump                             |
@@ -32,7 +32,7 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0024-bortezomib                       |
 | cpg0025-dactyloscopy                     |
 | cpg0026-lacoste_haghighi-rare-diseases   |
-| cpg0027-haghighi-barcodecalling          |
+| cpg0027                                  |
 | cpg0028-kelley-resistance                |
 | cpg0029-chroma-pilot                     |
 | cpg0030-gustafsdottir-cellpainting       |
