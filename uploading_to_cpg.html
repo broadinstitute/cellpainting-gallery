@@ -419,6 +419,7 @@ document.write(`
 <h1>Tutorial: Uploading to the Cell Painting Gallery<a class="headerlink" href="#tutorial-uploading-to-the-cell-painting-gallery" title="Permalink to this heading">#</a></h1>
 <p>To preserve data integrity, any data going into the Cell Painting Gallery is first uploaded to a staging bucket, <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.
 A gallery maintainer can then approve the staged data and initiate transfer to <code class="docutils literal notranslate"><span class="pre">cellpainting-gallery</span></code>.</p>
+<p><strong>Note that these instructions only work for uploading data from local storage; we do not currently have solutions to upload to the staging bucket directly from another S3 account</strong></p>
 <section id="get-upload-credentials">
 <h2>1. Get upload credentials<a class="headerlink" href="#get-upload-credentials" title="Permalink to this heading">#</a></h2>
 <p>Upload credentials enable anyone with the credentials to upload to <code class="docutils literal notranslate"><span class="pre">staging-cellpainting-gallery</span></code>.

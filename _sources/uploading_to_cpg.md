@@ -3,6 +3,8 @@
 To preserve data integrity, any data going into the Cell Painting Gallery is first uploaded to a staging bucket, `staging-cellpainting-gallery`.
 A gallery maintainer can then approve the staged data and initiate transfer to `cellpainting-gallery`.
 
+**Note that these instructions only work for uploading data from local storage; we do not currently have solutions to upload to the staging bucket directly from another S3 account**
+
 ## 1. Get upload credentials
 
 Upload credentials enable anyone with the credentials to upload to `staging-cellpainting-gallery`.
