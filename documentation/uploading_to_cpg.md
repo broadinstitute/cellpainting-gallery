@@ -105,4 +105,15 @@ Run your transfer commands to `staging-cellpainting-gallery`.
 
 Once the transfers are complete, either you (Imaging Platform internal) or your data champion (if external) must verify the data transferred to `staging-cellpainting-gallery` is complete.
 (Currently this is done manually, though this will be programatic in the future.)
+
+To verify if the transfer was succesful you (Imaging Platform internal) can compare:
+- Total file size on origin: `du -sh --apparent-size PATH/TO/YOUR/FILES`
+- Number of files on origin: `find PATH/TO/YOUR/FILES  -type f | wc -l`
+with
+- Total object size on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES --summarize --human-readable --recursive | grep Total`
+- Number of objects on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES --recursive | wc -l`
+
+>[!NOTE]
+>To run the `aws s3 ls` command on the staging bucket, you need to have your temporary credentials active (see "Activate credentials" above).
+
 Once verification is complete, let a Gallery maintainer (Erin, Shantanu, Ank) know that they should initiate transfer from staging to Gallery.
