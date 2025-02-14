@@ -502,7 +502,8 @@ You can check the value of these variables by using <code class="docutils litera
 <span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SESSION_TOKEN</span><span class="o">=</span>variable_3
 </pre></div>
 </div>
-<p>You can check that these values have been set up correctly win <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">AWS</span></code></p>
+<p>You can check that these values have been set up correctly win <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">AWS</span></code>
+Just defining the generated environmental variables (e.g.<code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID=variable1</span></code>) in the server doesn’t work even if <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$AWS_ACCESS_KEY_ID</span></code> shows the right variable. <code class="docutils literal notranslate"><span class="pre">export</span></code> has to be used.</p>
 </div></blockquote>
 </section>
 <section id="initiate-transfer-from-staging-to-gallery">
