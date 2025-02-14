@@ -97,7 +97,7 @@ This activates your credentials for 12 hours (the maximum duration) and writes t
 >```
 >You can check that these values have been set up correctly win `env | grep AWS`
 >[!NOTE]
->Just copying the generated environmental variables (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`) from the local to the server will not help although `echo $AWS_ACCESS_KEY_ID` might show the right variable. `export` has to be used as mentioned above (For example - export AWS_ACCESS_KEY_ID=variable_1)
+>Just defining the generated environmental variables (e.g.`AWS_ACCESS_KEY_ID=variable1`) in the server doesn't work even if `echo $AWS_ACCESS_KEY_ID` shows the right variable. `export` has to be used.
 
 ## 8. Initiate transfer from staging to Gallery
 
