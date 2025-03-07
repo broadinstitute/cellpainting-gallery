@@ -31,7 +31,7 @@ Open the AWS CLI config file:
 Add the following text at the bottom of the file:
 
 ```bash
-[cpg_staging]
+[cpg-staging]
 aws_access_key_id = {ACCESS_KEY_ID}
 aws_secret_access_key = {SECRET_ACCESS_KEY}
 region = us-east-1
@@ -46,18 +46,17 @@ Ensure that you have read [Contributing to the Cell Painting Gallery](/documenta
 
 Prepare your AWS CLI data transfer commands for upload to `staging-cellpainting-gallery` exactly mimicking the structure of `cellpainting-gallery`.
 Depending upon how you have locally structured your data, you may need to generate multiple separate commands for transfer to the gallery.
-They should follow the format of `aws s3 cp --recursive SOURCE DESTINATION --profile cpg_staging --acl bucket-owner-full-control`.
+They should follow the format of `aws s3 cp --recursive SOURCE DESTINATION --profile cpg-staging`.
 (For single files, remove the `--recursive` flag.)
 
-The `--acl` flag gives the Cell Painting Gallery full ownership of the uploaded files.  
 `SOURCE` is where the files are on your storage and can be a local absolute or relative path or can be an S3 location of your S3 bucket.  
 `DESTINATION` is the S3 path within the `staging-cellpainting-gallery` (that should match `cellpainting-gallery`).
 
 e.g.  
 
 ```bash
-aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/ --acl bucket-owner-full-control 
-aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --acl bucket-owner-full-control
+aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/cpg-staging 
+aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/cpg-staging
 ```
 
 ## 7. Initiate transfer from staging to Gallery
