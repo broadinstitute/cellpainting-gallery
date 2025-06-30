@@ -66,20 +66,21 @@ The `workspace_dl` structure encodes processing identity in paths:
 workspace_dl/embeddings/efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff/
 ```
 
-### 2. Versioned Subdirectories
-For assembled profiles, versions and variants are explicit (introduced in the [JUMP Hub manifest guide](https://github.com/broadinstitute/jump_hub/blob/213f90a6e1cdcf7ee665eb56ecf5d16c886dd7eb/howto/2_create_project_manifest.md)):
+### 2. Versioned Subdirectories with Manifest Tracking
+For assembled profiles, we use versioned subdirectories combined with manifest files for provenance tracking ([introduced](https://github.com/broadinstitute/jump_hub/pull/101) in the [JUMP Hub manifest guide](https://github.com/broadinstitute/jump_hub/blob/213f90a6e1cdcf7ee665eb56ecf5d16c886dd7eb/howto/2_create_project_manifest.md)):
+
+**Physical organization** (versioned subdirectories):
 ```
 profiles_assembled/compound_no_source7/v1.0/profiles_var_mad_int_featselect.parquet
 ```
 
-### 3. Manifest Files for Metadata
-Manifest files track:
+**Metadata tracking** (manifest files) documents:
 - What data was processed (`profile_url`)
 - How it was processed (`recipe_permalink`)
 - With what parameters (`config_permalink`)
 - Result verification (`etag`)
 
-This decouples physical storage from logical organization.
+This approach decouples physical storage from logical organization - files can be moved or reorganized while maintaining complete history and provenance through the manifest.
 
 ## Maintaining Consistency
 
