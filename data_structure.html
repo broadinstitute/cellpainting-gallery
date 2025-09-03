@@ -440,7 +440,7 @@ document.write(`
 The parent structure is as follows.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cellpainting-gallery
 └── &lt;project&gt;
-    └── &lt;project-specific-nesting&gt;
+    └── &lt;source&gt;
         ├── images
         ├── workspace
         └── workspace_dl
@@ -449,7 +449,7 @@ The parent structure is as follows.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;project&gt;</span></code>: top level folder for the project.
 Keep the name short and simple with <code class="docutils literal notranslate"><span class="pre">[a-z0-9_]</span></code> only.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;project-specific-nesting&gt;</span></code>: additional nesting level that is typically an institution identifier.
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;source&gt;</span></code>: additional nesting level that is an identifier for the contributing institution.
 It should be present even if the data is from a single source (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0003-rosetta/</span></code> only contains <code class="docutils literal notranslate"><span class="pre">broad/</span></code>).
 It can be anonymized (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">source_1/</span></code>, <code class="docutils literal notranslate"><span class="pre">source_2/</span></code>, etc.).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: all images and illumination correction functions.</p></li>
@@ -458,7 +458,7 @@ It can be anonymized (e.g. <code class="docutils literal notranslate"><span clas
 </ul>
 <p>Not all projects will have all parent structures.</p>
 <p>The “completeness” of a project can be checked using our <a class="reference external" href="https://github.com/broadinstitute/cpg">data validator</a>.
-Please note that it is in alpha and furhter functionality and documentation are under development.</p>
+Please note that it is in alpha and further functionality and documentation are under development.</p>
 <section id="images-folder-structure">
 <h2><code class="docutils literal notranslate"><span class="pre">images</span></code> folder structure<a class="headerlink" href="#images-folder-structure" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cellpainting-gallery/
