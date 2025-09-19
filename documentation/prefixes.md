@@ -47,4 +47,5 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0039-garcia-fossa-livecellpainting    |
 | cpg0040-garcia-fossa-AgNP                |
 | cpg0041-pccma                            |
-
+| cpg0042-chandrasekaran-jump              |
+| cpg0043-segmentation                     |
