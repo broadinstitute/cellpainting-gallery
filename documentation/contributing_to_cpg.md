@@ -9,7 +9,7 @@ We particularly welcome contributions to our list of [publications using data fr
 
 To ask a question that is not covered by our documentation, you are also welcome to create an [Issue](https://github.com/broadinstitute/cellpainting-gallery/issues) in the Cell Painting Gallery repository.
 Please note that the Cell Painting Gallery is not a place to ask dataset-specific questions.
-Instead, please direct such questions to the respective dataset repository linked in the [README](https://github.com/broadinstitute/cellpainting-gallery/README.md) or if no dataset repository, to the authors of any associated publication.
+Instead, please direct such questions to the respective dataset repository linked in [Complete Datasets](complete_datasets.md) or if no dataset repository, to the authors of any associated publication.
 
 ## Contributing Data to the Gallery
 
@@ -20,7 +20,7 @@ For new datasets, please include the following details in your contact:
 
 1) assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)
 2) approximate data size
-3) components you wish to contribute (all are described in [data structure](https://broadinstitute.github.io/cellpainting-gallery/data_structure.html)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` is required.
+3) components you wish to contribute (all are described in [data structure](data_structure.md)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` is required.
 4) institutional identifier to use for data (e.g. `broad`, `anonymous`)
 5) suggested top level project tag.
 We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.

@@ -50,7 +50,7 @@ Before using AWS CLI, you will need to install AWS CLI following [AWS documentat
 ### Downloading a whole dataset
 
 Perhaps the simplest download command is to download a whole dataset.
-However, before doing so, we encourage you to look carefully at the [README](README.md) so that you are aware of the size of the dataset that you are downloading.
+However, before doing so, we encourage you to look carefully at the dataset size information in [Complete Datasets](complete_datasets.md) so that you are aware of the size of the dataset that you are downloading.
 
 In your terminal, navigate into the folder that you would like to download into.
 Run the following command to see a listing of all files that would be downloaded with your command.

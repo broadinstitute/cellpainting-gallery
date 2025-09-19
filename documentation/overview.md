@@ -5,8 +5,10 @@ The Cell Painting Gallery is a publicly available collection of Cell Painting da
 
 ## Available datasets
 
-Complete datasets with descriptive overview are listed [here](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md).
+Complete datasets with descriptive overview are listed [here](complete_datasets.md).
 Prefixes for datasets-in-progress can be accessed [here](prefixes.md).
+Most prefixes within the Cell Painting Gallery are for unique Cell Painting datasets that contain images, extracted features, and metadata.
+However, some prefixes are re-analyses of other datasets and may not contain images.
 
 ## Downloading from Cell Painting Gallery
 
@@ -34,5 +36,5 @@ For other sources of publicly available Cell Painting datasets we encourage you 
 
 ## Acknowledgments
 
-We gratefully acknowledge E. Chu and N. Ragusa of AWS for their assistance in establishing the Cell Painting Gallery. 
+We gratefully acknowledge E. Chu and N. Ragusa of AWS for their assistance in establishing the Cell Painting Gallery.
 This resource was made possible through funding from Calico Life Sciences LLC and Merck Sharp & Dohme LLC (a subsidiary of Merck & Co., Inc.), as well as grants from the National Institutes of Health (P41 GM135019 to B.A.C. and A.E.C.; R35 GM122547 to A.E.C.) and the Chan Zuckerberg Initiative DAF (CZI grant DAF2020-225720, https://doi.org/10.37921/977328pjvbca), an advised fund of Silicon Valley Community Foundation (https://doi.org/10.13039/100014989, to B.A.C.).

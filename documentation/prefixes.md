@@ -1,7 +1,7 @@
 # Prefixes
 
 The purpose of this table is to maintain a full listing of Cell Painting Gallery identifiers for both complete and in-progress datasets.
-Complete datasets will be fully described in the main repository [README](http://github.com/broadinstitute/cellpainting-gallery/README.md).
+Complete datasets are fully described in [Complete Datasets](complete_datasets.md).
 
 | Dataset name                             |
 |------------------------------------------|
