@@ -229,6 +229,7 @@ Examples of additional optional folders you may upload to `workspace` include:
 - `assaydev`: work use to test/optimize segmentation parameters
 - `embeddings`: embeddings generated from deep learning models
 - `pipelines`: the CellProfiler .cppipe or .cpproj files used
+- `profiles_assembled`: versioned profiles processed across multiple batches or sources
 - `qc`: quality control data
 - `segmentation`: optimized segmentations generated independently of the `analysis` pipeline
 - `software`: scripts used while handling the batch
@@ -394,6 +395,37 @@ For a full description of the files, see [profiling-recipe files generated](http
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
 - The .csv files undergo gzip compression to be .csv.gz files
+
+### `profiles_assembled` folder structure
+
+The `profiles_assembled` folder contains profiles that have been processed across multiple batches or sources using workflows like the [JUMP profiling recipe](https://github.com/broadinstitute/jump-profiling-recipe).
+Unlike the `profiles` folder which contains per-plate outputs from the standard profiling recipe, `profiles_assembled` contains versioned datasets that may combine data from multiple plates, batches, or even sources.
+
+Within the `profiles_assembled` folder, data is organized by subset, version, and processing variant:
+
+```
+└── profiles_assembled
+    └── <subset_name>
+        └── <version>
+            ├── <processing_variant1>.parquet
+            └── <processing_variant2>.parquet
+```
+
+- `<subset_name>`: Describes which data was included (e.g., `compound_no_source7` indicates compounds excluding source 7)
+- `<version>`: Version of the assembled dataset (e.g., `v1.0`, `v2.0`)
+- `<processing_variant>`: Describes the specific processing applied (e.g., `profiles_var_mad_int_featselect` for variance, MAD, intensity feature selection)
+
+For example:
+```
+└── profiles_assembled
+    └── compound_no_source7
+        └── v1.0
+            ├── profiles_var_mad_int_featselect.parquet
+            └── profiles_var_mad_int_featselect_harmony.parquet
+```
+
+This structure allows multiple processing approaches to coexist without overwriting each other.
+The provenance of these files is typically tracked using manifest files as described in the [JUMP Hub manifest guide](https://github.com/broadinstitute/jump_hub/blob/main/howto/2_create_project_manifest.md) (note: this guide is a work in progress).
 
 ### `quality_control` folder structure
 
