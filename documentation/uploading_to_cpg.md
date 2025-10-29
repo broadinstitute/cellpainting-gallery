@@ -108,7 +108,6 @@ Once the transfers are complete, either you (Imaging Platform internal) or your 
 
 To verify if the transfer was successful, compare object counts between your source and destination.
 Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.
-- Total file size on origin: `du -sh --apparent-size PATH/TO/YOUR/FILES`
 - Number of files on origin: `find PATH/TO/YOUR/FILES  -type f | wc -l`
 with
 - Total object size on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES --summarize --human-readable --recursive | grep Total`
