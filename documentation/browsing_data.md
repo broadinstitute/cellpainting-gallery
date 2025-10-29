@@ -112,7 +112,7 @@ The `fullfile_list` returns a list of complete files (i.e. all objects) within t
 
 ![Searching CPG Metadata](images/CPG_Tools_Metadata_Search.png)
 
-We currently have an alpha release of our Cell Painting Gallery Tools which enables you to search through all metadata files in the Cell Painting Gallery for a string of interest.
+We currently have an alpha release of our [Cell Painting Gallery Tools](https://cpg-xi.vercel.app/search) which enables you to search through all metadata files in the Cell Painting Gallery for a string of interest.
 Enter any string (e.g. gene names, compound names, etc.) and it will return the metadata files that contain the matching string.
 
 Please note that this is an alpha release that is under active development.

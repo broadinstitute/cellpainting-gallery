@@ -27,6 +27,11 @@ jobs:
       run: |
         pip install jupyter-book
 
+    # Create "complete_datasets.md" from README.md
+    - name: Create complete_datasets.md
+      run: |
+        python documentation/add_README_to_docs.py
+
     # Build the book
     - name: Build the book
       run: |

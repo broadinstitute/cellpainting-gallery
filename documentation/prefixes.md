@@ -1,7 +1,7 @@
 # Prefixes
 
 The purpose of this table is to maintain a full listing of Cell Painting Gallery identifiers for both complete and in-progress datasets.
-Complete datasets will be fully described in the main repository [README](http://github.com/broadinstitute/cellpainting-gallery/README.md).
+Complete datasets are fully described in [Complete Datasets](complete_datasets.md).
 
 | Dataset name                             |
 |------------------------------------------|
@@ -40,11 +40,12 @@ Complete datasets will be fully described in the main repository [README](http:/
 | cpg0032-pooled-rare                      |
 | cpg0033-oasis-pilot                      |
 | cpg0034-arevalo-su-motive                |
-| cpg0035-compressed                       |
+| cpg0035                                  |
 | cpg0036-EU-OS-bioactives                 |
 | cpg0037-oasis                            |
 | cpg0038-tegtmeyer-neuropainting          |
 | cpg0039-garcia-fossa-livecellpainting    |
 | cpg0040-garcia-fossa-AgNP                |
 | cpg0041-pccma                            |
-
+| cpg0042-chandrasekaran-jump              |
+| cpg0043-segmentation                     |
