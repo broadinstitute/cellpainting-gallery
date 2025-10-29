@@ -474,8 +474,19 @@ aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>-
 Get file count on S3 with:
 <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">ls</span> <span class="pre">--summarize</span> <span class="pre">--human-readable</span> <span class="pre">--recursive</span> <span class="pre">s3://staging-cellpainting-gallery/${PROJECT_NAME}/${SOURCE}$/path/to/data/</span></code></p>
 <p>After complete transfer, you (Imaging Platform internal) or your data champion (if external) need to verify that all the data is in a structure compliant with our <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure requirements</span></a>.
-(Currently this is done manually, though this will be programatic in the future.)
-Once verification is complete, let a Gallery maintainer (Erin, Shantanu) know that they should initiate transfer from staging to Gallery.</p>
+(Currently this is done manually, though this will be programatic in the future.)</p>
+<p>To verify if the transfer was successful, compare object counts between your source and destination.
+Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.</p>
+<ul class="simple">
+<li><p>Number of files on origin (for a file system): <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">PATH/TO/YOUR/FILES</span>&#160; <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code>
+with</p></li>
+<li><p>Number of objects on the Staging bucket: <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">ls</span> <span class="pre">s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES</span> <span class="pre">--recursive</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>[!NOTE]
+To run the <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">ls</span></code> command on the staging bucket, you need to have your temporary credentials active (see “Activate credentials” above).</p>
+</div></blockquote>
+<p>Once verification is complete, let a Gallery maintainer (Erin, Shantanu) know that they should initiate transfer from staging to Gallery.</p>
 </section>
 </section>
 
