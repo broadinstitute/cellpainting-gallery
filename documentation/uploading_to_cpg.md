@@ -110,7 +110,6 @@ To verify if the transfer was successful, compare object counts between your sou
 Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.
 - Number of files on origin (for a file system): `find PATH/TO/YOUR/FILES  -type f | wc -l`
 with
-- Total object size on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES --summarize --human-readable --recursive | grep Total`
 - Number of objects on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES --recursive | wc -l`
 
 >[!NOTE]
