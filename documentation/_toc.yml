@@ -5,6 +5,7 @@ root: overview
 parts:
 - caption: Data
   chapters:
+  - file: complete_datasets
   - file: data_structure
   - file: organizational_philosophy
   - file: feature_sets

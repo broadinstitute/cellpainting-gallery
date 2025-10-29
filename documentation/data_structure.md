@@ -6,7 +6,7 @@ The parent structure is as follows.
 ```
 cellpainting-gallery
 └── <project>
-    └── <project-specific-nesting>
+    └── <source>
         ├── images
         ├── workspace
         └── workspace_dl
@@ -14,7 +14,7 @@ cellpainting-gallery
 
 - `<project>`: top level folder for the project.
 Keep the name short and simple with `[a-z0-9_]` only.
-- `<project-specific-nesting>`: additional nesting level that is typically an institution identifier.
+- `<source>`: additional nesting level that is an identifier for the contributing institution. 
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 It can be anonymized (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `source_1/`, `source_2/`, etc.).
 It can also indicate that it contains data aggregated from multiple sources (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `assembled`).
@@ -26,7 +26,7 @@ It can also indicate that it contains data aggregated from multiple sources (e.g
 Not all projects will have all parent structures.
 
 The "completeness" of a project can be checked using our [data validator](https://github.com/broadinstitute/cpg).
-Please note that it is in alpha and furhter functionality and documentation are under development.
+Please note that it is in alpha and further functionality and documentation are under development.
 
 ## `images` folder structure
 
