@@ -14,9 +14,10 @@ cellpainting-gallery
 
 - `<project>`: top level folder for the project.
 Keep the name short and simple with `[a-z0-9_]` only.
-- `<project-specific-nesting>`: additional nesting level that is typically an institution identifier. 
+- `<project-specific-nesting>`: additional nesting level that is typically an institution identifier.
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 It can be anonymized (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `source_1/`, `source_2/`, etc.).
+It can also indicate that it contains data aggregated from multiple sources (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `assembled`).
 
 - `images`: all images and illumination correction functions.
 - `workspace`: everything else that results from CellProfiler-based features goes here.
