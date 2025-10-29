@@ -22,9 +22,12 @@ It includes:
 - [how to download gallery data](https://broadinstitute.github.io/cellpainting-gallery/download_instructions.html) (with AWS CLI, Quilt, or dataset-specific tools)
 - [how to contribute to the gallery](https://broadinstitute.github.io/cellpainting-gallery/contributing_to_cpg)
 
-## Available datasets
+## Complete datasets
 
-All datasets are generated using the Cell Painting assay unless indicated otherwise. Several updates to that protocol exist ([Cell Painting wiki](https://github.com/carpenterlab/2022_Cimini_NatureProtocols/wiki)).
+All datasets are generated using the canonical Cell Painting assay unless indicated otherwise. Several updates to that protocol exist ([Cell Painting wiki](https://github.com/carpenterlab/2022_Cimini_NatureProtocols/wiki)).
+
+Most prefixes within the Cell Painting Gallery are for unique Cell Painting datasets that contain images, extracted features, and metadata.
+However, some prefixes are re-analyses of other datasets and may not contain images.
 
 The datasets are stored with the prefix indicated by the dataset name.
 e.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot` and can be listed using AWS CLI `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg0000-jump-pilot/` (note the `/` at the end).
