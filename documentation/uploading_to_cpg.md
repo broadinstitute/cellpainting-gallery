@@ -106,7 +106,8 @@ Run your transfer commands to `staging-cellpainting-gallery`.
 Once the transfers are complete, either you (Imaging Platform internal) or your data champion (if external) must verify the data transferred to `staging-cellpainting-gallery` is complete.
 (Currently this is done manually, though this will be programatic in the future.)
 
-To verify if the transfer was succesful you (Imaging Platform internal) can compare:
+To verify if the transfer was successful, compare object counts between your source and destination.
+Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.
 - Total file size on origin: `du -sh --apparent-size PATH/TO/YOUR/FILES`
 - Number of files on origin: `find PATH/TO/YOUR/FILES  -type f | wc -l`
 with
