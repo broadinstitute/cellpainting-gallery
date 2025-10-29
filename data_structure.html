@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="broadinstitute.github.io/data_structure.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Feature Sets" href="feature_sets.html" />
+    <link rel="next" title="Data Organization in the Cell Painting Gallery" href="organizational_philosophy.html" />
     <link rel="prev" title="Complete Datasets" href="complete_datasets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="complete_datasets.html">Complete Datasets</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cell Painting Gallery folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizational_philosophy.html">Data Organization in the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_sets.html">Feature Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
@@ -412,6 +413,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles</span></code> folder structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-assembled-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-folder-structure"><code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-folder-structure"><code class="docutils literal notranslate"><span class="pre">segmentation</span></code> folder structure</a></li>
 </ul>
@@ -452,7 +454,8 @@ The parent structure is as follows.</p>
 Keep the name short and simple with <code class="docutils literal notranslate"><span class="pre">[a-z0-9_]</span></code> only.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;source&gt;</span></code>: additional nesting level that is an identifier for the contributing institution.
 It should be present even if the data is from a single source (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0003-rosetta/</span></code> only contains <code class="docutils literal notranslate"><span class="pre">broad/</span></code>).
-It can be anonymized (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">source_1/</span></code>, <code class="docutils literal notranslate"><span class="pre">source_2/</span></code>, etc.).</p></li>
+It can be anonymized (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">source_1/</span></code>, <code class="docutils literal notranslate"><span class="pre">source_2/</span></code>, etc.).
+It can also indicate that it contains data aggregated from multiple sources (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">assembled</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: all images and illumination correction functions.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">workspace</span></code>: everything else that results from CellProfiler-based features goes here.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">workspace_dl</span></code>: everything else that results from deep learning-based features goes here.</p></li>
@@ -652,6 +655,7 @@ Note that some experiments may generate additional categories of data/metadata a
 <li><p><code class="docutils literal notranslate"><span class="pre">assaydev</span></code>: work use to test/optimize segmentation parameters</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">embeddings</span></code>: embeddings generated from deep learning models</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pipelines</span></code>: the CellProfiler .cppipe or .cpproj files used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code>: versioned profiles processed across multiple batches or sources</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">qc</span></code>: quality control data</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">segmentation</span></code>: optimized segmentations generated independently of the <code class="docutils literal notranslate"><span class="pre">analysis</span></code> pipeline</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">software</span></code>: scripts used while handling the batch</p></li>
@@ -823,6 +827,34 @@ For a full description of the files, see <a class="reference external" href="htt
 <li><p><code class="docutils literal notranslate"><span class="pre">2021_04_26_Batch1</span></code> is the batch and <code class="docutils literal notranslate"><span class="pre">BR00117035</span></code> is the plate</p></li>
 <li><p>The .csv files undergo gzip compression to be .csv.gz files</p></li>
 </ul>
+</section>
+<section id="profiles-assembled-folder-structure">
+<h3><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder structure<a class="headerlink" href="#profiles-assembled-folder-structure" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder contains profiles that have been processed across multiple batches or sources using workflows like the <a class="reference external" href="https://github.com/broadinstitute/jump-profiling-recipe">JUMP profiling recipe</a>.
+Unlike the <code class="docutils literal notranslate"><span class="pre">profiles</span></code> folder which contains per-plate outputs from the standard profiling recipe, <code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> contains versioned datasets that may combine data from multiple plates, batches, or even sources.</p>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder, data is organized by subset, version, and processing variant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── profiles_assembled
+    └── &lt;subset_name&gt;
+        └── &lt;version&gt;
+            ├── &lt;processing_variant1&gt;.parquet
+            └── &lt;processing_variant2&gt;.parquet
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;subset_name&gt;</span></code>: Describes which data was included (e.g., <code class="docutils literal notranslate"><span class="pre">compound_no_source7</span></code> indicates compounds excluding source 7)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code>: Version of the assembled dataset (e.g., <code class="docutils literal notranslate"><span class="pre">v1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">v2.0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;processing_variant&gt;</span></code>: Describes the specific processing applied (e.g., <code class="docutils literal notranslate"><span class="pre">profiles_var_mad_int_featselect</span></code> for variance, MAD, intensity feature selection)</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── profiles_assembled
+    └── compound_no_source7
+        └── v1.0
+            ├── profiles_var_mad_int_featselect.parquet
+            └── profiles_var_mad_int_featselect_harmony.parquet
+</pre></div>
+</div>
+<p>This structure allows multiple processing approaches to coexist without overwriting each other.
+The provenance of these files is typically tracked using manifest files as described in the <a class="reference external" href="https://github.com/broadinstitute/jump_hub/blob/main/howto/2_create_project_manifest.md">JUMP Hub manifest guide</a> (note: this guide is a work in progress).</p>
 </section>
 <section id="quality-control-folder-structure">
 <h3><code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder structure<a class="headerlink" href="#quality-control-folder-structure" title="Permalink to this heading">#</a></h3>
@@ -1090,11 +1122,11 @@ Within the network folder is a folder for each batch and within each batch folde
       </div>
     </a>
     <a class="right-next"
-       href="feature_sets.html"
+       href="organizational_philosophy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Feature Sets</p>
+        <p class="prev-next-title">Data Organization in the Cell Painting Gallery</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1128,6 +1160,7 @@ Within the network folder is a folder for each batch and within each batch folde
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles</span></code> folder structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-assembled-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-folder-structure"><code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-folder-structure"><code class="docutils literal notranslate"><span class="pre">segmentation</span></code> folder structure</a></li>
 </ul>

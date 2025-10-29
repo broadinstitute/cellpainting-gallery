@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Feature Sets &#8212; Cell Painting Gallery Documentation</title>
+    <title>Data Organization in the Cell Painting Gallery &#8212; Cell Painting Gallery Documentation</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'feature_sets';</script>
-    <link rel="canonical" href="broadinstitute.github.io/feature_sets.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'organizational_philosophy';</script>
+    <link rel="canonical" href="broadinstitute.github.io/organizational_philosophy.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Browsing Data on the Cell Painting Gallery" href="browsing_data.html" />
-    <link rel="prev" title="Data Organization in the Cell Painting Gallery" href="organizational_philosophy.html" />
+    <link rel="next" title="Feature Sets" href="feature_sets.html" />
+    <link rel="prev" title="Cell Painting Gallery folder structure" href="data_structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,8 +168,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="complete_datasets.html">Complete Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_structure.html">Cell Painting Gallery folder structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organizational_philosophy.html">Data Organization in the Cell Painting Gallery</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Feature Sets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Organization in the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_sets.html">Feature Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
 </ul>
@@ -257,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/feature_sets.md" target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/organizational_philosophy.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Ffeature_sets.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Forganizational_philosophy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/feature_sets.md" target="_blank"
+      <li><a href="_sources/organizational_philosophy.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Feature Sets</h1>
+    <h1>Data Organization in the Cell Painting Gallery</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,7 +398,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellprofiler-features">CellProfiler Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-principle-mirror-the-cell-painting-workflow">Core Principle: Mirror the Cell Painting Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-evolution-challenge-one-to-many-analysis">The Evolution Challenge: One-to-Many Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits">Benefits</a></li>
 </ul>
             </nav>
         </div>
@@ -410,39 +412,86 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="feature-sets">
-<h1>Feature Sets<a class="headerlink" href="#feature-sets" title="Permalink to this heading">#</a></h1>
-<section id="cellprofiler-features">
-<h2>CellProfiler Features<a class="headerlink" href="#cellprofiler-features" title="Permalink to this heading">#</a></h2>
-<p>An overview of CellProfiler features as typically measured in Cell Painting is available in the <a class="reference external" href="https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki/What-do-Cell-Painting-features-mean%3F">Cell Painting Assay Wiki</a>.</p>
-<p>Features measured can vary from dataset to dataset in the Cell Painting Gallery.
-Common sources of variation for measured features include:</p>
+  <section id="data-organization-in-the-cell-painting-gallery">
+<h1>Data Organization in the Cell Painting Gallery<a class="headerlink" href="#data-organization-in-the-cell-painting-gallery" title="Permalink to this heading">#</a></h1>
+<p>This document explains the reasoning behind the Cell Painting Gallery’s folder structure and how it has evolved.
+For the technical specification of the folder structure itself, see <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data_structure.md</span></a>.</p>
+<p>The Cell Painting Gallery has evolved from supporting single analyses to multiple processing variants while maintaining backwards compatibility.
+Fixed storage conventions combined with parameterized analysis paths support both automated pipelines and exploratory research.</p>
+<section id="core-principle-mirror-the-cell-painting-workflow">
+<h2>Core Principle: Mirror the Cell Painting Workflow<a class="headerlink" href="#core-principle-mirror-the-cell-painting-workflow" title="Permalink to this heading">#</a></h2>
+<p>The Cell Painting Gallery structure was built around the standard Cell Painting analysis workflow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>images → analysis → backend → profiles
+(raw data) → (image and object measurements) → (collation of single cell measurements) → (aggregation and processing of features)
+</pre></div>
+</div>
+<p>It was built around the principles of:</p>
 <ol class="arabic simple">
-<li><p>the version of the Cell Painting Assay analysis pipeline used</p></li>
-<li><p>the version of CellProfiler used</p></li>
-<li><p>the microscope used</p></li>
-<li><p>the stain panel used</p></li>
+<li><p><strong>Uniform Structure</strong>: Every project uses identical folder hierarchy, including seemingly redundant levels (e.g., institution folders even for single-source projects).</p></li>
+<li><p><strong>Workflow Mapping</strong>: Folders correspond to analysis stages - from raw images through analysis measurements to normalized profiles.</p></li>
+<li><p><strong>Time and Location Hierarchy</strong>:</p>
+<ul class="simple">
+<li><p>Time: Batches by date (YYYY_MM_DD)</p></li>
+<li><p>Space: Institution → Plate → Well → Site</p></li>
+<li><p>Purpose: Raw → Processed → Analyzed</p></li>
+</ul>
+</li>
+<li><p><strong>Method Separation</strong>: Traditional CellProfiler analysis in <code class="docutils literal notranslate"><span class="pre">workspace/</span></code>, deep learning approaches in <code class="docutils literal notranslate"><span class="pre">workspace_dl/</span></code>.</p></li>
 </ol>
-<p>Note that feature selection is a component of the Cell Painting Assay data analysis workflow so usually not all features measured by CellProfiler are contained in the final profiles used for data analysis.</p>
-<p>For the creation of the Cell Painting Gallery, we re-processed a number of historical datasets using the most up-to-date <a class="reference external" href="https://github.com/broadinstitute/imaging-platform-pipelines/blob/master/JUMP_production/JUMP_analysis_v3.cppipe">Cell Painting Assay analysis pipeline</a>.
-Reprocessed datasets include:</p>
+</section>
+<section id="the-evolution-challenge-one-to-many-analysis">
+<h2>The Evolution Challenge: One-to-Many Analysis<a class="headerlink" href="#the-evolution-challenge-one-to-many-analysis" title="Permalink to this heading">#</a></h2>
+<p>The original structure assumed a linear pipeline where each dataset has one canonical analysis.
+In practice, scientific exploration requires multiple valid interpretations of the same data.
+For example, the same images may be processed multiple times with similar but distinct tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                  ┌→ CellProfiler v3 → profiles_v1
+images ─────────→ ├→ CellProfiler v4 → profiles_v2
+                  ├→ Cellpose → different segmentations → profiles_v3
+                  └→ DeepProfiler → embeddings → profiles_dl
+</pre></div>
+</div>
+<p>This created a constraint: where to store alternative analyses without breaking existing tools or overwriting data?
+As a solution, we adopted a two-tier system that maintains backward compatibility:</p>
+<p><strong>Tier 1: Primary Data (Fixed Structure)</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cpg0012-wawer-bioactivecompoundprofiling</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cpg0017-rohban-pathways</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cpg0031-caicedo-cmvip</span></code></p></li>
+<li><p>Original standardized paths</p></li>
+<li><p>Single canonical location per data type</p></li>
+<li><p>Standard folders: <code class="docutils literal notranslate"><span class="pre">profiles/</span></code>, <code class="docutils literal notranslate"><span class="pre">analysis/</span></code>, etc.</p></li>
 </ul>
-<p>For <code class="docutils literal notranslate"><span class="pre">cpg0031-caicedo-cmvip</span></code>, the new feature set contains 3616 features that are not in the original feature set.</p>
+<p><strong>Tier 2: Derived Products (Parameterized)</strong></p>
 <ul class="simple">
-<li><p>230 features are additional features measured only from the Mitochondrial channel that quantify the mitochondrial structure (including skeleton and branching).</p></li>
-<li><p>979 features are Image features - measurements taken on the whole image (instead of in segmented Nuclei, Cell or Cytoplasm compartments).
-These features can be used as per-image QC measurements to enable filtering of low-quality images.
-They can also be used for exploration of signal contained in images without requiring segmentation.</p></li>
-<li><p>112 features are Granularity features.
-We show an example of this category of features being used for specific biological discovery in <a class="reference external" href="https://doi.org/10.1101/2023.08.06.552164">PERISCOPE</a>.</p></li>
-<li><p>3120 features are Texture features.
-(The original dataset had 630 Texture features which do have correspondents in the new Texture features but do not have the exact same name because we added extra information to the feature name to indicate the number of gray levels at which the feature was measured).
-Major <a class="reference external" href="https://doi.org/10.1186/s12859-021-04344-9">improvements to our CellProfiler software</a> enabled this dramatic expansion of Texture features.</p></li>
+<li><p>Multiple versions and processing variants</p></li>
+<li><p>Flexible, parameterized paths are embedded within existing rigid structure</p></li>
 </ul>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Fixed path (standardized location):   Parameterized path (specific analysis parameters):
+/workspace/profiles_assembled/   →    /{subset}/{version}/{processing_variant}.parquet
+/workspace/profiles_assembled/   →    /compound_no_source7/v1.0/profiles_var_mad_int_featselect.parquet
+
+/workspace_dl/embeddings/      →      /{network_or_model_with_hash}/
+/workspace_dl/embeddings/      →      /efficientnet_v2_imagenet1k_s_feature_vector_2_ec756ff/
+</pre></div>
+</div>
+<p>For assembled profiles, we use versioned subdirectories combined with manifest files for provenance tracking (<a class="reference external" href="https://github.com/broadinstitute/jump_hub/pull/101">introduced</a> in the <a class="reference external" href="https://github.com/broadinstitute/jump_hub/blob/213f90a6e1cdcf7ee665eb56ecf5d16c886dd7eb/howto/2_create_project_manifest.md">JUMP Hub manifest guide</a>).
+This approach decouples physical storage from logical organization - files can be moved or reorganized while maintaining complete history and provenance through the manifest.</p>
+<p><strong>Metadata tracking</strong> (manifest files) documents include:</p>
+<ul class="simple">
+<li><p>What data was processed (<code class="docutils literal notranslate"><span class="pre">profile_url</span></code>)</p></li>
+<li><p>How it was processed (<code class="docutils literal notranslate"><span class="pre">recipe_permalink</span></code>)</p></li>
+<li><p>With what parameters (<code class="docutils literal notranslate"><span class="pre">config_permalink</span></code>)</p></li>
+<li><p>Result verification (<code class="docutils literal notranslate"><span class="pre">etag</span></code>)</p></li>
+</ul>
+</section>
+<section id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this heading">#</a></h2>
+<p>This approach enables:</p>
+<ol class="arabic simple">
+<li><p><strong>Reproducibility</strong>: Standardized paths and manifests document analysis provenance</p></li>
+<li><p><strong>Scalability</strong>: Consistent structure across thousands of plates</p></li>
+<li><p><strong>Multiple analyses</strong>: Different processing pipelines without data conflicts</p></li>
+<li><p><strong>Automation</strong>: Predictable paths for computational tools</p></li>
+<li><p><strong>Flexibility</strong>: Researchers can iterate on processing methods</p></li>
+</ol>
 </section>
 </section>
 
@@ -477,20 +526,20 @@ Major <a class="reference external" href="https://doi.org/10.1186/s12859-021-043
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="organizational_philosophy.html"
+       href="data_structure.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Organization in the Cell Painting Gallery</p>
+        <p class="prev-next-title">Cell Painting Gallery folder structure</p>
       </div>
     </a>
     <a class="right-next"
-       href="browsing_data.html"
+       href="feature_sets.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Browsing Data on the Cell Painting Gallery</p>
+        <p class="prev-next-title">Feature Sets</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -509,7 +558,9 @@ Major <a class="reference external" href="https://doi.org/10.1186/s12859-021-043
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellprofiler-features">CellProfiler Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-principle-mirror-the-cell-painting-workflow">Core Principle: Mirror the Cell Painting Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-evolution-challenge-one-to-many-analysis">The Evolution Challenge: One-to-Many Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits">Benefits</a></li>
 </ul>
   </nav></div>
 
