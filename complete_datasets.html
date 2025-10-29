@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Complete Datasets &#8212; Cell Painting Gallery Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'complete_datasets';</script>
+    <link rel="canonical" href="broadinstitute.github.io/complete_datasets.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cell Painting Gallery folder structure" href="data_structure.html" />
+    <link rel="prev" title="Cell Painting Gallery Overview" href="overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="overview.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Cell Painting Gallery Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="overview.html">
+                    Cell Painting Gallery Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Complete Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structure.html">Cell Painting Gallery folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_sets.html">Feature Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows using the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning.html">Machine Learning (ML)/Deep Learning (DL)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing_to_cpg.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uploading_to_cpg.html">Tutorial: Uploading to the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prefixes.html">Prefixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using datasets in Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips and Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/complete_datasets.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fcomplete_datasets.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/complete_datasets.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Complete Datasets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="complete-datasets">
+<h1>Complete Datasets<a class="headerlink" href="#complete-datasets" title="Permalink to this heading">#</a></h1>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dataset name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Publication to cite</p></th>
+<th class="head"><p>Associated repositories</p></th>
+<th class="head text-center"><p>Total size</p></th>
+<th class="head text-center"><p>Images size</p></th>
+<th class="head text-center"><p>Numerical data size</p></th>
+<th class="head text-center"><p>Cell Painting protocol</p></th>
+<th class="head text-center"><p>Other aliases</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cpg0000-jump-pilot</p></td>
+<td><p>300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints</p></td>
+<td><p>(Chandrasekaran et al., 2024) <a class="reference external" href="https://doi.org/10.1038/s41592-024-02241-6">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2022.01.05.475090">Preprint</a>, Description of Cell Painting v2.5.</p></td>
+<td><p><a class="reference external" href="https://github.com/jump-cellpainting/2023_Chandrasekaran_submitted">data</a>, <a class="reference external" href="https://broad.io/jump">JUMP-Cell Painting Hub</a></p></td>
+<td class="text-center"><p>12.3 TB</p></td>
+<td class="text-center"><p>6.1 TB</p></td>
+<td class="text-center"><p>6.1 TB</p></td>
+<td class="text-center"><p>v2.5</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0001-cellpainting-protocol</p></td>
+<td><p>300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol</p></td>
+<td><p>(Cimini et al., 2022) <a class="reference external" href="https://doi.org/10.1038/nprot.2016.105">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2022.07.13.499171">Preprint</a> Description of Cell Painting v3.</p></td>
+<td><p><a class="reference external" href="https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols">data</a>, <a class="reference external" href="https://broad.io/jump">JUMP-Cell Painting Hub</a></p></td>
+<td class="text-center"><p>40.3 TB</p></td>
+<td class="text-center"><p>18.7 TB</p></td>
+<td class="text-center"><p>21.6 TB</p></td>
+<td class="text-center"><p>v3 and experiments</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0002-jump-scope</p></td>
+<td><p>90 compounds (JUMP-MOA plate) profiled in U2OS using different microscopes and settings</p></td>
+<td><p>(Tromans-Coia and Jamali et al., 2023) <a class="reference external" href="https://doi.org/10.1002/cyto.a.24786">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2023.02.15.528711">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/jump-cellpainting/jump-scope">data</a>, <a class="reference external" href="https://github.com/jump-cellpainting/jump-scope-analysis">analysis</a>, <a class="reference external" href="https://broad.io/jump">JUMP-Cell Painting Hub</a></p></td>
+<td class="text-center"><p>16.7 TB</p></td>
+<td class="text-center"><p>12.5 TB</p></td>
+<td class="text-center"><p>4.2 TB</p></td>
+<td class="text-center"><p>v2.5</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0003-rosetta</p></td>
+<td><p>28,000+ genes and compounds profiled in Cell Painting and <a class="reference external" href="https://doi.org/10.1016%2Fj.cell.2017.10.049">L1000</a> gene expression</p></td>
+<td><p>(Haghighi et al., 2022) <a class="reference external" href="https://doi.org/10.1038/s41592-022-01667-0">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2021.09.08.459417">Preprint</a>,</p></td>
+<td><p><a class="reference external" href="https://github.com/carpenter-singh-lab/2022_Haghighi_NatureMethods">data</a></p></td>
+<td class="text-center"><p>8.5 GB</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>8.5 GB</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0004-lincs</p></td>
+<td><p>1,571 compounds across 6 doses in A549 cells</p></td>
+<td><p>(Way et al., 2022) <a class="reference external" href="https://doi.org/10.1016/j.cels.2022.10.001">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2021.10.21.465335">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/lincs-cell-painting">data</a></p></td>
+<td class="text-center"><p>65.7 TB</p></td>
+<td class="text-center"><p>61.9 TB</p></td>
+<td class="text-center"><p>3.8 TB</p></td>
+<td class="text-center"><p>v2</p></td>
+<td class="text-center"><p>idr0125</p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0005-gerry-bioactivity</p></td>
+<td><p>30 related synthetic compounds across 6 doses in U2OS cells</p></td>
+<td><p>(Gerry et al., 2016) <a class="reference external" href="https://doi.org/10.1021/jacs.6b04614">Publication</a></p></td>
+<td><p></p></td>
+<td class="text-center"><p>356 GB</p></td>
+<td class="text-center"><p>356 GB</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>v1</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0010-caie-drugresponse</p></td>
+<td><p>MCF-7 breast cancer cells treated  with 113 small molecules at eight concentrations.</p></td>
+<td><p>(Caie et al., 2010) <a class="reference external" href="https://doi.org/10.1158/1535-7163.MCT-09-1148">Publication</a></p></td>
+<td><p></p></td>
+<td class="text-center"><p>239.2 GB</p></td>
+<td class="text-center"><p>98.4 GB</p></td>
+<td class="text-center"><p>140.8 GB</p></td>
+<td class="text-center"><p>other variation</p></td>
+<td class="text-center"><p><a class="reference external" href="https://bbbc.broadinstitute.org/BBBC021">BBBC021</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0011-lipocyteprofiler</p></td>
+<td><p>Variety of lipocytes in different metabolic states and with genetic and drug perturbations</p></td>
+<td><p>(Laber and Strobel et al., 2023) <a class="reference external" href="https://doi.org/10.1016/j.xgen.2023.100346">Publication</a>, <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.07.17.452050v1">Preprint</a> Description of Cell Painting lipocyte variant.</p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/2018_04_12_T2D_V2F_Saadat_Broad">Batch1 and Batch3 data</a>, <a class="reference external" href="https://github.com/ClaussnitzerLab/Lipocyte-Profiler">analysis</a></p></td>
+<td class="text-center"><p>1.2 TB</p></td>
+<td class="text-center"><p>1.2 TB</p></td>
+<td class="text-center"><p>16 MB</p></td>
+<td class="text-center"><p>lipocyte</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0012-wawer-bioactivecompoundprofiling</p></td>
+<td><p>30,000 compound dataset in U2OS cells. Original images re-profiled in 2023 (original profiles available in workspace/gigascience_profiles)</p></td>
+<td><p>(Wawer et al., 2014) <a class="reference external" href="https://doi.org/10.1073/pnas.1410933111">Publication</a> Description of Cell Painting v1, (Bray et al., 2017) <a class="reference external" href="https://doi.org/10.1093/gigascience/giw014">Publication</a> Description of Cell Painting v2</p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/2015_Bray_GigaScience-data">data</a></p></td>
+<td class="text-center"><p>10.7 TB</p></td>
+<td class="text-center"><p>3.1 TB</p></td>
+<td class="text-center"><p>7.6 TB</p></td>
+<td class="text-center"><p>v1</p></td>
+<td class="text-center"><p><a class="reference external" href="https://idr.openmicroscopy.org/webclient/?show=screen-1251">idr0016</a>, CDRP, <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC036">BBBC036</a>, <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC047">BBBC047</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0015-heterogeneity</p></td>
+<td><p>2,200+ compounds and 200+ genes profiles in U2OS cells</p></td>
+<td><p>(Rohban et al., 2019) <a class="reference external" href="https://doi.org/10.1038/s41467-019-10154-8">Publication</a></p></td>
+<td><p><a class="reference external" href="https://github.com/carpenterlab/2018_Rohban_NatComm">data</a></p></td>
+<td class="text-center"><p>204 GB</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>204 GB</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><a class="reference external" href="https://bbbc.broadinstitute.org/BBBC036">idr0016</a>, <a class="reference external" href="https://idr.openmicroscopy.org/webclient/?show=screen-1952">idr0036</a></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0016-jump</p></td>
+<td><p>116,000+ compounds and 15,000+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (&gt;126 TB), over 1.5 billion cells of numerical data (&gt;126TB), for over 250 TB data in total.</p></td>
+<td><p>(Chandrasekaran et al., 2023) <a class="reference external" href="https://doi.org/10.1101/2023.03.23.534023">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/jump-cellpainting/datasets">datasets resource</a>, <a class="reference external" href="https://broad.io/jump">JUMP-Cell Painting Hub</a></p></td>
+<td class="text-center"><p>358.4 TB</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>v3</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0017-rohban-pathways</p></td>
+<td><p>323 genes overexpressed in U2OS cells. Original images re-profiled in 2023 (original profiles not in gallery)</p></td>
+<td><p>(Rohban et al, 2017) <a class="reference external" href="https://doi.org/10.7554/eLife.24060">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/092403">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/cpg0017-rohban-pathways">re-profiled data</a>, <a class="reference external" href="https://github.com/carpenterlab/2017_Rohban_eLife">original data</a></p></td>
+<td class="text-center"><p>321 GB</p></td>
+<td class="text-center"><p>189 GB</p></td>
+<td class="text-center"><p>132 GB</p></td>
+<td class="text-center"><p>v1</p></td>
+<td class="text-center"><p><a class="reference external" href="https://bbbc.broadinstitute.org/BBBC037">BBBC037</a>, TA-ORF, <a class="reference external" href="https://idr.openmicroscopy.org/webclient/?show=screen-1751">idr0033</a></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0018-singh-seedseq</p></td>
+<td><p>U2OS cells treated with each of 315 unique shRNA sequences</p></td>
+<td><p>(Singh et al. 2013) <a class="reference external" href="https://doi.org/10.1371/journal.pone.0131370">Publication</a></p></td>
+<td><p></p></td>
+<td class="text-center"><p>247.1 GB</p></td>
+<td class="text-center"><p>247.1 GB</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><a class="reference external" href="https://bbbc.broadinstitute.org/BBBC025">BBBC025</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0019-moshkov-deepprofiler</p></td>
+<td><p>8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations</p></td>
+<td><p>(Moshkov et al., 2024) <a class="reference external" href="https://www.nature.com/articles/s41467-024-45999-1">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2022.08.12.503783">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/DeepProfilerExperiments">data</a>, <a class="reference external" href="https://github.com/cytomining/DeepProfiler">software</a></p></td>
+<td class="text-center"><p>522 GB</p></td>
+<td class="text-center"><p>482 GB</p></td>
+<td class="text-center"><p>40 GB</p></td>
+<td class="text-center"><p>dataset dependent</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0021-periscope</p></td>
+<td><p>30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media</p></td>
+<td><p>(Ramezani, Weisbart, Bauman, and Singh et al., 2025) <a class="reference external" href="https://doi.org/10.1101/2023.08.06.552164">Preprint</a>, <a class="reference external" href="https://doi.org/10.1038/s41592-024-02537-7">Publication</a>, Description of Cell Painting pooled variant. Also has data from (Haghighi et al., 2023) <a class="reference external" href="http://doi.org/10.48550/arXiv.2306.15898">Preprint</a>, <a class="reference external" href="https://www.ijcai.org/proceedings/2023/0531.pdf">Paper</a>.</p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/2022_PERISCOPE">analysis</a>, <a class="reference external" href="https://github.com/broadinstitute/CP186-A549-WG">A549 data</a>, <a class="reference external" href="https://github.com/broadinstitute/CP257-HeLa-WG">HeLa data</a>, <a class="reference external" href="https://github.com/carpenter-singh-lab/2023_Haghighi_IJCAI">PLePI</a></p></td>
+<td class="text-center"><p>56.0 TB</p></td>
+<td class="text-center"><p>45.0 TB</p></td>
+<td class="text-center"><p>11.0 TB</p></td>
+<td class="text-center"><p>pooled</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0022-cmqtl</p></td>
+<td><p>297 iPSC lines</p></td>
+<td><p>(Tegtmeyer et al., 2024) <a class="reference external" href="https://doi.org/10.1038/s41467-023-44045-w">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2023.01.09.522731">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/cmQTL">data</a></p></td>
+<td class="text-center"><p>3.7 TB</p></td>
+<td class="text-center"><p>2.8 TB</p></td>
+<td class="text-center"><p>945 GB</p></td>
+<td class="text-center"><p>v2.5</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0026-lacoste_haghighi-rare-diseases</p></td>
+<td><p>Protein localization of 3,448 missense variants in 1,269 genes in HeLa cells</p></td>
+<td><p>(Lacoste and Haghighi et al., 2024) <a class="reference external" href="https://doi.org/10.1016/j.cell.2024.09.003">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2023.09.05.556368">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/carpenter-singh-lab/2024_LacosteHaghighi_Cell_Mislocalization">analysis</a></p></td>
+<td class="text-center"><p>11 TB</p></td>
+<td class="text-center"><p>9.4 TB</p></td>
+<td class="text-center"><p>1.6 TB</p></td>
+<td class="text-center"><p>Protein of interest, Hoechst, ConA, Mitotracker</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0028-kelley-resistance</p></td>
+<td><p>Bortezomib resistant HCT116 clones</p></td>
+<td><p>(Kelley et al., 2023) <a class="reference external" href="https://doi.org/10.7554/eLife.91362">Publication</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/profiling-resistance-mechanisms">data</a></p></td>
+<td class="text-center"><p>4.1 TB</p></td>
+<td class="text-center"><p>1.9 TB</p></td>
+<td class="text-center"><p>2.2 TB</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0029-chroma-pilot</p></td>
+<td><p>Comparison of alternative Cell Painting dyes</p></td>
+<td><p>(Sivagurunathan et al., 2025) <a class="reference external" href="https://doi.org/10.1016/j.slasd.2025.100268">Publication</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/2022_09_07_New_phenotypic_dye_testing_CDoT_Broad_Analysis">data</a></p></td>
+<td class="text-center"><p>1.5 TB</p></td>
+<td class="text-center"><p>495 GB</p></td>
+<td class="text-center"><p>1 TB</p></td>
+<td class="text-center"><p>v3 and experiments</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0030-gustafsdottir-cellpainting</p></td>
+<td><p>U2OS cells treated with each of 1600 known bioactive compounds. Description of Cell Painting v1.</p></td>
+<td><p>(Gustafsdottir et al., 2013) <a class="reference external" href="https://doi.org/10.1371/journal.pone.0080999">Publication</a></p></td>
+<td><p></p></td>
+<td class="text-center"><p>234 GB</p></td>
+<td class="text-center"><p>234 GB</p></td>
+<td class="text-center"><p>.3 GB</p></td>
+<td class="text-center"><p>v1</p></td>
+<td class="text-center"><p><a class="reference external" href="https://bbbc.broadinstitute.org/BBBC022">BBBC022</a>, <a class="reference external" href="https://idr.openmicroscopy.org/webclient/?show=screen-1952">idr0036</a></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0031-caicedo-cmvip</p></td>
+<td><p>ORF over-expression of 596 alleles of 53 genes in A549 cells. Original images re-profiled in 2023 (original profiles available in workspace/profiles_orig)</p></td>
+<td><p>(Caicedo et al., 2023) <a class="reference external" href="https://www.molbiolcell.org/doi/10.1091/mbc.E21-11-0538">Publication</a>, <a class="reference external" href="https://doi.org/10.1101/2021.11.18.469171">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/luad-cell-painting">original data</a>, <a class="reference external" href="https://github.com/broadinstitute/cpg0031-caicedo-cmvip">re-profiled data</a></p></td>
+<td class="text-center"><p>2.2 TB</p></td>
+<td class="text-center"><p>605 GB</p></td>
+<td class="text-center"><p>1.6 TB</p></td>
+<td class="text-center"><p>v1</p></td>
+<td class="text-center"><p>BBBC043, LUAD</p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0034-arevalo-su-motive</p></td>
+<td><p>A graph dataset comprising Cell Painting features for 11,000 genes and 3,600 compounds, along with their relationships extracted from seven publicly available databases</p></td>
+<td><p>(Arevalo and Su et al., 2024) <a class="reference external" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/fdb3fa770c2e0ecbb4b7dc7083ef5be9-Abstract-Datasets_and_Benchmarks_Track.html">Publication</a>, <a class="reference external" href="https://arxiv.org/abs/2406.08649">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/carpenter-singh-lab/2024_Arevalo_NeurIPS_MotiVE">analysis</a></p></td>
+<td class="text-center"><p>4.5 GB</p></td>
+<td class="text-center"><p>0 GB</p></td>
+<td class="text-center"><p>4.5 GB</p></td>
+<td class="text-center"><p>v3</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p>cpg0036-EU-OS-bioactives</p></td>
+<td><p>2464 compounds from EU-OPENSCREEN Bioactive compound set, four imaging sites, two cell lines (HepG2 &amp; U2OS)</p></td>
+<td><p>(Wolff et al., 2025) <a class="reference external" href="https://doi.org/10.1016/j.isci.2025.112445">Publication</a> <a class="reference external" href="https://doi.org/10.1101/2024.08.27.609964">Preprint</a></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.13309566">aggregated profiles</a>, <a class="reference external" href="https://github.com/schmiedc/EU-OS_bioactives">analysis scripts</a>, <a class="reference external" href="https://www.probes-drugs.org/compounds/standardized#compoundset=353&#64;AND">compound information</a></p></td>
+<td class="text-center"><p>3.5 TB</p></td>
+<td class="text-center"><p>3.5 TB</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>v1</p></td>
+<td class="text-center"><p>Bioactives, EU-OS-Bioactives</p></td>
+</tr>
+<tr class="row-odd"><td><p>cpg0038-tegtmeyer-neuropainting</p></td>
+<td><p>Multiple brain cell types</p></td>
+<td><p>(Tegtmeyer et al., 2024) <a class="reference external" href="https://doi.org/10.1101/2024.11.16.623947">Preprint</a>, Description of Neuropainting variant</p></td>
+<td><p><a class="reference external" href="https://github.com/broadinstitute/2019_05_28_Neuronal_Cell_Painting">data</a>, <a class="reference external" href="https://github.com/broadinstitute/NeuroPainting">analysis</a></p></td>
+<td class="text-center"><p>2.0 TB</p></td>
+<td class="text-center"><p>1.8 TB</p></td>
+<td class="text-center"><p>240 GB</p></td>
+<td class="text-center"><p>neuropainting</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cell Painting Gallery Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="data_structure.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cell Painting Gallery folder structure</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Broad Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
