@@ -18,6 +18,7 @@ You are helping a Cell Painting Gallery maintainer onboard a new dataset contrib
 ## Context
 
 The Cell Painting Gallery follows a staging-to-production workflow. Contributors contact maintainers (@erinweisbart or @shntnu) to initiate contributions. Your job is to:
+
 1. Gather contributor information
 2. Assign a unique cpg#### identifier
 3. Update the prefixes registry
@@ -28,7 +29,8 @@ The Cell Painting Gallery follows a staging-to-production workflow. Contributors
 
 **First, check if the user has provided context** (email thread, message, etc.) in their initial request.
 
-### If context is provided:
+### If context is provided
+
 - **Parse the text** to extract:
   - Assay type (standard Cell Painting or variation)
   - Approximate data size
@@ -39,6 +41,7 @@ The Cell Painting Gallery follows a staging-to-production workflow. Contributors
   - Whether this is a new dataset or addition to existing dataset
 
 - **Present what you found** with confidence levels, like:
+
   ```
   📧 Extracted from provided context:
   ✓ Assay type: [what you found]
@@ -53,10 +56,11 @@ The Cell Painting Gallery follows a staging-to-production workflow. Contributors
   - Ambiguous details that need clarification
   - Confirmation of assumptions
 
-### If no context is provided:
+### If no context is provided
+
 Use the `AskUserQuestion` tool to gather all required information interactively.
 
-### Required Information:
+### Required Information
 
 1. **Assay type**:
    - Standard Cell Painting
@@ -166,27 +170,58 @@ Once a paper is published:
    - Fill in champion name (the maintainer using this skill, unless specified otherwise)
    - Check the first workflow item (prefixes.md updated)
 
-3. **Create the discussion** using the GitHub CLI:
+3. **Create the discussion** using the GitHub GraphQL API:
    - Use title format: `[Dataset Contribution] cpg####-tag - Brief Description`
-   - Use `gh` command to create the discussion in the repository
-   - Category should be "Contributions" or "General" if Contributions doesn't exist
+   - The `gh discussion create` command doesn't exist in most gh CLI versions
+   - Instead, use the GraphQL API via `gh api graphql`
 
-Example command:
-```bash
-gh discussion create \
-  --repo broadinstitute/cellpainting-gallery \
-  --title "[Dataset Contribution] cpg####-tag - Description" \
-  --body "$(cat discussion_body.md)" \
-  --category "General"
-```
+   **Step 3a**: First, get the repository ID and category IDs:
 
-4. **Capture and display** the discussion URL to the maintainer
+   ```bash
+   gh api graphql -f query='
+   query {
+     repository(owner: "broadinstitute", name: "cellpainting-gallery") {
+       id
+       discussionCategories(first: 10) {
+         nodes {
+           id
+           name
+         }
+       }
+     }
+   }'
+   ```
+
+   Look for the category named **"Dataset descriptions"** (preferred) or "General" as fallback.
+
+   **Step 3b**: Create the discussion using the GraphQL mutation:
+
+   ```bash
+   gh api graphql -f query='
+   mutation {
+     createDiscussion(input: {
+       repositoryId: "R_kgDOGULepQ"
+       categoryId: "[CATEGORY_ID_FROM_STEP_3a]"
+       title: "[Dataset Contribution] cpg####-tag - Brief Description"
+       body: "'"$(cat discussion_body.md | sed 's/"/\\"/g' | tr '\n' '\r' | sed 's/\r/\\n/g')"'"
+     }) {
+       discussion {
+         url
+       }
+     }
+   }'
+   ```
+
+   Note: The body requires escaping quotes and converting newlines for JSON compatibility.
+
+4. **Extract and display** the discussion URL from the GraphQL response
 
 ## Step 5: Generate Next Steps Summary
 
 Provide the maintainer with a brief confirmation:
 
 ### ✅ Dataset onboarding initiated
+
 - **Assigned**: cpg####-tag
 - **Updated**: `documentation/prefixes.md`
 - **Tracking**: [Discussion URL]
@@ -204,19 +239,20 @@ Provide the maintainer with a brief confirmation:
 
 ## Error Handling
 
-- If `gh` CLI is not available or fails, provide the template body and title for manual creation
+- If `gh api` CLI is not available or fails, provide the template body and title for manual creation via GitHub web UI
+- If the GraphQL query for categories fails, use the hardcoded repository ID (`R_kgDOGULepQ`) and category ID for "Dataset descriptions" (`DIC_kwDOGULepc4CZL49`)
 - If prefixes.md cannot be read, ask the maintainer to verify file location
 - If the suggested tag violates naming conventions, suggest alternatives
 - If unclear about any information, always ask rather than guess
 
-## Files You'll Need Access To:
+## Files You'll Need Access To
 
 - `documentation/prefixes.md` - Registry of all cpg identifiers
 - `.git/` - For git operations (checking branch, status)
 
-## Commands You May Use:
+## Commands You May Use
 
-- `gh discussion create` - Create GitHub discussion
+- `gh api graphql` - Query/mutate GitHub data via GraphQL API (used for creating discussions)
 - `git status` - Check repository state
 - `git add` - Stage changes (only with maintainer approval)
 - `gh repo view` - Verify repository details
