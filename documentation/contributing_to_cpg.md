@@ -32,7 +32,8 @@ For existing datasets, please  the following details include in your contact:
 2) approximate data size
 3) components you wish to contribute
 
-After approval, we will assign you a project identifier and create a new [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) using our [discussion template](https://github.com/broadinstitute/cellpainting-gallery/discussions/66) to provide next steps and track data deposition.
+After approval, maintainers will assign you a project identifier and create a new [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) using our [discussion template](https://github.com/broadinstitute/cellpainting-gallery/discussions/66) to provide next steps and track data deposition.
+Maintainers may use automated workflows or manual processes for this onboarding step.
 
 ## Preparing for data deposition
 

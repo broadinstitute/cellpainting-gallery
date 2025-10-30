@@ -114,55 +114,9 @@ Use the `AskUserQuestion` tool to gather all required information interactively.
 
 ## Step 4: Create GitHub Discussion
 
-1. **Use the template structure** (based on discussion #66):
-
-```markdown
-## Dataset Information
-- **Identifier**: cpg####-tag
-- **Contributor**: [name/contact]
-- **Assay Type**: [Standard Cell Painting / variation description]
-- **Approximate Size**: [size estimate]
-- **Components**: [images, analysis, backend, profiles, metadata, etc.]
-- **Type**: [New dataset / Addition to cpg####]
-
-Profile/data repo = [Link to profile/data repo or TBD]
-Publication/analysis repo = [Link to publication/analysis repo or TBD]
-Imaging Platform project tag = [YYYY_MM_DD_ProjectName] DELETE IF EXTERNAL CONTRIBUTOR
-Institution identifier = [institution identifier from Step 1]
-Imaging Platform internal "champion" = [Maintainer name or specify if external]
-
-**Workflow**
-- [ ] Maintainer adds dataset identifier to [prefixes](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/prefixes.md) document.
-- [ ] Champion or Contributor fills out the metadata collection form (https://airtable.com/shrVxz9DcoMlDoCBI)
-- [ ] Champion checks that metadata completely filled out in Project Profiler Database (Imaging Platform internal use only)
-- [ ] Champion asks Erin/Shantanu to  1) open the prefix for transfer to \`staging-cellpainting-gallery\` and 2) create credentials that allow upload. Each credential is for a single prefix on the staging bucket; multiple people can assume that same credential.
-
-**Transfer data to \`staging-cellpainting-gallery\`**
-Instructions for using the staging bucket credentials are [here](https://broadinstitute.github.io/cellpainting-gallery/uploading_to_cpg.html).
-For each data subtype, Champion marks off as complete or explain why it is not being included:
-- [ ] Image acquisition complete and uploaded (\`/images\`)
-- [ ] Feature extraction complete and uploaded (\`/workspace/analysis\`)
-- [ ] Backend complete and uploaded (\`/workspace/backend\`)
-- [ ] Load_data complete and uploaded (\`/workspace/load_data_csv\`)
-- [ ] Profiling complete and uploaded (\`/workspace/profiles\`)
-- [ ] Metadata complete and uploaded (\`/workspace/metadata\`)
-
-**Project completion**
-These are the final steps to make a dataset fully public:
-- [ ] Maintainer or champion Run [validation script](http://github.com/broadinstitute/cpg/cpgdata) to ensure data is completely uploaded (When script is out of alpha)
-- [ ] Maintainer or champion updates cellpainting-gallery/README.md to add dataset to README.
-- [ ] Maintainer transfers from \`staging-cellpainting-gallery\` to \`cellpainting-gallery\`.
-- [ ] Erin/Shantanu disable staging prefix, delete data from staging, delete upload credentials.
-
-Optional preparation for publication:
-- [ ] Run Distributed-BioFormats2Raw to create .ome.zarr files
-- [ ] Upload (meta)data to IDR (images remain hosted in cellpainting-gallery)
-- [ ] Make IDR entry public
-
-Once a paper is published:
-- [ ] Maintainer or champion updates [Publications](https://github.com/broadinstitute/cellpainting-gallery/docs/publications.md) (In PR by data generator)
-- [ ] Contributor adds the paper to https://github.com/cytodata/awesome-cytodata
-```
+1. **Read the template** from `.claude/skills/onboard-dataset/templates/discussion_template.md`
+   - This is based on the official template: https://github.com/broadinstitute/cellpainting-gallery/discussions/66
+   - Enhanced with structured Dataset Information section for easier tracking
 
 2. **Customize the template** with the information gathered:
    - Fill in all Dataset Information fields (identifier, contributor, assay type, size, components, type)
@@ -170,12 +124,28 @@ Once a paper is published:
    - Fill in champion name (the maintainer using this skill, unless specified otherwise)
    - Check the first workflow item (prefixes.md updated)
 
-3. **Create the discussion** using the GitHub GraphQL API:
-   - Use title format: `[Dataset Contribution] cpg####-tag - Brief Description`
-   - The `gh discussion create` command doesn't exist in most gh CLI versions
-   - Instead, use the GraphQL API via `gh api graphql`
+3. **Create the discussion** using the helper script:
+   - Use simple title format: `cpg####-tag` or `cpg####-tag (brief description)`
+     - Examples from existing discussions:
+       - `cpg0020-varchamp`
+       - `cpg0029-chroma-pilot`
+       - `cpg0016-JUMP (deep-learning generated profiles via Mesmer)`
+   - First, write the customized template to a temporary file (e.g., `discussion_body.md`)
+   - Then run the helper script:
 
-   **Step 3a**: First, get the repository ID and category IDs:
+   ```bash
+   .claude/skills/onboard-dataset/scripts/create_discussion.sh \
+     discussion_body.md \
+     "cpg####-tag"
+   ```
+
+   The script will:
+   - Properly escape the body content for GraphQL
+   - Use the correct repository ID (`R_kgDOGULepQ`) and category ID (`DIC_kwDOGULepc4CZL49` for "Dataset descriptions")
+   - Create the discussion via GitHub GraphQL API
+   - Return the discussion URL and number
+
+   **Optional**: If you need to verify category IDs or use a different category:
 
    ```bash
    gh api graphql -f query='
@@ -192,29 +162,17 @@ Once a paper is published:
    }'
    ```
 
-   Look for the category named **"Dataset descriptions"** (preferred) or "General" as fallback.
-
-   **Step 3b**: Create the discussion using the GraphQL mutation:
+   Then pass the custom IDs to the script:
 
    ```bash
-   gh api graphql -f query='
-   mutation {
-     createDiscussion(input: {
-       repositoryId: "R_kgDOGULepQ"
-       categoryId: "[CATEGORY_ID_FROM_STEP_3a]"
-       title: "[Dataset Contribution] cpg####-tag - Brief Description"
-       body: "'"$(cat discussion_body.md | sed 's/"/\\"/g' | tr '\n' '\r' | sed 's/\r/\\n/g')"'"
-     }) {
-       discussion {
-         url
-       }
-     }
-   }'
+   .claude/skills/onboard-dataset/scripts/create_discussion.sh \
+     discussion_body.md \
+     "Title" \
+     "REPO_ID" \
+     "CATEGORY_ID"
    ```
 
-   Note: The body requires escaping quotes and converting newlines for JSON compatibility.
-
-4. **Extract and display** the discussion URL from the GraphQL response
+   **Result**: The script will display the discussion URL and number when successful
 
 ## Step 5: Generate Next Steps Summary
 
@@ -239,20 +197,24 @@ Provide the maintainer with a brief confirmation:
 
 ## Error Handling
 
-- If `gh api` CLI is not available or fails, provide the template body and title for manual creation via GitHub web UI
-- If the GraphQL query for categories fails, use the hardcoded repository ID (`R_kgDOGULepQ`) and category ID for "Dataset descriptions" (`DIC_kwDOGULepc4CZL49`)
+- If `gh` CLI is not available, the script will fail with a clear error message. Provide the template body and title for manual creation via GitHub web UI
+- If `jq` is not installed, the script will fail with a clear error. Install it with `brew install jq` (macOS) or appropriate package manager
+- If the script fails to create the discussion, it will display the GraphQL response for debugging
 - If prefixes.md cannot be read, ask the maintainer to verify file location
 - If the suggested tag violates naming conventions, suggest alternatives
 - If unclear about any information, always ask rather than guess
 
-## Files You'll Need Access To
+## Files and Scripts You'll Use
 
 - `documentation/prefixes.md` - Registry of all cpg identifiers
+- `.claude/skills/onboard-dataset/templates/discussion_template.md` - GitHub Discussion template (based on [#66](https://github.com/broadinstitute/cellpainting-gallery/discussions/66))
+- `.claude/skills/onboard-dataset/scripts/create_discussion.sh` - Helper script for creating GitHub discussions
 - `.git/` - For git operations (checking branch, status)
 
 ## Commands You May Use
 
-- `gh api graphql` - Query/mutate GitHub data via GraphQL API (used for creating discussions)
+- `.claude/skills/onboard-dataset/scripts/create_discussion.sh` - Create GitHub discussion with proper escaping
+- `gh api graphql` - Query/mutate GitHub data via GraphQL API (optional, script handles discussion creation)
 - `git status` - Check repository state
 - `git add` - Stage changes (only with maintainer approval)
 - `gh repo view` - Verify repository details
