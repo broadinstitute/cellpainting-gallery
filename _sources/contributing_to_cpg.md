@@ -20,7 +20,7 @@ For new datasets, please include the following details in your contact:
 
 1) assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)
 2) approximate data size
-3) components you wish to contribute (all are described in [data structure](data_structure.md)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` is required.
+3) components you wish to contribute (all are described in [data structure](data_structure.md)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` and `load_data_csv` are required.
 4) institutional identifier to use for data (e.g. `broad`, `anonymous`)
 5) suggested top level project tag.
 We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.
