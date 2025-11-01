@@ -16,23 +16,29 @@ Instead, please direct such questions to the respective dataset repository linke
 Contributions can be in the form of complete datasets or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
 Please contact @erinweisbart or @shntnu to initiate discussion of a data contribution.
 
-For new datasets, please include the following details in your contact:
+For new datasets, please include the following details in your email:
 
-1) assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)
-2) approximate data size
-3) components you wish to contribute (all are described in [data structure](data_structure.md)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` is required.
-4) institutional identifier to use for data (e.g. `broad`, `anonymous`)
-5) suggested top level project tag.
-We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.
-The tag is typically a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)
+**Required information:**
 
-For existing datasets, please  the following details include in your contact:
+1. **Assay type**: Standard Cell Painting (6 stains: Hoechst 33342/DNA, Concanavalin A/ER, SYTO 14/nucleoli & RNA, Phalloidin/actin, WGA/Golgi & plasma membrane, MitoTracker Deep Red/mitochondria) or describe the variation. Variations must include at least 3 of the 6 canonical stains.
+2. **Approximate data size**: Total size estimate (e.g., "5 TB", "500 GB")
+3. **Components you wish to contribute**: All components are described in [data structure](data_structure.md). Major components include: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. Optional components: `pipelines`, `qc`, etc. Note that `metadata` is required.
+4. **Institutional identifier**: This will be used in the data path structure (e.g., `cpg####-tag/broad/` or `cpg####-tag/anonymous/`). Examples: `broad`, `anonymous`, `edinburgh`
+5. **Suggested project tag**: We will assign the cpg number but are happy to take suggestions for the tag portion. The tag is typically 1-2 words summarizing the project (e.g., `jump`, `cmqtl`, `lipocyteprofiler`) and sometimes includes the first author's last name (e.g., `caie-drugresponse`, `kelley-resistance`, `caicedo-cmvip`)
 
-1) top-level project tag that your data corresponds to (e.g. `cpg0016-jump`)
-2) approximate data size
-3) components you wish to contribute
+For existing datasets, please include the following details in your email:
 
-After approval, maintainers will assign you a project identifier and create a new [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) using our [discussion template](https://github.com/broadinstitute/cellpainting-gallery/discussions/66) to provide next steps and track data deposition.
+1. **Top-level project tag** that your data corresponds to (e.g., `cpg0016-jump`)
+2. **Approximate data size**: Total size estimate
+3. **Components you wish to contribute**
+
+After initial contact, maintainers will:
+
+1. Review your contribution proposal and confirm you can format your metadata to our requirements (particularly for `load_data_csv` and `metadata` folders - see [data structure](data_structure.md))
+2. Assign you a project identifier (for new datasets)
+3. Provide staging bucket upload credentials
+4. Create a [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) using our [discussion template](https://github.com/broadinstitute/cellpainting-gallery/discussions/66) to track your data deposition
+
 Maintainers may use automated workflows or manual processes for this onboarding step.
 
 ## Preparing for data deposition
