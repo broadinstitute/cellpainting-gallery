@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Workflows using the Cell Painting Gallery &#8212; Cell Painting Gallery Documentation</title>
+    <title>Asking Questions &#8212; Cell Painting Gallery Documentation</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'workflows';</script>
-    <link rel="canonical" href="broadinstitute.github.io/workflows.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'asking_questions';</script>
+    <link rel="canonical" href="broadinstitute.github.io/asking_questions.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Machine Learning (ML)/Deep Learning (DL)" href="machine_learning.html" />
-    <link rel="prev" title="Downloading from Cell Painting Gallery" href="download_instructions.html" />
+    <link rel="next" title="Contributing" href="contributing_to_cpg.html" />
+    <link rel="prev" title="Citing the Cell Painting Gallery" href="citing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,14 +174,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Workflows using the Cell Painting Gallery</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows using the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine_learning.html">Machine Learning (ML)/Deep Learning (DL)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Guides</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing the Cell Painting Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="asking_questions.html">Asking Questions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Asking Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing_to_cpg.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uploading_to_cpg.html">Tutorial: Uploading to the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prefixes.html">Prefixes</a></li>
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/workflows.md" target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/edit/main/documentation/asking_questions.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fworkflows.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/broadinstitute/cellpainting-gallery/issues/new?title=Issue%20on%20page%20%2Fasking_questions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/workflows.md" target="_blank"
+      <li><a href="_sources/asking_questions.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Workflows using the Cell Painting Gallery</h1>
+    <h1>Asking Questions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,9 +399,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellpose">CellPose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-cellprofiler">Distributed-CellProfiler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpg0021-periscope-representative-cell-image-retrieval">cpg0021-periscope representative cell image retrieval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-the-cell-painting-gallery">Questions about the Cell Painting Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-individual-datasets">Questions about individual datasets</a></li>
 </ul>
             </nav>
         </div>
@@ -413,34 +412,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="workflows-using-the-cell-painting-gallery">
-<h1>Workflows using the Cell Painting Gallery<a class="headerlink" href="#workflows-using-the-cell-painting-gallery" title="Permalink to this heading">#</a></h1>
-<p>Data in the Cell Painting Gallery can be used for many different purposes in many different ways.
-We provide here links to external workflows that access Cell Painting Gallery data to serve as inspiration for others in making their own workflows.</p>
-<section id="cellpose">
-<h2>CellPose<a class="headerlink" href="#cellpose" title="Permalink to this heading">#</a></h2>
-<p>Workflow: <a class="reference external" href="https://github.com/theislab/jump-cpg0016-segmentation">Segment images in cpg0016-jump using CellPose in a SnakeMake pipeline</a>.</p>
-<p><a class="reference external" href="https://www.cellpose.org">CellPose</a> is an open-source generalist algorithm for cellular segmentation.
-<a class="reference external" href="https://snakemake.github.io">Snakemake</a> is an open-source workflow engine that provides a readable Python-based workflow definition language and execution environment.</p>
-<p>This workflow was used to create single-cell crops from the entire <code class="docutils literal notranslate"><span class="pre">cpg0016-jump</span></code> dataset and can be customized to run on subsets filtered by Metadata such as Source, Batch, Plate, Well Site, and InChIKey.</p>
+  <section id="asking-questions">
+<h1>Asking Questions<a class="headerlink" href="#asking-questions" title="Permalink to this heading">#</a></h1>
+<section id="questions-about-the-cell-painting-gallery">
+<h2>Questions about the Cell Painting Gallery<a class="headerlink" href="#questions-about-the-cell-painting-gallery" title="Permalink to this heading">#</a></h2>
+<p>Please use the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery/issues">issues page</a> of the Cell Painting Gallery GitHub repository to ask questions about the Cell Painting Gallery.</p>
+<p>Questions in this category include questions about:</p>
+<ul class="simple">
+<li><p>the Cell Painting Gallery in general</p></li>
+<li><p>how to access data in the CPG</p></li>
+<li><p>file organization in the CPG</p></li>
+<li><p>artifacts missing from the CPG</p></li>
+</ul>
 </section>
-<section id="distributed-cellprofiler">
-<h2>Distributed-CellProfiler<a class="headerlink" href="#distributed-cellprofiler" title="Permalink to this heading">#</a></h2>
-<p>Workflow: <a class="reference external" href="https://github.com/DistributedScience/Distributed-CellProfiler/tree/master/example_project_CPG">Load images in cpg0016-jump, make measurements, and output image crops using Distributed-CellProfiler</a>.</p>
-<p><a class="reference external" href="https://github.com/DistributedScience/Distributed-CellProfiler">Distributed-CellProfiler</a> is simple, open-source Python software for running encapsulated docker containers with CellProfiler in the Amazon Web Services (AWS) infrastructure.
-<a class="reference external" href="https://cellprofiler.org">CellProfiler</a> is an open-source image analysis software that excels in GUI or headless handling of high-content workflows.
-CellProfiler has dozens of native image and object handling modules as well as the ability to run <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins">custom modules</a> (i.e. plugins).
-CellProfiler-plugins include modules that call out to other softwares such as open-source image analysis software <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runimagejscript.py">ImageJ/FIJI</a>, including open-source Deep Learning softwares such as <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runcellpose.py">CellPose</a> and <a class="reference external" href="https://github.com/CellProfiler/CellProfiler-plugins/blob/master/active_plugins/runstardist.py">Stardist</a>.</p>
-<p>This workflow is a minimal example used to demonstrate data access from the CellPainting-Gallery.
-Distributed-CellProfiler workflows have been used to generate most of the illumination correction files and classic morphological profiles found in the CellPainting-Gallery.</p>
-<p>Though we don’t have separate tutorials at this point in time, other softwares in the <a class="reference external" href="https://github.com/DistributedScience">DistributedScience</a> suite (such as <a class="reference external" href="https://github.com/DistributedScience/Distributed-Fiji">Distributed-FIJI</a> or <a class="reference external" href="https://github.com/DistributedScience/Distributed-OMEZarrCreator">Distributed-OMEZarrCreator</a>) can be similarly used to access data in the Cell Painting Gallery.</p>
-</section>
-<section id="cpg0021-periscope-representative-cell-image-retrieval">
-<h2>cpg0021-periscope representative cell image retrieval<a class="headerlink" href="#cpg0021-periscope-representative-cell-image-retrieval" title="Permalink to this heading">#</a></h2>
-<p><img alt="PERISCOPE single cell crops" src="_images/cpg0021-periscope_single_cell_crops.png" /></p>
-<p>The PERISCOPE dataset provides a tool for retrieving single cell image crops for each of the three whole-genome screens included in the dataset. The number of cells returned and bounding box size are configurable.
-Cells can either be representative or random for any given gene or CRISPR guide.
-The tool can be found in the <a class="reference external" href="https://github.com/broadinstitute/2022_PERISCOPE/tree/main/Supplemental_5">paper repository</a>.</p>
+<section id="questions-about-individual-datasets">
+<h2>Questions about individual datasets<a class="headerlink" href="#questions-about-individual-datasets" title="Permalink to this heading">#</a></h2>
+<p>For questions about individual datasets that are hosted within the CPG, please ask in the repository associated with that dataset.
+Dataset repository links can be found in our <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery#available-datasets">Available Datasets</a> documentation.</p>
+<p>Questions in this category include questions about:</p>
+<ul class="simple">
+<li><p>biological interpretation</p></li>
+<li><p>methods and protocols used to generate the data</p></li>
+</ul>
 </section>
 </section>
 
@@ -475,20 +468,20 @@ The tool can be found in the <a class="reference external" href="https://github.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="download_instructions.html"
+       href="citing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Downloading from Cell Painting Gallery</p>
+        <p class="prev-next-title">Citing the Cell Painting Gallery</p>
       </div>
     </a>
     <a class="right-next"
-       href="machine_learning.html"
+       href="contributing_to_cpg.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine Learning (ML)/Deep Learning (DL)</p>
+        <p class="prev-next-title">Contributing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -507,9 +500,8 @@ The tool can be found in the <a class="reference external" href="https://github.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellpose">CellPose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-cellprofiler">Distributed-CellProfiler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpg0021-periscope-representative-cell-image-retrieval">cpg0021-periscope representative cell image retrieval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-the-cell-painting-gallery">Questions about the Cell Painting Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-individual-datasets">Questions about individual datasets</a></li>
 </ul>
   </nav></div>
 
