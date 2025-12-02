@@ -61,12 +61,11 @@ aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-
 
 ## Alternative: S3 Access Grants (Beta)
 
-```{note}
 This section only applies if your maintainer specifically set you up with S3 Access Grants.
 If unsure, use the standard instructions above.
 
 Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
-```
+
 
 S3 Access Grants provides temporary, prefix-scoped credentials. Instead of steps 3-4 above, follow these steps:
 
