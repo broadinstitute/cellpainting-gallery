@@ -59,6 +59,74 @@ aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-ga
 aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/cpg-staging
 ```
 
+## Alternative: S3 Access Grants (Beta)
+
+This section only applies if your maintainer specifically set you up with S3 Access Grants.
+If unsure, use the standard instructions above.
+
+Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
+
+S3 Access Grants provides temporary, prefix-scoped credentials. Instead of steps 3-4 above, follow these steps:
+
+### A1. Add your credentials
+
+Your maintainer will provide you with AWS credentials (access key and secret key) for the Cell Painting Gallery AWS account.
+These are **not** credentials from your own AWS account—use the ones provided to you.
+
+Add them to `~/.aws/credentials`:
+
+```ini
+[cpg-staging]
+aws_access_key_id = YOUR_ACCESS_KEY
+aws_secret_access_key = YOUR_SECRET_KEY
+```
+
+### A2. Get temporary S3 credentials
+
+Replace `YOUR_PREFIX` with the **full prefix** your maintainer assigned (e.g., `cpg0037-oasis/biospyder`).
+Use exactly the prefix provided—do not shorten or modify it.
+
+```bash
+aws s3control get-data-access \
+  --account-id 309624411020 \
+  --target "s3://staging-cellpainting-gallery/YOUR_PREFIX/*" \
+  --permission READWRITE \
+  --duration-seconds 43200 \
+  --region us-east-1 \
+  --profile cpg-staging
+```
+
+This returns temporary credentials valid for 12 hours. Export them:
+
+```bash
+export AWS_ACCESS_KEY_ID=<AccessKeyId from output>
+export AWS_SECRET_ACCESS_KEY=<SecretAccessKey from output>
+export AWS_SESSION_TOKEN=<SessionToken from output>
+```
+
+### A3. Upload your data
+
+With the exported credentials active, upload using standard AWS CLI commands (no `--profile` needed):
+
+```bash
+aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/
+```
+
+If your credentials expire during a long upload, re-run step A2 to get fresh credentials.
+
+### Troubleshooting
+
+**Error: "not authorized to perform s3:GetDataAccess on resource ...us-west-2..."**
+
+The Access Grants instance is in `us-east-1` only. Make sure your command includes `--region us-east-1`.
+
+**Error: "No matching grant found" or "Access Denied" on a valid prefix**
+
+Verify your `--target` path uses the **complete prefix** your maintainer assigned.
+For example, if assigned `cpg0037-oasis/biospyder`, use exactly that—not just `biospyder`.
+
+---
+
 ## 7. Initiate transfer from staging to Gallery
 
 Run your transfer commands to `staging-cellpainting-gallery`.
