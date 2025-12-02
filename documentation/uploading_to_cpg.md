@@ -66,30 +66,33 @@ If unsure, use the standard instructions above.
 
 Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
 
-
 S3 Access Grants provides temporary, prefix-scoped credentials. Instead of steps 3-4 above, follow these steps:
 
 ### A1. Add your credentials
 
-Add the credentials you received to `~/.aws/credentials`:
+Your maintainer will provide you with AWS credentials (access key and secret key) for the Cell Painting Gallery AWS account.
+These are **not** credentials from your own AWS account—use the ones provided to you.
+
+Add them to `~/.aws/credentials`:
 
 ```ini
 [cpg-staging]
 aws_access_key_id = YOUR_ACCESS_KEY
 aws_secret_access_key = YOUR_SECRET_KEY
-region = us-east-1
 ```
 
 ### A2. Get temporary S3 credentials
 
-Replace `YOUR_PREFIX` with your assigned prefix (e.g., `cpg0037-oasis/biospyder`):
+Replace `YOUR_PREFIX` with the **full prefix** your maintainer assigned (e.g., `cpg0037-oasis/biospyder`).
+Use exactly the prefix provided—do not shorten or modify it.
 
 ```bash
 aws s3control get-data-access \
   --account-id 309624411020 \
-  --target s3://staging-cellpainting-gallery/YOUR_PREFIX/* \
+  --target "s3://staging-cellpainting-gallery/YOUR_PREFIX/*" \
   --permission READWRITE \
   --duration-seconds 43200 \
+  --region us-east-1 \
   --profile cpg-staging
 ```
 
@@ -110,6 +113,17 @@ aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/
 ```
 
 If your credentials expire during a long upload, re-run step A2 to get fresh credentials.
+
+### Troubleshooting
+
+**Error: "not authorized to perform s3:GetDataAccess on resource ...us-west-2..."**
+
+The Access Grants instance is in `us-east-1` only. Make sure your command includes `--region us-east-1`.
+
+**Error: "No matching grant found" or "Access Denied" on a valid prefix**
+
+Verify your `--target` path uses the **complete prefix** your maintainer assigned.
+For example, if assigned `cpg0037-oasis/biospyder`, use exactly that—not just `biospyder`.
 
 ---
 
