@@ -59,6 +59,61 @@ aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-ga
 aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/cpg-staging
 ```
 
+## Alternative: S3 Access Grants (Beta)
+
+```{note}
+This section only applies if your maintainer specifically set you up with S3 Access Grants.
+If unsure, use the standard instructions above.
+
+Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
+```
+
+S3 Access Grants provides temporary, prefix-scoped credentials. Instead of steps 3-4 above, follow these steps:
+
+### A1. Add your credentials
+
+Add the credentials you received to `~/.aws/credentials`:
+
+```ini
+[cpg-staging]
+aws_access_key_id = YOUR_ACCESS_KEY
+aws_secret_access_key = YOUR_SECRET_KEY
+region = us-east-1
+```
+
+### A2. Get temporary S3 credentials
+
+Replace `YOUR_PREFIX` with your assigned prefix (e.g., `cpg0037-oasis/biospyder`):
+
+```bash
+aws s3control get-data-access \
+  --account-id 309624411020 \
+  --target s3://staging-cellpainting-gallery/YOUR_PREFIX/* \
+  --permission READWRITE \
+  --duration-seconds 43200 \
+  --profile cpg-staging
+```
+
+This returns temporary credentials valid for 12 hours. Export them:
+
+```bash
+export AWS_ACCESS_KEY_ID=<AccessKeyId from output>
+export AWS_SECRET_ACCESS_KEY=<SecretAccessKey from output>
+export AWS_SESSION_TOKEN=<SessionToken from output>
+```
+
+### A3. Upload your data
+
+With the exported credentials active, upload using standard AWS CLI commands (no `--profile` needed):
+
+```bash
+aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/
+```
+
+If your credentials expire during a long upload, re-run step A2 to get fresh credentials.
+
+---
+
 ## 7. Initiate transfer from staging to Gallery
 
 Run your transfer commands to `staging-cellpainting-gallery`.
