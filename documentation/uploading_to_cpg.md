@@ -66,12 +66,13 @@ If unsure, use the standard instructions above.
 
 Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
 
-S3 Access Grants provides temporary, prefix-scoped credentials. Instead of steps 3-4 above, follow these steps:
+S3 Access Grants provides temporary, prefix-scoped credentials. Each project prefix (e.g., `cpg0037-oasis`) has shared credentials that all contributors to that project use. Instead of steps 3-4 above, follow these steps:
 
 ### A1. Add your credentials
 
 Your maintainer will provide you with AWS credentials (access key and secret key) for the Cell Painting Gallery AWS account.
-These are **not** credentials from your own AWS account—use the ones provided to you.
+These credentials are **shared** among all contributors to your project prefix.
+They are **not** credentials from your own AWS account—use the ones provided to you.
 
 Add them to `~/.aws/credentials`:
 
@@ -83,8 +84,7 @@ aws_secret_access_key = YOUR_SECRET_KEY
 
 ### A2. Get temporary S3 credentials
 
-Replace `YOUR_PREFIX` with the **full prefix** your maintainer assigned (e.g., `cpg0037-oasis/biospyder`).
-Use exactly the prefix provided—do not shorten or modify it.
+Replace `YOUR_PREFIX` with your project's top-level prefix (e.g., `cpg0037-oasis`).
 
 ```bash
 aws s3control get-data-access \
@@ -109,8 +109,12 @@ export AWS_SESSION_TOKEN=<SessionToken from output>
 With the exported credentials active, upload using standard AWS CLI commands (no `--profile` needed):
 
 ```bash
-aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/
+aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/your/data/path/
 ```
+
+You can upload to any sub-path within your assigned prefix. For example, if your prefix is `cpg0037-oasis`, you can upload to:
+- `s3://staging-cellpainting-gallery/cpg0037-oasis/broad/images/...`
+- `s3://staging-cellpainting-gallery/cpg0037-oasis/source_2/workspace/...`
 
 If your credentials expire during a long upload, re-run step A2 to get fresh credentials.
 
@@ -122,8 +126,8 @@ The Access Grants instance is in `us-east-1` only. Make sure your command includ
 
 **Error: "No matching grant found" or "Access Denied" on a valid prefix**
 
-Verify your `--target` path uses the **complete prefix** your maintainer assigned.
-For example, if assigned `cpg0037-oasis/biospyder`, use exactly that—not just `biospyder`.
+Verify your `--target` path uses your project's top-level prefix (e.g., `cpg0037-oasis`).
+The credentials are scoped to this prefix and all sub-paths within it.
 
 ---
 
