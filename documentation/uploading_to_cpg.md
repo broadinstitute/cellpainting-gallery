@@ -129,6 +129,10 @@ The Access Grants instance is in `us-east-1` only. Make sure your command includ
 Verify your `--target` path uses your project's top-level prefix (e.g., `cpg0037-oasis`).
 The credentials are scoped to this prefix and all sub-paths within it.
 
+```{tip}
+**For read-only access** (e.g., data champions verifying uploads): Follow the same steps above, but request reader credentials and use `--permission READ` instead of `READWRITE`.
+```
+
 ---
 
 ## 7. Initiate transfer from staging to Gallery
