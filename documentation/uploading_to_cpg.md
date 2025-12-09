@@ -66,9 +66,7 @@ If unsure, use the standard instructions above.
 
 Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
 
-S3 Access Grants provides temporary, prefix-scoped credentials. Each project prefix (e.g., `cpg0037-oasis`) has shared credentials that all contributors to that project use. Instead of steps 3-4 above, follow these steps:
-
-**Note:** Read-only credentials are also available for data champions verifying uploads—request reader credentials and use `--permission READ` instead of `READWRITE` in step A2.
+S3 Access Grants provides temporary, prefix-scoped credentials. Each project prefix (e.g., `cpg0037-oasis`) has shared credentials—either READWRITE for uploading data, or READ for verification and read-only access. Instead of steps 3-4 above, follow these steps:
 
 ### A1. Add your credentials
 
