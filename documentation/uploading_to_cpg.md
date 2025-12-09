@@ -68,6 +68,8 @@ Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/
 
 S3 Access Grants provides temporary, prefix-scoped credentials. Each project prefix (e.g., `cpg0037-oasis`) has shared credentials that all contributors to that project use. Instead of steps 3-4 above, follow these steps:
 
+**Note:** Read-only credentials are also available for data champions verifying uploads—request reader credentials and use `--permission READ` instead of `READWRITE` in step A2.
+
 ### A1. Add your credentials
 
 Your maintainer will provide you with AWS credentials (access key and secret key) for the Cell Painting Gallery AWS account.
@@ -128,10 +130,6 @@ The Access Grants instance is in `us-east-1` only. Make sure your command includ
 
 Verify your `--target` path uses your project's top-level prefix (e.g., `cpg0037-oasis`).
 The credentials are scoped to this prefix and all sub-paths within it.
-
-```{tip}
-**For read-only access** (e.g., data champions verifying uploads): Follow the same steps above, but request reader credentials and use `--permission READ` instead of `READWRITE`.
-```
 
 ---
 
