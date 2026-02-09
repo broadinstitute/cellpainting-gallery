@@ -223,6 +223,7 @@ cellpainting-gallery/
 - `backend`: contains the single-cell SQLite files (one per plate), the well-level aggregated profiles CSV files (also one per plate)
 - `load_data_csv`: contains [LoadData CSV files](https://cytomining.github.io/profiling-handbook/setup-images.html#create-loaddata-csvs) used by CellProfiler to process the data
 - `metadata`: contains metadata files used to annotate the profiles
+- `metadata_harmonized`: contains metadata that has been harmonized across the CPG
 - `profiles`: contains a set of well-level profiles files (one set per plate). The set comprises different stages of the CSV files produced when running the profiling recipe, as well as other output.
 
 Examples of additional optional folders you may upload to `workspace` include:
@@ -357,9 +358,8 @@ Within `PLATEMAP.txt` there at least `plate_map_name` and `well_position` column
 Some datasets additionally have `external_metadata.tsv`.
 These contain mapping between a perturbation identifier to other metadata using matching column names.
 
-We do not currently enforce metadata harmonization beyond what is described here.
+We do not currently enforce metadata harmonization beyond what is described here for these files.
 However, one can generally expect that metadata have been harmonized within a dataset.
-We are currently exploring further metadata harmonization requirements and will update our documentation at the point of implementation.
 
 #### pooled metadata
 
@@ -374,6 +374,12 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
         ├── Barcodes.csv
         └── metadata.json
 ```
+
+### `metadata_harmonized` folder structure
+
+Files in these folders have been harmonized across the Cell Painting Gallery.
+Please note that these are currently **sparse** and in **draft** status.
+These metadata are under active development and the files, their structuring, and their creation requirements are subject to potential change without notice.
 
 ### `profiles` folder structure
 
