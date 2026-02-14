@@ -69,7 +69,7 @@ Data contributions follow a **staging-to-production workflow**:
 3. Data is uploaded to `s3://staging-cellpainting-gallery/` using AWS CLI
 4. Contributor/champion verifies structure compliance
 5. Maintainers approve and transfer to production `s3://cellpainting-gallery/`
-6. Contributor submits PR to update `README.md` with new dataset entry
+6. Contributor submits PR to update `registry.yml` and regenerate docs with `uv run scripts/build_registry.py`
 
 See `documentation/contributing_to_cpg.md` and `documentation/uploading_to_cpg.md` for complete workflow.
 
@@ -77,7 +77,7 @@ See `documentation/contributing_to_cpg.md` and `documentation/uploading_to_cpg.m
 
 ### Adding a New Dataset
 
-1. **Update `registry.yml`**: Add a new entry to the `datasets` list with required fields (`name`, `description`, `status`) and optional fields (`publications`, `repositories`, `size`, `protocol`, `aliases`, `external_contributions`, `zenodo_doi`, `last_updated`)
+1. **Update `registry.yml`**: Add a new entry to the `datasets` list with required fields (`name`, `description`, `status`) and optional fields (`publications`, `repositories`, `size`, `protocol`, `aliases`, `external_contributions`, `zenodo_doi`)
 
 2. **Regenerate tables**: Run `uv run scripts/build_registry.py` to update `README.md` and `documentation/complete_datasets.md`
 

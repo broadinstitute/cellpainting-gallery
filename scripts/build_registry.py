@@ -33,10 +33,6 @@ PREFIXES_PATH = ROOT / "documentation" / "prefixes.md"
 NAME_PATTERN = re.compile(r"^cpg\d{4}(-[A-Za-z0-9_-]+)?$")
 VALID_STATUSES = {"published", "unpublished"}
 
-# Migration-only count check — remove after migration is verified
-EXPECTED_PUBLISHED = 24
-EXPECTED_UNPUBLISHED = 22
-
 # Markers in README.md
 PUB_START = "<!-- AUTO-GENERATED PUBLISHED TABLE START -->"
 PUB_END = "<!-- AUTO-GENERATED PUBLISHED TABLE END -->"
@@ -96,19 +92,6 @@ def validate(datasets):
 
         if "description" not in ds:
             errors.append(f"{prefix}: missing 'description'")
-
-    # Migration count check
-    published = [d for d in datasets if d.get("status") == "published"]
-    unpublished = [d for d in datasets if d.get("status") == "unpublished"]
-
-    if len(published) != EXPECTED_PUBLISHED:
-        errors.append(
-            f"Expected {EXPECTED_PUBLISHED} published datasets, found {len(published)}"
-        )
-    if len(unpublished) != EXPECTED_UNPUBLISHED:
-        errors.append(
-            f"Expected {EXPECTED_UNPUBLISHED} unpublished datasets, found {len(unpublished)}"
-        )
 
     return errors
 
@@ -338,13 +321,17 @@ def build_external_contributions_section(datasets):
     )
 
     for e in entries:
-        link_cell = f"[Link]({e['link']})" if e["link"] else ""
+        dataset = escape_md(e["dataset"])
+        contributor = escape_md(e["contributor"])
+        description = escape_md(e["description"])
+        date = escape_md(e["date"])
+        link_cell = f"[Link]({escape_md(e['link'])})" if e["link"] else ""
         lines.append(
-            f"| {e['dataset']} "
-            f"| {e['contributor']} "
-            f"| {e['description']} "
+            f"| {dataset} "
+            f"| {contributor} "
+            f"| {description} "
             f"| {link_cell} "
-            f"| {e['date']} |"
+            f"| {date} |"
         )
 
     return "\n".join(lines)
@@ -447,8 +434,12 @@ def main():
             print(f"  - {err}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Registry valid: {len(datasets)} datasets "
-          f"({EXPECTED_PUBLISHED} published, {EXPECTED_UNPUBLISHED} unpublished)")
+    published_count = sum(1 for d in datasets if d.get("status") == "published")
+    unpublished_count = sum(1 for d in datasets if d.get("status") == "unpublished")
+    print(
+        f"Registry valid: {len(datasets)} datasets "
+        f"({published_count} published, {unpublished_count} unpublished)"
+    )
 
     if args.check:
         print("Check mode: no files written.")
