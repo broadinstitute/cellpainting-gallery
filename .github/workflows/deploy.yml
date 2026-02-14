@@ -1,13 +1,15 @@
 name: deploy-documentation
 
-# Only run this when the master branch changes
+# Only run this when the main branch changes
 on:
   push:
     branches:
     - main
-    # Only run if edits in documentation
     paths:
     - documentation/**
+    - registry.yml
+    - scripts/**
+    - README.md
     - .github/workflows/deploy.yml
 
 # This job installs dependencies, builds the book, and pushes it to branch `gh-pages`
@@ -16,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
 
     # Install dependencies
     - name: Set up Python 3.8
@@ -27,10 +32,15 @@ jobs:
       run: |
         pip install jupyter-book
 
-    # Create "complete_datasets.md" from README.md
-    - name: Create complete_datasets.md
+    # Validate registry
+    - name: Validate registry
       run: |
-        python documentation/add_README_to_docs.py
+        uv run scripts/build_registry.py --check
+
+    # Generate tables from registry.yml
+    - name: Generate datasets from registry
+      run: |
+        uv run scripts/build_registry.py
 
     # Build the book
     - name: Build the book

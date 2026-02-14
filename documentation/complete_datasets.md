@@ -1,42 +1,5 @@
-# Cell Painting Gallery
+# Complete Datasets
 
-This page provides a guide to the datasets that are available in the Cell Painting Gallery, hosted by the AWS Registry of Open Data (RODA): <https://registry.opendata.aws/cellpainting-gallery>
-
-## Citation/license
-
-All the data is released with CC0 1.0 Universal (CC0 1.0).
-Still, professional ethics require that you cite the appropriate resources/publications, [listed below](#available-datasets), when using individual datasets, along with our Nature Methods publication announcing the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.1038/s41592-024-02399-z)).
-For example,
-
-> We used the dataset `cpg0000` ([Chandrasekaran et al., 2022](https://doi.org/10.1101/2022.01.05.475090)), available from the Cell Painting Gallery ([Weisbart et al., 2024](https://doi.org/10.1038/s41592-024-02399-z)) on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>).
-
-Please also acknowledge the Registry of Open Data (RODA) on AWS for their support in hosting the data, e.g., "We thank the AWS Open Data Sponsorship Program for sponsoring data storage."
-
-## Documentation
-
-Please see [our documentation](https://broadinstitute.github.io/cellpainting-gallery/) for extensive supporting information.
-
-It includes:
-
-- [how to browse gallery data](https://broadinstitute.github.io/cellpainting-gallery/browsing_data)
-- [how to download gallery data](https://broadinstitute.github.io/cellpainting-gallery/download_instructions.html) (with AWS CLI, Quilt, or dataset-specific tools)
-- [how to contribute to the gallery](https://broadinstitute.github.io/cellpainting-gallery/contributing_to_cpg)
-
-## Complete datasets
-
-All datasets are generated using the canonical Cell Painting assay unless indicated otherwise. Several updates to that protocol exist ([Cell Painting wiki](https://github.com/carpenterlab/2022_Cimini_NatureProtocols/wiki)).
-
-Most prefixes within the Cell Painting Gallery are for unique Cell Painting datasets that contain images, extracted features, and metadata.
-However, some prefixes are re-analyses of other datasets and may not contain images.
-
-The datasets are stored with the prefix indicated by the dataset name.
-e.g. the first dataset is located at `s3://cellpainting-gallery/cpg0000-jump-pilot` and can be listed using AWS CLI `aws s3 ls --no-sign-request s3://cellpainting-gallery/cpg0000-jump-pilot/` (note the `/` at the end).
-See [browsing data](https://broadinstitute.github.io/cellpainting-gallery/browsing_data) in our documentation for more information on viewing the gallery in a browser and examples of how to list files using AWS CLI or boto3.
-
-The datasets' accession numbers are the first seven characters of the dataset name.
-e.g. the accession number of the first dataset is `cpg0000`.
-
-<!-- AUTO-GENERATED PUBLISHED TABLE START -->
 | Dataset name | Description | Publication to cite | Associated repositories | Total size | Images size | Numerical data size | Cell Painting protocol | Other aliases |
 | --- | --- | --- | --- | :---: | :---: | :---: | :---: | :---: |
 | cpg0000-jump-pilot                       | 300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints | (Chandrasekaran et al., 2024) [Publication](https://doi.org/10.1038/s41592-024-02241-6), [Preprint](https://doi.org/10.1101/2022.01.05.475090) Description of Cell Painting v2.5. | [data](https://github.com/jump-cellpainting/2023_Chandrasekaran_submitted), [JUMP Hub](https://broad.io/jump), [JUMP datasets](https://github.com/jump-cellpainting/datasets) |  12.3 TB   |   6.1 TB    |       6.1 TB        |          v2.5          |                                                                                                                                                                  |
@@ -63,15 +26,12 @@ e.g. the accession number of the first dataset is `cpg0000`.
 | cpg0034-arevalo-su-motive                | A graph dataset comprising Cell Painting features for 11,000 genes and 3,600 compounds, along with their relationships extracted from seven publicly available databases | (Arevalo and Su et al., 2024) [Publication](https://proceedings.neurips.cc/paper_files/paper/2024/hash/fdb3fa770c2e0ecbb4b7dc7083ef5be9-Abstract-Datasets_and_Benchmarks_Track.html), [Preprint](https://arxiv.org/abs/2406.08649) | [analysis](https://github.com/carpenter-singh-lab/2024_Arevalo_NeurIPS_MotiVE) |   4.5 GB   |    0 GB     |       4.5 GB        |           v3           |                                                                                                                                                                  |
 | cpg0036-EU-OS-bioactives                 | 2464 compounds from EU-OPENSCREEN Bioactive compound set, four imaging sites, two cell lines (HepG2 & U2OS) | (Wolff et al., 2025) [Publication](https://doi.org/10.1016/j.isci.2025.112445), [Preprint](https://doi.org/10.1101/2024.08.27.609964) | [aggregated profiles](https://doi.org/10.5281/zenodo.13309566), [analysis scripts](https://github.com/schmiedc/EU-OS_bioactives), [compound information](https://www.probes-drugs.org/compounds/standardized#compoundset=353@AND) |   3.5 TB   |   3.5 TB    |                     |           v1           |                                                                   Bioactives, EU-OS-Bioactives                                                                   |
 | cpg0038-tegtmeyer-neuropainting          | Multiple brain cell types | (Tegtmeyer et al., 2024) [Preprint](https://doi.org/10.1101/2024.11.16.623947) Description of Neuropainting variant | [data](https://github.com/broadinstitute/2019_05_28_Neuronal_Cell_Painting), [analysis](https://github.com/broadinstitute/NeuroPainting) |   2.0 TB   |   1.8 TB    |       240 GB        |     neuropainting      |                                                                                                                                                                  |
-<!-- AUTO-GENERATED PUBLISHED TABLE END -->
 
-### Datasets without publications
+## Datasets without publications
 
 These datasets are available in the Cell Painting Gallery but do not have an associated publication.
-If you use them, please cite the [Cell Painting Gallery paper](https://doi.org/10.1038/s41592-024-02399-z)
-and any reference listed below.
+If you use them, please cite the [Cell Painting Gallery paper](https://doi.org/10.1038/s41592-024-02399-z) and any reference listed below.
 
-<!-- AUTO-GENERATED UNPUBLISHED TABLE START -->
 | Dataset name                             | Description | Citable reference | Total size | Cell Painting protocol |
 |------------------------------------------|-------------|-------------------|:----------:|:----------------------:|
 | cpg0006-miami                            |  |  |            |                        |
@@ -96,5 +56,11 @@ and any reference listed below.
 | cpg0043-segmentation                     |  |  |            |                        |
 | cpg0044-uhler-multicells                 |  |  |            |                        |
 | cpg0045-ncats-mito                       |  |  |            |                        |
-<!-- AUTO-GENERATED UNPUBLISHED TABLE END -->
 
+## External Contributions
+
+The following external contributions have been added to existing datasets:
+
+| Dataset | Contributor | Description | Link | Date |
+|---------|-------------|-------------|------|------|
+| cpg0016-jump | BioX-NKU | cpDistiller Mesmer profiles | [Link](https://github.com/broadinstitute/cellpainting-gallery/discussions/145) | 2025-01-15 |

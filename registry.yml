@@ -1,0 +1,700 @@
+# Cell Painting Gallery Dataset Registry
+# This is the single source of truth for all datasets in the Cell Painting Gallery.
+# Run `uv run scripts/build_registry.py` to regenerate README.md and documentation tables.
+
+datasets:
+  # ── Published datasets ──────────────────────────────────────────────────────
+
+  - name: cpg0000-jump-pilot
+    description: >-
+      300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints
+    status: published
+
+    publications:
+      - authors: "Chandrasekaran et al., 2024"
+        publication: "https://doi.org/10.1038/s41592-024-02241-6"
+        preprint: "https://doi.org/10.1101/2022.01.05.475090"
+        note: "Description of Cell Painting v2.5."
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/jump-cellpainting/2023_Chandrasekaran_submitted"
+      - label: "JUMP Hub"
+        url: "https://broad.io/jump"
+      - label: "JUMP datasets"
+        url: "https://github.com/jump-cellpainting/datasets"
+
+    size:
+      total: "12.3 TB"
+      images: "6.1 TB"
+      numerical: "6.1 TB"
+
+    protocol: "v2.5"
+
+    aliases: []
+
+  - name: cpg0001-cellpainting-protocol
+    description: >-
+      300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol
+    status: published
+    publications:
+      - authors: "Cimini et al., 2023"
+        publication: "https://doi.org/10.1038/s41596-023-00840-9"
+        preprint: "https://doi.org/10.1101/2022.07.13.499171"
+        note: "Description of Cell Painting v3."
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols"
+      - label: "JUMP Hub"
+        url: "https://broad.io/jump"
+      - label: "JUMP datasets"
+        url: "https://github.com/jump-cellpainting/datasets"
+
+    size:
+      total: "40.3 TB"
+      images: "18.7 TB"
+      numerical: "21.6 TB"
+
+    protocol: "v3 and experiments"
+
+    aliases: []
+
+  - name: cpg0002-jump-scope
+    description: >-
+      90 compounds (JUMP-MOA plate) profiled in U2OS using different microscopes and settings
+    status: published
+    publications:
+      - authors: "Tromans-Coia and Jamali et al., 2023"
+        publication: "https://doi.org/10.1002/cyto.a.24786"
+        preprint: "https://doi.org/10.1101/2023.02.15.528711"
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/jump-cellpainting/jump-scope"
+      - label: "analysis"
+        url: "https://github.com/jump-cellpainting/jump-scope-analysis"
+      - label: "JUMP Hub"
+        url: "https://broad.io/jump"
+      - label: "JUMP datasets"
+        url: "https://github.com/jump-cellpainting/datasets"
+
+    size:
+      total: "16.7 TB"
+      images: "12.5 TB"
+      numerical: "4.2 TB"
+
+    protocol: "v2.5"
+
+    aliases: []
+
+  - name: cpg0003-rosetta
+    description: >-
+      28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression
+    status: published
+    publications:
+      - authors: "Haghighi et al., 2022"
+        publication: "https://doi.org/10.1038/s41592-022-01667-0"
+        preprint: "https://doi.org/10.1101/2021.09.08.459417"
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/carpenter-singh-lab/2022_Haghighi_NatureMethods"
+
+    size:
+      total: "8.5 GB"
+      images: "0"
+      numerical: "8.5 GB"
+
+    protocol: ""
+
+    aliases: []
+
+  - name: cpg0004-lincs
+    description: >-
+      1,571 compounds across 6 doses in A549 cells
+    status: published
+    publications:
+      - authors: "Way et al., 2022"
+        publication: "https://doi.org/10.1016/j.cels.2022.10.001"
+        preprint: "https://doi.org/10.1101/2021.10.21.465335"
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/lincs-cell-painting"
+
+    size:
+      total: "65.7 TB"
+      images: "61.9 TB"
+      numerical: "3.8 TB"
+
+    protocol: "v2"
+
+    aliases:
+      - "idr0125"
+
+  - name: cpg0005-gerry-bioactivity
+    description: >-
+      30 related synthetic compounds across 6 doses in U2OS cells
+    status: published
+    publications:
+      - authors: "Gerry et al., 2016"
+        publication: "https://doi.org/10.1021/jacs.6b04614"
+        preprint: ""
+        note: ""
+
+    repositories: []
+
+    size:
+      total: "356 GB"
+      images: "356 GB"
+      numerical: ""
+
+    protocol: "v1"
+
+    aliases: []
+
+  - name: cpg0010-caie-drugresponse
+    description: >-
+      MCF-7 breast cancer cells treated  with 113 small molecules at eight concentrations.
+    status: published
+    publications:
+      - authors: "Caie et al., 2010"
+        publication: "https://doi.org/10.1158/1535-7163.MCT-09-1148"
+        preprint: ""
+        note: ""
+
+    repositories: []
+
+    size:
+      total: "239.2 GB"
+      images: "98.4 GB"
+      numerical: "140.8 GB"
+
+    protocol: "other variation"
+
+    aliases:
+      - label: "BBBC021"
+        url: "https://bbbc.broadinstitute.org/BBBC021"
+
+  - name: cpg0011-lipocyteprofiler
+    description: >-
+      Variety of lipocytes in different metabolic states and with genetic and drug perturbations
+    status: published
+    publications:
+      - authors: "Laber and Strobel et al., 2023"
+        publication: "https://doi.org/10.1016/j.xgen.2023.100346"
+        preprint: "https://www.biorxiv.org/content/10.1101/2021.07.17.452050v1"
+        note: "Description of Cell Painting lipocyte variant."
+
+    repositories:
+      - label: "Batch1 and Batch3 data"
+        url: "https://github.com/broadinstitute/2018_04_12_T2D_V2F_Saadat_Broad"
+      - label: "analysis"
+        url: "https://github.com/ClaussnitzerLab/Lipocyte-Profiler"
+
+    size:
+      total: "1.2 TB"
+      images: "1.2 TB"
+      numerical: "16 MB"
+
+    protocol: "lipocyte"
+
+    aliases: []
+
+  - name: cpg0012-wawer-bioactivecompoundprofiling
+    description: >-
+      30,000 compound dataset in U2OS cells. Original images re-profiled in 2023 (original profiles available in workspace/gigascience_profiles)
+    status: published
+    publications:
+      - authors: "Wawer et al., 2014"
+        publication: "https://doi.org/10.1073/pnas.1410933111"
+        preprint: ""
+        note: "Description of Cell Painting v1,"
+      - authors: "Bray et al., 2017"
+        publication: "https://doi.org/10.1093/gigascience/giw014"
+        preprint: ""
+        note: "Description of Cell Painting v2"
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/2015_Bray_GigaScience-data"
+
+    size:
+      total: "10.7 TB"
+      images: "3.1 TB"
+      numerical: "7.6 TB"
+
+    protocol: "v1"
+
+    aliases:
+      - label: "idr0016"
+        url: "https://idr.openmicroscopy.org/webclient/?show=screen-1251"
+      - "CDRP"
+      - label: "BBBC036"
+        url: "https://bbbc.broadinstitute.org/BBBC036"
+      - label: "BBBC047"
+        url: "https://bbbc.broadinstitute.org/BBBC047"
+
+  - name: cpg0015-heterogeneity
+    description: >-
+      2,200+ compounds and 200+ genes profiles in U2OS cells
+    status: published
+    publications:
+      - authors: "Rohban et al., 2019"
+        publication: "https://doi.org/10.1038/s41467-019-10154-8"
+        preprint: ""
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/carpenterlab/2018_Rohban_NatComm"
+
+    size:
+      total: "204 GB"
+      images: "0"
+      numerical: "204 GB"
+
+    protocol: ""
+
+    aliases:
+      - label: "idr0016"
+        url: "https://bbbc.broadinstitute.org/BBBC036"
+      - label: "idr0036"
+        url: "https://idr.openmicroscopy.org/webclient/?show=screen-1952"
+
+  - name: cpg0016-jump
+    description: >-
+      116,000+ compounds and 15,000+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.
+    status: published
+    publications:
+      - authors: "Chandrasekaran et al., 2023"
+        publication: ""
+        preprint: "https://doi.org/10.1101/2023.03.23.534023"
+        note: ""
+
+    repositories:
+      - label: "JUMP Hub"
+        url: "https://broad.io/jump"
+      - label: "JUMP datasets"
+        url: "https://github.com/jump-cellpainting/datasets"
+
+    size:
+      total: "358.4 TB"
+      images: ""
+      numerical: ""
+
+    protocol: "v3"
+
+    aliases: []
+
+    external_contributions:
+      - contributor: "BioX-NKU"
+        description: "cpDistiller Mesmer profiles"
+        link: "https://github.com/broadinstitute/cellpainting-gallery/discussions/145"
+        date: "2025-01-15"
+
+  - name: cpg0017-rohban-pathways
+    description: >-
+      323 genes overexpressed in U2OS cells. Original images re-profiled in 2023 (original profiles not in gallery)
+    status: published
+    publications:
+      - authors: "Rohban et al, 2017"
+        publication: "https://doi.org/10.7554/eLife.24060"
+        preprint: "https://doi.org/10.1101/092403"
+        note: ""
+
+    repositories:
+      - label: "re-profiled data"
+        url: "https://github.com/broadinstitute/cpg0017-rohban-pathways"
+      - label: "original data"
+        url: "https://github.com/carpenterlab/2017_Rohban_eLife"
+
+    size:
+      total: "321 GB"
+      images: "189 GB"
+      numerical: "132 GB"
+
+    protocol: "v1"
+
+    aliases:
+      - label: "BBBC037"
+        url: "https://bbbc.broadinstitute.org/BBBC037"
+      - "TA-ORF"
+      - label: "idr0033"
+        url: "https://idr.openmicroscopy.org/webclient/?show=screen-1751"
+
+  - name: cpg0018-singh-seedseq
+    description: >-
+      U2OS cells treated with each of 315 unique shRNA sequences
+    status: published
+    publications:
+      - authors: "Singh et al. 2013"
+        publication: "https://doi.org/10.1371/journal.pone.0131370"
+        preprint: ""
+        note: ""
+
+    repositories: []
+
+    size:
+      total: "247.1 GB"
+      images: "247.1 GB"
+      numerical: "0"
+
+    protocol: ""
+
+    aliases:
+      - label: "BBBC025"
+        url: "https://bbbc.broadinstitute.org/BBBC025"
+
+  - name: cpg0019-moshkov-deepprofiler
+    description: >-
+      8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations
+    status: published
+    publications:
+      - authors: "Moshkov et al., 2024"
+        publication: "https://www.nature.com/articles/s41467-024-45999-1"
+        preprint: "https://doi.org/10.1101/2022.08.12.503783"
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/DeepProfilerExperiments"
+      - label: "software"
+        url: "https://github.com/cytomining/DeepProfiler"
+
+    size:
+      total: "522 GB"
+      images: "482 GB"
+      numerical: "40 GB"
+
+    protocol: "dataset dependent"
+
+    aliases: []
+
+  - name: cpg0021-periscope
+    description: >-
+      30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media
+    status: published
+    publications:
+      - authors: "Ramezani, Weisbart, Bauman, and Singh et al., 2025"
+        publication: "https://doi.org/10.1038/s41592-024-02537-7"
+        preprint: "https://doi.org/10.1101/2023.08.06.552164"
+        note: "Description of Cell Painting pooled variant."
+      - authors: "Haghighi et al., 2023"
+        publication: "https://www.ijcai.org/proceedings/2023/0531.pdf"
+        preprint: "http://doi.org/10.48550/arXiv.2306.15898"
+        note: ""
+        prefix: "Also has data from"
+
+    repositories:
+      - label: "analysis"
+        url: "https://github.com/broadinstitute/2022_PERISCOPE"
+      - label: "A549 data"
+        url: "https://github.com/broadinstitute/CP186-A549-WG"
+      - label: "HeLa data"
+        url: "https://github.com/broadinstitute/CP257-HeLa-WG"
+      - label: "PLePI"
+        url: "https://github.com/carpenter-singh-lab/2023_Haghighi_IJCAI"
+
+    size:
+      total: "56.0 TB"
+      images: "45.0 TB"
+      numerical: "11.0 TB"
+
+    protocol: "pooled"
+
+    aliases: []
+
+  - name: cpg0022-cmqtl
+    description: >-
+      297 iPSC lines
+    status: published
+    publications:
+      - authors: "Tegtmeyer et al., 2024"
+        publication: "https://doi.org/10.1038/s41467-023-44045-w"
+        preprint: "https://doi.org/10.1101/2023.01.09.522731"
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/cmQTL"
+
+    size:
+      total: "3.7 TB"
+      images: "2.8 TB"
+      numerical: "945 GB"
+
+    protocol: "v2.5"
+
+    aliases: []
+
+  - name: cpg0026-lacoste_haghighi-rare-diseases
+    description: >-
+      Protein localization of 3,448 missense variants in 1,269 genes in HeLa cells
+    status: published
+    publications:
+      - authors: "Lacoste and Haghighi et al., 2024"
+        publication: "https://doi.org/10.1016/j.cell.2024.09.003"
+        preprint: "https://doi.org/10.1101/2023.09.05.556368"
+        note: ""
+
+    repositories:
+      - label: "analysis"
+        url: "https://github.com/carpenter-singh-lab/2024_LacosteHaghighi_Cell_Mislocalization"
+
+    size:
+      total: "11 TB"
+      images: "9.4 TB"
+      numerical: "1.6 TB"
+
+    protocol: "Protein of interest, Hoechst, ConA, Mitotracker"
+
+    aliases: []
+
+  - name: cpg0028-kelley-resistance
+    description: >-
+      Bortezomib resistant HCT116 clones
+    status: published
+    publications:
+      - authors: "Kelley et al., 2023"
+        publication: "https://doi.org/10.7554/eLife.91362"
+        preprint: ""
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/profiling-resistance-mechanisms"
+
+    size:
+      total: "4.1 TB"
+      images: "1.9 TB"
+      numerical: "2.2 TB"
+
+    protocol: ""
+
+    aliases: []
+
+  - name: cpg0029-chroma-pilot
+    description: >-
+      Comparison of alternative Cell Painting dyes
+    status: published
+    publications:
+      - authors: "Sivagurunathan et al., 2025"
+        publication: "https://doi.org/10.1016/j.slasd.2025.100268"
+        preprint: ""
+        note: ""
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/2022_09_07_New_phenotypic_dye_testing_CDoT_Broad_Analysis"
+
+    size:
+      total: "1.5 TB"
+      images: "495 GB"
+      numerical: "1 TB"
+
+    protocol: "v3 and experiments"
+
+    aliases: []
+
+  - name: cpg0030-gustafsdottir-cellpainting
+    description: >-
+      U2OS cells treated with each of 1600 known bioactive compounds. Description of Cell Painting v1.
+    status: published
+    publications:
+      - authors: "Gustafsdottir et al., 2013"
+        publication: "https://doi.org/10.1371/journal.pone.0080999"
+        preprint: ""
+        note: ""
+
+    repositories: []
+
+    size:
+      total: "234 GB"
+      images: "234 GB"
+      numerical: ".3 GB"
+
+    protocol: "v1"
+
+    aliases:
+      - label: "BBBC022"
+        url: "https://bbbc.broadinstitute.org/BBBC022"
+      - label: "idr0036"
+        url: "https://idr.openmicroscopy.org/webclient/?show=screen-1952"
+
+  - name: cpg0031-caicedo-cmvip
+    description: >-
+      ORF over-expression of 596 alleles of 53 genes in A549 cells. Original images re-profiled in 2023 (original profiles available in workspace/profiles_orig)
+    status: published
+    publications:
+      - authors: "Caicedo et al., 2023"
+        publication: "https://www.molbiolcell.org/doi/10.1091/mbc.E21-11-0538"
+        preprint: "https://doi.org/10.1101/2021.11.18.469171"
+        note: ""
+
+    repositories:
+      - label: "original data"
+        url: "https://github.com/broadinstitute/luad-cell-painting"
+      - label: "re-profiled data"
+        url: "https://github.com/broadinstitute/cpg0031-caicedo-cmvip"
+
+    size:
+      total: "2.2 TB"
+      images: "605 GB"
+      numerical: "1.6 TB"
+
+    protocol: "v1"
+
+    aliases:
+      - "BBBC043"
+      - "LUAD"
+
+  - name: cpg0034-arevalo-su-motive
+    description: >-
+      A graph dataset comprising Cell Painting features for 11,000 genes and 3,600 compounds, along with their relationships extracted from seven publicly available databases
+    status: published
+    publications:
+      - authors: "Arevalo and Su et al., 2024"
+        publication: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/fdb3fa770c2e0ecbb4b7dc7083ef5be9-Abstract-Datasets_and_Benchmarks_Track.html"
+        preprint: "https://arxiv.org/abs/2406.08649"
+        note: ""
+
+    repositories:
+      - label: "analysis"
+        url: "https://github.com/carpenter-singh-lab/2024_Arevalo_NeurIPS_MotiVE"
+
+    size:
+      total: "4.5 GB"
+      images: "0 GB"
+      numerical: "4.5 GB"
+
+    protocol: "v3"
+
+    aliases: []
+
+  - name: cpg0036-EU-OS-bioactives
+    description: >-
+      2464 compounds from EU-OPENSCREEN Bioactive compound set, four imaging sites, two cell lines (HepG2 & U2OS)
+    status: published
+    publications:
+      - authors: "Wolff et al., 2025"
+        publication: "https://doi.org/10.1016/j.isci.2025.112445"
+        preprint: "https://doi.org/10.1101/2024.08.27.609964"
+        note: ""
+
+    repositories:
+      - label: "aggregated profiles"
+        url: "https://doi.org/10.5281/zenodo.13309566"
+      - label: "analysis scripts"
+        url: "https://github.com/schmiedc/EU-OS_bioactives"
+      - label: "compound information"
+        url: "https://www.probes-drugs.org/compounds/standardized#compoundset=353@AND"
+
+    size:
+      total: "3.5 TB"
+      images: "3.5 TB"
+      numerical: ""
+
+    protocol: "v1"
+
+    aliases:
+      - "Bioactives"
+      - "EU-OS-Bioactives"
+
+  - name: cpg0038-tegtmeyer-neuropainting
+    description: >-
+      Multiple brain cell types
+    status: published
+    publications:
+      - authors: "Tegtmeyer et al., 2024"
+        publication: ""
+        preprint: "https://doi.org/10.1101/2024.11.16.623947"
+        note: "Description of Neuropainting variant"
+
+    repositories:
+      - label: "data"
+        url: "https://github.com/broadinstitute/2019_05_28_Neuronal_Cell_Painting"
+      - label: "analysis"
+        url: "https://github.com/broadinstitute/NeuroPainting"
+
+    size:
+      total: "2.0 TB"
+      images: "1.8 TB"
+      numerical: "240 GB"
+
+    protocol: "neuropainting"
+
+    aliases: []
+
+  # ── Unpublished datasets ────────────────────────────────────────────────────
+
+  - name: cpg0006-miami
+    description: ""
+    status: unpublished
+  - name: cpg0007-prism
+    description: ""
+    status: unpublished
+  - name: cpg0008-pki
+    description: ""
+    status: unpublished
+  - name: cpg0009-molglue
+    description: ""
+    status: unpublished
+  - name: cpg0013
+    description: ""
+    status: unpublished
+  - name: cpg0014-jump-adipocyte
+    description: ""
+    status: unpublished
+  - name: cpg0020-varchamp
+    description: ""
+    status: unpublished
+  - name: cpg0023-mpi
+    description: ""
+    status: unpublished
+  - name: cpg0024-bortezomib
+    description: ""
+    status: unpublished
+  - name: cpg0025-dactyloscopy
+    description: ""
+    status: unpublished
+  - name: cpg0027
+    description: ""
+    status: unpublished
+  - name: cpg0032-pooled-rare
+    description: ""
+    status: unpublished
+  - name: cpg0033-oasis-pilot
+    description: ""
+    status: unpublished
+  - name: cpg0035
+    description: ""
+    status: unpublished
+  - name: cpg0037-oasis
+    description: ""
+    status: unpublished
+  - name: cpg0039-garcia-fossa-livecellpainting
+    description: ""
+    status: unpublished
+  - name: cpg0040-garcia-fossa-AgNP
+    description: ""
+    status: unpublished
+  - name: cpg0041-pccma
+    description: ""
+    status: unpublished
+  - name: cpg0042-chandrasekaran-jump
+    description: ""
+    status: unpublished
+  - name: cpg0043-segmentation
+    description: ""
+    status: unpublished
+  - name: cpg0044-uhler-multicells
+    description: ""
+    status: unpublished
+  - name: cpg0045-ncats-mito
+    description: ""
+    status: unpublished

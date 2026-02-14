@@ -1,8 +1,9 @@
 # Prefixes
 
-The purpose of this table is to maintain a full listing of Cell Painting Gallery identifiers for both complete and in-progress datasets.
+The canonical dataset list is maintained in [`registry.yml`](https://github.com/broadinstitute/cellpainting-gallery/blob/main/registry.yml).
 Complete datasets are fully described in [Complete Datasets](complete_datasets.md).
 
+<!-- AUTO-GENERATED PREFIX TABLE START -->
 | Dataset name                             |
 |------------------------------------------|
 | cpg0000-jump-pilot                       |
@@ -51,4 +52,4 @@ Complete datasets are fully described in [Complete Datasets](complete_datasets.m
 | cpg0043-segmentation                     |
 | cpg0044-uhler-multicells                 |
 | cpg0045-ncats-mito                       |
-
+<!-- AUTO-GENERATED PREFIX TABLE END -->

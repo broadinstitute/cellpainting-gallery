@@ -59,5 +59,5 @@ It is currently in alpha and for internal use but we plan to develop it to the p
 
 ### Create a pull-request
 
-Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the [Cell Painting Gallery repository](https://github.com/broadinstitute/cellpainting-gallery/) with updates to the README to add your dataset to [Available datasets](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md).
+Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the [Cell Painting Gallery repository](https://github.com/broadinstitute/cellpainting-gallery/) with an update to [`registry.yml`](https://github.com/broadinstitute/cellpainting-gallery/blob/main/registry.yml) to add your dataset entry, followed by running `uv run scripts/build_registry.py` to regenerate the README table and documentation.
 If your dataset is associated with a publication, please also edit [Publications](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/publications.md).
