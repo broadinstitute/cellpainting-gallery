@@ -212,7 +212,7 @@ def build_published_table(datasets):
         pub_cell = format_publication_cell(ds.get("publications", []))
         repo_cell = format_repositories_cell(ds.get("repositories", []))
 
-        size = ds.get("size", {})
+        size = ds.get("size") or {}
         total = escape_md(size.get("total", ""))
         images = escape_md(size.get("images", ""))
         numerical = escape_md(size.get("numerical", ""))
@@ -271,8 +271,8 @@ def build_unpublished_table(datasets):
         else:
             citable = ""
 
-        size = ds.get("size", {})
-        total = escape_md(size.get("total", "")) if size else ""
+        size = ds.get("size") or {}
+        total = escape_md(size.get("total", ""))
         protocol = escape_md(ds.get("protocol", "")) if ds.get("protocol") else ""
 
         row = (
