@@ -6,6 +6,9 @@ on:
     - registry.yml
     - scripts/**
     - .github/workflows/validate-registry.yml
+    - README.md
+    - documentation/complete_datasets.md
+    - documentation/prefixes.md
 
 permissions:
   contents: read

@@ -60,10 +60,19 @@ def escape_md(text):
 def validate(datasets):
     """Validate the registry schema. Returns list of error strings."""
     errors = []
+
+    if not isinstance(datasets, list):
+        errors.append("'datasets' must be a list")
+        return errors
+
     seen_names = set()
 
     for i, ds in enumerate(datasets):
         prefix = f"Dataset #{i + 1}"
+
+        if not isinstance(ds, dict):
+            errors.append(f"{prefix}: entry must be a mapping, got {type(ds).__name__}")
+            continue
 
         # Required fields
         name = ds.get("name")
@@ -376,6 +385,13 @@ def main():
 
     # Load and validate
     data = load_registry()
+    if not isinstance(data, dict):
+        print("Registry validation errors:", file=sys.stderr)
+        print(
+            f"  - Expected a YAML mapping at top level, got {type(data).__name__}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     datasets = data.get("datasets", [])
 
     errors = validate(datasets)
