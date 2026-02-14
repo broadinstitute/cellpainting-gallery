@@ -49,14 +49,14 @@ Depending upon how you have locally structured your data, you may need to genera
 They should follow the format of `aws s3 cp --recursive SOURCE DESTINATION --profile cpg-staging`.
 (For single files, remove the `--recursive` flag.)
 
-`SOURCE` is where the files are on your storage and can be a local absolute or relative path or can be an S3 location of your S3 bucket.  
-`DESTINATION` is the S3 path within the `staging-cellpainting-gallery` (that should match `cellpainting-gallery`).
+`SOURCE` is where the files are on your storage and can be a local absolute or relative path. Theoretically, it can be an S3 location of your S3 bucket but that requires a more complicated credential setup or that the files in your S3 location are fully public.
+`DESTINATION` is the S3 path within the `staging-cellpainting-gallery` (that should generally match the path that will be used in the `cellpainting-gallery`).
 
 e.g.  
 
 ```bash
-aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/cpg-staging 
-aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/cpg-staging
+aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/ --profile cpg-staging 
+aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --profile cpg-staging
 ```
 
 ## Alternative: S3 Access Grants (Beta)
@@ -132,15 +132,16 @@ The Access Grants instance is in `us-east-1` only. Make sure your command includ
 Verify your `--target` path uses your project's top-level prefix (e.g., `cpg0037-oasis`).
 The credentials are scoped to this prefix and all sub-paths within it.
 
-## 7. Initiate transfer from staging to Gallery
+## 7. Initiate transfer from your staging to Gallery staging
 
 Run your transfer commands to `staging-cellpainting-gallery`.
 
 ## 8. Verify transfer
 
 Once the transfers are complete, verify the data transferred to `staging-cellpainting-gallery` completely by comparing file count betwen the source and the CPG path.
+
 Get file count on S3 with:
-`aws s3 ls --summarize --human-readable --recursive s3://staging-cellpainting-gallery/${PROJECT_NAME}/${SOURCE}$/path/to/data/`
+`aws s3 ls --summarize --human-readable --recursive s3://staging-cellpainting-gallery/${PROJECT_NAME}/${SOURCE}$/path/to/data/ --profile cpg-staging`
 
 After complete transfer, you (Imaging Platform internal) or your data champion (if external) need to verify that all the data is in a structure compliant with our [data structure requirements](data_structure.md).
 (Currently this is done manually, though this will be programatic in the future.)
@@ -149,9 +150,6 @@ To verify if the transfer was successful, compare object counts between your sou
 Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.
 - Number of files on origin (for a file system): `find PATH/TO/YOUR/FILES  -type f | wc -l`
 with
-- Number of objects on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/$PROJECT_PREFIX/$SOURCE/$YOUR_FILES --recursive | wc -l`
-
->[!NOTE]
->To run the `aws s3 ls` command on the staging bucket, you need to have your temporary credentials active (see "Activate credentials" above).
+- Number of objects on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/${PROJECT_NAME}/${SOURCE}$/path/to/data/ --recursive --profile cpg-staging | wc -l`
 
 Once verification is complete, let a Gallery maintainer (Erin, Shantanu) know that they should initiate transfer from staging to Gallery.

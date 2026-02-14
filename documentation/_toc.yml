@@ -18,6 +18,7 @@ parts:
 - caption: Technical Guides
   chapters:
   - file: citing
+  - file: asking_questions
   - file: contributing_to_cpg
   - file: uploading_to_cpg
   - file: prefixes
