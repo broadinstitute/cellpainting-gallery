@@ -66,7 +66,7 @@ If unsure, use the standard instructions above.
 
 Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
 
-S3 Access Grants provides temporary, prefix-scoped credentials. Each project prefix (e.g., `cpg0037-oasis`) has shared credentials—either READWRITE for uploading data, or READ for verification and read-only access. Instead of steps 3-4 above, follow these steps:
+S3 Access Grants provides temporary, prefix-scoped credentials. Each assigned prefix has shared credentials—either READWRITE for uploading data, or READ for verification and read-only access. Your prefix is usually a top-level project prefix (e.g., `cpg0037-oasis`) but in some cases may be a nested sub-path (e.g., `cpg0016-jump/source_2/workspace/segmentation`). Your maintainer will tell you which prefix you have access to. Instead of steps 3-4 above, follow these steps:
 
 ### A1. Set your credentials
 
@@ -85,7 +85,7 @@ If you prefer using an AWS profile instead of environment variables, add the cre
 
 ### A2. Get temporary S3 credentials
 
-Replace `YOUR_PREFIX` with your project's top-level prefix (e.g., `cpg0037-oasis`).
+Replace `YOUR_PREFIX` with your assigned prefix (e.g., `cpg0037-oasis` or a nested path like `cpg0016-jump/source_2/workspace/segmentation`).
 
 The `--account-id` below is the Cell Painting Gallery AWS account.
 
@@ -129,7 +129,7 @@ The Access Grants instance is in `us-east-1` only. Make sure your command includ
 
 **Error: "No matching grant found" or "Access Denied" on a valid prefix**
 
-Verify your `--target` path uses your project's top-level prefix (e.g., `cpg0037-oasis`).
+Verify your `--target` path matches your assigned prefix exactly.
 The credentials are scoped to this prefix and all sub-paths within it.
 
 ## 7. Initiate transfer from your staging to Gallery staging
