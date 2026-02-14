@@ -132,18 +132,18 @@ def format_publication_cell(publications):
     return escape_md(cell)
 
 
-def format_repositories_cell(repositories):
-    """Format the repositories column from a list of repo dicts."""
-    if not repositories:
+def format_link_list(items):
+    """Format a list of strings or {label, url} dicts as markdown links."""
+    if not items:
         return ""
 
     parts = []
-    for repo in repositories:
-        if isinstance(repo, str):
-            parts.append(repo)
+    for item in items:
+        if isinstance(item, str):
+            parts.append(item)
         else:
-            label = repo.get("label", "")
-            url = repo.get("url", "")
+            label = item.get("label", "")
+            url = item.get("url", "")
             if url:
                 parts.append(f"[{label}]({url})")
             else:
@@ -152,24 +152,16 @@ def format_repositories_cell(repositories):
     return escape_md(", ".join(parts))
 
 
-def format_aliases_cell(aliases):
-    """Format the aliases column from a list of alias items."""
-    if not aliases:
-        return ""
-
-    parts = []
-    for alias in aliases:
-        if isinstance(alias, str):
-            parts.append(alias)
-        else:
-            label = alias.get("label", "")
-            url = alias.get("url", "")
-            if url:
-                parts.append(f"[{label}]({url})")
-            else:
-                parts.append(label)
-
-    return escape_md(", ".join(parts))
+def build_md_table(headers, alignments, rows):
+    """Build a markdown table from headers, column alignments, and row data."""
+    sep_map = {"left": "---", "center": ":---:", "right": "---:"}
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join(sep_map[a] for a in alignments) + " |",
+    ]
+    for row in rows:
+        lines.append("| " + " | ".join(row) + " |")
+    return "\n".join(lines)
 
 
 def build_published_table(datasets):
@@ -179,8 +171,6 @@ def build_published_table(datasets):
         key=lambda d: d["name"],
     )
 
-    lines = []
-    # Header
     headers = [
         "Dataset name",
         "Description",
@@ -192,48 +182,27 @@ def build_published_table(datasets):
         "Cell Painting protocol",
         "Other aliases",
     ]
-    lines.append("| " + " | ".join(headers) + " |")
-    seps = [
-        "---",
-        "---",
-        "---",
-        "---",
-        ":---:",
-        ":---:",
-        ":---:",
-        ":---:",
-        ":---:",
+    alignments = [
+        "left", "left", "left", "left",
+        "center", "center", "center", "center", "center",
     ]
-    lines.append("| " + " | ".join(seps) + " |")
 
+    rows = []
     for ds in published:
-        name = ds["name"]
-        desc = escape_md(ds.get("description", ""))
-        pub_cell = format_publication_cell(ds.get("publications", []))
-        repo_cell = format_repositories_cell(ds.get("repositories", []))
-
         size = ds.get("size") or {}
-        total = escape_md(size.get("total", ""))
-        images = escape_md(size.get("images", ""))
-        numerical = escape_md(size.get("numerical", ""))
+        rows.append([
+            ds["name"],
+            escape_md(ds.get("description", "")),
+            format_publication_cell(ds.get("publications", [])),
+            format_link_list(ds.get("repositories", [])),
+            escape_md(size.get("total", "")),
+            escape_md(size.get("images", "")),
+            escape_md(size.get("numerical", "")),
+            escape_md(ds.get("protocol", "")),
+            format_link_list(ds.get("aliases", [])),
+        ])
 
-        protocol = escape_md(ds.get("protocol", ""))
-        aliases = format_aliases_cell(ds.get("aliases", []))
-
-        row = (
-            f"| {name:<40} "
-            f"| {desc} "
-            f"| {pub_cell} "
-            f"| {repo_cell} "
-            f"| {total:^10} "
-            f"| {images:^11} "
-            f"| {numerical:^19} "
-            f"| {protocol:^22} "
-            f"| {aliases:^160} |"
-        )
-        lines.append(row)
-
-    return "\n".join(lines)
+    return build_md_table(headers, alignments, rows)
 
 
 def build_unpublished_table(datasets):
@@ -246,45 +215,25 @@ def build_unpublished_table(datasets):
     if not unpublished:
         return ""
 
-    lines = []
-    lines.append(
-        "| Dataset name                             "
-        "| Description "
-        "| Citable reference "
-        "| Total size "
-        "| Cell Painting protocol |"
-    )
-    lines.append(
-        "|------------------------------------------"
-        "|-------------"
-        "|-------------------"
-        "|:----------:"
-        "|:----------------------:|"
-    )
+    headers = [
+        "Dataset name", "Description", "Citable reference",
+        "Total size", "Cell Painting protocol",
+    ]
+    alignments = ["left", "left", "left", "center", "center"]
 
+    rows = []
     for ds in unpublished:
-        name = ds["name"]
-        desc = escape_md(ds.get("description", ""))
         zenodo = ds.get("zenodo_doi", "")
-        if zenodo:
-            citable = f"[Zenodo]({zenodo})"
-        else:
-            citable = ""
-
         size = ds.get("size") or {}
-        total = escape_md(size.get("total", ""))
-        protocol = escape_md(ds.get("protocol", "")) if ds.get("protocol") else ""
+        rows.append([
+            ds["name"],
+            escape_md(ds.get("description", "")),
+            f"[Zenodo]({zenodo})" if zenodo else "",
+            escape_md(size.get("total", "")),
+            escape_md(ds.get("protocol", "")) if ds.get("protocol") else "",
+        ])
 
-        row = (
-            f"| {name:<40} "
-            f"| {desc} "
-            f"| {citable} "
-            f"| {total:^10} "
-            f"| {protocol:^22} |"
-        )
-        lines.append(row)
-
-    return "\n".join(lines)
+    return build_md_table(headers, alignments, rows)
 
 
 def build_external_contributions_section(datasets):
@@ -308,47 +257,37 @@ def build_external_contributions_section(datasets):
     if not entries:
         return ""
 
-    lines = ["## External Contributions", ""]
-    lines.append(
-        "The following external contributions have been added to existing datasets:"
-    )
-    lines.append("")
-    lines.append(
-        "| Dataset | Contributor | Description | Link | Date |"
-    )
-    lines.append(
-        "|---------|-------------|-------------|------|------|"
-    )
+    headers = ["Dataset", "Contributor", "Description", "Link", "Date"]
+    alignments = ["left", "left", "left", "left", "left"]
 
+    rows = []
     for e in entries:
-        dataset = escape_md(e["dataset"])
-        contributor = escape_md(e["contributor"])
-        description = escape_md(e["description"])
-        date = escape_md(e["date"])
         link_cell = f"[Link]({escape_md(e['link'])})" if e["link"] else ""
-        lines.append(
-            f"| {dataset} "
-            f"| {contributor} "
-            f"| {description} "
-            f"| {link_cell} "
-            f"| {date} |"
-        )
+        rows.append([
+            escape_md(e["dataset"]),
+            escape_md(e["contributor"]),
+            escape_md(e["description"]),
+            link_cell,
+            escape_md(e["date"]),
+        ])
 
+    lines = [
+        "## External Contributions",
+        "",
+        "The following external contributions have been added to existing datasets:",
+        "",
+        build_md_table(headers, alignments, rows),
+    ]
     return "\n".join(lines)
 
 
 def build_prefixes_table(datasets):
     """Build the single-column prefixes table from all datasets."""
     all_datasets = sorted(datasets, key=lambda d: d["name"])
-
-    lines = []
-    lines.append("| Dataset name                             |")
-    lines.append("|------------------------------------------|")
-
-    for ds in all_datasets:
-        lines.append(f"| {ds['name']:<40} |")
-
-    return "\n".join(lines)
+    return build_md_table(
+        ["Dataset name"], ["left"],
+        [[ds["name"]] for ds in all_datasets],
+    )
 
 
 def splice_between_markers(content, start_marker, end_marker, replacement):
