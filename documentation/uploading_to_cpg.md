@@ -87,6 +87,8 @@ If you prefer using an AWS profile instead of environment variables, add the cre
 
 Replace `YOUR_PREFIX` with your project's top-level prefix (e.g., `cpg0037-oasis`).
 
+The `--account-id` below is the Cell Painting Gallery AWS account.
+
 ```bash
 aws s3control get-data-access \
   --account-id 309624411020 \
@@ -96,7 +98,8 @@ aws s3control get-data-access \
   --region us-east-1
 ```
 
-This returns temporary credentials valid for 12 hours. Copy the values from the output and export them:
+This returns temporary credentials valid for 12 hours. Copy the values from the output and export them.
+These replace the credentials from step A1—make sure to export all three values, including `AWS_SESSION_TOKEN`:
 
 ```bash
 export AWS_ACCESS_KEY_ID=<AccessKeyId from output>
@@ -109,14 +112,14 @@ export AWS_SESSION_TOKEN=<SessionToken from output>
 With the exported credentials active, upload using standard AWS CLI commands:
 
 ```bash
-aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/your/data/path/
+aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/your/data/path/ --region us-east-1
 ```
 
 You can upload to any sub-path within your assigned prefix. For example, if your prefix is `cpg0037-oasis`, you can upload to:
 - `s3://staging-cellpainting-gallery/cpg0037-oasis/broad/images/...`
 - `s3://staging-cellpainting-gallery/cpg0037-oasis/source_2/workspace/...`
 
-If your credentials expire during a long upload, re-run step A2 to get fresh credentials.
+If your credentials expire during a long upload, re-run step A2 to get fresh credentials and then re-run the same `aws s3 sync` command—it will skip files already uploaded.
 
 ### Troubleshooting
 
@@ -128,8 +131,6 @@ The Access Grants instance is in `us-east-1` only. Make sure your command includ
 
 Verify your `--target` path uses your project's top-level prefix (e.g., `cpg0037-oasis`).
 The credentials are scoped to this prefix and all sub-paths within it.
-
----
 
 ## 7. Initiate transfer from staging to Gallery
 
