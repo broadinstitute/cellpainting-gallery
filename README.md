@@ -72,29 +72,29 @@ If you use them, please cite the [Cell Painting Gallery paper](https://doi.org/1
 and any reference listed below.
 
 <!-- AUTO-GENERATED UNPUBLISHED TABLE START -->
-| Dataset name | Description | Citable reference | Total size | Cell Painting protocol |
-| --- | --- | --- | :---: | :---: |
-| cpg0006-miami |  |  |  |  |
-| cpg0007-prism |  |  |  |  |
-| cpg0008-pki |  |  |  |  |
-| cpg0009-molglue |  |  |  |  |
-| cpg0013 |  |  |  |  |
-| cpg0014-jump-adipocyte |  |  |  |  |
-| cpg0020-varchamp |  |  |  |  |
-| cpg0023-mpi |  |  |  |  |
-| cpg0024-bortezomib |  |  |  |  |
-| cpg0025-dactyloscopy |  |  |  |  |
-| cpg0027 |  |  |  |  |
-| cpg0032-pooled-rare |  |  |  |  |
-| cpg0033-oasis-pilot |  |  |  |  |
-| cpg0035 |  |  |  |  |
-| cpg0037-oasis |  |  |  |  |
-| cpg0039-garcia-fossa-livecellpainting |  |  |  |  |
-| cpg0040-garcia-fossa-AgNP |  |  |  |  |
-| cpg0041-pccma |  |  |  |  |
-| cpg0042-chandrasekaran-jump |  |  |  |  |
-| cpg0043-segmentation |  |  |  |  |
-| cpg0044-uhler-multicells |  |  |  |  |
-| cpg0045-ncats-mito |  |  |  |  |
+| Dataset name | Description | Citable reference |
+| --- | --- | --- |
+| cpg0006-miami |  |  |
+| cpg0007-prism |  |  |
+| cpg0008-pki | Selective protein kinase inhibitors from the Nathanael Gray lab |  |
+| cpg0009-molglue | 155 molecular glue degrader compounds from the Amit Choudhary lab |  |
+| cpg0013 |  |  |
+| cpg0014-jump-adipocyte | Drug Repurposing Hub compounds profiled in human white adipose tissue (hWAT) adipocytes and U2OS cells under four metabolic stress conditions |  |
+| cpg0020-varchamp | Coding variants across Mendelian disease genes profiled via arrayed ORF over-expression in U2OS cells |  |
+| cpg0023-mpi |  |  |
+| cpg0024-bortezomib |  |  |
+| cpg0025-dactyloscopy | Corticosteroids and drug-repurposing compounds profiled in A549, MCF7, and pooled A549/MCF7 cells |  |
+| cpg0027 |  |  |
+| cpg0032-pooled-rare | Pooled optical screening of pathogenic missense variants for rare disease drug repurposing |  |
+| cpg0033-oasis-pilot | Pilot OASIS compound profiling in U2OS and HepaRG cells |  |
+| cpg0035 |  |  |
+| cpg0037-oasis | OASIS compound profiling across multiple cell lines |  |
+| cpg0039-garcia-fossa-livecellpainting | Live Cell Painting assay images captured in GFP and Propidium Iodide channels |  |
+| cpg0040-garcia-fossa-AgNP | Silver nanoparticle toxicity study using three fluorescence microscopy panels |  |
+| cpg0041-pccma |  |  |
+| cpg0042-chandrasekaran-jump | Assembled profiles from the JUMP Cell Painting production dataset (cpg0016) including CellProfiler and deep learning embeddings |  |
+| cpg0043-segmentation |  |  |
+| cpg0044-uhler-multicells | 44 drug compounds profiled across 11 cell lines |  |
+| cpg0045-ncats-mito |  |  |
 <!-- AUTO-GENERATED UNPUBLISHED TABLE END -->
 

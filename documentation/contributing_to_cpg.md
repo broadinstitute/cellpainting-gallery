@@ -26,13 +26,15 @@ For new datasets, please include the following details in your contact:
 We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.
 The tag is typically a 1 word summary of the project (e.g. cpg0011-lipocyteprofiler, cpg0016-jump, cpg0022-cmqtl) and sometimes also includes the last name of the first author (e.g. cpg0010-caie-drugresponse, cpg0028-kelley-resistance, cpg0031-caicedo-cmvip)
 
-For existing datasets, please  the following details include in your contact:
+For existing datasets, please include the following details in your contact:
 
 1) top-level project tag that your data corresponds to (e.g. `cpg0016-jump`)
 2) approximate data size
 3) components you wish to contribute
 
 After approval, we will assign you a project identifier and create a new [Github Discussion](https://github.com/broadinstitute/cellpainting-gallery/discussions) using our [discussion template](https://github.com/broadinstitute/cellpainting-gallery/discussions/66) to provide next steps and track data deposition.
+
+After your data has been transferred, submit a PR to add an `external_contributions` entry to your dataset in [`registry.yml`](https://github.com/broadinstitute/cellpainting-gallery/blob/main/registry.yml), then run `uv run scripts/build_registry.py` to regenerate the documentation. Each entry should include the contributor name, a description of the contribution, a link to the relevant Discussion or Issue, and the date. See the existing `external_contributions` entries in `registry.yml` for the expected format.
 
 ## Preparing for data deposition
 

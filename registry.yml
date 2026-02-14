@@ -10,7 +10,7 @@ datasets:
       300+ compounds and 160+ genes (CRISPR knockout and overexpression) profiled in A549 and U2OS cells, at two timepoints
     status: published
 
-    publications:
+    references:
       - authors: "Chandrasekaran et al., 2024"
         publication: "https://doi.org/10.1038/s41592-024-02241-6"
         preprint: "https://doi.org/10.1101/2022.01.05.475090"
@@ -37,7 +37,7 @@ datasets:
     description: >-
       300+ compounds profiled in U2OS cells using several different modifications of the Cell Painting protocol
     status: published
-    publications:
+    references:
       - authors: "Cimini et al., 2023"
         publication: "https://doi.org/10.1038/s41596-023-00840-9"
         preprint: "https://doi.org/10.1101/2022.07.13.499171"
@@ -64,7 +64,7 @@ datasets:
     description: >-
       90 compounds (JUMP-MOA plate) profiled in U2OS using different microscopes and settings
     status: published
-    publications:
+    references:
       - authors: "Tromans-Coia and Jamali et al., 2023"
         publication: "https://doi.org/10.1002/cyto.a.24786"
         preprint: "https://doi.org/10.1101/2023.02.15.528711"
@@ -93,7 +93,7 @@ datasets:
     description: >-
       28,000+ genes and compounds profiled in Cell Painting and [L1000](https://doi.org/10.1016%2Fj.cell.2017.10.049) gene expression
     status: published
-    publications:
+    references:
       - authors: "Haghighi et al., 2022"
         publication: "https://doi.org/10.1038/s41592-022-01667-0"
         preprint: "https://doi.org/10.1101/2021.09.08.459417"
@@ -116,7 +116,7 @@ datasets:
     description: >-
       1,571 compounds across 6 doses in A549 cells
     status: published
-    publications:
+    references:
       - authors: "Way et al., 2022"
         publication: "https://doi.org/10.1016/j.cels.2022.10.001"
         preprint: "https://doi.org/10.1101/2021.10.21.465335"
@@ -140,7 +140,7 @@ datasets:
     description: >-
       30 related synthetic compounds across 6 doses in U2OS cells
     status: published
-    publications:
+    references:
       - authors: "Gerry et al., 2016"
         publication: "https://doi.org/10.1021/jacs.6b04614"
         preprint: ""
@@ -161,7 +161,7 @@ datasets:
     description: >-
       MCF-7 breast cancer cells treated  with 113 small molecules at eight concentrations.
     status: published
-    publications:
+    references:
       - authors: "Caie et al., 2010"
         publication: "https://doi.org/10.1158/1535-7163.MCT-09-1148"
         preprint: ""
@@ -184,7 +184,7 @@ datasets:
     description: >-
       Variety of lipocytes in different metabolic states and with genetic and drug perturbations
     status: published
-    publications:
+    references:
       - authors: "Laber and Strobel et al., 2023"
         publication: "https://doi.org/10.1016/j.xgen.2023.100346"
         preprint: "https://www.biorxiv.org/content/10.1101/2021.07.17.452050v1"
@@ -209,7 +209,7 @@ datasets:
     description: >-
       30,000 compound dataset in U2OS cells. Original images re-profiled in 2023 (original profiles available in workspace/gigascience_profiles)
     status: published
-    publications:
+    references:
       - authors: "Wawer et al., 2014"
         publication: "https://doi.org/10.1073/pnas.1410933111"
         preprint: ""
@@ -243,7 +243,7 @@ datasets:
     description: >-
       2,200+ compounds and 200+ genes profiles in U2OS cells
     status: published
-    publications:
+    references:
       - authors: "Rohban et al., 2019"
         publication: "https://doi.org/10.1038/s41467-019-10154-8"
         preprint: ""
@@ -270,7 +270,7 @@ datasets:
     description: >-
       116,000+ compounds and 15,000+ genes (CRISPR knockout and overexpression) profiled in U2OS cells. Over 8 million images (>126 TB), over 1.5 billion cells of numerical data (>126TB), for over 250 TB data in total.
     status: published
-    publications:
+    references:
       - authors: "Chandrasekaran et al., 2023"
         publication: ""
         preprint: "https://doi.org/10.1101/2023.03.23.534023"
@@ -301,7 +301,7 @@ datasets:
     description: >-
       323 genes overexpressed in U2OS cells. Original images re-profiled in 2023 (original profiles not in gallery)
     status: published
-    publications:
+    references:
       - authors: "Rohban et al, 2017"
         publication: "https://doi.org/10.7554/eLife.24060"
         preprint: "https://doi.org/10.1101/092403"
@@ -331,7 +331,7 @@ datasets:
     description: >-
       U2OS cells treated with each of 315 unique shRNA sequences
     status: published
-    publications:
+    references:
       - authors: "Singh et al. 2013"
         publication: "https://doi.org/10.1371/journal.pone.0131370"
         preprint: ""
@@ -354,7 +354,7 @@ datasets:
     description: >-
       8.3 million single cells from 232 plates, across 488 treatments from 5 public datasets, used for learning representations
     status: published
-    publications:
+    references:
       - authors: "Moshkov et al., 2024"
         publication: "https://www.nature.com/articles/s41467-024-45999-1"
         preprint: "https://doi.org/10.1101/2022.08.12.503783"
@@ -379,7 +379,7 @@ datasets:
     description: >-
       30 million cells with 20,000 single-gene knockouts in pooled format. A549 cells and HeLa cells in two growth media
     status: published
-    publications:
+    references:
       - authors: "Ramezani, Weisbart, Bauman, and Singh et al., 2025"
         publication: "https://doi.org/10.1038/s41592-024-02537-7"
         preprint: "https://doi.org/10.1101/2023.08.06.552164"
@@ -413,7 +413,7 @@ datasets:
     description: >-
       297 iPSC lines
     status: published
-    publications:
+    references:
       - authors: "Tegtmeyer et al., 2024"
         publication: "https://doi.org/10.1038/s41467-023-44045-w"
         preprint: "https://doi.org/10.1101/2023.01.09.522731"
@@ -436,7 +436,7 @@ datasets:
     description: >-
       Protein localization of 3,448 missense variants in 1,269 genes in HeLa cells
     status: published
-    publications:
+    references:
       - authors: "Lacoste and Haghighi et al., 2024"
         publication: "https://doi.org/10.1016/j.cell.2024.09.003"
         preprint: "https://doi.org/10.1101/2023.09.05.556368"
@@ -459,7 +459,7 @@ datasets:
     description: >-
       Bortezomib resistant HCT116 clones
     status: published
-    publications:
+    references:
       - authors: "Kelley et al., 2023"
         publication: "https://doi.org/10.7554/eLife.91362"
         preprint: ""
@@ -482,7 +482,7 @@ datasets:
     description: >-
       Comparison of alternative Cell Painting dyes
     status: published
-    publications:
+    references:
       - authors: "Sivagurunathan et al., 2025"
         publication: "https://doi.org/10.1016/j.slasd.2025.100268"
         preprint: ""
@@ -505,7 +505,7 @@ datasets:
     description: >-
       U2OS cells treated with each of 1600 known bioactive compounds. Description of Cell Painting v1.
     status: published
-    publications:
+    references:
       - authors: "Gustafsdottir et al., 2013"
         publication: "https://doi.org/10.1371/journal.pone.0080999"
         preprint: ""
@@ -530,7 +530,7 @@ datasets:
     description: >-
       ORF over-expression of 596 alleles of 53 genes in A549 cells. Original images re-profiled in 2023 (original profiles available in workspace/profiles_orig)
     status: published
-    publications:
+    references:
       - authors: "Caicedo et al., 2023"
         publication: "https://www.molbiolcell.org/doi/10.1091/mbc.E21-11-0538"
         preprint: "https://doi.org/10.1101/2021.11.18.469171"
@@ -557,7 +557,7 @@ datasets:
     description: >-
       A graph dataset comprising Cell Painting features for 11,000 genes and 3,600 compounds, along with their relationships extracted from seven publicly available databases
     status: published
-    publications:
+    references:
       - authors: "Arevalo and Su et al., 2024"
         publication: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/fdb3fa770c2e0ecbb4b7dc7083ef5be9-Abstract-Datasets_and_Benchmarks_Track.html"
         preprint: "https://arxiv.org/abs/2406.08649"
@@ -580,7 +580,7 @@ datasets:
     description: >-
       2464 compounds from EU-OPENSCREEN Bioactive compound set, four imaging sites, two cell lines (HepG2 & U2OS)
     status: published
-    publications:
+    references:
       - authors: "Wolff et al., 2025"
         publication: "https://doi.org/10.1016/j.isci.2025.112445"
         preprint: "https://doi.org/10.1101/2024.08.27.609964"
@@ -609,7 +609,7 @@ datasets:
     description: >-
       Multiple brain cell types
     status: published
-    publications:
+    references:
       - authors: "Tegtmeyer et al., 2024"
         publication: ""
         preprint: "https://doi.org/10.1101/2024.11.16.623947"
@@ -639,19 +639,23 @@ datasets:
     description: ""
     status: unpublished
   - name: cpg0008-pki
-    description: ""
+    description: >-
+      Selective protein kinase inhibitors from the Nathanael Gray lab
     status: unpublished
   - name: cpg0009-molglue
-    description: ""
+    description: >-
+      155 molecular glue degrader compounds from the Amit Choudhary lab
     status: unpublished
   - name: cpg0013
     description: ""
     status: unpublished
   - name: cpg0014-jump-adipocyte
-    description: ""
+    description: >-
+      Drug Repurposing Hub compounds profiled in human white adipose tissue (hWAT) adipocytes and U2OS cells under four metabolic stress conditions
     status: unpublished
   - name: cpg0020-varchamp
-    description: ""
+    description: >-
+      Coding variants across Mendelian disease genes profiled via arrayed ORF over-expression in U2OS cells
     status: unpublished
   - name: cpg0023-mpi
     description: ""
@@ -660,40 +664,48 @@ datasets:
     description: ""
     status: unpublished
   - name: cpg0025-dactyloscopy
-    description: ""
+    description: >-
+      Corticosteroids and drug-repurposing compounds profiled in A549, MCF7, and pooled A549/MCF7 cells
     status: unpublished
   - name: cpg0027
     description: ""
     status: unpublished
   - name: cpg0032-pooled-rare
-    description: ""
+    description: >-
+      Pooled optical screening of pathogenic missense variants for rare disease drug repurposing
     status: unpublished
   - name: cpg0033-oasis-pilot
-    description: ""
+    description: >-
+      Pilot OASIS compound profiling in U2OS and HepaRG cells
     status: unpublished
   - name: cpg0035
     description: ""
     status: unpublished
   - name: cpg0037-oasis
-    description: ""
+    description: >-
+      OASIS compound profiling across multiple cell lines
     status: unpublished
   - name: cpg0039-garcia-fossa-livecellpainting
-    description: ""
+    description: >-
+      Live Cell Painting assay images captured in GFP and Propidium Iodide channels
     status: unpublished
   - name: cpg0040-garcia-fossa-AgNP
-    description: ""
+    description: >-
+      Silver nanoparticle toxicity study using three fluorescence microscopy panels
     status: unpublished
   - name: cpg0041-pccma
     description: ""
     status: unpublished
   - name: cpg0042-chandrasekaran-jump
-    description: ""
+    description: >-
+      Assembled profiles from the JUMP Cell Painting production dataset (cpg0016) including CellProfiler and deep learning embeddings
     status: unpublished
   - name: cpg0043-segmentation
     description: ""
     status: unpublished
   - name: cpg0044-uhler-multicells
-    description: ""
+    description: >-
+      44 drug compounds profiled across 11 cell lines
     status: unpublished
   - name: cpg0045-ncats-mito
     description: ""

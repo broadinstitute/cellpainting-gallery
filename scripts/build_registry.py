@@ -96,13 +96,13 @@ def validate(datasets):
     return errors
 
 
-def format_publication_cell(publications):
-    """Format the publication column from a list of publication dicts."""
-    if not publications:
+def format_reference_cell(references):
+    """Format the reference column from a list of reference dicts."""
+    if not references:
         return ""
 
     parts = []
-    for pub in publications:
+    for pub in references:
         authors = pub.get("authors", "")
         publication_url = pub.get("publication", "")
         preprint_url = pub.get("preprint", "")
@@ -127,7 +127,7 @@ def format_publication_cell(publications):
 
         parts.append(piece)
 
-    # Join multiple publications
+    # Join multiple references
     cell = " ".join(parts)
     return escape_md(cell)
 
@@ -193,7 +193,7 @@ def build_published_table(datasets):
         rows.append([
             ds["name"],
             escape_md(ds.get("description", "")),
-            format_publication_cell(ds.get("publications", [])),
+            format_reference_cell(ds.get("references", [])),
             format_link_list(ds.get("repositories", [])),
             escape_md(size.get("total", "")),
             escape_md(size.get("images", "")),
@@ -215,22 +215,15 @@ def build_unpublished_table(datasets):
     if not unpublished:
         return ""
 
-    headers = [
-        "Dataset name", "Description", "Citable reference",
-        "Total size", "Cell Painting protocol",
-    ]
-    alignments = ["left", "left", "left", "center", "center"]
+    headers = ["Dataset name", "Description", "Citable reference"]
+    alignments = ["left", "left", "left"]
 
     rows = []
     for ds in unpublished:
-        zenodo = ds.get("zenodo_doi", "")
-        size = ds.get("size") or {}
         rows.append([
             ds["name"],
             escape_md(ds.get("description", "")),
-            f"[Zenodo]({zenodo})" if zenodo else "",
-            escape_md(size.get("total", "")),
-            escape_md(ds.get("protocol", "")) if ds.get("protocol") else "",
+            format_reference_cell(ds.get("references", [])),
         ])
 
     return build_md_table(headers, alignments, rows)
