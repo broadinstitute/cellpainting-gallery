@@ -93,27 +93,43 @@ def validate(datasets):
         if "description" not in ds:
             errors.append(f"{prefix}: missing 'description'")
 
+        if "references" in ds and not isinstance(ds["references"], list):
+            errors.append(f"{prefix}: 'references' must be a list")
+            continue
+
     return errors
 
 
 def format_reference_cell(references):
-    """Format the reference column from a list of reference dicts."""
+    """Format the reference column from a list of reference strings/dicts."""
     if not references:
         return ""
 
     parts = []
-    for pub in references:
-        authors = pub.get("authors", "")
-        publication_url = pub.get("publication", "")
-        preprint_url = pub.get("preprint", "")
-        note = pub.get("note", "")
-        pub_prefix = pub.get("prefix", "")
+    for ref in references:
+        if isinstance(ref, str):
+            text = ref.strip()
+            if text:
+                parts.append(text)
+            continue
+
+        if not isinstance(ref, dict):
+            continue
+
+        authors = ref.get("authors", "")
+        publication_url = ref.get("publication", "")
+        preprint_url = ref.get("preprint", "")
+        generic_url = ref.get("url", "")
+        generic_label = ref.get("label", "Reference")
+        text = ref.get("text") or ref.get("title") or ""
+        note = ref.get("note", "")
+        ref_prefix = ref.get("prefix", "")
 
         piece = ""
-        if pub_prefix:
-            piece += f"{pub_prefix} "
-
-        piece += f"({authors})"
+        if ref_prefix:
+            piece += f"{ref_prefix} "
+        if authors:
+            piece += f"({authors})"
 
         if publication_url:
             piece += f" [Publication]({publication_url})"
@@ -121,15 +137,18 @@ def format_reference_cell(references):
                 piece += f", [Preprint]({preprint_url})"
         elif preprint_url:
             piece += f" [Preprint]({preprint_url})"
+        elif generic_url:
+            piece += f" [{generic_label}]({generic_url})"
+        elif text:
+            piece += f" {text}"
 
         if note:
             piece += f" {note}"
+        piece = piece.strip()
+        if piece:
+            parts.append(piece)
 
-        parts.append(piece)
-
-    # Join multiple references
-    cell = " ".join(parts)
-    return escape_md(cell)
+    return escape_md(" ".join(parts))
 
 
 def format_link_list(items):
