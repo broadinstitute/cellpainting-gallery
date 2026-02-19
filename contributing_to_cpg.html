@@ -432,13 +432,13 @@ Instead, please direct such questions to the respective dataset repository linke
 </section>
 <section id="contributing-data-to-the-gallery">
 <h2>Contributing Data to the Gallery<a class="headerlink" href="#contributing-data-to-the-gallery" title="Permalink to this heading">#</a></h2>
-<p>Contributions can be in the form of complete datasets or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
+<p>Contributions can be in the form of complete datasets (can be images and metadata or images and a complete <code class="docutils literal notranslate"><span class="pre">workspace</span></code>) or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
 Please contact &#64;erinweisbart or &#64;shntnu to initiate discussion of a data contribution.</p>
 <p>For new datasets, please include the following details in your contact:</p>
 <ol class="arabic simple">
 <li><p>assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)</p></li>
 <li><p>approximate data size</p></li>
-<li><p>components you wish to contribute (all are described in <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a>) (major components: <code class="docutils literal notranslate"><span class="pre">images</span></code>, <code class="docutils literal notranslate"><span class="pre">analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">backend</span></code>, <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code>, <code class="docutils literal notranslate"><span class="pre">profiles</span></code>. optional components: <code class="docutils literal notranslate"><span class="pre">pipelines</span></code>, <code class="docutils literal notranslate"><span class="pre">qc</span></code>, etc.). Note that <code class="docutils literal notranslate"><span class="pre">metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code> are required.</p></li>
+<li><p>components you wish to contribute (all are described in <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a>) (major components: <code class="docutils literal notranslate"><span class="pre">images</span></code>, <code class="docutils literal notranslate"><span class="pre">analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">backend</span></code>, <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code>, <code class="docutils literal notranslate"><span class="pre">profiles</span></code>. optional components: <code class="docutils literal notranslate"><span class="pre">pipelines</span></code>, <code class="docutils literal notranslate"><span class="pre">qc</span></code>, etc.). <strong>Note that <code class="docutils literal notranslate"><span class="pre">images</span></code>, <code class="docutils literal notranslate"><span class="pre">metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code> are required.</strong></p></li>
 <li><p>institutional identifier to use for data (e.g. <code class="docutils literal notranslate"><span class="pre">broad</span></code>, <code class="docutils literal notranslate"><span class="pre">anonymous</span></code>)</p></li>
 <li><p>suggested top level project tag.
 We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.
@@ -457,18 +457,17 @@ The tag is typically a 1 word summary of the project (e.g. cpg0011-lipocyteprofi
 <p>In preparation for transferring data, please perform all of the following steps:</p>
 <section id="remove-special-characters-in-folder-names">
 <h3>Remove special characters in folder names<a class="headerlink" href="#remove-special-characters-in-folder-names" title="Permalink to this heading">#</a></h3>
-<p>To the maximum extent possible, please avoid the following in your folder names</p>
+<p>To the maximum extent possible, please avoid the following in your folder names (delete them if present).</p>
 <ul class="simple">
 <li><p>Whitespaces</p></li>
 <li><p>Special characters other than <code class="docutils literal notranslate"><span class="pre">_</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
 </ul>
-<p>Please delete these characters if they are present in your folder names.</p>
 </section>
 <section id="prepare-project-specific-naming">
 <h3>Prepare project-specific naming<a class="headerlink" href="#prepare-project-specific-naming" title="Permalink to this heading">#</a></h3>
 <p>Reference <a class="reference internal" href="data_structure.html"><span class="doc std std-doc">data structure</span></a> for comprehensive information on folder structure and naming.
 Your data must strictly comply with the data structure we have laid out.
-Additionally it must include all, unblinded metadata.</p>
+Additionally it must include all, unblinded metadata - this means that the minimum dataset contribution is <code class="docutils literal notranslate"><span class="pre">images</span></code>, <code class="docutils literal notranslate"><span class="pre">metadata</span></code>, and <code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code>.</p>
 </section>
 <section id="validate-your-data">
 <h3>Validate your data<a class="headerlink" href="#validate-your-data" title="Permalink to this heading">#</a></h3>
