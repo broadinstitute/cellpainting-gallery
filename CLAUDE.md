@@ -77,7 +77,7 @@ See `documentation/contributing_to_cpg.md` and `documentation/uploading_to_cpg.m
 
 ### Adding a New Dataset
 
-1. **Update `registry.yml`**: Add a new entry to the `datasets` list with required fields (`name`, `description`, `status`) and optional fields (`references`, `repositories`, `size`, `protocol`, `aliases`, `external_contributions`)
+1. **Update `registry.yml`**: Add a new entry to the `datasets` list with required fields (`name`, `description`, `complete`) and optional fields (`references`, `repositories`, `size`, `protocol`, `aliases`, `external_contributions`). Set `complete: true` when the dataset has a description and is ready to appear in the main table; set `complete: false` for datasets still in progress. A non-empty `description` is required when `complete: true`.
 
 2. **Regenerate tables**: Run `uv run scripts/build_registry.py` to update `README.md` and `documentation/complete_datasets.md`
 

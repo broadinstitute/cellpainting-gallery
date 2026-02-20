@@ -7,9 +7,7 @@
 Build script for the Cell Painting Gallery dataset registry.
 
 Reads registry.yml and generates:
-  - Published dataset table in README.md (between markers)
-  - Unpublished dataset table in README.md (between markers)
-  - documentation/complete_datasets.md with both tables + external contributions
+  - documentation/complete_datasets.md with table + external contributions
   - documentation/prefixes.md prefix table (between markers)
 
 Usage:
@@ -26,18 +24,12 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY_PATH = ROOT / "registry.yml"
-README_PATH = ROOT / "README.md"
 COMPLETE_DATASETS_PATH = ROOT / "documentation" / "complete_datasets.md"
 PREFIXES_PATH = ROOT / "documentation" / "prefixes.md"
 
 NAME_PATTERN = re.compile(r"^cpg\d{4}(-[A-Za-z0-9_-]+)?$")
-VALID_STATUSES = {"published", "unpublished"}
 
-# Markers in README.md
-PUB_START = "<!-- AUTO-GENERATED PUBLISHED TABLE START -->"
-PUB_END = "<!-- AUTO-GENERATED PUBLISHED TABLE END -->"
-UNPUB_START = "<!-- AUTO-GENERATED UNPUBLISHED TABLE START -->"
-UNPUB_END = "<!-- AUTO-GENERATED UNPUBLISHED TABLE END -->"
+# Markers in documentation files
 PREFIX_START = "<!-- AUTO-GENERATED PREFIX TABLE START -->"
 PREFIX_END = "<!-- AUTO-GENERATED PREFIX TABLE END -->"
 
@@ -91,16 +83,17 @@ def validate(datasets):
             errors.append(f"{prefix}: duplicate name")
         seen_names.add(name)
 
-        status = ds.get("status")
-        if not status:
-            errors.append(f"{prefix}: missing 'status'")
-        elif status not in VALID_STATUSES:
+        if "complete" not in ds:
+            errors.append(f"{prefix}: missing 'complete'")
+        elif not isinstance(ds["complete"], bool):
             errors.append(
-                f"{prefix}: invalid status '{status}', must be one of {VALID_STATUSES}"
+                f"{prefix}: 'complete' must be a boolean (true/false)"
             )
 
         if "description" not in ds:
             errors.append(f"{prefix}: missing 'description'")
+        elif ds.get("complete") is True and not ds.get("description"):
+            errors.append(f"{prefix}: 'description' required when complete is true")
 
         if "references" in ds and not isinstance(ds["references"], list):
             errors.append(f"{prefix}: 'references' must be a list")
@@ -192,17 +185,17 @@ def build_md_table(headers, alignments, rows):
     return "\n".join(lines)
 
 
-def build_published_table(datasets):
-    """Build the 9-column published dataset table matching current README format."""
-    published = sorted(
-        [d for d in datasets if d.get("status") == "published"],
+def build_datasets_table(datasets):
+    """Build the unified 9-column dataset table for all complete datasets."""
+    complete = sorted(
+        [d for d in datasets if d.get("complete") is True],
         key=lambda d: d["name"],
     )
 
     headers = [
         "Dataset name",
         "Description",
-        "Publication to cite",
+        "References",
         "Associated repositories",
         "Total size",
         "Images size",
@@ -216,10 +209,13 @@ def build_published_table(datasets):
     ]
 
     rows = []
-    for ds in published:
+    for ds in complete:
+        name = ds["name"]
+        if ds.get("external_contributions"):
+            name += " *"
         size = ds.get("size") or {}
         rows.append([
-            ds["name"],
+            name,
             escape_md(ds.get("description", "")),
             format_reference_cell(ds.get("references", [])),
             format_link_list(ds.get("repositories", [])),
@@ -228,30 +224,6 @@ def build_published_table(datasets):
             escape_md(size.get("numerical", "")),
             escape_md(ds.get("protocol", "")),
             format_link_list(ds.get("aliases", [])),
-        ])
-
-    return build_md_table(headers, alignments, rows)
-
-
-def build_unpublished_table(datasets):
-    """Build the simplified unpublished dataset table."""
-    unpublished = sorted(
-        [d for d in datasets if d.get("status") == "unpublished"],
-        key=lambda d: d["name"],
-    )
-
-    if not unpublished:
-        return ""
-
-    headers = ["Dataset name", "Description", "Citable reference"]
-    alignments = ["left", "left", "left"]
-
-    rows = []
-    for ds in unpublished:
-        rows.append([
-            ds["name"],
-            escape_md(ds.get("description", "")),
-            format_reference_cell(ds.get("references", [])),
         ])
 
     return build_md_table(headers, alignments, rows)
@@ -329,44 +301,54 @@ def splice_between_markers(content, start_marker, end_marker, replacement):
     return before + "\n" + replacement + "\n" + after
 
 
-def generate_readme(datasets, readme_content):
-    """Splice generated tables into README.md content."""
-    pub_table = build_published_table(datasets)
-    unpub_table = build_unpublished_table(datasets)
-
-    result = splice_between_markers(readme_content, PUB_START, PUB_END, pub_table)
-    result = splice_between_markers(result, UNPUB_START, UNPUB_END, unpub_table)
-
-    return result
-
-
 def generate_complete_datasets(datasets):
     """Generate documentation/complete_datasets.md."""
     lines = ["# Complete Datasets", ""]
 
-    pub_table = build_published_table(datasets)
-    lines.append(pub_table)
+    table = build_datasets_table(datasets)
+    lines.append(table)
     lines.append("")
 
-    unpub_table = build_unpublished_table(datasets)
-    if unpub_table:
-        lines.append("## Datasets without publications")
-        lines.append("")
+    has_contribs = any(ds.get("external_contributions") for ds in datasets)
+    if has_contribs:
         lines.append(
-            "These datasets are available in the Cell Painting Gallery but do not have an associated publication."
+            "\\* This dataset has external contributions (see below)."
         )
-        lines.append(
-            "If you use them, please cite the "
-            "[Cell Painting Gallery paper](https://doi.org/10.1038/s41592-024-02399-z) "
-            "and any reference listed below."
-        )
-        lines.append("")
-        lines.append(unpub_table)
         lines.append("")
 
     contrib_section = build_external_contributions_section(datasets)
     if contrib_section:
         lines.append(contrib_section)
+        lines.append("")
+
+    in_progress = sorted(
+        [d for d in datasets if d.get("complete") is not True and not d.get("retired")],
+        key=lambda d: d["name"],
+    )
+    if in_progress:
+        lines.append("## Datasets in progress")
+        lines.append("")
+        lines.append(
+            "The following datasets are in progress and not yet fully documented:"
+        )
+        lines.append("")
+        for ds in in_progress:
+            lines.append(f"- {ds['name']}")
+        lines.append("")
+
+    retired = sorted(
+        [d for d in datasets if d.get("retired")],
+        key=lambda d: d["name"],
+    )
+    if retired:
+        lines.append("## Retired prefixes")
+        lines.append("")
+        lines.append(
+            "The following prefixes are reserved but not associated with any dataset:"
+        )
+        lines.append("")
+        for ds in retired:
+            lines.append(f"- {ds['name']}")
         lines.append("")
 
     return "\n".join(lines)
@@ -401,22 +383,16 @@ def main():
             print(f"  - {err}", file=sys.stderr)
         sys.exit(1)
 
-    published_count = sum(1 for d in datasets if d.get("status") == "published")
-    unpublished_count = sum(1 for d in datasets if d.get("status") == "unpublished")
+    complete_count = sum(1 for d in datasets if d.get("complete") is True)
+    incomplete_count = sum(1 for d in datasets if d.get("complete") is not True)
     print(
         f"Registry valid: {len(datasets)} datasets "
-        f"({published_count} published, {unpublished_count} unpublished)"
+        f"({complete_count} complete, {incomplete_count} incomplete)"
     )
 
     if args.check:
         print("Check mode: no files written.")
         return
-
-    # Generate README
-    readme_content = README_PATH.read_text(encoding="utf-8")
-    new_readme = generate_readme(datasets, readme_content)
-    README_PATH.write_text(new_readme, encoding="utf-8")
-    print(f"Updated {README_PATH}")
 
     # Generate complete_datasets.md
     complete = generate_complete_datasets(datasets)
