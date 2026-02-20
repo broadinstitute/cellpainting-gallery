@@ -64,7 +64,7 @@ aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-
 This section only applies if your maintainer specifically set you up with S3 Access Grants.
 If unsure, use the standard instructions above.
 
-Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra) (private) for onboarding setup.
+Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra?tab=readme-ov-file#setting-up-access-for-a-new-prefix) (private) for onboarding setup.
 
 S3 Access Grants provides temporary, prefix-scoped credentials. Each assigned prefix has shared credentials—either READWRITE for uploading data, or READ for verification and read-only access. Your prefix is usually a top-level project prefix (e.g., `cpg0037-oasis`) but in some cases may be a nested sub-path (e.g., `cpg0016-jump/source_2/workspace/segmentation`). Your maintainer will tell you which prefix you have access to. Instead of steps 3-4 above, follow these steps:
 
