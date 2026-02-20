@@ -159,7 +159,7 @@ datasets:
 
   - name: cpg0010-caie-drugresponse
     description: >-
-      MCF-7 breast cancer cells treated  with 113 small molecules at eight concentrations.
+      MCF-7 breast cancer cells treated with 113 small molecules at eight concentrations.
     complete: true
     references:
       - authors: "Caie et al., 2010"
@@ -630,14 +630,8 @@ datasets:
 
     aliases: []
 
-  # ── Incomplete datasets ─────────────────────────────────────────────────────
+  # ── Complete datasets without references ────────────────────────────────────
 
-  - name: cpg0006-miami
-    description: ""
-    complete: false
-  - name: cpg0007-prism
-    description: ""
-    complete: false
   - name: cpg0008-pki
     description: >-
       Selective protein kinase inhibitors from the Nathanael Gray lab
@@ -646,10 +640,6 @@ datasets:
     description: >-
       155 molecular glue degrader compounds from the Amit Choudhary lab
     complete: true
-  - name: cpg0013
-    description: ""
-    complete: false
-    retired: true
   - name: cpg0014-jump-adipocyte
     description: >-
       Drug Repurposing Hub compounds profiled in human white adipose tissue (hWAT) adipocytes and U2OS cells under four metabolic stress conditions
@@ -658,20 +648,10 @@ datasets:
     description: >-
       Coding variants across Mendelian disease genes profiled via arrayed ORF over-expression in U2OS cells
     complete: true
-  - name: cpg0023-mpi
-    description: ""
-    complete: false
-  - name: cpg0024-bortezomib
-    description: ""
-    complete: false
   - name: cpg0025-dactyloscopy
     description: >-
       Corticosteroids and drug-repurposing compounds profiled in A549, MCF7, and pooled A549/MCF7 cells
     complete: true
-  - name: cpg0027
-    description: ""
-    complete: false
-    retired: true
   - name: cpg0032-pooled-rare
     description: >-
       Pooled optical screening of pathogenic missense variants for rare disease drug repurposing
@@ -680,10 +660,6 @@ datasets:
     description: >-
       Pilot OASIS compound profiling in U2OS and HepaRG cells
     complete: true
-  - name: cpg0035
-    description: ""
-    complete: false
-    retired: true
   - name: cpg0037-oasis
     description: >-
       OASIS compound profiling across multiple cell lines
@@ -696,20 +672,50 @@ datasets:
     description: >-
       Silver nanoparticle toxicity study using three fluorescence microscopy panels
     complete: true
-  - name: cpg0041-pccma
-    description: ""
-    complete: false
   - name: cpg0042-chandrasekaran-jump
     description: >-
       Assembled profiles from the JUMP Cell Painting production dataset (cpg0016) including CellProfiler and deep learning embeddings
     complete: true
-  - name: cpg0043-segmentation
-    description: ""
-    complete: false
   - name: cpg0044-uhler-multicells
     description: >-
       44 drug compounds profiled across 11 cell lines
     complete: true
+
+  # ── Incomplete datasets ────────────────────────────────────────────────────
+
+  - name: cpg0006-miami
+    description: ""
+    complete: false
+  - name: cpg0007-prism
+    description: ""
+    complete: false
+  - name: cpg0023-mpi
+    description: ""
+    complete: false
+  - name: cpg0024-bortezomib
+    description: ""
+    complete: false
+  - name: cpg0041-pccma
+    description: ""
+    complete: false
+  - name: cpg0043-segmentation
+    description: ""
+    complete: false
   - name: cpg0045-ncats-mito
     description: ""
     complete: false
+
+  # ── Retired prefixes ───────────────────────────────────────────────────────
+
+  - name: cpg0013
+    description: ""
+    complete: false
+    retired: true
+  - name: cpg0027
+    description: ""
+    complete: false
+    retired: true
+  - name: cpg0035
+    description: ""
+    complete: false
+    retired: true

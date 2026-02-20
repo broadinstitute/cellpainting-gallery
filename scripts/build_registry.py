@@ -95,6 +95,11 @@ def validate(datasets):
         elif ds.get("complete") is True and not ds.get("description"):
             errors.append(f"{prefix}: 'description' required when complete is true")
 
+        if "retired" in ds and not isinstance(ds["retired"], bool):
+            errors.append(f"{prefix}: 'retired' must be a boolean (true/false)")
+        elif ds.get("retired") is True and ds.get("complete") is True:
+            errors.append(f"{prefix}: retired datasets cannot be marked complete")
+
         if "references" in ds and not isinstance(ds["references"], list):
             errors.append(f"{prefix}: 'references' must be a list")
             continue
@@ -212,7 +217,7 @@ def build_datasets_table(datasets):
     for ds in complete:
         name = ds["name"]
         if ds.get("external_contributions"):
-            name += " *"
+            name += " `*`"
         size = ds.get("size") or {}
         rows.append([
             name,
@@ -312,7 +317,7 @@ def generate_complete_datasets(datasets):
     has_contribs = any(ds.get("external_contributions") for ds in datasets)
     if has_contribs:
         lines.append(
-            "\\* This dataset has external contributions (see below)."
+    "`*` This dataset has external contributions (see below)."
         )
         lines.append("")
 
