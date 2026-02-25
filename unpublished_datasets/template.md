@@ -17,7 +17,7 @@
 **Seeding density**: \
 **Gene transfer method**: \
 **Selection reagent**: \
-**Mycoplasma tested**: \
+**Mycoplasma tested**: 
 
 ### Imaging metadata
 
@@ -28,7 +28,7 @@
 **Pixel resolution (microns/pixel)**: \
 **Numerical aperture**: \
 **Binning**: \
-**Laser power**: \
+**Laser power**: 
 
 ### Perturbation metadata
 
@@ -37,4 +37,4 @@
 **Number of perturbations**: \
 **Number of affected genes**: \
 **Plate size**: \
-**Plate brand**: \
+**Plate brand**: 
