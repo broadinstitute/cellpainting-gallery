@@ -63,3 +63,6 @@ It is currently in alpha and for internal use but we plan to develop it to the p
 
 Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the [Cell Painting Gallery repository](https://github.com/broadinstitute/cellpainting-gallery/) with an update to [`registry.yml`](https://github.com/broadinstitute/cellpainting-gallery/blob/main/registry.yml) to add your dataset entry, followed by running `uv run scripts/build_registry.py` to regenerate the README table and documentation.
 If your dataset is associated with a publication, please also edit [Publications](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/publications.md).
+
+If your dataset will not have an associated publication, create a dataset description file in [`unpublished_datasets/`](https://github.com/broadinstitute/cellpainting-gallery/tree/main/unpublished_datasets) using the provided template, then create a standalone [Zenodo](https://zenodo.org/) deposit with that file to mint a DOI.
+Add the resulting DOI to both the dataset description file and the `references` section of your dataset entry in `registry.yml`.
