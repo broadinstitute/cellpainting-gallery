@@ -1,0 +1,34 @@
+name: validate-registry
+
+on:
+  pull_request:
+    paths:
+    - registry.yml
+    - scripts/**
+    - .github/workflows/validate-registry.yml
+    - README.md
+    - documentation/complete_datasets.md
+    - documentation/prefixes.md
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    # Validate registry schema
+    - name: Validate registry
+      run: |
+        uv run scripts/build_registry.py --check
+
+    # Check that generated files are up to date
+    - name: Check generated files are up to date
+      run: |
+        uv run scripts/build_registry.py
+        git diff --exit-code README.md documentation/complete_datasets.md documentation/prefixes.md

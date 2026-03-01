@@ -33,7 +33,8 @@ Weisbart, E., Kumar, A., Arevalo, J., Carpenter, A. E., Cimini, B. A., & Singh, 
 
 ### Individual dataset publications
 
-Individual publications associated with specific datasets are listed in the "Publication to cite" column in the Cell Painting Gallery repository [README and landing page](https://github.com/broadinstitute/cellpainting-gallery).
+Individual dataset references are listed in the Cell Painting Gallery repository [README and landing page](https://github.com/broadinstitute/cellpainting-gallery).
+These may be journal publications, preprints, or [Zenodo](https://zenodo.org/) DOIs for datasets without a publication.
 
 ### Example citations
 
