@@ -8,6 +8,10 @@
 
 ## Description
 
+Intended experiment and/or comparisons to be made within the dataset
+Expected phenotypes within the dataset
+Links to any protocols used
+
 ## Metadata
 
 **Cell line**: \
@@ -17,7 +21,7 @@
 **Seeding density**: \
 **Gene transfer method**: \
 **Selection reagent**: \
-**Mycoplasma tested**: 
+**Mycoplasma tested**:
 
 ### Imaging metadata
 
@@ -28,7 +32,7 @@
 **Pixel resolution (microns/pixel)**: \
 **Numerical aperture**: \
 **Binning**: \
-**Laser power**: 
+**Laser power**:
 
 ### Perturbation metadata
 
@@ -37,4 +41,4 @@
 **Number of perturbations**: \
 **Number of affected genes**: \
 **Plate size**: \
-**Plate brand**: 
+**Plate brand**:
