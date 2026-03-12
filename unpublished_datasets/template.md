@@ -16,6 +16,8 @@ Links to any protocols used
 
 **Cell line**: \
 **Cell source**: \
+**Cell line modification**: \
+**Assay**: \
 **Assay**: \
 **Perturbation type**: \
 **Seeding density**: \
@@ -32,13 +34,21 @@ Links to any protocols used
 **Pixel resolution (microns/pixel)**: \
 **Numerical aperture**: \
 **Binning**: \
-**Laser power**:
+**Bit depth***: \
+**Number of Z planes**: \
+**Number of timepoints acquired**: \
+**Image size X**: \
+**Image size Y** \
+**Channel power**: \
+**Channel Excitation(Width)/Emmission(Width)**: \
 
 ### Perturbation metadata
 
-**Number of compound doses used**: \
+**Compound or genetic**: \
+**Number of treatment doses used**: \
 **Number of well replicates/perturbation**: \
 **Number of perturbations**: \
 **Number of affected genes**: \
 **Plate size**: \
 **Plate brand**:
+**Time (hours) of treatment**:
