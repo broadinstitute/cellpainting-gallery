@@ -59,6 +59,79 @@ aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-ga
 aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --profile cpg-staging
 ```
 
+## Alternative: S3 Access Grants (Beta)
+
+This section only applies if your maintainer specifically set you up with S3 Access Grants.
+If unsure, use the standard instructions above.
+
+Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra?tab=readme-ov-file#setting-up-access-for-a-new-prefix) (private) for onboarding setup.
+
+S3 Access Grants provides temporary, prefix-scoped credentials. Each assigned prefix has shared credentials—either READWRITE for uploading data, or READ for verification and read-only access. Your prefix is usually a top-level project prefix (e.g., `cpg0037-oasis`) but in some cases may be a nested sub-path (e.g., `cpg0016-jump/source_2/workspace/segmentation`). Your maintainer will tell you which prefix you have access to. Instead of steps 3-4 above, follow these steps:
+
+### A1. Set your credentials
+
+Your maintainer will provide you with AWS credentials (access key and secret key) for the Cell Painting Gallery AWS account.
+These credentials are **shared** among all contributors to your project prefix.
+They are **not** credentials from your own AWS account—use the ones provided to you.
+
+```bash
+export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
+export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
+```
+
+```{tip}
+If you prefer using an AWS profile instead of environment variables, add the credentials to `~/.aws/credentials` under `[cpg-staging]` and append `--profile cpg-staging` to the command in step A2.
+```
+
+### A2. Get temporary S3 credentials
+
+Replace `YOUR_PREFIX` with your assigned prefix (e.g., `cpg0037-oasis` or a nested path like `cpg0016-jump/source_2/workspace/segmentation`).
+
+The `--account-id` below is the Cell Painting Gallery AWS account.
+
+```bash
+aws s3control get-data-access \
+  --account-id 309624411020 \
+  --target "s3://staging-cellpainting-gallery/YOUR_PREFIX/*" \
+  --permission READWRITE \
+  --duration-seconds 43200 \
+  --region us-east-1
+```
+
+This returns temporary credentials valid for 12 hours. Copy the values from the output and export them.
+These replace the credentials from step A1—make sure to export all three values, including `AWS_SESSION_TOKEN`:
+
+```bash
+export AWS_ACCESS_KEY_ID=<AccessKeyId from output>
+export AWS_SECRET_ACCESS_KEY=<SecretAccessKey from output>
+export AWS_SESSION_TOKEN=<SessionToken from output>
+```
+
+### A3. Upload your data
+
+With the exported credentials active, upload using standard AWS CLI commands:
+
+```bash
+aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/your/data/path/ --region us-east-1
+```
+
+You can upload to any sub-path within your assigned prefix. For example, if your prefix is `cpg0037-oasis`, you can upload to:
+- `s3://staging-cellpainting-gallery/cpg0037-oasis/broad/images/...`
+- `s3://staging-cellpainting-gallery/cpg0037-oasis/source_2/workspace/...`
+
+If your credentials expire during a long upload, re-run step A2 to get fresh credentials and then re-run the same `aws s3 sync` command—it will skip files already uploaded.
+
+### Troubleshooting
+
+**Error: "not authorized to perform s3:GetDataAccess on resource ...us-west-2..."**
+
+The Access Grants instance is in `us-east-1` only. Make sure your command includes `--region us-east-1`.
+
+**Error: "No matching grant found" or "Access Denied" on a valid prefix**
+
+Verify your `--target` path matches your assigned prefix exactly.
+The credentials are scoped to this prefix and all sub-paths within it.
+
 ## 7. Initiate transfer from your staging to Gallery staging
 
 Run your transfer commands to `staging-cellpainting-gallery`.
