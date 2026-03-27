@@ -300,7 +300,7 @@ Within the plate folder there are typically two files - a `load_data.csv` for pi
 The `load_data.csv` maps the actual file names and paths and their metadata (e.g. channel number, channel name) to the naming information passed to CellProfiler for running the images in a CellProfiler pipeline.
 More information on `load_data.csv`'s and their contents is available in [CellProfiler documentation](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/fileprocessing.html#loaddata).
 
-Though CellProfiler suports multiple formats for file paths, all `load_data.csv` in the CPG use the format of column names `URL_<ChannelName>` where the URL starts `s3://cellpainting-gallery`. e.g.
+Though CellProfiler suports multiple formats for file paths, all `load_data.csv` in the CPG use the format of column names `URL_<ChannelName>` where the URL starts `s3://cellpainting-gallery`. All `load_data.csv` must also have a column named `Metadata_Well`. e.g.
 
 URL_OrigDNA | URL_OrigER | Metadata_Plate | Metadata_Well | Metadata_Site
 ----------- | ---------- | -------------- | ------------- | -------------
@@ -374,6 +374,14 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
         ├── Barcodes.csv
         └── metadata.json
 ```
+
+### `metadata_harmonized` folder structure
+
+We have created metadata that is harmonized across the entire Cell Painting Gallery.
+Details of that project are available in the [Cell Painting Gallery Metadata](https://github.com/broadinstitute/cellpainting-gallery-metadata) Github repository.
+Harmonized metadata are named by their project tag with a suffix that indicates the version of the metadata.
+e.g. `cpg0030-gustafsdottir-cellpainting_harmonized_metadata_v01.parquet`
+The metadata spec is currently at v0.1 and we are in the process of creating and uploading v0.1 versions for all datasets within the CPG.
 
 ### `profiles` folder structure
 
