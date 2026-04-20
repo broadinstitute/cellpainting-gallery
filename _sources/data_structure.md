@@ -48,8 +48,8 @@ cellpainting-gallery/
         └── workspace
 ```
 
-Within the outer `images` folder, there are `YYYY_MM_DD_<batch-name>` subfolders for each batch.
-Each batch folder typically starts with `YYYY_MM_DD` of the date that image acquisition started.
+Within the outer `images` folder, there are batch subfolders for each batch.
+Each batch folder typically starts with `YYYY_MM_DD` of the date that image acquisition started though the date prefix is not strictly required.
 The rest of the batch folder name can be a simple ordinal (e.g. `YYYY_MM_DD_Batch1`) or more descriptive of its contents (e.g. `2020_01_02_TestPhalloidinConcentration`).
 A single batch typically contains all of the plates that were imaged (or started acquisition) on that day.
 However, for simplifying project tracking and analysis, sometimes plates imaged on the same day are divided into multiple batches where each batch is a different experimental condition (e.g. `2020_01_02_LowPhalloidin` and `2020_01_02_HighPhalloidin`).
