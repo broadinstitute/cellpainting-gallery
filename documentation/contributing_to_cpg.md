@@ -40,11 +40,10 @@ In preparation for transferring data, please perform all of the following steps:
 
 ### Remove special characters in folder names
 
-To the maximum extent possible, please avoid the following in your folder names (delete them if present). 
+To the maximum extent possible, please avoid the following in your folder names (delete them if present):
 
 - Whitespaces
 - Special characters other than `_` and `-`
-
 
 ### Prepare project-specific naming
 
@@ -54,8 +53,7 @@ Additionally it must include all, unblinded metadata - this means that the minim
 
 ### Validate your data
 
-We are building a [data validator](http://github.com/broadinstitute/cpg/cpgdata) to check compliance with our required structure.
-It is currently in alpha and for internal use but we plan to develop it to the point that contributors can use it to validate their data before deposition in the future.
+Currently, validation is performed by Erin/Shantanu after data is uploaded to staging. In the future we plan on having contributors first validate their data before any upload.
 
 ### Create a pull-request
 

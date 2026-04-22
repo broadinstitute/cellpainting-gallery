@@ -1,95 +1,41 @@
 # Tutorial: Uploading to the Cell Painting Gallery
 
-To preserve data integrity, any data going into the Cell Painting Gallery is first uploaded to a staging bucket, `staging-cellpainting-gallery`.
-A gallery maintainer can then approve the staged data and initiate transfer to `cellpainting-gallery`.
+To preserve data integrity, any data going into the Cell Painting Gallery is first uploaded to a private staging bucket, `staging-cellpainting-gallery`.
+A gallery maintainer must approve the staged data and can then initiate transfer to the public `cellpainting-gallery`.
 
 ```{warning}
 These instructions are currently applicable for upload from a non-S3 source (such as an institutional server).
 Transfer from S3 to S3 requires slightly more complicated credential setup so please let Erin/Shantanu know if your data is on S3 and they will provide additional instructions.
 ```
 
-## 1. Get upload credentials
+## 1. Prepare data
 
-Upload credentials enable anyone with the credentials to upload to `staging-cellpainting-gallery`.
-
-**Imaging Platform internal**: Email Erin/Shantanu to ask for credentials, letting them know the prefix you want to upload to.
-
-**External source**: Your dataset will have an Imaging Platform champion.
-That champion will contact Erin/Shantanu to request credentials and share them with you.
+Ensure that you have read [Contributing to the CPG](https://broadinstitute.github.io/cellpainting-gallery/contributing_to_cpg.html) and have performed the appropriate "Preparation for Data Deposition."
 
 ## 2. Install AWS CLI
 
 Follow AWS documentation to [install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-## 3. Add your upload credentials to your AWS CLI config
+## 3. Request upload credentials
 
-Open the AWS CLI config file:
+Upload credentials enable anyone with the credentials to upload to `staging-cellpainting-gallery`.
+Email Erin/Shantanu to ask for credentials, letting them know the prefix you want to upload to.
+(Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra?tab=readme-ov-file#setting-up-access-for-a-new-prefix) (private) for onboarding setup.)
 
-`nano ~/.aws/config` on Mac/Linux  
-`notepad C:\Users\Administrator\.aws\config` on Windows
-
-Add the following text at the bottom of the file:
-
-```bash
-[cpg-staging]
-aws_access_key_id = {ACCESS_KEY_ID}
-aws_secret_access_key = {SECRET_ACCESS_KEY}
-region = us-east-1
-output = json
-```
-
-The `aws_access_key_id` and `aws_secret_access_key` will be sent to you by Erin/Shantanu when they generate credentials.
-
-## 4. Prepare your AWS CLI data transfer commands
-
-Ensure that you have read [Contributing to the Cell Painting Gallery](/documentation/contributing_to_cpg.md) and [Data Structure](/documentation/data_structure.md).
-
-Prepare your AWS CLI data transfer commands for upload to `staging-cellpainting-gallery` exactly mimicking the structure of `cellpainting-gallery`.
-Depending upon how you have locally structured your data, you may need to generate multiple separate commands for transfer to the gallery.
-They should follow the format of `aws s3 cp --recursive SOURCE DESTINATION --profile cpg-staging`.
-(For single files, remove the `--recursive` flag.)
-
-`SOURCE` is where the files are on your storage and can be a local absolute or relative path. Theoretically, it can be an S3 location of your S3 bucket but that requires a more complicated credential setup or that the files in your S3 location are fully public.
-`DESTINATION` is the S3 path within the `staging-cellpainting-gallery` (that should generally match the path that will be used in the `cellpainting-gallery`).
-
-e.g.  
-
-```bash
-aws s3 cp --recursive /Users/eweisbar/Batch8_images s3://staging-cellpainting-gallery/cpg0123-example/broad/images/2024_04_01_Batch8/images/ --profile cpg-staging 
-aws s3 cp --recursive /Users/eweisbar/Batch8_profiles s3://staging-cellpainting-gallery/cpg0123-example/broad/workspace/profiles/2024_04_01_Batch8/ --profile cpg-staging
-```
-
-## Alternative: S3 Access Grants (Beta)
-
-This section only applies if your maintainer specifically set you up with S3 Access Grants.
-If unsure, use the standard instructions above.
-
-Maintainers: see [cellpainting-gallery-infra](https://github.com/broadinstitute/cellpainting-gallery-infra?tab=readme-ov-file#setting-up-access-for-a-new-prefix) (private) for onboarding setup.
-
-S3 Access Grants provides temporary, prefix-scoped credentials. Each assigned prefix has shared credentials—either READWRITE for uploading data, or READ for verification and read-only access. Your prefix is usually a top-level project prefix (e.g., `cpg0037-oasis`) but in some cases may be a nested sub-path (e.g., `cpg0016-jump/source_2/workspace/segmentation`). Your maintainer will tell you which prefix you have access to. Instead of steps 3-4 above, follow these steps:
-
-### A1. Set your credentials
+## 4. Get temporary AWS credentials
 
 Your maintainer will provide you with AWS credentials (access key and secret key) for the Cell Painting Gallery AWS account.
 These credentials are **shared** among all contributors to your project prefix.
-They are **not** credentials from your own AWS account—use the ones provided to you.
+(If you have AWS credentials from your own AWS account, note that these are different. Use these, **not** your own credentials for the following steps.)
+
+The credentials that you are sent by Erin/Shantanu allow you access to S3 Access Grants. S3 Access Grants provides temporary, prefix-scoped credentials that allow actual upload to the CPG. Each assigned prefix has shared credentials — either READWRITE for uploading data, or READ for verification and read-only access. Your prefix is usually a top-level project prefix that includes your source (e.g., `cpg0037-oasis/broad`) but in some cases may be a nested sub-path (e.g., `cpg0016-jump/source_2/workspace/segmentation`). Your maintainer will tell you which prefix you have access to.
+
+Enter the following into your terminal, replacing `YOUR_ACCESS_KEY` and `YOUR_SECRET_KEY` with the credentials sent to you and `YOUR_PREFIX` with the prefix your credentials are scoped to.
 
 ```bash
 export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
-```
 
-```{tip}
-If you prefer using an AWS profile instead of environment variables, add the credentials to `~/.aws/credentials` under `[cpg-staging]` and append `--profile cpg-staging` to the command in step A2.
-```
-
-### A2. Get temporary S3 credentials
-
-Replace `YOUR_PREFIX` with your assigned prefix (e.g., `cpg0037-oasis` or a nested path like `cpg0016-jump/source_2/workspace/segmentation`).
-
-The `--account-id` below is the Cell Painting Gallery AWS account.
-
-```bash
 aws s3control get-data-access \
   --account-id 309624411020 \
   --target "s3://staging-cellpainting-gallery/YOUR_PREFIX/*" \
@@ -107,7 +53,7 @@ export AWS_SECRET_ACCESS_KEY=<SecretAccessKey from output>
 export AWS_SESSION_TOKEN=<SessionToken from output>
 ```
 
-### A3. Upload your data
+## 5. Upload your data
 
 With the exported credentials active, upload using standard AWS CLI commands:
 
@@ -123,20 +69,16 @@ If your credentials expire during a long upload, re-run step A2 to get fresh cre
 
 ### Troubleshooting
 
-**Error: "not authorized to perform s3:GetDataAccess on resource ...us-west-2..."**
+`Error: "not authorized to perform s3:GetDataAccess on resource ...us-west-2..."`
 
 The Access Grants instance is in `us-east-1` only. Make sure your command includes `--region us-east-1`.
 
-**Error: "No matching grant found" or "Access Denied" on a valid prefix**
+`Error: "No matching grant found" or "Access Denied" on a valid prefix`
 
 Verify your `--target` path matches your assigned prefix exactly.
 The credentials are scoped to this prefix and all sub-paths within it.
 
-## 7. Initiate transfer from your staging to Gallery staging
-
-Run your transfer commands to `staging-cellpainting-gallery`.
-
-## 8. Verify transfer
+## 6. Verify transfer
 
 Once the transfers are complete, verify the data transferred to `staging-cellpainting-gallery` completely by comparing file count betwen the source and the CPG path.
 
