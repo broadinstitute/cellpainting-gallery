@@ -650,6 +650,7 @@ Note that some experiments may generate additional categories of data/metadata a
 <li><p><code class="docutils literal notranslate"><span class="pre">backend</span></code>: contains the single-cell SQLite files (one per plate), the well-level aggregated profiles CSV files (also one per plate)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">load_data_csv</span></code>: contains <a class="reference external" href="https://cytomining.github.io/profiling-handbook/setup-images.html#create-loaddata-csvs">LoadData CSV files</a> used by CellProfiler to process the data</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code>: contains metadata files used to annotate the profiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata_harmonized</span></code>: contains metadata that has been harmonized across the CPG</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">profiles</span></code>: contains a set of well-level profiles files (one set per plate). The set comprises different stages of the CSV files produced when running the profiling recipe, as well as other output.</p></li>
 </ul>
 <p>Examples of additional optional folders you may upload to <code class="docutils literal notranslate"><span class="pre">workspace</span></code> include:</p>
@@ -790,9 +791,8 @@ Platemap naming can vary greatly from dataset to dataset depending upon the sour
 </ul>
 <p>Some datasets additionally have <code class="docutils literal notranslate"><span class="pre">external_metadata.tsv</span></code>.
 These contain mapping between a perturbation identifier to other metadata using matching column names.</p>
-<p>We do not currently enforce metadata harmonization beyond what is described here.
-However, one can generally expect that metadata have been harmonized within a dataset.
-We are currently exploring further metadata harmonization requirements and will update our documentation at the point of implementation.</p>
+<p>We do not currently enforce metadata harmonization beyond what is described here for these files.
+However, one can generally expect that metadata have been harmonized within a dataset.</p>
 </section>
 <section id="pooled-metadata">
 <h4>pooled metadata<a class="headerlink" href="#pooled-metadata" title="Permalink to this heading">#</a></h4>
@@ -812,9 +812,9 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
 <h3><code class="docutils literal notranslate"><span class="pre">metadata_harmonized</span></code> folder structure<a class="headerlink" href="#metadata-harmonized-folder-structure" title="Permalink to this heading">#</a></h3>
 <p>We have created metadata that is harmonized across the entire Cell Painting Gallery.
 Details of that project are available in the <a class="reference external" href="https://github.com/broadinstitute/cellpainting-gallery-metadata">Cell Painting Gallery Metadata</a> Github repository.
-Harmonized metadata are named by their project tag with a suffix that indicates the version of the metadata.
-e.g. <code class="docutils literal notranslate"><span class="pre">cpg0030-gustafsdottir-cellpainting_harmonized_metadata_v01.parquet</span></code>
 The metadata spec is currently at v0.1 and we are in the process of creating and uploading v0.1 versions for all datasets within the CPG.</p>
+<p>Harmonized metadata are named by their project tag with a suffix that indicates the version of the metadata.
+e.g. <code class="docutils literal notranslate"><span class="pre">cpg0030-gustafsdottir-cellpainting_harmonized_metadata_v01.parquet</span></code></p>
 </section>
 <section id="profiles-folder-structure">
 <h3><code class="docutils literal notranslate"><span class="pre">profiles</span></code> folder structure<a class="headerlink" href="#profiles-folder-structure" title="Permalink to this heading">#</a></h3>
