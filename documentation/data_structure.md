@@ -378,7 +378,7 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
 ### `metadata_harmonized` folder structure
 
 Files in these folders have been harmonized across the Cell Painting Gallery.
-Please note that these are currently **sparse** and in **v1** status.
+Please note that these are currently **sparse** and in **v0.1** status.
 These metadata are under active development and the files, their structuring, and their creation requirements are subject to potential change without notice.
 
 Current metadata harmonization efforts are captured and documented in the [Cell Painting Gallery Metadata](https://github.com/broadinstitute/cellpainting-gallery-metadata) repository.
