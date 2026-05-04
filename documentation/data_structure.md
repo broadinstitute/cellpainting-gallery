@@ -379,9 +379,10 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
 
 We have created metadata that is harmonized across the entire Cell Painting Gallery.
 Details of that project are available in the [Cell Painting Gallery Metadata](https://github.com/broadinstitute/cellpainting-gallery-metadata) Github repository.
+The metadata spec is currently at v0.1 and we are in the process of creating and uploading v0.1 versions for all datasets within the CPG.
+
 Harmonized metadata are named by their project tag with a suffix that indicates the version of the metadata.
 e.g. `cpg0030-gustafsdottir-cellpainting_harmonized_metadata_v01.parquet`
-The metadata spec is currently at v0.1 and we are in the process of creating and uploading v0.1 versions for all datasets within the CPG.
 
 ### `profiles` folder structure
 
