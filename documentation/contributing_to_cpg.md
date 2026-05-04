@@ -13,14 +13,14 @@ Instead, please direct such questions to the respective dataset repository linke
 
 ## Contributing Data to the Gallery
 
-Contributions can be in the form of complete datasets or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
+Contributions can be in the form of complete datasets (can be images and metadata or images and a complete `workspace`) or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
 Please contact @erinweisbart or @shntnu to initiate discussion of a data contribution.
 
 For new datasets, please include the following details in your contact:
 
 1) assay used (standard Cell Painting or describe the variation. If you would like to contribute data from a derivative assay it must be useable for morphological profiling in that it stains/labels multiple cellular compartments/organelles.)
 2) approximate data size
-3) components you wish to contribute (all are described in [data structure](data_structure.md)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). Note that `metadata` and `load_data_csv` are required.
+3) components you wish to contribute (all are described in [data structure](data_structure.md)) (major components: `images`, `analysis`, `backend`, `load_data_csv`, `profiles`. optional components: `pipelines`, `qc`, etc.). **Note that `images`, `metadata` and `load_data_csv` are required.**
 4) institutional identifier to use for data (e.g. `broad`, `anonymous`)
 5) suggested top level project tag.
 We will assign the cpg number but are happy to take suggestions for the tag appended to the cpg number.
@@ -40,23 +40,20 @@ In preparation for transferring data, please perform all of the following steps:
 
 ### Remove special characters in folder names
 
-To the maximum extent possible, please avoid the following in your folder names
+To the maximum extent possible, please avoid the following in your folder names (delete them if present):
 
 - Whitespaces
 - Special characters other than `_` and `-`
-
-Please delete these characters if they are present in your folder names.
 
 ### Prepare project-specific naming
 
 Reference [data structure](data_structure.md) for comprehensive information on folder structure and naming.
 Your data must strictly comply with the data structure we have laid out.
-Additionally it must include all, unblinded metadata.
+Additionally it must include all, unblinded metadata - this means that the minimum dataset contribution is `images`, `metadata`, and `load_data_csv`.
 
 ### Validate your data
 
-We are building a [data validator](http://github.com/broadinstitute/cpg/cpgdata) to check compliance with our required structure.
-It is currently in alpha and for internal use but we plan to develop it to the point that contributors can use it to validate their data before deposition in the future.
+Currently, validation is performed by Erin/Shantanu after data is uploaded to staging. In the future we plan on having contributors first validate their data before any upload.
 
 ### Create a pull-request
 

@@ -48,8 +48,8 @@ cellpainting-gallery/
         └── workspace
 ```
 
-Within the outer `images` folder, there are `YYYY_MM_DD_<batch-name>` subfolders for each batch.
-Each batch folder typically starts with `YYYY_MM_DD` of the date that image acquisition started.
+Within the outer `images` folder, there are batch subfolders for each batch.
+Each batch folder typically starts with `YYYY_MM_DD` of the date that image acquisition started though the date prefix is not strictly required.
 The rest of the batch folder name can be a simple ordinal (e.g. `YYYY_MM_DD_Batch1`) or more descriptive of its contents (e.g. `2020_01_02_TestPhalloidinConcentration`).
 A single batch typically contains all of the plates that were imaged (or started acquisition) on that day.
 However, for simplifying project tracking and analysis, sometimes plates imaged on the same day are divided into multiple batches where each batch is a different experimental condition (e.g. `2020_01_02_LowPhalloidin` and `2020_01_02_HighPhalloidin`).
@@ -301,7 +301,7 @@ Within the plate folder there are typically two files - a `load_data.csv` for pi
 The `load_data.csv` maps the actual file names and paths and their metadata (e.g. channel number, channel name) to the naming information passed to CellProfiler for running the images in a CellProfiler pipeline.
 More information on `load_data.csv`'s and their contents is available in [CellProfiler documentation](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/fileprocessing.html#loaddata).
 
-Though CellProfiler suports multiple formats for file paths, all `load_data.csv` in the CPG use the format of column names `URL_<ChannelName>` where the URL starts `s3://cellpainting-gallery`. e.g.
+Though CellProfiler suports multiple formats for file paths, all `load_data.csv` in the CPG use the format of column names `URL_<ChannelName>` where the URL starts `s3://cellpainting-gallery`. All `load_data.csv` must also have a column named `Metadata_Well`. e.g.
 
 URL_OrigDNA | URL_OrigER | Metadata_Plate | Metadata_Well | Metadata_Site
 ----------- | ---------- | -------------- | ------------- | -------------
@@ -377,11 +377,11 @@ Additionally, we suggest the inclusion of the metadata.json dictionary used for 
 
 ### `metadata_harmonized` folder structure
 
-Files in these folders have been harmonized across the Cell Painting Gallery.
-Please note that these are currently **sparse** and in **v0.1** status.
-These metadata are under active development and the files, their structuring, and their creation requirements are subject to potential change without notice.
-
-Current metadata harmonization efforts are captured and documented in the [Cell Painting Gallery Metadata](https://github.com/broadinstitute/cellpainting-gallery-metadata) repository.
+We have created metadata that is harmonized across the entire Cell Painting Gallery.
+Details of that project are available in the [Cell Painting Gallery Metadata](https://github.com/broadinstitute/cellpainting-gallery-metadata) Github repository.
+Harmonized metadata are named by their project tag with a suffix that indicates the version of the metadata.
+e.g. `cpg0030-gustafsdottir-cellpainting_harmonized_metadata_v01.parquet`
+The metadata spec is currently at v0.1 and we are in the process of creating and uploading v0.1 versions for all datasets within the CPG.
 
 ### `profiles` folder structure
 

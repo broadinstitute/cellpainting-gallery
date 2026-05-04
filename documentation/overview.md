@@ -33,6 +33,7 @@ For other sources of publicly available Cell Painting datasets we encourage you 
 
 - [Recursion](https://www.rxrx.ai)
 - [Image Data Resource](https://idr.openmicroscopy.org)
+- [Gingko Datapoints](https://huggingface.co/datasets/ginkgo-datapoints/GDPx3)
 
 ## Acknowledgments
 
