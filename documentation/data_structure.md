@@ -386,9 +386,13 @@ e.g. `cpg0030-gustafsdottir-cellpainting_harmonized_metadata_v01.parquet`
 
 ### `profiles` folder structure
 
-Within the `profiles` folder is a folder for each batch and within each batch folder is a folder for each plate.
-Within each plate folder are many files produced by the [profiling-recipe](https://github.com/cytomining/profiling-recipe) that describe single-cell morphological profiles.
-For a full description of the files, see [profiling-recipe files generated](https://github.com/cytomining/profiling-recipe#files-generated).
+`profiles` are morphological profiles that are generated on a per-plate basis, typically but not exclusively by the [profiling-recipe](https://github.com/cytomining/profiling-recipe).
+
+Within the `profiles` folder, data is organized by batch and plate.
+
+The profiling recipe produces a standard [set of files](https://github.com/cytomining/profiling-recipe#files-generated) where the `PLATE.csv` is per-well aggregated profiles that are then augmented with metadata to make `PLATE_augmented.csv`, then normalized to make `PLATE_normalized.csv` or `PLATE_normalized_SUBSET.csv`, and finally feature selected to make `PLATE_normalized_feature_select_GROUPING.csv` and `PLATE_normalized_feature_select_SUBSET_GROUPING.csv`. SEe the profiling recipe documentation for more details on the different files and their creation.
+
+Profiles generated outside of the profiling recipe may have a different structure and naming convention but should still be generated on a per-plate basis.
 
 ```
 └── profiles
@@ -408,8 +412,7 @@ For a full description of the files, see [profiling-recipe files generated](http
 
 ### `profiles_assembled` folder structure
 
-The `profiles_assembled` folder contains profiles that have been processed across multiple batches or sources using workflows like the [JUMP profiling recipe](https://github.com/broadinstitute/jump-profiling-recipe).
-Unlike the `profiles` folder which contains per-plate outputs from the standard profiling recipe, `profiles_assembled` contains versioned datasets that may combine data from multiple plates, batches, or even sources.
+`profiles_assembled` are profiles that are **not** generated on a per-plate basis but rather have been processed across multiple sources, batches and/or plates using workflows like the [JUMP profiling recipe](https://github.com/broadinstitute/jump-profiling-recipe).
 
 Within the `profiles_assembled` folder, data is organized by subset, version, and processing variant:
 
@@ -426,6 +429,7 @@ Within the `profiles_assembled` folder, data is organized by subset, version, an
 - `<processing_variant>`: Describes the specific processing applied (e.g., `profiles_var_mad_int_featselect` for variance, MAD, intensity feature selection)
 
 For example:
+
 ```
 └── profiles_assembled
     └── compound_no_source7
