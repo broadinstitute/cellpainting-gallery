@@ -19,14 +19,11 @@ It should be present even if the data is from a single source (e.g. `s3://cellpa
 It can be anonymized (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `source_1/`, `source_2/`, etc.).
 It can also indicate that it contains data aggregated from multiple sources (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `assembled`).
 
-- `images`: all images and illumination correction functions.
-- `workspace`: everything else that results from CellProfiler-based features goes here.
-- `workspace_dl`: everything else that results from deep learning-based features goes here.
+- `images`: all images and illumination correction functions
+- `workspace`: everything else that results from CellProfiler-based features goes here
+- `workspace_dl`: everything else that results from deep learning-based features goes here
 
-Not all projects will have all parent structures.
-
-The "completeness" of a project can be checked using our [data validator](https://github.com/broadinstitute/cpg).
-Please note that it is in alpha and further functionality and documentation are under development.
+**Not all projects will have all parent structures.**
 
 ## `images` folder structure
 
