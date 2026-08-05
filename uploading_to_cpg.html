@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="complete_datasets.html">Complete Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_structure.html">Cell Painting Gallery folder structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organizational_philosophy.html">Data Organization in the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizational_philosophy.html">Data Organization Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_sets.html">Feature Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
@@ -499,8 +499,7 @@ The credentials are scoped to this prefix and all sub-paths within it.</p>
 <p>To verify if the transfer was successful, compare object counts between your source and destination.
 Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.</p>
 <ul class="simple">
-<li><p>Number of files on origin (for a file system): <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">PATH/TO/YOUR/FILES</span>&#160; <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code>
-with</p></li>
+<li><p>Number of files on origin (for a file system): <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">PATH/TO/YOUR/FILES</span>&#160; <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
 <li><p>Number of objects on the Staging bucket: <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">ls</span> <span class="pre">s3://staging-cellpainting-gallery/${PROJECT_NAME}/${SOURCE}$/path/to/data/</span> <span class="pre">--recursive</span> <span class="pre">--profile</span> <span class="pre">cpg-staging</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
 </ul>
 <p>Once verification is complete, let a Gallery maintainer (Erin, Shantanu) know that they should initiate transfer from staging to Gallery.</p>

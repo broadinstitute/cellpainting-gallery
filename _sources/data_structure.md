@@ -14,19 +14,16 @@ cellpainting-gallery
 
 - `<project>`: top level folder for the project.
 Keep the name short and simple with `[a-z0-9_]` only.
-- `<source>`: additional nesting level that is an identifier for the contributing institution. 
+- `<source>`: additional nesting level that is an identifier for the contributing institution.
 It should be present even if the data is from a single source (e.g. `s3://cellpainting-gallery/cpg0003-rosetta/` only contains `broad/`).
 It can be anonymized (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `source_1/`, `source_2/`, etc.).
 It can also indicate that it contains data aggregated from multiple sources (e.g. `s3://cellpainting-gallery/cpg0016-jump/` contains `assembled`).
 
-- `images`: all images and illumination correction functions.
-- `workspace`: everything else that results from CellProfiler-based features goes here.
-- `workspace_dl`: everything else that results from deep learning-based features goes here.
+- `images`: all images and illumination correction functions
+- `workspace`: everything else that results from CellProfiler-based features goes here
+- `workspace_dl`: everything else that results from deep learning-based features goes here
 
-Not all projects will have all parent structures.
-
-The "completeness" of a project can be checked using our [data validator](https://github.com/broadinstitute/cpg).
-Please note that it is in alpha and further functionality and documentation are under development.
+**Not all projects will have all parent structures.**
 
 ## `images` folder structure
 
@@ -204,7 +201,7 @@ Let's look under the `workspace` folder.
 Everything but images lives here.
 These folders are produced when following the data processing steps in the [Image-based Profiling Handbook](https://cytomining.github.io/profiling-handbook/).
 Below are the minimally required top-level folders under `workspace`.
-Note that some experiments may generate additional categories of data/metadata and these should be uploaded to the `workspace` folder in their own folder/s.
+Note that some experiments may generate additional categories of data/metadata and these are uploaded to the `workspace` folder in their own folder/s.
 
 ```
 cellpainting-gallery/
@@ -226,12 +223,13 @@ cellpainting-gallery/
 - `metadata_harmonized`: contains metadata that has been harmonized across the CPG
 - `profiles`: contains a set of well-level profiles files (one set per plate). The set comprises different stages of the CSV files produced when running the profiling recipe, as well as other output.
 
-Examples of additional optional folders you may upload to `workspace` include:
+Examples of additional optional folders you may find in `workspace` include:
 
 - `assaydev`: work use to test/optimize segmentation parameters
 - `embeddings`: embeddings generated from deep learning models
 - `pipelines`: the CellProfiler .cppipe or .cpproj files used
 - `profiles_assembled`: versioned profiles processed across multiple batches or sources
+- `publication_data`: additional data generated for a specific publication
 - `qc`: quality control data
 - `segmentation`: optimized segmentations generated independently of the `analysis` pipeline
 - `software`: scripts used while handling the batch
@@ -426,6 +424,7 @@ Within the `profiles_assembled` folder, data is organized by subset, version, an
 - `<processing_variant>`: Describes the specific processing applied (e.g., `profiles_var_mad_int_featselect` for variance, MAD, intensity feature selection)
 
 For example:
+
 ```
 └── profiles_assembled
     └── compound_no_source7
@@ -439,8 +438,8 @@ The provenance of these files is typically tracked using manifest files as descr
 
 ### `quality_control` folder structure
 
-The `quality_control` folder has the slightly different structure.
-The files are all produced by the [profiling-recipe](https://github.com/jump-cellpainting/profiling-recipe#files-generated).
+The `quality_control` folder substructure and contents may vary.
+One example of files and structure are those produced by the [profiling-recipe](https://github.com/jump-cellpainting/profiling-recipe#files-generated).
 
 ```
 └── quality_control
@@ -455,6 +454,21 @@ The files are all produced by the [profiling-recipe](https://github.com/jump-cel
 ```
 
 - `2021_04_26_Batch1` is the batch and `BR00117035` is the plate
+
+### `publication_data` folder structure
+
+Files within this folder are files associated with or generated for a specific publication.
+They are organized into subfolders, generally named by YEAR_FIRSTAUTHOR or YEAR_SHORT_DESCRIPTIVE_NAME, though the exact naming may vary.
+The exact files vary and substructure may vary.
+
+```
+└── publication_data
+    └── YEAR_PUBLICATION
+        └── publication_specific_organization
+                ├── file_example1.csv.gz
+                ├── file_example2.csv.gz
+                └── file_example3.csv.gz
+```
 
 ### `segmentation` folder structure
 

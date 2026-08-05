@@ -1,4 +1,4 @@
-# Data Organization in the Cell Painting Gallery
+# Data Organization Philosophy
 
 This document explains the reasoning behind the Cell Painting Gallery's folder structure and how it has evolved.
 For the technical specification of the folder structure itself, see [data_structure.md](data_structure.md).
@@ -70,6 +70,7 @@ For assembled profiles, we use versioned subdirectories combined with manifest f
 This approach decouples physical storage from logical organization - files can be moved or reorganized while maintaining complete history and provenance through the manifest.
 
 **Metadata tracking** (manifest files) documents include:
+
 - What data was processed (`profile_url`)
 - How it was processed (`recipe_permalink`)
 - With what parameters (`config_permalink`)

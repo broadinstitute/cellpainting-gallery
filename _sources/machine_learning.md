@@ -8,7 +8,7 @@ As machine learning (ML) and deep learning (DL) workflows often benefit from ima
 We welcome contributions of compressed images for any other datasets in the Cell Painting Gallery.
 
 | Dataset | Location | Description |
-|---------|-------------|----------|
+| ------- | -------- | ----------- |
 | cpg0004-lincs | cpg0019-moshkov-deepprofiler/broad/training_images/LINCS/ | single cell .png crops with cell masks |
 | cpg0012-wawer-bioactivecompoundprofiling | cpg0019-moshkov-deepprofiler/broad/training_images/BBBC036/ | single cell .png crops with cell masks |
 | cpg0016-jump | cpg0016-jump/SOURCE/workspace/segmentation/cellpose/objects/BATCH/ | PLATE.zarr files of single cell crops and nuclei and cell masks. Label image for mapping. |

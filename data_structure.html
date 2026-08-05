@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="broadinstitute.github.io/data_structure.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Organization in the Cell Painting Gallery" href="organizational_philosophy.html" />
+    <link rel="next" title="Data Organization Philosophy" href="organizational_philosophy.html" />
     <link rel="prev" title="Complete Datasets" href="complete_datasets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="complete_datasets.html">Complete Datasets</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cell Painting Gallery folder structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organizational_philosophy.html">Data Organization in the Cell Painting Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizational_philosophy.html">Data Organization Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_sets.html">Feature Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="browsing_data.html">Browsing Data on the Cell Painting Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="download_instructions.html">Downloading from Cell Painting Gallery</a></li>
@@ -417,6 +417,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-assembled-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-folder-structure"><code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-data-folder-structure"><code class="docutils literal notranslate"><span class="pre">publication_data</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-folder-structure"><code class="docutils literal notranslate"><span class="pre">segmentation</span></code> folder structure</a></li>
 </ul>
 </li>
@@ -458,13 +459,11 @@ Keep the name short and simple with <code class="docutils literal notranslate"><
 It should be present even if the data is from a single source (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0003-rosetta/</span></code> only contains <code class="docutils literal notranslate"><span class="pre">broad/</span></code>).
 It can be anonymized (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">source_1/</span></code>, <code class="docutils literal notranslate"><span class="pre">source_2/</span></code>, etc.).
 It can also indicate that it contains data aggregated from multiple sources (e.g. <code class="docutils literal notranslate"><span class="pre">s3://cellpainting-gallery/cpg0016-jump/</span></code> contains <code class="docutils literal notranslate"><span class="pre">assembled</span></code>).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: all images and illumination correction functions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">workspace</span></code>: everything else that results from CellProfiler-based features goes here.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">workspace_dl</span></code>: everything else that results from deep learning-based features goes here.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: all images and illumination correction functions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">workspace</span></code>: everything else that results from CellProfiler-based features goes here</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">workspace_dl</span></code>: everything else that results from deep learning-based features goes here</p></li>
 </ul>
-<p>Not all projects will have all parent structures.</p>
-<p>The “completeness” of a project can be checked using our <a class="reference external" href="https://github.com/broadinstitute/cpg">data validator</a>.
-Please note that it is in alpha and further functionality and documentation are under development.</p>
+<p><strong>Not all projects will have all parent structures.</strong></p>
 <section id="images-folder-structure">
 <h2><code class="docutils literal notranslate"><span class="pre">images</span></code> folder structure<a class="headerlink" href="#images-folder-structure" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cellpainting-gallery/
@@ -632,7 +631,7 @@ Within the <code class="docutils literal notranslate"><span class="pre">CP257A</
 Everything but images lives here.
 These folders are produced when following the data processing steps in the <a class="reference external" href="https://cytomining.github.io/profiling-handbook/">Image-based Profiling Handbook</a>.
 Below are the minimally required top-level folders under <code class="docutils literal notranslate"><span class="pre">workspace</span></code>.
-Note that some experiments may generate additional categories of data/metadata and these should be uploaded to the <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folder in their own folder/s.</p>
+Note that some experiments may generate additional categories of data/metadata and these are uploaded to the <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folder in their own folder/s.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cellpainting-gallery/
 └── cpg0016-jump
     └── source_4
@@ -653,12 +652,13 @@ Note that some experiments may generate additional categories of data/metadata a
 <li><p><code class="docutils literal notranslate"><span class="pre">metadata_harmonized</span></code>: contains metadata that has been harmonized across the CPG</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">profiles</span></code>: contains a set of well-level profiles files (one set per plate). The set comprises different stages of the CSV files produced when running the profiling recipe, as well as other output.</p></li>
 </ul>
-<p>Examples of additional optional folders you may upload to <code class="docutils literal notranslate"><span class="pre">workspace</span></code> include:</p>
+<p>Examples of additional optional folders you may find in <code class="docutils literal notranslate"><span class="pre">workspace</span></code> include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">assaydev</span></code>: work use to test/optimize segmentation parameters</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">embeddings</span></code>: embeddings generated from deep learning models</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pipelines</span></code>: the CellProfiler .cppipe or .cpproj files used</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code>: versioned profiles processed across multiple batches or sources</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">publication_data</span></code>: additional data generated for a specific publication</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">qc</span></code>: quality control data</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">segmentation</span></code>: optimized segmentations generated independently of the <code class="docutils literal notranslate"><span class="pre">analysis</span></code> pipeline</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">software</span></code>: scripts used while handling the batch</p></li>
@@ -868,8 +868,8 @@ The provenance of these files is typically tracked using manifest files as descr
 </section>
 <section id="quality-control-folder-structure">
 <h3><code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder structure<a class="headerlink" href="#quality-control-folder-structure" title="Permalink to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder has the slightly different structure.
-The files are all produced by the <a class="reference external" href="https://github.com/jump-cellpainting/profiling-recipe#files-generated">profiling-recipe</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder substructure and contents may vary.
+One example of files and structure are those produced by the <a class="reference external" href="https://github.com/jump-cellpainting/profiling-recipe#files-generated">profiling-recipe</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── quality_control
     └── heatmap
         └── 2021_04_26_Batch1
@@ -884,6 +884,20 @@ The files are all produced by the <a class="reference external" href="https://gi
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">2021_04_26_Batch1</span></code> is the batch and <code class="docutils literal notranslate"><span class="pre">BR00117035</span></code> is the plate</p></li>
 </ul>
+</section>
+<section id="publication-data-folder-structure">
+<h3><code class="docutils literal notranslate"><span class="pre">publication_data</span></code> folder structure<a class="headerlink" href="#publication-data-folder-structure" title="Permalink to this heading">#</a></h3>
+<p>Files within this folder are files associated with or generated for a specific publication.
+They are organized into subfolders, generally named by YEAR_FIRSTAUTHOR or YEAR_SHORT_DESCRIPTIVE_NAME, though the exact naming may vary.
+The exact files vary and substructure may vary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── publication_data
+    └── YEAR_PUBLICATION
+        └── publication_specific_organization
+                ├── file_example1.csv.gz
+                ├── file_example2.csv.gz
+                └── file_example3.csv.gz
+</pre></div>
+</div>
 </section>
 <section id="segmentation-folder-structure">
 <h3><code class="docutils literal notranslate"><span class="pre">segmentation</span></code> folder structure<a class="headerlink" href="#segmentation-folder-structure" title="Permalink to this heading">#</a></h3>
@@ -1136,7 +1150,7 @@ Within the network folder is a folder for each batch and within each batch folde
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Organization in the Cell Painting Gallery</p>
+        <p class="prev-next-title">Data Organization Philosophy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1173,6 +1187,7 @@ Within the network folder is a folder for each batch and within each batch folde
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-assembled-folder-structure"><code class="docutils literal notranslate"><span class="pre">profiles_assembled</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-folder-structure"><code class="docutils literal notranslate"><span class="pre">quality_control</span></code> folder structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-data-folder-structure"><code class="docutils literal notranslate"><span class="pre">publication_data</span></code> folder structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-folder-structure"><code class="docutils literal notranslate"><span class="pre">segmentation</span></code> folder structure</a></li>
 </ul>
 </li>

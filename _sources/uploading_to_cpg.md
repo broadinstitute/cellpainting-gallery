@@ -62,6 +62,7 @@ aws s3 sync /path/to/local/data s3://staging-cellpainting-gallery/YOUR_PREFIX/yo
 ```
 
 You can upload to any sub-path within your assigned prefix. For example, if your prefix is `cpg0037-oasis`, you can upload to:
+
 - `s3://staging-cellpainting-gallery/cpg0037-oasis/broad/images/...`
 - `s3://staging-cellpainting-gallery/cpg0037-oasis/source_2/workspace/...`
 
@@ -90,8 +91,8 @@ After complete transfer, you (Imaging Platform internal) or your data champion (
 
 To verify if the transfer was successful, compare object counts between your source and destination.
 Because of differences in the way file sizes are calculated between file systems and object storage, file size is not a reliable metric for comparison.
+
 - Number of files on origin (for a file system): `find PATH/TO/YOUR/FILES  -type f | wc -l`
-with
 - Number of objects on the Staging bucket: `aws s3 ls s3://staging-cellpainting-gallery/${PROJECT_NAME}/${SOURCE}$/path/to/data/ --recursive --profile cpg-staging | wc -l`
 
 Once verification is complete, let a Gallery maintainer (Erin, Shantanu) know that they should initiate transfer from staging to Gallery.

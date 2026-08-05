@@ -25,7 +25,7 @@ For data browsing, Quilt has a number of in-browser features for browsing and ex
 ## Listing the Cell Painting Gallery with AWS CLI
 
 The Amazon Web Services Command Line Interface (AWS CLI) is a unified tool to manage AWS services from the command line.
-AWS provides more information on AWS CLI [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
+AWS provides more information on [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
 Before using AWS CLI you will need to [install it](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), following AWS instructions.
 
 ```bash
@@ -47,7 +47,7 @@ aws s3 ls s3://cellpainting-gallery/${DATASET}/source_4/workspace/load_data_csv/
 ## Listing the Cell Painting Gallery with boto3
 
 Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python.
-AWS provides more information on boto3 [here](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html).
+AWS provides more information [on boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html).
 Before using boto3, you will need to [install it](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html), following AWS instructions.
 
 ```python
