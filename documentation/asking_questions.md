@@ -20,3 +20,5 @@ Questions in this category include questions about:
 
 - biological interpretation
 - methods and protocols used to generate the data
+
+Please note that we do have a [Discussion page](https://github.com/broadinstitute/cellpainting-gallery/discussions) for each Dataset in the Cell Painting Gallery GitHub repository, and you may be able to find answers to your questions and/or reach dataset contributors for questions there as well.

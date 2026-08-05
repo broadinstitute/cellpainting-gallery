@@ -34,6 +34,8 @@ Weisbart, E., Kumar, A., Arevalo, J., Carpenter, A. E., Cimini, B. A., & Singh, 
 ### Individual dataset publications
 
 Individual publications associated with specific datasets are listed in the "Publication to cite" column in the Cell Painting Gallery repository [README and landing page](https://github.com/broadinstitute/cellpainting-gallery).
+The Cell Painting Gallery does have some datasets that are unpublished.
+For unpublished datasets, please follow the citation instructions in the associated [unpublished datasets description](https://github.com/broadinstitute/cellpainting-gallery/unpublished_datasets).
 
 ### Example citations
 
