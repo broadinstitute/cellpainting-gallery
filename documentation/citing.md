@@ -1,15 +1,22 @@
 # Citing the Cell Painting Gallery
 
-## Cell Painting Gallery data licence
+## Cell Painting Gallery data licence and citation
 
-All the data is released with CC0 1.0 Universal (CC0 1.0).
+All the data in the Cell Painting Gallery is released with [CC0 1.0 Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+CC0 enables the data to be copied, modified, redistributed, combined with other datasets, and used for any purpose without requiring permission or tracking legal attribution obligations across datasets.
 
-Though the data is in the public domain, professional ethics requires citation.
+However, though the data is in the public domain, **professional ethics requires citation**.
+CC0 removes a legal requirement for attribution.
+It does not remove the **scholarly responsibility** to credit the people and institutions that generated, curated, and shared the data.
+This citation expectation does not add a legal restriction or modify the CC0 status of the data.
+However, appropriate citation is essential both to give contributors credit and to allow their institutions and funders to recognize the scientific impact of making these resources public.
 
-## Citing the CPG
+When publicly reporting work that uses Cell Painting Gallery data, users are expected to:
 
-When citing data that you have accessed from the Cell Painting Gallery, please cite both our publication announcing the Cell Painting Gallery in Nature Methods (Weisbart et al., 2024) as well as the individual publication/s describing any dataset/s that you have used.
-Please also acknowledge the Registry of Open Data (RODA) on AWS for their support in hosting the data.
+- identify each dataset by its CPG accession number
+- cite the dataset-specific publication or resource listed listed in the README for each dataset used
+- cite the Cell Painting Gallery publication ([Weisbart et al., 2024](https://doi.org/10.1038/s41592-024-02399-z))
+- acknowledge the Registry of Open Data (RODA) on AWS for their support in hosting the data
 
 ### Cell Painting Gallery publication
 
