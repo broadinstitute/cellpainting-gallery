@@ -44,14 +44,14 @@ Individual publications associated with specific datasets are listed in the "Pub
 
 ### Example citations
 
-```text
-We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery (Weisbart et al., 2024) on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/).
-```
+**Example 1**, all in text:
 
-```text
-# In text
-Data was accessed from the Cell Painting Gallery (Weisbart et al., 2024). We analysed datasets cpg0000-jump-pilot (Chandrasekaran et al., 2022) and cpg0001-cellpainting-protocol (Cimini et al., 2022).
+>We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery (Weisbart et al., 2024) on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/).
 
-# In acknowledgements
-We acknowledge the AWS Registry of Open Data (RODA) program for hosting the Cell Painting Gallery data.
-```
+**Example 2**, in text and acknowledgements:
+
+In text:
+> Data was accessed from the Cell Painting Gallery (Weisbart et al., 2024). We analysed datasets cpg0000-jump-pilot (Chandrasekaran et al., 2022) and cpg0001-cellpainting-protocol (Cimini et al., 2022).
+
+In acknowledgements:
+>We acknowledge the AWS Registry of Open Data (RODA) program for hosting the Cell Painting Gallery data.
