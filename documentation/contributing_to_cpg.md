@@ -59,3 +59,9 @@ Currently, validation is performed by Erin/Shantanu after data is uploaded to st
 
 Any data contributions to Cell Painting Gallery must be accompanied by a pull request to the [Cell Painting Gallery repository](https://github.com/broadinstitute/cellpainting-gallery/) with updates to the README to add your dataset to [Available datasets](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md).
 If your dataset is associated with a publication, please also edit [Publications](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/publications.md).
+
+## Acknowledging CPG maintainers' role in deposition
+
+Most datasets require a handful of hours of time for a maintainer of the CPG to assist in data deposition, performing tasks such as handling upload credentials, transferring data from staging to production, answering questions, confirming data structure and metadata completeness, and generating harmonized metadata. We are happy to provide these hours as a service to the scientific community. We ask that you acknowledge our volunteered time in your paper's acknowledgements if you are depositing data pre-publication.
+
+In the rare occasion that you don't have someone in your team that has the skills or time to prepare your data appropriately for deposition, and your data requires more substantial cleaning/reorganizing/preparation for deposition, we are available to help but ask that we be appropriately compensated. This can be through hourly fee-for-service and/or by making the person on our team who spends the time handling the data an author on your paper describing the data. This is consistent with the [Contributor Role Taxonomy (CRediT)](https://credit.niso.org) that acknowledges "data curation" as one of the diverse contributions behind published research.
