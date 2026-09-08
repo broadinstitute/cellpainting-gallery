@@ -461,7 +461,7 @@ aws<span class="w"> </span>s3control<span class="w"> </span>get-data-access<span
 </pre></div>
 </div>
 <p>This returns temporary credentials valid for 12 hours. Copy the values from the output and export them.
-These replace the credentials from step A1—make sure to export all three values, including <code class="docutils literal notranslate"><span class="pre">AWS_SESSION_TOKEN</span></code>:</p>
+These replace the credentials you just entered (those credentials allow you to access the temporary upload credentials) — make sure to export all three values, including <code class="docutils literal notranslate"><span class="pre">AWS_SESSION_TOKEN</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>&lt;AccessKeyId<span class="w"> </span>from<span class="w"> </span>output&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>&lt;SecretAccessKey<span class="w"> </span>from<span class="w"> </span>output&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SESSION_TOKEN</span><span class="o">=</span>&lt;SessionToken<span class="w"> </span>from<span class="w"> </span>output&gt;

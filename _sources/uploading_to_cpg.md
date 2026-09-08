@@ -45,7 +45,7 @@ aws s3control get-data-access \
 ```
 
 This returns temporary credentials valid for 12 hours. Copy the values from the output and export them.
-These replace the credentials from step A1—make sure to export all three values, including `AWS_SESSION_TOKEN`:
+These replace the credentials you just entered (those credentials allow you to access the temporary upload credentials) — make sure to export all three values, including `AWS_SESSION_TOKEN`:
 
 ```bash
 export AWS_ACCESS_KEY_ID=<AccessKeyId from output>
