@@ -8,7 +8,7 @@ The Cell Painting Gallery is a publicly available collection of Cell Painting da
 Complete datasets with descriptive overview [are listed here](complete_datasets.md).
 Prefixes for datasets-in-progress can be [accessed here](prefixes.md).
 Most prefixes within the Cell Painting Gallery are for unique Cell Painting datasets that contain images, extracted features, and metadata.
-However, some prefixes are re-analyses of other datasets and may not contain images.
+However, some prefixes are re-analyses of other datasets and may not contain images and some contributed image datasets have not undergone the same image analysis as the majority of the gallery.
 
 ## Downloading from Cell Painting Gallery
 
@@ -17,6 +17,8 @@ Note that for each dataset you can download just images, just extracted features
 Note also that many datasets contain multiple batches and you may want a subset of available batches.
 
 We provide detailed information on how to list/browse the Cell Painting Gallery in [Browsing Data](browsing_data.md) and download from the Cell Painting Gallery in [Download Instructions](download_instructions.md).
+
+For a view of how much data has been downloaded from the Cell Painting Gallery, browse the [Cell Painting Gallery downloads dashboard](https://cloudwatch.amazonaws.com/dashboard.html?dashboard=cellpainting-gallery-usage&context=eyJSIjoidXMtZWFzdC0xIiwiRCI6ImN3LWRiLTMwOTYyNDQxMTAyMCIsIlUiOiJ1cy1lYXN0LTFfMG00VzRzVDRiIiwiQyI6IjQyM2F0ODU0MTk1Y2ZqY2RwcGJ0MnNiOGQ3IiwiSSI6InVzLWVhc3QtMToxZTBlNmE4My00ZDIyLTQ2YjItYmZkNC01ZmE5NjFjNWQ0NTkiLCJNIjoiUHVibGljIn0%3D&start=PT8640H&end=null).
 
 ## Cell Painting protocol versions
 
