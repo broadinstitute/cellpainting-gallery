@@ -2,6 +2,8 @@
 
 The purpose of this table is to maintain a full listing of Cell Painting Gallery identifiers for both complete and in-progress datasets.
 Complete datasets are fully described in [Complete Datasets](complete_datasets.md).
+Retired identifiers stay listed so they are never reused.
+`cpg0042-chandrasekaran-jump` was retired in 2026 after its contents moved into `cpg0016-jump/source_all/workspace/`.
 
 | Dataset name                             |
 |------------------------------------------|
@@ -47,7 +49,7 @@ Complete datasets are fully described in [Complete Datasets](complete_datasets.m
 | cpg0039-garcia-fossa-livecellpainting    |
 | cpg0040-garcia-fossa-AgNP                |
 | cpg0041-pccma                            |
-| cpg0042-chandrasekaran-jump              |
+| cpg0042-chandrasekaran-jump (retired)    |
 | cpg0043-segmentation                     |
 | cpg0044-uhler-multicells                 |
 | cpg0045-ncats-mito                       |
