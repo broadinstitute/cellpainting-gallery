@@ -14,7 +14,7 @@ Instead, please direct such questions to the respective dataset repository linke
 ## Contributing Data to the Gallery
 
 Contributions can be in the form of complete datasets (can be images and metadata or images and a complete `workspace`) or additions to extant datasets (e.g. segmentations or deep-learning generated profiles).
-Please contact @erinweisbart or @shntnu to initiate discussion of a data contribution.
+Please contact @erinweisbart to initiate discussion of a data contribution.
 
 For new datasets, please include the following details in your contact:
 
@@ -53,7 +53,7 @@ Additionally it must include all, unblinded metadata - this means that the minim
 
 ### Validate your data
 
-Currently, validation is performed by Erin/Shantanu after data is uploaded to staging. In the future we plan on having contributors first validate their data before any upload.
+Currently, validation is performed by Erin after data is uploaded to staging. In the future we plan on having contributors first validate their data before any upload.
 
 ### Create a pull-request
 
